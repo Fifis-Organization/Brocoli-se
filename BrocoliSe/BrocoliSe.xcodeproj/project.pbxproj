@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3902B0D826EF7AD500FE2C8F /* Graviola-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3902B0D726EF7AD500FE2C8F /* Graviola-Regular.otf */; };
+		3902B0DB26EF7AEB00FE2C8F /* GraviolaSoft-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3902B0DA26EF7AEB00FE2C8F /* GraviolaSoft-Medium.otf */; };
 		3932586526E8FF3F00A44687 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3932586426E8FF3F00A44687 /* Colors.swift */; };
 		3932586826E8FF4900A44687 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3932586726E8FF4900A44687 /* Fonts.swift */; };
 		3932586B26E8FF7A00A44687 /* Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3932586A26E8FF7A00A44687 /* Protocol.swift */; };
@@ -21,6 +23,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3902B0D726EF7AD500FE2C8F /* Graviola-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Graviola-Regular.otf"; sourceTree = "<group>"; };
+		3902B0DA26EF7AEB00FE2C8F /* GraviolaSoft-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GraviolaSoft-Medium.otf"; sourceTree = "<group>"; };
 		3932586426E8FF3F00A44687 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		3932586726E8FF4900A44687 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		3932586A26E8FF7A00A44687 /* Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocol.swift; sourceTree = "<group>"; };
@@ -133,6 +137,8 @@
 		3984BD5A26E8FCF400C92824 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				3902B0DA26EF7AEB00FE2C8F /* GraviolaSoft-Medium.otf */,
+				3902B0D726EF7AD500FE2C8F /* Graviola-Regular.otf */,
 				3932586726E8FF4900A44687 /* Fonts.swift */,
 			);
 			path = Fonts;
@@ -205,7 +211,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				3984BD4826E8E9AC00C92824 /* LaunchScreen.storyboard in Resources */,
+				3902B0DB26EF7AEB00FE2C8F /* GraviolaSoft-Medium.otf in Resources */,
 				3984BD4526E8E9AC00C92824 /* Assets.xcassets in Resources */,
+				3902B0D826EF7AD500FE2C8F /* Graviola-Regular.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
