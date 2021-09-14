@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -17,7 +17,7 @@
 		3932586826E8FF4900A44687 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3932586726E8FF4900A44687 /* Fonts.swift */; };
 		3932586B26E8FF7A00A44687 /* Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3932586A26E8FF7A00A44687 /* Protocol.swift */; };
 		3932586E26E8FF8800A44687 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3932586D26E8FF8800A44687 /* Model.swift */; };
-		3932587126E9008000A44687 /* Components.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3932587026E9008000A44687 /* Components.swift */; };
+		3932587126E9008000A44687 /* ProgressBarComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3932587026E9008000A44687 /* ProgressBarComponent.swift */; };
 		3932587426E9008C00A44687 /* Scenes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3932587326E9008C00A44687 /* Scenes.swift */; };
 		3984BD3C26E8E9AB00C92824 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3984BD3B26E8E9AB00C92824 /* AppDelegate.swift */; };
 		3984BD3E26E8E9AB00C92824 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3984BD3D26E8E9AB00C92824 /* SceneDelegate.swift */; };
@@ -40,7 +40,7 @@
 		3932586726E8FF4900A44687 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		3932586A26E8FF7A00A44687 /* Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocol.swift; sourceTree = "<group>"; };
 		3932586D26E8FF8800A44687 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
-		3932587026E9008000A44687 /* Components.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Components.swift; sourceTree = "<group>"; };
+		3932587026E9008000A44687 /* ProgressBarComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarComponent.swift; sourceTree = "<group>"; };
 		3932587326E9008C00A44687 /* Scenes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scenes.swift; sourceTree = "<group>"; };
 		3984BD3826E8E9AB00C92824 /* BrocoliSe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BrocoliSe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3984BD3B26E8E9AB00C92824 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -156,7 +156,7 @@
 		3984BD5926E8FCE900C92824 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				3932587026E9008000A44687 /* Components.swift */,
+				3932587026E9008000A44687 /* ProgressBarComponent.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -208,6 +208,7 @@
 				3984BD3526E8E9AB00C92824 /* Frameworks */,
 				3984BD3626E8E9AB00C92824 /* Resources */,
 				3984BD5026E8EFE300C92824 /* ShellScript */,
+				BD9AB581B54DF394EEE84BE9 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -304,6 +305,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		BD9AB581B54DF394EEE84BE9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BrocoliSe/Pods-BrocoliSe-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BrocoliSe/Pods-BrocoliSe-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BrocoliSe/Pods-BrocoliSe-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -314,6 +332,7 @@
 				3932586E26E8FF8800A44687 /* Model.swift in Sources */,
 				3932587126E9008000A44687 /* Components.swift in Sources */,
 				3902B0E526EF96BC00FE2C8F /* Coordinator.swift in Sources */,
+				3932587126E9008000A44687 /* ProgressBarComponent.swift in Sources */,
 				3932587426E9008C00A44687 /* Scenes.swift in Sources */,
 				3984BD4026E8E9AB00C92824 /* ViewController.swift in Sources */,
 				3902B0E926EF977900FE2C8F /* AppCoordinator.swift in Sources */,
