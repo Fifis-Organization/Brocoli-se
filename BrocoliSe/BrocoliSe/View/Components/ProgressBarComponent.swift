@@ -57,9 +57,9 @@ class ProgressBarComponent: UIView {
         progressBar.setTypeText(.fixedCenter)
         progressBar.setTypeForm(.inLine)
         progressBar.setFont(UIFont.graviolaRegular(size: 10) ?? UIFont.systemFont(ofSize: 30))
-        progressBar.setLabelTextColor(.blueDark!)
-        progressBar.progressTintColor = UIColor.greenSoft!
-        progressBar.backgroundTintColor = UIColor.backgroundColor!
+        progressBar.setLabelTextColor((.blueDark ?? .black))
+        progressBar.progressTintColor = UIColor.greenSoft ?? UIColor.gray
+        progressBar.backgroundTintColor = UIColor.backgroundColor ?? UIColor.white
         progressBar.cornerRadius = 10
         
     }
