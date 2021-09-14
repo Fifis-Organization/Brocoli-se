@@ -6,5 +6,6 @@ target 'BrocoliSe' do
   use_frameworks!
 
   # Pods for BrocoliSe
+  pod 'UBProgress'
 
 end
