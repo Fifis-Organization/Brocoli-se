@@ -22,9 +22,10 @@ class ProgressBarComponent: UIView {
     }()
     
     let image: UIImageView = {
-        let image = UIImageView(image: UIImage(named: "Recompensa"))
+        let image = UIImageView(image: UIImage(systemName: "gift.fill"))
         image.clipsToBounds = true
         image.backgroundColor = UIColor.clear
+        image.tintColor = UIColor.blueDark
         image.contentMode = .scaleAspectFill
         return image
     }()
@@ -85,8 +86,8 @@ class ProgressBarComponent: UIView {
             NSLayoutConstraint.activate([
                 image.centerYAnchor.constraint(equalTo: circle.centerYAnchor),
                 image.centerXAnchor.constraint(equalTo: circle.centerXAnchor),
-                image.heightAnchor.constraint(equalToConstant: 16),
-                image.widthAnchor.constraint(equalToConstant: 16)
+                image.heightAnchor.constraint(equalToConstant: 18),
+                image.widthAnchor.constraint(equalToConstant: 18)
             ])
     }
 
