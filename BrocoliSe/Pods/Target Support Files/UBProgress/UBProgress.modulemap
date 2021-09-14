@@ -1,0 +1,6 @@
+framework module UBProgress {
+  umbrella header "UBProgress-umbrella.h"
+
+  export *
+  module * { export * }
+}

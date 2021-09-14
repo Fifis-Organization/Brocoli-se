@@ -8,10 +8,16 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    let progress = ProgressBarComponent(frame: UIScreen.main.bounds)
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .blue
+        
+        self.view = progress
+        view.backgroundColor = UIColor.blueDark
+        title = "Poc"
+   
         // Do any additional setup after loading the view.
     }
 

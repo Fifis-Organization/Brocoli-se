@@ -7,48 +7,98 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		24D8B1516DC9727001BE1A4C6F34E5D8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		356C1DFE9A29DFF36C257A3AFF04B54F /* Pods-BrocoliSe-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 16D763546B952DA068788324162EA3CF /* Pods-BrocoliSe-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		40B9C56C818CF00144EC32EC291E3E00 /* Pods-BrocoliSe-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BE9E390FCC7E954A8006D7E8DF1EAC70 /* Pods-BrocoliSe-dummy.m */; };
+		03847F4AFF3033ED70566FABBD51704D /* Pods-BrocoliSe-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 09E871FBA6656B1485D05B3C8E9651BC /* Pods-BrocoliSe-dummy.m */; };
+		0BD0513D20C80C2BCC671232D745DA81 /* Pods-BrocoliSe-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 162778A06CBD6787B9BCEFF704703462 /* Pods-BrocoliSe-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0E7AE4C484170995857DE57E82FD1E6C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		2F893AE6A3FB74D43805E47E51C23FF5 /* UBProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = BD509913D81909C965825E3218804835 /* UBProgress.m */; };
+		4BE21C9FCA345606203A094B2EC7C2DD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		51F077500965DF7E911AA1DF173908D2 /* UBProgress-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0706F204889DB816C2374F0B383D981E /* UBProgress-dummy.m */; };
+		B74344AB49DFC1E27F16695887039201 /* UBProgress.h in Headers */ = {isa = PBXBuildFile; fileRef = CE795830C0C9B55FA08DB49500F6689F /* UBProgress.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EC4764EA0EEF90437209097E9B0872EA /* UBProgress-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5D3B49EA0563381186DC9BCDBFD8BE5E /* UBProgress-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		0D8A76B4B9FFF962B7F8788B46A18859 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 60D354207883A696E54CF0054A6EFDE3;
+			remoteInfo = UBProgress;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
-		07526BBFBED487A26D8B3B7916D58801 /* Pods-BrocoliSe-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-BrocoliSe-acknowledgements.plist"; sourceTree = "<group>"; };
-		16D763546B952DA068788324162EA3CF /* Pods-BrocoliSe-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-BrocoliSe-umbrella.h"; sourceTree = "<group>"; };
-		404CB6E6988B24313D70400574E3CCBC /* Pods-BrocoliSe-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-BrocoliSe-acknowledgements.markdown"; sourceTree = "<group>"; };
+		0706F204889DB816C2374F0B383D981E /* UBProgress-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UBProgress-dummy.m"; sourceTree = "<group>"; };
+		09E871FBA6656B1485D05B3C8E9651BC /* Pods-BrocoliSe-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-BrocoliSe-dummy.m"; sourceTree = "<group>"; };
+		162778A06CBD6787B9BCEFF704703462 /* Pods-BrocoliSe-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-BrocoliSe-umbrella.h"; sourceTree = "<group>"; };
+		1C144D8557F653584DE24CD386D7229A /* Pods-BrocoliSe-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-BrocoliSe-frameworks.sh"; sourceTree = "<group>"; };
+		1F7F9FA3D99F529D625D63C7C7E7AC65 /* Pods-BrocoliSe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BrocoliSe.debug.xcconfig"; sourceTree = "<group>"; };
+		5D3B49EA0563381186DC9BCDBFD8BE5E /* UBProgress-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UBProgress-umbrella.h"; sourceTree = "<group>"; };
 		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		8923441B14E437987352F90279271116 /* Pods-BrocoliSe-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-BrocoliSe-Info.plist"; sourceTree = "<group>"; };
+		74C2FECDBB9C7B40CF0EAB6626681E7F /* UBProgress.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = UBProgress.modulemap; sourceTree = "<group>"; };
+		77DB1BFC9F99C9392A79F1E1F008EBB3 /* Pods-BrocoliSe-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-BrocoliSe-Info.plist"; sourceTree = "<group>"; };
+		7B9DB8D01FFDBD9DBBB9B9D3A2F4FA04 /* Pods-BrocoliSe-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-BrocoliSe-acknowledgements.plist"; sourceTree = "<group>"; };
+		807B034A7B112291D686194A59270EC0 /* Pods-BrocoliSe-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-BrocoliSe-acknowledgements.markdown"; sourceTree = "<group>"; };
 		8D0FDBA02A1853C1BC8E4B54AFD8BB15 /* Pods_BrocoliSe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_BrocoliSe.framework; path = "Pods-BrocoliSe.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		94A37CAE1DCD53C964886CD063141F6C /* UBProgress-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "UBProgress-Info.plist"; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		B0A8CB0A3D2A74FC91AA2A1F2FCADFB3 /* Pods-BrocoliSe.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-BrocoliSe.modulemap"; sourceTree = "<group>"; };
-		BE9E390FCC7E954A8006D7E8DF1EAC70 /* Pods-BrocoliSe-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-BrocoliSe-dummy.m"; sourceTree = "<group>"; };
-		DB220B0C40B1A0AF741546A13482B32E /* Pods-BrocoliSe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BrocoliSe.debug.xcconfig"; sourceTree = "<group>"; };
-		DBC6AE8544EFECE706823F0805C7EB15 /* Pods-BrocoliSe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BrocoliSe.release.xcconfig"; sourceTree = "<group>"; };
+		A86697CC98B5C3EF330000E0A13665FC /* Pods-BrocoliSe.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-BrocoliSe.modulemap"; sourceTree = "<group>"; };
+		BD509913D81909C965825E3218804835 /* UBProgress.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = UBProgress.m; path = UBProgress/UBProgress.m; sourceTree = "<group>"; };
+		C1713464E1F0BDAC44977F75E3D68FF4 /* Pods-BrocoliSe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BrocoliSe.release.xcconfig"; sourceTree = "<group>"; };
+		C596CA8C36E41EDA0C20C1A72CFDB9A3 /* UBProgress.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = UBProgress.debug.xcconfig; sourceTree = "<group>"; };
+		CE795830C0C9B55FA08DB49500F6689F /* UBProgress.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = UBProgress.h; path = UBProgress/UBProgress.h; sourceTree = "<group>"; };
+		DAB179598F3148ADD7A143F16C54A50D /* UBProgress-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UBProgress-prefix.pch"; sourceTree = "<group>"; };
+		DF95775FD49637B20932D430C32120BC /* UBProgress.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = UBProgress.framework; path = UBProgress.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FEDD0BF32354D1F2898105482C5F5640 /* UBProgress.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = UBProgress.release.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		CE4B657B3AC6F7F2669629C236ACA6A2 /* Frameworks */ = {
+		B47319520308368AA4CF83CFE5092312 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				24D8B1516DC9727001BE1A4C6F34E5D8 /* Foundation.framework in Frameworks */,
+				4BE21C9FCA345606203A094B2EC7C2DD /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FE54FA02F989790CF8013A1BFC5CD8F3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0E7AE4C484170995857DE57E82FD1E6C /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		16DF7397E661138A83B28255286A8EB0 /* Pods-BrocoliSe */ = {
+		20D5A9F058DBEDBB4893DDA468A5E3B6 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				B0A8CB0A3D2A74FC91AA2A1F2FCADFB3 /* Pods-BrocoliSe.modulemap */,
-				404CB6E6988B24313D70400574E3CCBC /* Pods-BrocoliSe-acknowledgements.markdown */,
-				07526BBFBED487A26D8B3B7916D58801 /* Pods-BrocoliSe-acknowledgements.plist */,
-				BE9E390FCC7E954A8006D7E8DF1EAC70 /* Pods-BrocoliSe-dummy.m */,
-				8923441B14E437987352F90279271116 /* Pods-BrocoliSe-Info.plist */,
-				16D763546B952DA068788324162EA3CF /* Pods-BrocoliSe-umbrella.h */,
-				DB220B0C40B1A0AF741546A13482B32E /* Pods-BrocoliSe.debug.xcconfig */,
-				DBC6AE8544EFECE706823F0805C7EB15 /* Pods-BrocoliSe.release.xcconfig */,
+				74C2FECDBB9C7B40CF0EAB6626681E7F /* UBProgress.modulemap */,
+				0706F204889DB816C2374F0B383D981E /* UBProgress-dummy.m */,
+				94A37CAE1DCD53C964886CD063141F6C /* UBProgress-Info.plist */,
+				DAB179598F3148ADD7A143F16C54A50D /* UBProgress-prefix.pch */,
+				5D3B49EA0563381186DC9BCDBFD8BE5E /* UBProgress-umbrella.h */,
+				C596CA8C36E41EDA0C20C1A72CFDB9A3 /* UBProgress.debug.xcconfig */,
+				FEDD0BF32354D1F2898105482C5F5640 /* UBProgress.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/UBProgress";
+			sourceTree = "<group>";
+		};
+		482EF774DC0B3541D42ADE2DAF3465D3 /* Pods-BrocoliSe */ = {
+			isa = PBXGroup;
+			children = (
+				A86697CC98B5C3EF330000E0A13665FC /* Pods-BrocoliSe.modulemap */,
+				807B034A7B112291D686194A59270EC0 /* Pods-BrocoliSe-acknowledgements.markdown */,
+				7B9DB8D01FFDBD9DBBB9B9D3A2F4FA04 /* Pods-BrocoliSe-acknowledgements.plist */,
+				09E871FBA6656B1485D05B3C8E9651BC /* Pods-BrocoliSe-dummy.m */,
+				1C144D8557F653584DE24CD386D7229A /* Pods-BrocoliSe-frameworks.sh */,
+				77DB1BFC9F99C9392A79F1E1F008EBB3 /* Pods-BrocoliSe-Info.plist */,
+				162778A06CBD6787B9BCEFF704703462 /* Pods-BrocoliSe-umbrella.h */,
+				1F7F9FA3D99F529D625D63C7C7E7AC65 /* Pods-BrocoliSe.debug.xcconfig */,
+				C1713464E1F0BDAC44977F75E3D68FF4 /* Pods-BrocoliSe.release.xcconfig */,
 			);
 			name = "Pods-BrocoliSe";
 			path = "Target Support Files/Pods-BrocoliSe";
@@ -62,18 +112,30 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		B538262BA5650E12D14F8B571F9D762C /* Targets Support Files */ = {
+		6A47CADD723C2378338F0D65F5D6A3AA /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				16DF7397E661138A83B28255286A8EB0 /* Pods-BrocoliSe */,
+				482EF774DC0B3541D42ADE2DAF3465D3 /* Pods-BrocoliSe */,
 			);
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		BC91B23A4FB1A11C13393408DF2FEA26 /* Products */ = {
+		8E48ACAE56E65F0F404D5259BC716063 /* UBProgress */ = {
+			isa = PBXGroup;
+			children = (
+				CE795830C0C9B55FA08DB49500F6689F /* UBProgress.h */,
+				BD509913D81909C965825E3218804835 /* UBProgress.m */,
+				20D5A9F058DBEDBB4893DDA468A5E3B6 /* Support Files */,
+			);
+			name = UBProgress;
+			path = UBProgress;
+			sourceTree = "<group>";
+		};
+		A7D44F7CD7C5E367AA1BF5CFA8A60D77 /* Products */ = {
 			isa = PBXGroup;
 			children = (
 				8D0FDBA02A1853C1BC8E4B54AFD8BB15 /* Pods_BrocoliSe.framework */,
+				DF95775FD49637B20932D430C32120BC /* UBProgress.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -83,8 +145,9 @@
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
-				BC91B23A4FB1A11C13393408DF2FEA26 /* Products */,
-				B538262BA5650E12D14F8B571F9D762C /* Targets Support Files */,
+				F25D4DD72F7AFF2840793BF1E6B6A00E /* Pods */,
+				A7D44F7CD7C5E367AA1BF5CFA8A60D77 /* Products */,
+				6A47CADD723C2378338F0D65F5D6A3AA /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
@@ -96,32 +159,68 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		F25D4DD72F7AFF2840793BF1E6B6A00E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8E48ACAE56E65F0F404D5259BC716063 /* UBProgress */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		1253D6E70CD16A6D4074A8C3AAFB6B0B /* Headers */ = {
+		180C81C186953F86B2CF7B2795CF7D2C /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				356C1DFE9A29DFF36C257A3AFF04B54F /* Pods-BrocoliSe-umbrella.h in Headers */,
+				0BD0513D20C80C2BCC671232D745DA81 /* Pods-BrocoliSe-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3F1F4B03F901D425515A640E1976C0F6 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EC4764EA0EEF90437209097E9B0872EA /* UBProgress-umbrella.h in Headers */,
+				B74344AB49DFC1E27F16695887039201 /* UBProgress.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		F882F501E130699A66242F82314E78E8 /* Pods-BrocoliSe */ = {
+		60D354207883A696E54CF0054A6EFDE3 /* UBProgress */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C049E17C7A82AEAB37B0413482430822 /* Build configuration list for PBXNativeTarget "Pods-BrocoliSe" */;
+			buildConfigurationList = B3167168534C18A65BDD84FA0C6A9E31 /* Build configuration list for PBXNativeTarget "UBProgress" */;
 			buildPhases = (
-				1253D6E70CD16A6D4074A8C3AAFB6B0B /* Headers */,
-				7890B2F1269B78F5D26330EF945297FA /* Sources */,
-				CE4B657B3AC6F7F2669629C236ACA6A2 /* Frameworks */,
-				01AF5D8F09A3332B47852FFD9486FB0A /* Resources */,
+				3F1F4B03F901D425515A640E1976C0F6 /* Headers */,
+				F4073B250DD964B955DFE176C7C1EF70 /* Sources */,
+				FE54FA02F989790CF8013A1BFC5CD8F3 /* Frameworks */,
+				4355D7E0E6A908CDE31E253FA5E35912 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+			);
+			name = UBProgress;
+			productName = UBProgress;
+			productReference = DF95775FD49637B20932D430C32120BC /* UBProgress.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		F882F501E130699A66242F82314E78E8 /* Pods-BrocoliSe */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DD3502A50F178937E83F43E5676BB93D /* Build configuration list for PBXNativeTarget "Pods-BrocoliSe" */;
+			buildPhases = (
+				180C81C186953F86B2CF7B2795CF7D2C /* Headers */,
+				FA83C646A0B022FBFFDA25DF9498C866 /* Sources */,
+				B47319520308368AA4CF83CFE5092312 /* Frameworks */,
+				B26251D1D0D83B99A406A8D3579A08D1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				83B6450FA864C2AF54AA43648D89F7F9 /* PBXTargetDependency */,
 			);
 			name = "Pods-BrocoliSe";
 			productName = "Pods-BrocoliSe";
@@ -134,8 +233,8 @@
 		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1100;
-				LastUpgradeCheck = 1100;
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1240;
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 9.3";
@@ -146,17 +245,25 @@
 				Base,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = BC91B23A4FB1A11C13393408DF2FEA26 /* Products */;
+			productRefGroup = A7D44F7CD7C5E367AA1BF5CFA8A60D77 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				F882F501E130699A66242F82314E78E8 /* Pods-BrocoliSe */,
+				60D354207883A696E54CF0054A6EFDE3 /* UBProgress */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		01AF5D8F09A3332B47852FFD9486FB0A /* Resources */ = {
+		4355D7E0E6A908CDE31E253FA5E35912 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B26251D1D0D83B99A406A8D3579A08D1 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -166,92 +273,35 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		7890B2F1269B78F5D26330EF945297FA /* Sources */ = {
+		F4073B250DD964B955DFE176C7C1EF70 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				40B9C56C818CF00144EC32EC291E3E00 /* Pods-BrocoliSe-dummy.m in Sources */,
+				51F077500965DF7E911AA1DF173908D2 /* UBProgress-dummy.m in Sources */,
+				2F893AE6A3FB74D43805E47E51C23FF5 /* UBProgress.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA83C646A0B022FBFFDA25DF9498C866 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				03847F4AFF3033ED70566FABBD51704D /* Pods-BrocoliSe-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		83B6450FA864C2AF54AA43648D89F7F9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = UBProgress;
+			target = 60D354207883A696E54CF0054A6EFDE3 /* UBProgress */;
+			targetProxy = 0D8A76B4B9FFF962B7F8788B46A18859 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
-		032E5596CB14D1BC92DBB6F46644A6A6 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = DBC6AE8544EFECE706823F0805C7EB15 /* Pods-BrocoliSe.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-BrocoliSe/Pods-BrocoliSe-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-BrocoliSe/Pods-BrocoliSe.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		3A5B761F24B0CE04D38219903D257FDE /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = DB220B0C40B1A0AF741546A13482B32E /* Pods-BrocoliSe.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-BrocoliSe/Pods-BrocoliSe-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-BrocoliSe/Pods-BrocoliSe.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
 		71243899B61152433AAE34EE86456EE7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -380,6 +430,150 @@
 			};
 			name = Debug;
 		};
+		8E386253C7AAEC7E1FCA74F3BF1CBB64 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C1713464E1F0BDAC44977F75E3D68FF4 /* Pods-BrocoliSe.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-BrocoliSe/Pods-BrocoliSe-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-BrocoliSe/Pods-BrocoliSe.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		B69F5AE44935AF5B9A00A64B22DB4B03 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C596CA8C36E41EDA0C20C1A72CFDB9A3 /* UBProgress.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/UBProgress/UBProgress-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/UBProgress/UBProgress-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/UBProgress/UBProgress.modulemap";
+				PRODUCT_MODULE_NAME = UBProgress;
+				PRODUCT_NAME = UBProgress;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		C1504409144A3812360D9CBE2693226F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FEDD0BF32354D1F2898105482C5F5640 /* UBProgress.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/UBProgress/UBProgress-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/UBProgress/UBProgress-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/UBProgress/UBProgress.modulemap";
+				PRODUCT_MODULE_NAME = UBProgress;
+				PRODUCT_NAME = UBProgress;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		F51E03EA97F4FD723C041B1AE9239971 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1F7F9FA3D99F529D625D63C7C7E7AC65 /* Pods-BrocoliSe.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-BrocoliSe/Pods-BrocoliSe-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-BrocoliSe/Pods-BrocoliSe.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -392,11 +586,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C049E17C7A82AEAB37B0413482430822 /* Build configuration list for PBXNativeTarget "Pods-BrocoliSe" */ = {
+		B3167168534C18A65BDD84FA0C6A9E31 /* Build configuration list for PBXNativeTarget "UBProgress" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				3A5B761F24B0CE04D38219903D257FDE /* Debug */,
-				032E5596CB14D1BC92DBB6F46644A6A6 /* Release */,
+				B69F5AE44935AF5B9A00A64B22DB4B03 /* Debug */,
+				C1504409144A3812360D9CBE2693226F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DD3502A50F178937E83F43E5676BB93D /* Build configuration list for PBXNativeTarget "Pods-BrocoliSe" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F51E03EA97F4FD723C041B1AE9239971 /* Debug */,
+				8E386253C7AAEC7E1FCA74F3BF1CBB64 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
