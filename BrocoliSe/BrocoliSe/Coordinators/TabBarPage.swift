@@ -1,11 +1,5 @@
-//
-//  TabBarPage.swift
-//  BrocoliSe
-//
-//  Created by Samuel Sales on 14/09/21.
-//
-
 import Foundation
+import UIKit
 
 enum TabBarPage {
     case daily
@@ -39,4 +33,14 @@ enum TabBarPage {
             return 1
         }
     }
+    
+    func pageIcon() -> UIImage {
+        switch self {
+        case .daily:
+            return UIImage(named: "daily-icon") ?? UIImage()
+        case .album:
+            return UIImage(named: "album-icon") ?? UIImage()
+        }
+    }
+    
 }

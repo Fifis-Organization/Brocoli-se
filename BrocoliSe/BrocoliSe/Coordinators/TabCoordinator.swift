@@ -33,6 +33,8 @@ class TabCoordinator: NSObject, Coordinator {
         tabBarController.setViewControllers(tabControllers, animated: true)
         tabBarController.selectedIndex = TabBarPage.daily.pageOrderNumber()
         tabBarController.tabBar.isTranslucent = false
+        tabBarController.tabBar.tintColor = UIColor.greenMedium
+        tabBarController.tabBar.unselectedItemTintColor = UIColor.blueDark?.withAlphaComponent(0.4)
         navigationController.viewControllers = [tabBarController]
     }
       
@@ -41,9 +43,11 @@ class TabCoordinator: NSObject, Coordinator {
         navController.setNavigationBarHidden(false, animated: false)
 
         navController.tabBarItem = UITabBarItem.init(title: page.pageTitleValue(),
-                                                     image: nil,
+                                                     image: page.pageIcon(),
                                                      tag: page.pageOrderNumber())
 
+        
+        
         switch page {
         case .daily:
             let dailyVC = ViewController()
@@ -71,6 +75,5 @@ class TabCoordinator: NSObject, Coordinator {
 extension TabCoordinator: UITabBarControllerDelegate {
     func tabBarController(_ tabBarController: UITabBarController,
                           didSelect viewController: UIViewController) {
-        
     }
 }
