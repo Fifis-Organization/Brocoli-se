@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		3902B0D826EF7AD500FE2C8F /* Graviola-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3902B0D726EF7AD500FE2C8F /* Graviola-Regular.otf */; };
 		3902B0DB26EF7AEB00FE2C8F /* GraviolaSoft-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3902B0DA26EF7AEB00FE2C8F /* GraviolaSoft-Medium.otf */; };
+		3902B0E526EF96BC00FE2C8F /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3902B0E426EF96BC00FE2C8F /* Coordinator.swift */; };
+		3902B0E926EF977900FE2C8F /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3902B0E826EF977900FE2C8F /* AppCoordinator.swift */; };
+		3902B0EF26F0B1BB00FE2C8F /* TabCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3902B0EE26F0B1BB00FE2C8F /* TabCoordinator.swift */; };
+		3902B0F326F0DD0200FE2C8F /* TabBarPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3902B0F226F0DD0200FE2C8F /* TabBarPage.swift */; };
 		3932586526E8FF3F00A44687 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3932586426E8FF3F00A44687 /* Colors.swift */; };
 		3932586826E8FF4900A44687 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3932586726E8FF4900A44687 /* Fonts.swift */; };
 		3932586B26E8FF7A00A44687 /* Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3932586A26E8FF7A00A44687 /* Protocol.swift */; };
@@ -28,6 +32,10 @@
 		339A77E77343AA9D6B45448B /* Pods_BrocoliSe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BrocoliSe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3902B0D726EF7AD500FE2C8F /* Graviola-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Graviola-Regular.otf"; sourceTree = "<group>"; };
 		3902B0DA26EF7AEB00FE2C8F /* GraviolaSoft-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GraviolaSoft-Medium.otf"; sourceTree = "<group>"; };
+		3902B0E426EF96BC00FE2C8F /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		3902B0E826EF977900FE2C8F /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		3902B0EE26F0B1BB00FE2C8F /* TabCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabCoordinator.swift; sourceTree = "<group>"; };
+		3902B0F226F0DD0200FE2C8F /* TabBarPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarPage.swift; sourceTree = "<group>"; };
 		3932586426E8FF3F00A44687 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		3932586726E8FF4900A44687 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		3932586A26E8FF7A00A44687 /* Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocol.swift; sourceTree = "<group>"; };
@@ -56,6 +64,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3902B0E326EF96AB00FE2C8F /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				3902B0E426EF96BC00FE2C8F /* Coordinator.swift */,
+				3902B0E826EF977900FE2C8F /* AppCoordinator.swift */,
+				3902B0EE26F0B1BB00FE2C8F /* TabCoordinator.swift */,
+				3902B0F226F0DD0200FE2C8F /* TabBarPage.swift */,
+			);
+			path = Coordinators;
+			sourceTree = "<group>";
+		};
 		3984BD2F26E8E9AB00C92824 = {
 			isa = PBXGroup;
 			children = (
@@ -77,6 +96,7 @@
 		3984BD3A26E8E9AB00C92824 /* BrocoliSe */ = {
 			isa = PBXGroup;
 			children = (
+				3902B0E326EF96AB00FE2C8F /* Coordinators */,
 				3984BD5726E8FC9A00C92824 /* Protocols */,
 				3984BD5626E8FC9300C92824 /* View */,
 				3984BD5526E8FC9000C92824 /* Controller */,
@@ -165,7 +185,6 @@
 				7FA58FB81DD24388A0BB3880 /* Pods-BrocoliSe.debug.xcconfig */,
 				02A9E034F88539424516D3FD /* Pods-BrocoliSe.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -294,12 +313,16 @@
 			files = (
 				3932586E26E8FF8800A44687 /* Model.swift in Sources */,
 				3932587126E9008000A44687 /* Components.swift in Sources */,
+				3902B0E526EF96BC00FE2C8F /* Coordinator.swift in Sources */,
 				3932587426E9008C00A44687 /* Scenes.swift in Sources */,
 				3984BD4026E8E9AB00C92824 /* ViewController.swift in Sources */,
+				3902B0E926EF977900FE2C8F /* AppCoordinator.swift in Sources */,
 				3932586826E8FF4900A44687 /* Fonts.swift in Sources */,
+				3902B0F326F0DD0200FE2C8F /* TabBarPage.swift in Sources */,
 				3932586526E8FF3F00A44687 /* Colors.swift in Sources */,
 				3984BD3C26E8E9AB00C92824 /* AppDelegate.swift in Sources */,
 				3984BD3E26E8E9AB00C92824 /* SceneDelegate.swift in Sources */,
+				3902B0EF26F0B1BB00FE2C8F /* TabCoordinator.swift in Sources */,
 				3932586B26E8FF7A00A44687 /* Protocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
