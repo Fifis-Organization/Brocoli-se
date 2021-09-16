@@ -8,6 +8,8 @@
 import UIKit
 
 class DiaryTableViewCellComponent: UITableViewCell {
+    
+    static let reuseIdentifier = String(describing: DiaryTableViewCellComponent.self)
 
     var checkButtonCallBack: () -> Void  = { }
 

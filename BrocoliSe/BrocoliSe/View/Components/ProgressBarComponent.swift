@@ -48,8 +48,9 @@ class ProgressBarComponent: UIView {
         NSLayoutConstraint.activate([
             progressBar.centerYAnchor.constraint(equalTo: self.centerYAnchor),
             progressBar.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-            progressBar.heightAnchor.constraint(equalToConstant: 20),
-            progressBar.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.8)
+            progressBar.heightAnchor.constraint(equalToConstant: 22),
+            progressBar.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -18),
+            progressBar.leadingAnchor.constraint(equalTo: leadingAnchor)
         ])
         
         progressBar.setProgress(CGFloat(progressValue), animated: true)
@@ -64,7 +65,6 @@ class ProgressBarComponent: UIView {
         
     }
     
-    
     func addCircle() {
         circle.translatesAutoresizingMaskIntoConstraints = false
         addSubview(circle)
@@ -72,8 +72,8 @@ class ProgressBarComponent: UIView {
             NSLayoutConstraint.activate([
                 circle.centerYAnchor.constraint(equalTo: progressBar.centerYAnchor),
                 circle.centerXAnchor.constraint(equalTo: progressBar.trailingAnchor),
-                circle.heightAnchor.constraint(equalToConstant: 30),
-                circle.widthAnchor.constraint(equalToConstant: 30)
+                circle.heightAnchor.constraint(equalToConstant: 35),
+                circle.widthAnchor.constraint(equalToConstant: 35)
             ])
         
         if progressValue == 1.0 {
@@ -81,13 +81,13 @@ class ProgressBarComponent: UIView {
         }
         
         image.translatesAutoresizingMaskIntoConstraints = false
-        addSubview(image)
+        circle.addSubview(image)
 
             NSLayoutConstraint.activate([
                 image.centerYAnchor.constraint(equalTo: circle.centerYAnchor),
                 image.centerXAnchor.constraint(equalTo: circle.centerXAnchor),
-                image.heightAnchor.constraint(equalToConstant: 18),
-                image.widthAnchor.constraint(equalToConstant: 18)
+                image.heightAnchor.constraint(equalToConstant: 24),
+                image.widthAnchor.constraint(equalToConstant: 24)
             ])
     }
 
