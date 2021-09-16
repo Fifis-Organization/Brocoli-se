@@ -18,7 +18,8 @@
 		3932586B26E8FF7A00A44687 /* Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3932586A26E8FF7A00A44687 /* Protocol.swift */; };
 		3932586E26E8FF8800A44687 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3932586D26E8FF8800A44687 /* Model.swift */; };
 		3932587126E9008000A44687 /* ProgressBarComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3932587026E9008000A44687 /* ProgressBarComponent.swift */; };
-		3932587426E9008C00A44687 /* Scenes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3932587326E9008C00A44687 /* Scenes.swift */; };
+		3932587426E9008C00A44687 /* DiaryScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3932587326E9008C00A44687 /* DiaryScene.swift */; };
+		3950D13326F3DFFC003D3E97 /* DiaryCardComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3950D13226F3DFFC003D3E97 /* DiaryCardComponent.swift */; };
 		3984BD3C26E8E9AB00C92824 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3984BD3B26E8E9AB00C92824 /* AppDelegate.swift */; };
 		3984BD3E26E8E9AB00C92824 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3984BD3D26E8E9AB00C92824 /* SceneDelegate.swift */; };
 		3984BD4026E8E9AB00C92824 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3984BD3F26E8E9AB00C92824 /* ViewController.swift */; };
@@ -43,7 +44,8 @@
 		3932586A26E8FF7A00A44687 /* Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocol.swift; sourceTree = "<group>"; };
 		3932586D26E8FF8800A44687 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		3932587026E9008000A44687 /* ProgressBarComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarComponent.swift; sourceTree = "<group>"; };
-		3932587326E9008C00A44687 /* Scenes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scenes.swift; sourceTree = "<group>"; };
+		3932587326E9008C00A44687 /* DiaryScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryScene.swift; sourceTree = "<group>"; };
+		3950D13226F3DFFC003D3E97 /* DiaryCardComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryCardComponent.swift; sourceTree = "<group>"; };
 		3984BD3826E8E9AB00C92824 /* BrocoliSe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BrocoliSe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3984BD3B26E8E9AB00C92824 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3984BD3D26E8E9AB00C92824 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -161,6 +163,7 @@
 		3984BD5926E8FCE900C92824 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				3950D13226F3DFFC003D3E97 /* DiaryCardComponent.swift */,
 				3932587026E9008000A44687 /* ProgressBarComponent.swift */,
 				54109F1526F2959700EC4C10 /* DiaryTableViewCellComponent.swift */,
 			);
@@ -180,7 +183,7 @@
 		3984BD5B26E8FCFF00C92824 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				3932587326E9008C00A44687 /* Scenes.swift */,
+				3932587326E9008C00A44687 /* DiaryScene.swift */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -348,10 +351,11 @@
 				3902B0E526EF96BC00FE2C8F /* Coordinator.swift in Sources */,
 				3932587126E9008000A44687 /* ProgressBarComponent.swift in Sources */,
 				54109F1626F2959700EC4C10 /* DiaryTableViewCellComponent.swift in Sources */,
-				3932587426E9008C00A44687 /* Scenes.swift in Sources */,
+				3932587426E9008C00A44687 /* DiaryScene.swift in Sources */,
 				3984BD4026E8E9AB00C92824 /* ViewController.swift in Sources */,
 				543DCF9926F36DCC00BDAF63 /* NamesEnums.swift in Sources */,
 				3902B0E926EF977900FE2C8F /* AppCoordinator.swift in Sources */,
+				3950D13326F3DFFC003D3E97 /* DiaryCardComponent.swift in Sources */,
 				3932586826E8FF4900A44687 /* Fonts.swift in Sources */,
 				3902B0F326F0DD0200FE2C8F /* TabBarPage.swift in Sources */,
 				3932586526E8FF3F00A44687 /* Colors.swift in Sources */,
@@ -427,7 +431,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -482,7 +486,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -508,7 +512,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.samuelsales.BrocoliSe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -528,7 +532,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.samuelsales.BrocoliSe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
