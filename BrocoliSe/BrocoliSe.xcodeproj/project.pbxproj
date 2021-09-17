@@ -3,27 +3,59 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3902B0D826EF7AD500FE2C8F /* Graviola-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3902B0D726EF7AD500FE2C8F /* Graviola-Regular.otf */; };
+		3902B0DB26EF7AEB00FE2C8F /* GraviolaSoft-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3902B0DA26EF7AEB00FE2C8F /* GraviolaSoft-Medium.otf */; };
+		3902B0E526EF96BC00FE2C8F /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3902B0E426EF96BC00FE2C8F /* Coordinator.swift */; };
+		3902B0E926EF977900FE2C8F /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3902B0E826EF977900FE2C8F /* AppCoordinator.swift */; };
+		3902B0EF26F0B1BB00FE2C8F /* TabCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3902B0EE26F0B1BB00FE2C8F /* TabCoordinator.swift */; };
+		3902B0F326F0DD0200FE2C8F /* TabBarPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3902B0F226F0DD0200FE2C8F /* TabBarPage.swift */; };
+		3932586526E8FF3F00A44687 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3932586426E8FF3F00A44687 /* Colors.swift */; };
+		3932586826E8FF4900A44687 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3932586726E8FF4900A44687 /* Fonts.swift */; };
+		3932586B26E8FF7A00A44687 /* Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3932586A26E8FF7A00A44687 /* Protocol.swift */; };
+		3932586E26E8FF8800A44687 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3932586D26E8FF8800A44687 /* Model.swift */; };
+		3932587126E9008000A44687 /* ProgressBarComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3932587026E9008000A44687 /* ProgressBarComponent.swift */; };
+		3932587426E9008C00A44687 /* DiaryScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3932587326E9008C00A44687 /* DiaryScene.swift */; };
+		3950D13326F3DFFC003D3E97 /* DiaryCardComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3950D13226F3DFFC003D3E97 /* DiaryCardComponent.swift */; };
 		3984BD3C26E8E9AB00C92824 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3984BD3B26E8E9AB00C92824 /* AppDelegate.swift */; };
 		3984BD3E26E8E9AB00C92824 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3984BD3D26E8E9AB00C92824 /* SceneDelegate.swift */; };
 		3984BD4026E8E9AB00C92824 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3984BD3F26E8E9AB00C92824 /* ViewController.swift */; };
-		3984BD4326E8E9AB00C92824 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3984BD4126E8E9AB00C92824 /* Main.storyboard */; };
 		3984BD4526E8E9AC00C92824 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3984BD4426E8E9AC00C92824 /* Assets.xcassets */; };
 		3984BD4826E8E9AC00C92824 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3984BD4626E8E9AC00C92824 /* LaunchScreen.storyboard */; };
+		54109F1626F2959700EC4C10 /* DiaryTableViewCellComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54109F1526F2959700EC4C10 /* DiaryTableViewCellComponent.swift */; };
+		543DCF9926F36DCC00BDAF63 /* NamesEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543DCF9826F36DCC00BDAF63 /* NamesEnums.swift */; };
+		5F22C12D64DBC49B6281335B /* Pods_BrocoliSe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 339A77E77343AA9D6B45448B /* Pods_BrocoliSe.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		02A9E034F88539424516D3FD /* Pods-BrocoliSe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BrocoliSe.release.xcconfig"; path = "Target Support Files/Pods-BrocoliSe/Pods-BrocoliSe.release.xcconfig"; sourceTree = "<group>"; };
+		339A77E77343AA9D6B45448B /* Pods_BrocoliSe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BrocoliSe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3902B0D726EF7AD500FE2C8F /* Graviola-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Graviola-Regular.otf"; sourceTree = "<group>"; };
+		3902B0DA26EF7AEB00FE2C8F /* GraviolaSoft-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GraviolaSoft-Medium.otf"; sourceTree = "<group>"; };
+		3902B0E426EF96BC00FE2C8F /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		3902B0E826EF977900FE2C8F /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		3902B0EE26F0B1BB00FE2C8F /* TabCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabCoordinator.swift; sourceTree = "<group>"; };
+		3902B0F226F0DD0200FE2C8F /* TabBarPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarPage.swift; sourceTree = "<group>"; };
+		3932586426E8FF3F00A44687 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		3932586726E8FF4900A44687 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		3932586A26E8FF7A00A44687 /* Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocol.swift; sourceTree = "<group>"; };
+		3932586D26E8FF8800A44687 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		3932587026E9008000A44687 /* ProgressBarComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarComponent.swift; sourceTree = "<group>"; };
+		3932587326E9008C00A44687 /* DiaryScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryScene.swift; sourceTree = "<group>"; };
+		3950D13226F3DFFC003D3E97 /* DiaryCardComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryCardComponent.swift; sourceTree = "<group>"; };
 		3984BD3826E8E9AB00C92824 /* BrocoliSe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BrocoliSe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3984BD3B26E8E9AB00C92824 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3984BD3D26E8E9AB00C92824 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		3984BD3F26E8E9AB00C92824 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		3984BD4226E8E9AB00C92824 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3984BD4426E8E9AC00C92824 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3984BD4726E8E9AC00C92824 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3984BD4926E8E9AC00C92824 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		54109F1526F2959700EC4C10 /* DiaryTableViewCellComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryTableViewCellComponent.swift; sourceTree = "<group>"; };
+		543DCF9826F36DCC00BDAF63 /* NamesEnums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamesEnums.swift; sourceTree = "<group>"; };
+		7FA58FB81DD24388A0BB3880 /* Pods-BrocoliSe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BrocoliSe.debug.xcconfig"; path = "Target Support Files/Pods-BrocoliSe/Pods-BrocoliSe.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +63,31 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F22C12D64DBC49B6281335B /* Pods_BrocoliSe.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3902B0E326EF96AB00FE2C8F /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				3902B0E426EF96BC00FE2C8F /* Coordinator.swift */,
+				3902B0E826EF977900FE2C8F /* AppCoordinator.swift */,
+				3902B0EE26F0B1BB00FE2C8F /* TabCoordinator.swift */,
+				3902B0F226F0DD0200FE2C8F /* TabBarPage.swift */,
+			);
+			path = Coordinators;
+			sourceTree = "<group>";
+		};
 		3984BD2F26E8E9AB00C92824 = {
 			isa = PBXGroup;
 			children = (
 				3984BD3A26E8E9AB00C92824 /* BrocoliSe */,
 				3984BD3926E8E9AB00C92824 /* Products */,
+				51F8D0A3306B81203B7F79CE /* Pods */,
+				F5092037EE03D133043F77A8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +102,115 @@
 		3984BD3A26E8E9AB00C92824 /* BrocoliSe */ = {
 			isa = PBXGroup;
 			children = (
+				543DCF9726F36DB600BDAF63 /* Utilities */,
+				3902B0E326EF96AB00FE2C8F /* Coordinators */,
+				3984BD5726E8FC9A00C92824 /* Protocols */,
+				3984BD5626E8FC9300C92824 /* View */,
+				3984BD5526E8FC9000C92824 /* Controller */,
+				3984BD5426E8FC8D00C92824 /* Model */,
 				3984BD3B26E8E9AB00C92824 /* AppDelegate.swift */,
 				3984BD3D26E8E9AB00C92824 /* SceneDelegate.swift */,
-				3984BD3F26E8E9AB00C92824 /* ViewController.swift */,
-				3984BD4126E8E9AB00C92824 /* Main.storyboard */,
 				3984BD4426E8E9AC00C92824 /* Assets.xcassets */,
 				3984BD4626E8E9AC00C92824 /* LaunchScreen.storyboard */,
 				3984BD4926E8E9AC00C92824 /* Info.plist */,
 			);
 			path = BrocoliSe;
+			sourceTree = "<group>";
+		};
+		3984BD5426E8FC8D00C92824 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3932586D26E8FF8800A44687 /* Model.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3984BD5526E8FC9000C92824 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				3984BD3F26E8E9AB00C92824 /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		3984BD5626E8FC9300C92824 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3984BD5826E8FCD700C92824 /* Colors */,
+				3984BD5A26E8FCF400C92824 /* Fonts */,
+				3984BD5926E8FCE900C92824 /* Components */,
+				3984BD5B26E8FCFF00C92824 /* Scenes */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3984BD5726E8FC9A00C92824 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				3932586A26E8FF7A00A44687 /* Protocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		3984BD5826E8FCD700C92824 /* Colors */ = {
+			isa = PBXGroup;
+			children = (
+				3932586426E8FF3F00A44687 /* Colors.swift */,
+			);
+			path = Colors;
+			sourceTree = "<group>";
+		};
+		3984BD5926E8FCE900C92824 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				3950D13226F3DFFC003D3E97 /* DiaryCardComponent.swift */,
+				3932587026E9008000A44687 /* ProgressBarComponent.swift */,
+				54109F1526F2959700EC4C10 /* DiaryTableViewCellComponent.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		3984BD5A26E8FCF400C92824 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				3902B0DA26EF7AEB00FE2C8F /* GraviolaSoft-Medium.otf */,
+				3902B0D726EF7AD500FE2C8F /* Graviola-Regular.otf */,
+				3932586726E8FF4900A44687 /* Fonts.swift */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		3984BD5B26E8FCFF00C92824 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				3932587326E9008C00A44687 /* DiaryScene.swift */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		51F8D0A3306B81203B7F79CE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7FA58FB81DD24388A0BB3880 /* Pods-BrocoliSe.debug.xcconfig */,
+				02A9E034F88539424516D3FD /* Pods-BrocoliSe.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		543DCF9726F36DB600BDAF63 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				543DCF9826F36DCC00BDAF63 /* NamesEnums.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		F5092037EE03D133043F77A8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				339A77E77343AA9D6B45448B /* Pods_BrocoliSe.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,10 +220,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3984BD4C26E8E9AC00C92824 /* Build configuration list for PBXNativeTarget "BrocoliSe" */;
 			buildPhases = (
+				98EE72D5E36E61E5E9CDD260 /* [CP] Check Pods Manifest.lock */,
 				3984BD3426E8E9AB00C92824 /* Sources */,
 				3984BD3526E8E9AB00C92824 /* Frameworks */,
 				3984BD3626E8E9AB00C92824 /* Resources */,
 				3984BD5026E8EFE300C92824 /* ShellScript */,
+				BD9AB581B54DF394EEE84BE9 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -126,8 +274,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				3984BD4826E8E9AC00C92824 /* LaunchScreen.storyboard in Resources */,
+				3902B0DB26EF7AEB00FE2C8F /* GraviolaSoft-Medium.otf in Resources */,
 				3984BD4526E8E9AC00C92824 /* Assets.xcassets in Resources */,
-				3984BD4326E8E9AB00C92824 /* Main.storyboard in Resources */,
+				3902B0D826EF7AD500FE2C8F /* Graviola-Regular.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -151,6 +300,45 @@
 			shellPath = /bin/sh;
 			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
+		98EE72D5E36E61E5E9CDD260 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BrocoliSe-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BD9AB581B54DF394EEE84BE9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BrocoliSe/Pods-BrocoliSe-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BrocoliSe/Pods-BrocoliSe-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BrocoliSe/Pods-BrocoliSe-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -158,23 +346,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3932586E26E8FF8800A44687 /* Model.swift in Sources */,
+				3932587126E9008000A44687 /* ProgressBarComponent.swift in Sources */,
+				3902B0E526EF96BC00FE2C8F /* Coordinator.swift in Sources */,
+				3932587126E9008000A44687 /* ProgressBarComponent.swift in Sources */,
+				54109F1626F2959700EC4C10 /* DiaryTableViewCellComponent.swift in Sources */,
+				3932587426E9008C00A44687 /* DiaryScene.swift in Sources */,
 				3984BD4026E8E9AB00C92824 /* ViewController.swift in Sources */,
+				543DCF9926F36DCC00BDAF63 /* NamesEnums.swift in Sources */,
+				3902B0E926EF977900FE2C8F /* AppCoordinator.swift in Sources */,
+				3950D13326F3DFFC003D3E97 /* DiaryCardComponent.swift in Sources */,
+				3932586826E8FF4900A44687 /* Fonts.swift in Sources */,
+				3902B0F326F0DD0200FE2C8F /* TabBarPage.swift in Sources */,
+				3932586526E8FF3F00A44687 /* Colors.swift in Sources */,
 				3984BD3C26E8E9AB00C92824 /* AppDelegate.swift in Sources */,
 				3984BD3E26E8E9AB00C92824 /* SceneDelegate.swift in Sources */,
+				3902B0EF26F0B1BB00FE2C8F /* TabCoordinator.swift in Sources */,
+				3932586B26E8FF7A00A44687 /* Protocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		3984BD4126E8E9AB00C92824 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				3984BD4226E8E9AB00C92824 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		3984BD4626E8E9AC00C92824 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -237,7 +431,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -292,7 +486,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -304,10 +498,12 @@
 		};
 		3984BD4D26E8E9AC00C92824 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7FA58FB81DD24388A0BB3880 /* Pods-BrocoliSe.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 0.1.0;
 				DEVELOPMENT_TEAM = 975J2YVPPP;
 				INFOPLIST_FILE = BrocoliSe/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -317,16 +513,18 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.samuelsales.BrocoliSe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		3984BD4E26E8E9AC00C92824 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 02A9E034F88539424516D3FD /* Pods-BrocoliSe.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 0.1.0;
 				DEVELOPMENT_TEAM = 975J2YVPPP;
 				INFOPLIST_FILE = BrocoliSe/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -336,7 +534,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.samuelsales.BrocoliSe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
