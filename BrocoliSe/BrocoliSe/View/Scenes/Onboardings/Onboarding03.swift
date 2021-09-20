@@ -6,13 +6,11 @@
 //
 
 import UIKit
-protocol Onboarding03Protocol: AnyObject {
-    func buttonContinueAction()
-}
 
 class Onboarding03: UIView {
     
-    weak var onboardingVC: Onboarding03Protocol?
+    weak var onboardingVC: OnboardingViewController?
+    
     
     
     let buttonConfirm: UIButton = {
@@ -57,7 +55,7 @@ class Onboarding03: UIView {
     }
     
     @objc func targetContiue(_ sender: UIButton) {
-        onboardingVC?.buttonContinueAction()
+        buttonContinueAction()
     }
     
     func style() {
@@ -103,3 +101,14 @@ class Onboarding03: UIView {
     }
 
 }
+
+extension Onboarding03: OnboardingViewControllerProtocol {
+    func buttonContinueAction() {
+        guard let onboardingVC = onboardingVC,
+              let didSendContinue = onboardingVC.didSendContinue else {return}
+        didSendContinue()
+    }
+    
+    
+}
+

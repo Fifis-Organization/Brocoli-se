@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol OnboardingViewControllerProtocol: AnyObject {
+    func buttonContinueAction()
+}
+
 class OnboardingViewController: UIViewController {
     
     var didSendContinue: (() -> Void)?
@@ -71,16 +75,6 @@ class OnboardingViewController: UIViewController {
         pageControl.pinTo(view)
         
     }
-}
-
-extension OnboardingViewController: Onboarding03Protocol {
-    func buttonContinueAction() {
-        print("foi")
-        guard let didSend = self.didSendContinue else {return}
-        didSend()
-    }
-    
-    
 }
 
 extension OnboardingViewController: UIScrollViewDelegate {
