@@ -8,8 +8,8 @@
 import UIKit
 
 class FoodSelectorComponent: UIView {
-
-    let buttonFood01: UIButton = {
+    
+    private let buttonFood01: UIButton = {
         let button = UIButton(type: .custom)
         let image = UIImage(named: "carne-icon")
         let imageconfig = image?.withRenderingMode(.alwaysTemplate)
@@ -17,9 +17,8 @@ class FoodSelectorComponent: UIView {
         button.tintColor = UIColor.blueDark?.withAlphaComponent(0.4)
         return button
     }()
-    var bool01 = false
     
-    let buttonFood02: UIButton = {
+    private let buttonFood02: UIButton = {
         let button = UIButton(type: .custom)
         let image = UIImage(named: "ovo-icon")
         let imageconfig = image?.withRenderingMode(.alwaysTemplate)
@@ -27,9 +26,8 @@ class FoodSelectorComponent: UIView {
         button.tintColor = UIColor.blueDark?.withAlphaComponent(0.4)
         return button
     }()
-    var bool02 = false
     
-    let buttonFood03: UIButton = {
+    private let buttonFood03: UIButton = {
         let button = UIButton(type: .custom)
         let image = UIImage(named: "leite-icon")
         let imageconfig = image?.withRenderingMode(.alwaysTemplate)
@@ -37,9 +35,8 @@ class FoodSelectorComponent: UIView {
         button.tintColor = UIColor.blueDark?.withAlphaComponent(0.4)
         return button
     }()
-    var bool03 = false
     
-    let buttonFood04: UIButton = {
+    private let buttonFood04: UIButton = {
         let button = UIButton(type: .custom)
         let image = UIImage(named: "frango-icon")
         let imageconfig = image?.withRenderingMode(.alwaysTemplate)
@@ -47,9 +44,8 @@ class FoodSelectorComponent: UIView {
         button.tintColor = UIColor.blueDark?.withAlphaComponent(0.4)
         return button
     }()
-    var bool04 = false
     
-    let buttonFood05: UIButton = {
+    private let buttonFood05: UIButton = {
         let button = UIButton(type: .custom)
         let image = UIImage(named: "peixe-icon")
         let imageconfig = image?.withRenderingMode(.alwaysTemplate)
@@ -57,7 +53,6 @@ class FoodSelectorComponent: UIView {
         button.tintColor = UIColor.blueDark?.withAlphaComponent(0.4)
         return button
     }()
-    var bool05 = false
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -66,10 +61,10 @@ class FoodSelectorComponent: UIView {
         self.layer.cornerRadius = 22
         self.layer.shadowColor = CGColor(red: 0, green: 0, blue: 0, alpha: 1)
         self.layer.shadowOpacity = 0.04
-        buttonFood01Style()
+        buttonFoodStyle()
         
     }
-
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -93,15 +88,15 @@ class FoodSelectorComponent: UIView {
     @objc func button05(_ sender: UIButton) {
         buttonFood05.tintColor = .greenMedium
     }
-
-    func buttonFood01Style() {
+    
+    private func buttonFoodStyle() {
         buttonFood03.translatesAutoresizingMaskIntoConstraints = false
         addSubview(buttonFood03)
         NSLayoutConstraint.activate([
             buttonFood03.centerYAnchor.constraint(equalTo: self.centerYAnchor),
             buttonFood03.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-            buttonFood03.heightAnchor.constraint(equalToConstant: 32),
-            buttonFood03.widthAnchor.constraint(equalToConstant: 32)
+            buttonFood03.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.48),
+            buttonFood03.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.11)
         ])
         buttonFood03.addTarget(self, action: #selector(button03), for: .touchUpInside)
         
@@ -110,8 +105,8 @@ class FoodSelectorComponent: UIView {
         NSLayoutConstraint.activate([
             buttonFood02.trailingAnchor.constraint(equalTo: buttonFood03.leadingAnchor, constant: -22),
             buttonFood02.centerYAnchor.constraint(equalTo: self.centerYAnchor),
-            buttonFood02.heightAnchor.constraint(equalToConstant: 33),
-            buttonFood02.widthAnchor.constraint(equalToConstant: 32)
+            buttonFood02.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.45),
+            buttonFood02.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.11)
         ])
         
         buttonFood02.addTarget(self, action: #selector(button02), for: .touchUpInside)
@@ -121,8 +116,9 @@ class FoodSelectorComponent: UIView {
         NSLayoutConstraint.activate([
             buttonFood04.leadingAnchor.constraint(equalTo: buttonFood03.trailingAnchor, constant: 22),
             buttonFood04.centerYAnchor.constraint(equalTo: self.centerYAnchor),
-            buttonFood04.heightAnchor.constraint(equalToConstant: 32),
-            buttonFood04.widthAnchor.constraint(equalToConstant: 32)
+            buttonFood04.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.48),
+            buttonFood04.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.11)
+            
         ])
         
         buttonFood04.addTarget(self, action: #selector(button04), for: .touchUpInside)
@@ -132,8 +128,8 @@ class FoodSelectorComponent: UIView {
         NSLayoutConstraint.activate([
             buttonFood01.trailingAnchor.constraint(equalTo: buttonFood02.leadingAnchor, constant: -22),
             buttonFood01.centerYAnchor.constraint(equalTo: self.centerYAnchor),
-            buttonFood01.heightAnchor.constraint(equalToConstant: 27),
-            buttonFood01.widthAnchor.constraint(equalToConstant: 33)
+            buttonFood01.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.48),
+            buttonFood01.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.11)
         ])
         buttonFood01.addTarget(self, action: #selector(button01), for: .touchUpInside)
         
@@ -142,8 +138,8 @@ class FoodSelectorComponent: UIView {
         NSLayoutConstraint.activate([
             buttonFood05.leadingAnchor.constraint(equalTo: buttonFood04.trailingAnchor, constant: 22),
             buttonFood05.centerYAnchor.constraint(equalTo: self.centerYAnchor),
-            buttonFood05.heightAnchor.constraint(equalToConstant: 32),
-            buttonFood05.widthAnchor.constraint(equalToConstant: 32)
+            buttonFood05.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.48),
+            buttonFood05.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.11)
         ])
         buttonFood05.addTarget(self, action: #selector(button05), for: .touchUpInside)
     }

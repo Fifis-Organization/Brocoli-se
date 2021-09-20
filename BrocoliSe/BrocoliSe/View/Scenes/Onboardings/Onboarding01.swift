@@ -9,7 +9,7 @@ import UIKit
 
 class Onboarding01: UIView {
     
-    let imageView: UIImageView = {
+    private let imageView: UIImageView = {
         let image = UIImageView(image: UIImage(named: "brocolis-receptivo"))
         image.clipsToBounds = true
         image.backgroundColor = UIColor.clear
@@ -17,7 +17,7 @@ class Onboarding01: UIView {
         return image
     }()
     
-    let welcomeText: UILabel = {
+    private let welcomeText: UILabel = {
         let title = UILabel()
         title.text = "Olá! Muito bom ver você aqui, irei te acompanhar na sua grande jornada!"
         title.font = UIFont(name: "graviola-regular", size: 17)
@@ -37,15 +37,13 @@ class Onboarding01: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func style() {
-        
+    private func style() {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         
         welcomeText.translatesAutoresizingMaskIntoConstraints = false
-        
     }
-        
-    func layout() {
+    
+    private func layout() {
         addSubview(imageView)
         addSubview(welcomeText)
         
@@ -60,5 +58,4 @@ class Onboarding01: UIView {
             welcomeText.centerXAnchor.constraint(equalTo: self.centerXAnchor, constant: 0)
         ])
     }
-
 }

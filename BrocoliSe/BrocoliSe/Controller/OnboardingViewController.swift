@@ -15,25 +15,25 @@ class OnboardingViewController: UIViewController {
     
     var didSendContinue: (() -> Void)?
     
-    lazy var view0: UIView = {
+    private lazy var view0: UIView = {
         let view = Onboarding01()
         return view
     }()
     
-    lazy var view1: UIView = {
+    private lazy var view1: UIView = {
         let view = Onboarding02()
         return view
     }()
     
-    lazy var view2: UIView = {
+    private lazy var view2: UIView = {
         let view = Onboarding03()
         view.onboardingVC = self
         return view
     }()
     
-    lazy var views = [view0, view1, view2]
+    private lazy var views = [view0, view1, view2]
     
-    lazy var scrollView: UIScrollView = {
+    private lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.showsHorizontalScrollIndicator = false
         scrollView.isPagingEnabled = true
@@ -88,10 +88,12 @@ extension OnboardingViewController: UIScrollViewDelegate {
 extension UIScrollView {
     func edgeTo(view: UIView) {
         translatesAutoresizingMaskIntoConstraints = false
-        topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-        leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        NSLayoutConstraint.activate([
+            topAnchor.constraint(equalTo: view.topAnchor),
+            leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        ])
     }
 }
 
@@ -106,9 +108,11 @@ extension UIScrollView {
 extension UIView {
     func pinTo(_ view: UIView) {
         translatesAutoresizingMaskIntoConstraints = false
-        heightAnchor.constraint(equalToConstant: 50).isActive = true
-        leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -12).isActive = true
+        NSLayoutConstraint.activate([
+            heightAnchor.constraint(equalToConstant: 50),
+            leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -12)
+        ])
     }
 }

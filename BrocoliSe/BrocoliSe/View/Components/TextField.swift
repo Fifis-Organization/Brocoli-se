@@ -8,8 +8,8 @@
 import UIKit
 
 class TextField: UIView {
-
-    let nameTextField = UITextField()
+    
+    private let nameTextField = UITextField()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -24,7 +24,7 @@ class TextField: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func styleTextField(_ textField: UITextField, withText text: String) {
+    private func styleTextField(_ textField: UITextField, withText text: String) {
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.backgroundColor = .clear
         textField.placeholder = text
@@ -41,7 +41,7 @@ class TextField: UIView {
             textField.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.9),
             textField.centerXAnchor.constraint(equalTo: self.centerXAnchor)
         ])
-   }
+    }
 }
 
 extension TextField: UITextFieldDelegate {
@@ -53,8 +53,4 @@ extension TextField: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         return nameTextField.resignFirstResponder()
     }
-    
-//    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-//        view.endEditing(true)
-//    }
 }

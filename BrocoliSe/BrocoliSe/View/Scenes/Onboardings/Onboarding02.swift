@@ -8,9 +8,8 @@
 import UIKit
 
 class Onboarding02: UIView {
-
     
-    let imageView: UIImageView = {
+    private let imageView: UIImageView = {
         let image = UIImageView(image: UIImage(named: "brocolis-feliz"))
         image.clipsToBounds = true
         image.backgroundColor = UIColor.clear
@@ -18,14 +17,14 @@ class Onboarding02: UIView {
         return image
     }()
     
-    let welcomeText: UILabel = {
+    private let welcomeText: UILabel = {
         let title = UILabel()
         title.text = "Qual seu nome?"
         title.font = UIFont(name: "graviola-regular", size: 17)
         title.textColor = .blueDark
         title.textAlignment = .center
         title.numberOfLines = 0
-
+        
         return title
     }()
     
@@ -47,25 +46,23 @@ class Onboarding02: UIView {
     
     @objc func keyboardWillShow(notification: NSNotification) {
         if ((notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue) != nil {
-                frame.origin.y -= 80
+            frame.origin.y -= 80
         }
     }
     
     @objc func keyboardWillHide(notification: NSNotification) {
-            frame.origin.y += 80
+        frame.origin.y += 80
     }
     
-    func style() {
-        
+    private func style() {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         
         welcomeText.translatesAutoresizingMaskIntoConstraints = false
-                
-        nameTextField.translatesAutoresizingMaskIntoConstraints = false
-
-    }
         
-    func layout() {
+        nameTextField.translatesAutoresizingMaskIntoConstraints = false
+    }
+    
+    private func layout() {
         addSubview(imageView)
         addSubview(welcomeText)
         addSubview(nameTextField)

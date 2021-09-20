@@ -11,9 +11,7 @@ class Onboarding03: UIView {
     
     weak var onboardingVC: OnboardingViewController?
     
-    
-    
-    let buttonConfirm: UIButton = {
+    private let buttonConfirm: UIButton = {
         let button = UIButton()
         button.setTitle("Continuar", for: .normal)
         button.titleLabel?.font = UIFont(name: "graviola-regular", size: 17)
@@ -23,7 +21,7 @@ class Onboarding03: UIView {
         return button
     }()
     
-    let imageView: UIImageView = {
+    private let imageView: UIImageView = {
         let image = UIImageView(image: UIImage(named: "brocolis-happy"))
         image.clipsToBounds = true
         image.backgroundColor = UIColor.clear
@@ -31,7 +29,7 @@ class Onboarding03: UIView {
         return image
     }()
     
-    let welcomeText: UILabel = {
+    private let welcomeText: UILabel = {
         let title = UILabel()
         title.text = "Quais alimentos você não está consumindo?"
         title.font = UIFont(name: "graviola-regular", size: 17)
@@ -59,7 +57,6 @@ class Onboarding03: UIView {
     }
     
     func style() {
-        
         imageView.translatesAutoresizingMaskIntoConstraints = false
         
         welcomeText.translatesAutoresizingMaskIntoConstraints = false
@@ -67,16 +64,14 @@ class Onboarding03: UIView {
         foodSelector.translatesAutoresizingMaskIntoConstraints = false
         
         buttonConfirm.translatesAutoresizingMaskIntoConstraints = false
-        
     }
-        
+    
     func layout() {
         addSubview(imageView)
         addSubview(welcomeText)
         addSubview(foodSelector)
         addSubview(buttonConfirm)
         
-      
         NSLayoutConstraint.activate([
             
             imageView.heightAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.5),
@@ -88,18 +83,18 @@ class Onboarding03: UIView {
             welcomeText.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 20),
             welcomeText.centerXAnchor.constraint(equalTo: self.centerXAnchor, constant: 0),
             
-            foodSelector.widthAnchor.constraint(equalToConstant: 280),
-            foodSelector.heightAnchor.constraint(equalToConstant: 66),
+            foodSelector.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.74),
+            foodSelector.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.098),
             foodSelector.topAnchor.constraint(equalTo: welcomeText.bottomAnchor, constant: 10),
             foodSelector.centerXAnchor.constraint(equalTo: self.centerXAnchor),
             
-            buttonConfirm.widthAnchor.constraint(equalToConstant: 144),
-            buttonConfirm.heightAnchor.constraint(equalToConstant: 36),
+            buttonConfirm.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.38),
+            buttonConfirm.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.053),
             buttonConfirm.topAnchor.constraint(equalTo: foodSelector.bottomAnchor, constant: 20),
             buttonConfirm.centerXAnchor.constraint(equalTo: self.centerXAnchor)
         ])
     }
-
+    
 }
 
 extension Onboarding03: OnboardingViewControllerProtocol {
