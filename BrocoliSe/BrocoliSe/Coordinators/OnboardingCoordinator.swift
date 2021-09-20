@@ -14,7 +14,7 @@ protocol OnboardingCoodinatorProtocol: Coordinator {
 
 class OnboardingCoordinator: OnboardingCoodinatorProtocol {
     
-    var finishDelegate: CoordinatorFinishDelegate?
+    weak var finishDelegate: CoordinatorFinishDelegate?
     
     var childCoordinators: [Coordinator] = []
     

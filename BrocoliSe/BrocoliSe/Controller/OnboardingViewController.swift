@@ -9,7 +9,7 @@ import UIKit
 
 class OnboardingViewController: UIViewController {
     
-    var didSendContinue: (()-> Void)?
+    var didSendContinue: (() -> Void)?
     
     lazy var view0: UIView = {
         let view = Onboarding01()
@@ -118,4 +118,3 @@ extension UIView {
         bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -12).isActive = true
     }
 }
-
