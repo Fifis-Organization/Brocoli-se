@@ -103,7 +103,4 @@ extension Onboarding03: OnboardingViewControllerProtocol {
               let didSendContinue = onboardingVC.didSendContinue else {return}
         didSendContinue()
     }
-    
-    
 }
-
