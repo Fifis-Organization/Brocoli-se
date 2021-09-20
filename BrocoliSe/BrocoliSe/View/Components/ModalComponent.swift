@@ -62,15 +62,10 @@ class ModalComponent: UIView {
             dimmedView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
 
             containerView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-            containerView.trailingAnchor.constraint(equalTo: self.trailingAnchor)
+            containerView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            containerView.heightAnchor.constraint(equalToConstant: defaultHeight),
+            containerView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: defaultHeight)
         ])
-
-        containerViewHeightConstraint = containerView.heightAnchor.constraint(equalToConstant: defaultHeight)
-
-        containerViewBottomConstraint = containerView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: defaultHeight)
-
-        containerViewHeightConstraint?.isActive = true
-        containerViewBottomConstraint?.isActive = true
     }
 
     func animatePresentContainer() {
