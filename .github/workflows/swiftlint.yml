@@ -11,10 +11,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-        with:
-          ref: ${{ github.event.pull_request.head.ref }}
-          fetch-depth: 0
       - name: SwiftLint
         uses: norio-nomura/action-swiftlint@3.2.1
-        env:
-           DIFF_BASE: ${{ github.event.pull_request.head.ref }}
