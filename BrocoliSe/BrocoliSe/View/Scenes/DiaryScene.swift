@@ -8,7 +8,12 @@ import Foundation
 import FOCalendar
 
 class DiaryScene: UIView {
-    let diaryCardComponent = DiaryCardComponent()
+    
+    private var controller: DiaryViewController?
+    private var foods: [FoodOff]?
+    
+    private let diaryCardComponent = DiaryCardComponent()
+    
     lazy var diaryTableView: UITableView = {
         let table = UITableView()
         table.translatesAutoresizingMaskIntoConstraints = false
@@ -27,17 +32,17 @@ class DiaryScene: UIView {
         setupConstraints()
     }
     
-    func hierarchyView() {
+    private func hierarchyView() {
         addSubview(diaryCardComponent)
         addSubview(diaryTableView)
     }
     
-    func setupConstraints() {
+    private func setupConstraints() {
         diaryCardComponentSetupConstraints()
         diaryTableViewSetupConstraints()
     }
     
-    func diaryCardComponentSetupConstraints() {
+    private func diaryCardComponentSetupConstraints() {
         diaryCardComponent.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             diaryCardComponent.topAnchor.constraint(equalTo: topAnchor),
@@ -47,7 +52,7 @@ class DiaryScene: UIView {
         ])
     }
     
-    func diaryTableViewSetupConstraints() {
+    private func diaryTableViewSetupConstraints() {
         NSLayoutConstraint.activate([
             diaryTableView.topAnchor.constraint(equalTo: diaryCardComponent.bottomAnchor),
             diaryTableView.leadingAnchor.constraint(equalTo: leadingAnchor),
@@ -59,42 +64,46 @@ class DiaryScene: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-        
 }
 
 extension DiaryScene: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return foods?.count ?? 0
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: DiaryTableViewCellComponent.reuseIdentifier, for: indexPath) as? DiaryTableViewCellComponent
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: DiaryTableViewCellComponent.reuseIdentifier, for: indexPath) as? DiaryTableViewCellComponent,
+              let food = foods?[indexPath.row] else { fatalError() }
 
-        switch indexPath.row {
-        case 0:
-            cell?.setData(iconName: IconNames.carne, foodName: FoodNames.carne)
-        case 1:
-            cell?.setData(iconName: IconNames.ovos, foodName: FoodNames.ovos)
-        case 2:
-            cell?.setData(iconName: IconNames.leite, foodName: FoodNames.leite)
-        case 3:
-            cell?.setData(iconName: IconNames.frango, foodName: FoodNames.frango)
-        case 4:
-            cell?.setData(iconName: IconNames.peixe, foodName: FoodNames.peixe)
-        default:
-            cell?.setData(iconName: IconNames.carne, foodName: FoodNames.carne)
-        }
-
-        cell?.checkButtonCallBack = {
+        let foodName = food.food ?? ""
+        cell.setData(iconName: foodName.iconTable(), foodName:  foodName)
+        cell.checkButtonCallBack = {
             // MARK: Teoricamente pega os dados da célula clicada pra salvar no CoreData aqui
-            cell?.getData()
+            cell.getData()
         }
 
-        return cell ?? UITableViewCell()
+        return cell
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 90
+    }
+}
+
+extension DiaryScene: DiarySceneDelegate {
+    func getDayAll(days: [Day]) {
+        
+    }
+    
+    func getFoodAll(foods: [FoodOff]) {
+        self.foods = foods
+    }
+    
+    func setController(controller: DiaryViewController) {
+        self.controller = controller
+    }
+    
+    func setupDatas() {
+        controller?.fetchFoodAll()
     }
 }

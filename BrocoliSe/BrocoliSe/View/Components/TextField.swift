@@ -53,4 +53,8 @@ extension TextField: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         return nameTextField.resignFirstResponder()
     }
+    
+    func dismissKeyborad() {
+        nameTextField.resignFirstResponder()
+    }
 }

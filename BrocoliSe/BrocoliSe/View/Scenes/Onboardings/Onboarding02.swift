@@ -9,6 +9,8 @@ import UIKit
 
 class Onboarding02: UIView {
     
+    private var isActiveKeyboard: Bool = false
+    
     private let imageView: UIImageView = {
         let image = UIImageView(image: UIImage(named: "brocolis-feliz"))
         image.clipsToBounds = true
@@ -35,6 +37,8 @@ class Onboarding02: UIView {
         style()
         layout()
         nameTextField.myKeyBoard()
+        let tapDismiss = UITapGestureRecognizer(target: self, action: #selector(keyboardWillHide(notification:)))
+        addGestureRecognizer(tapDismiss)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
         
@@ -46,12 +50,15 @@ class Onboarding02: UIView {
     
     @objc func keyboardWillShow(notification: NSNotification) {
         if ((notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue) != nil {
-            frame.origin.y -= 80
+            frame.origin.y -= (self.isActiveKeyboard ? 0 : 80)
+            isActiveKeyboard = true
         }
     }
     
     @objc func keyboardWillHide(notification: NSNotification) {
-        frame.origin.y += 80
+        frame.origin.y += (self.isActiveKeyboard ? 80 : 0)
+        isActiveKeyboard = false
+        nameTextField.dismissKeyborad()
     }
     
     private func style() {
