@@ -10,7 +10,7 @@ import UIKit
 
 class AlbumViewController: UIViewController {
     
-    let scene = AlbumScene(frame: UIScreen.main.bounds)
+    private let scene = AlbumScene(frame: UIScreen.main.bounds)
 
     override func viewDidLoad() {
         super.viewDidLoad()
