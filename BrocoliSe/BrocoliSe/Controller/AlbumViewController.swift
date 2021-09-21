@@ -30,7 +30,6 @@ class AlbumViewController: UIViewController {
         ])
     }
     
-    
     func setupNavigationBar() {
         self.navigationItem.title = "Álbum"
         
