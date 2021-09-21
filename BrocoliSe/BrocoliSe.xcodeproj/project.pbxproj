@@ -26,19 +26,19 @@
 		3950D13326F3DFFC003D3E97 /* DiaryCardComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3950D13226F3DFFC003D3E97 /* DiaryCardComponent.swift */; };
 		3984BD3C26E8E9AB00C92824 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3984BD3B26E8E9AB00C92824 /* AppDelegate.swift */; };
 		3984BD3E26E8E9AB00C92824 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3984BD3D26E8E9AB00C92824 /* SceneDelegate.swift */; };
-		3984BD4026E8E9AB00C92824 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3984BD3F26E8E9AB00C92824 /* ViewController.swift */; };
+		3984BD4026E8E9AB00C92824 /* DiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3984BD3F26E8E9AB00C92824 /* DiaryViewController.swift */; };
 		3984BD4526E8E9AC00C92824 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3984BD4426E8E9AC00C92824 /* Assets.xcassets */; };
 		3984BD4826E8E9AC00C92824 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3984BD4626E8E9AC00C92824 /* LaunchScreen.storyboard */; };
 		39DA525C26F7E4DF00158880 /* FactoryControllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39DA525B26F7E4DF00158880 /* FactoryControllers.swift */; };
 		39DA526026F9FFEC00158880 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39DA525F26F9FFEC00158880 /* StringExtension.swift */; };
 		54109F1626F2959700EC4C10 /* DiaryTableViewCellComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54109F1526F2959700EC4C10 /* DiaryTableViewCellComponent.swift */; };
 		543DCF9926F36DCC00BDAF63 /* NamesEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543DCF9826F36DCC00BDAF63 /* NamesEnums.swift */; };
-		562C91DD26F8B3CD00548428 /* AlbumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 562C91DC26F8B3CD00548428 /* AlbumViewController.swift */; };
-		562C91DF26F8B51D00548428 /* AlbumScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 562C91DE26F8B51D00548428 /* AlbumScene.swift */; };
-		562C91E126F8C85300548428 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 562C91E026F8C85300548428 /* CollectionViewCell.swift */; };
 		54BA499526F8B0D000201438 /* ModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BA499426F8B0D000201438 /* ModalViewController.swift */; };
 		54BA499726F8B1B300201438 /* ModalComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BA499626F8B1B300201438 /* ModalComponent.swift */; };
 		54BA499926F8C2D900201438 /* RewardModalScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BA499826F8C2D900201438 /* RewardModalScene.swift */; };
+		562C91DD26F8B3CD00548428 /* AlbumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 562C91DC26F8B3CD00548428 /* AlbumViewController.swift */; };
+		562C91DF26F8B51D00548428 /* AlbumScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 562C91DE26F8B51D00548428 /* AlbumScene.swift */; };
+		562C91E126F8C85300548428 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 562C91E026F8C85300548428 /* CollectionViewCell.swift */; };
 		5F22C12D64DBC49B6281335B /* Pods_BrocoliSe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 339A77E77343AA9D6B45448B /* Pods_BrocoliSe.framework */; };
 		A47C62FD26F8B48600D6A54B /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47C62FC26F8B48600D6A54B /* OnboardingViewController.swift */; };
 		A47C630026F8B4E600D6A54B /* Onboarding01.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47C62FF26F8B4E600D6A54B /* Onboarding01.swift */; };
@@ -72,7 +72,7 @@
 		3984BD3826E8E9AB00C92824 /* BrocoliSe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BrocoliSe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3984BD3B26E8E9AB00C92824 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3984BD3D26E8E9AB00C92824 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		3984BD3F26E8E9AB00C92824 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3984BD3F26E8E9AB00C92824 /* DiaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryViewController.swift; sourceTree = "<group>"; };
 		3984BD4426E8E9AC00C92824 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3984BD4726E8E9AC00C92824 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3984BD4926E8E9AC00C92824 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -80,12 +80,12 @@
 		39DA525F26F9FFEC00158880 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		54109F1526F2959700EC4C10 /* DiaryTableViewCellComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryTableViewCellComponent.swift; sourceTree = "<group>"; };
 		543DCF9826F36DCC00BDAF63 /* NamesEnums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamesEnums.swift; sourceTree = "<group>"; };
-		562C91DC26F8B3CD00548428 /* AlbumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumViewController.swift; sourceTree = "<group>"; };
-		562C91DE26F8B51D00548428 /* AlbumScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumScene.swift; sourceTree = "<group>"; };
-		562C91E026F8C85300548428 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		54BA499426F8B0D000201438 /* ModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalViewController.swift; sourceTree = "<group>"; };
 		54BA499626F8B1B300201438 /* ModalComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalComponent.swift; sourceTree = "<group>"; };
 		54BA499826F8C2D900201438 /* RewardModalScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardModalScene.swift; sourceTree = "<group>"; };
+		562C91DC26F8B3CD00548428 /* AlbumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumViewController.swift; sourceTree = "<group>"; };
+		562C91DE26F8B51D00548428 /* AlbumScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumScene.swift; sourceTree = "<group>"; };
+		562C91E026F8C85300548428 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		7FA58FB81DD24388A0BB3880 /* Pods-BrocoliSe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BrocoliSe.debug.xcconfig"; path = "Target Support Files/Pods-BrocoliSe/Pods-BrocoliSe.debug.xcconfig"; sourceTree = "<group>"; };
 		A47C62FC26F8B48600D6A54B /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		A47C62FF26F8B4E600D6A54B /* Onboarding01.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding01.swift; sourceTree = "<group>"; };
@@ -188,7 +188,7 @@
 		3984BD5526E8FC9000C92824 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				3984BD3F26E8E9AB00C92824 /* ViewController.swift */,
+				3984BD3F26E8E9AB00C92824 /* DiaryViewController.swift */,
 				562C91DC26F8B3CD00548428 /* AlbumViewController.swift */,
 				A47C62FC26F8B48600D6A54B /* OnboardingViewController.swift */,
 				54BA499426F8B0D000201438 /* ModalViewController.swift */,
@@ -438,7 +438,7 @@
 				3932587126E9008000A44687 /* ProgressBarComponent.swift in Sources */,
 				54109F1626F2959700EC4C10 /* DiaryTableViewCellComponent.swift in Sources */,
 				3932587426E9008C00A44687 /* DiaryScene.swift in Sources */,
-				3984BD4026E8E9AB00C92824 /* ViewController.swift in Sources */,
+				3984BD4026E8E9AB00C92824 /* DiaryViewController.swift in Sources */,
 				A47C62FD26F8B48600D6A54B /* OnboardingViewController.swift in Sources */,
 				543DCF9926F36DCC00BDAF63 /* NamesEnums.swift in Sources */,
 				A47C630A26F8B66000D6A54B /* OnboardingCoordinator.swift in Sources */,

@@ -36,7 +36,6 @@ class OnboardingCoordinator: OnboardingCoodinatorProtocol {
             self?.finish()
         }
         navigationController.pushViewController(onboardingVC, animated: false)
-        
     }
     
 }

@@ -1,15 +1,15 @@
 import Foundation
 
 struct FactoryControllers {
-    static func createDiaryViewController() -> ViewController {
-        let diaryVC = ViewController()
+    static func createDiaryViewController() -> DiaryViewController {
+        let diaryVC = DiaryViewController()
         diaryVC.setCoreDataManager(CoreDataManager())
         diaryVC.setDiaryScene(DiaryScene())
         return diaryVC
     }
     
-    static func createAlbumViewController() {
-        
+    static func createAlbumViewController() -> AlbumViewController {
+        return AlbumViewController()
     }
     
     static func createProfileViewController() {

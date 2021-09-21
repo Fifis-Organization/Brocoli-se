@@ -9,7 +9,7 @@ import FOCalendar
 
 class DiaryScene: UIView {
     
-    private var controller: ViewController?
+    private var controller: DiaryViewController?
     private var foods: [FoodOff]?
     
     private let diaryCardComponent = DiaryCardComponent()
@@ -99,7 +99,7 @@ extension DiaryScene: DiarySceneDelegate {
         self.foods = foods
     }
     
-    func setController(controller: ViewController) {
+    func setController(controller: DiaryViewController) {
         self.controller = controller
     }
     

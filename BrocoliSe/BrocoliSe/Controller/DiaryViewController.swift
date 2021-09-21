@@ -10,11 +10,11 @@ import UIKit
 protocol DiarySceneDelegate: class {
     func getDayAll(days: [Day])
     func getFoodAll(foods: [FoodOff])
-    func setController(controller: ViewController)
+    func setController(controller: DiaryViewController)
     func setupDatas()
 }
 
-class ViewController: UIViewController {
+class DiaryViewController: UIViewController {
     private var diaryScene: DiarySceneDelegate?
     private var coreDataManager: CoreDataManagerProtocol?
     
