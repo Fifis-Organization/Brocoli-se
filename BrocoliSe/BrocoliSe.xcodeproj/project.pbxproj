@@ -34,7 +34,17 @@
 		39DA526026F9FFEC00158880 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39DA525F26F9FFEC00158880 /* StringExtension.swift */; };
 		54109F1626F2959700EC4C10 /* DiaryTableViewCellComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54109F1526F2959700EC4C10 /* DiaryTableViewCellComponent.swift */; };
 		543DCF9926F36DCC00BDAF63 /* NamesEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543DCF9826F36DCC00BDAF63 /* NamesEnums.swift */; };
+		54BA499526F8B0D000201438 /* ModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BA499426F8B0D000201438 /* ModalViewController.swift */; };
+		54BA499726F8B1B300201438 /* ModalComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BA499626F8B1B300201438 /* ModalComponent.swift */; };
+		54BA499926F8C2D900201438 /* RewardModalScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BA499826F8C2D900201438 /* RewardModalScene.swift */; };
 		5F22C12D64DBC49B6281335B /* Pods_BrocoliSe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 339A77E77343AA9D6B45448B /* Pods_BrocoliSe.framework */; };
+		A47C62FD26F8B48600D6A54B /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47C62FC26F8B48600D6A54B /* OnboardingViewController.swift */; };
+		A47C630026F8B4E600D6A54B /* Onboarding01.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47C62FF26F8B4E600D6A54B /* Onboarding01.swift */; };
+		A47C630226F8B4F800D6A54B /* Onboarding02.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47C630126F8B4F800D6A54B /* Onboarding02.swift */; };
+		A47C630426F8B50000D6A54B /* Onboarding03.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47C630326F8B50000D6A54B /* Onboarding03.swift */; };
+		A47C630626F8B56A00D6A54B /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47C630526F8B56A00D6A54B /* TextField.swift */; };
+		A47C630826F8B58100D6A54B /* FoodSelectorComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47C630726F8B58100D6A54B /* FoodSelectorComponent.swift */; };
+		A47C630A26F8B66000D6A54B /* OnboardingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47C630926F8B66000D6A54B /* OnboardingCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,7 +79,17 @@
 		39DA525F26F9FFEC00158880 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		54109F1526F2959700EC4C10 /* DiaryTableViewCellComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryTableViewCellComponent.swift; sourceTree = "<group>"; };
 		543DCF9826F36DCC00BDAF63 /* NamesEnums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamesEnums.swift; sourceTree = "<group>"; };
+		54BA499426F8B0D000201438 /* ModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalViewController.swift; sourceTree = "<group>"; };
+		54BA499626F8B1B300201438 /* ModalComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalComponent.swift; sourceTree = "<group>"; };
+		54BA499826F8C2D900201438 /* RewardModalScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardModalScene.swift; sourceTree = "<group>"; };
 		7FA58FB81DD24388A0BB3880 /* Pods-BrocoliSe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BrocoliSe.debug.xcconfig"; path = "Target Support Files/Pods-BrocoliSe/Pods-BrocoliSe.debug.xcconfig"; sourceTree = "<group>"; };
+		A47C62FC26F8B48600D6A54B /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		A47C62FF26F8B4E600D6A54B /* Onboarding01.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding01.swift; sourceTree = "<group>"; };
+		A47C630126F8B4F800D6A54B /* Onboarding02.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding02.swift; sourceTree = "<group>"; };
+		A47C630326F8B50000D6A54B /* Onboarding03.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding03.swift; sourceTree = "<group>"; };
+		A47C630526F8B56A00D6A54B /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
+		A47C630726F8B58100D6A54B /* FoodSelectorComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodSelectorComponent.swift; sourceTree = "<group>"; };
+		A47C630926F8B66000D6A54B /* OnboardingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +112,7 @@
 				3902B0EE26F0B1BB00FE2C8F /* TabCoordinator.swift */,
 				3902B0F226F0DD0200FE2C8F /* TabBarPage.swift */,
 				39DA525B26F7E4DF00158880 /* FactoryControllers.swift */,
+				A47C630926F8B66000D6A54B /* OnboardingCoordinator.swift */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -165,6 +186,8 @@
 			isa = PBXGroup;
 			children = (
 				3984BD3F26E8E9AB00C92824 /* ViewController.swift */,
+				A47C62FC26F8B48600D6A54B /* OnboardingViewController.swift */,
+				54BA499426F8B0D000201438 /* ModalViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -202,6 +225,9 @@
 				3950D13226F3DFFC003D3E97 /* DiaryCardComponent.swift */,
 				3932587026E9008000A44687 /* ProgressBarComponent.swift */,
 				54109F1526F2959700EC4C10 /* DiaryTableViewCellComponent.swift */,
+				A47C630526F8B56A00D6A54B /* TextField.swift */,
+				A47C630726F8B58100D6A54B /* FoodSelectorComponent.swift */,
+				54BA499626F8B1B300201438 /* ModalComponent.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -219,7 +245,9 @@
 		3984BD5B26E8FCFF00C92824 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				A47C62FE26F8B4C600D6A54B /* Onboardings */,
 				3932587326E9008C00A44687 /* DiaryScene.swift */,
+				54BA499826F8C2D900201438 /* RewardModalScene.swift */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -240,6 +268,16 @@
 				39DA525F26F9FFEC00158880 /* StringExtension.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		A47C62FE26F8B4C600D6A54B /* Onboardings */ = {
+			isa = PBXGroup;
+			children = (
+				A47C62FF26F8B4E600D6A54B /* Onboarding01.swift */,
+				A47C630126F8B4F800D6A54B /* Onboarding02.swift */,
+				A47C630326F8B50000D6A54B /* Onboarding03.swift */,
+			);
+			path = Onboardings;
 			sourceTree = "<group>";
 		};
 		F5092037EE03D133043F77A8 /* Frameworks */ = {
@@ -384,16 +422,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				3932586E26E8FF8800A44687 /* Model.swift in Sources */,
+				A47C630626F8B56A00D6A54B /* TextField.swift in Sources */,
+				54BA499926F8C2D900201438 /* RewardModalScene.swift in Sources */,
 				3932587126E9008000A44687 /* ProgressBarComponent.swift in Sources */,
+				A47C630226F8B4F800D6A54B /* Onboarding02.swift in Sources */,
+				A47C630826F8B58100D6A54B /* FoodSelectorComponent.swift in Sources */,
+				A47C630026F8B4E600D6A54B /* Onboarding01.swift in Sources */,
 				3902B0E526EF96BC00FE2C8F /* Coordinator.swift in Sources */,
 				394AEB2226F7ADF700C5D8E7 /* CoreDataManager.swift in Sources */,
 				3932587126E9008000A44687 /* ProgressBarComponent.swift in Sources */,
 				54109F1626F2959700EC4C10 /* DiaryTableViewCellComponent.swift in Sources */,
 				3932587426E9008C00A44687 /* DiaryScene.swift in Sources */,
 				3984BD4026E8E9AB00C92824 /* ViewController.swift in Sources */,
+				A47C62FD26F8B48600D6A54B /* OnboardingViewController.swift in Sources */,
 				543DCF9926F36DCC00BDAF63 /* NamesEnums.swift in Sources */,
+				A47C630A26F8B66000D6A54B /* OnboardingCoordinator.swift in Sources */,
+				A47C630426F8B50000D6A54B /* Onboarding03.swift in Sources */,
 				3902B0E926EF977900FE2C8F /* AppCoordinator.swift in Sources */,
 				3950D13326F3DFFC003D3E97 /* DiaryCardComponent.swift in Sources */,
+				54BA499726F8B1B300201438 /* ModalComponent.swift in Sources */,
 				3932586826E8FF4900A44687 /* Fonts.swift in Sources */,
 				3902B0F326F0DD0200FE2C8F /* TabBarPage.swift in Sources */,
 				3932586526E8FF3F00A44687 /* Colors.swift in Sources */,
@@ -406,6 +453,7 @@
 				39DA526026F9FFEC00158880 /* StringExtension.swift in Sources */,
 				3902B0EF26F0B1BB00FE2C8F /* TabCoordinator.swift in Sources */,
 				394AEB2A26F7CEBE00C5D8E7 /* EntitySaveProtocol.swift in Sources */,
+				54BA499526F8B0D000201438 /* ModalViewController.swift in Sources */,
 				3932586B26E8FF7A00A44687 /* Protocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
