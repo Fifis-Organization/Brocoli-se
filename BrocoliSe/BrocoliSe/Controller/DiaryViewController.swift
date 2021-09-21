@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol DiarySceneDelegate: class {
+protocol DiarySceneDelegate: AnyObject {
     func getDayAll(days: [Day])
     func getFoodAll(foods: [FoodOff])
     func setController(controller: DiaryViewController)

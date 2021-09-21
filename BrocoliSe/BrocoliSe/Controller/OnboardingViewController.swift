@@ -14,6 +14,7 @@ protocol OnboardingViewControllerProtocol: AnyObject {
 class OnboardingViewController: UIViewController {
     
     var didSendContinue: (() -> Void)?
+    private var coreDataManager: CoreDataManagerProtocol?
     
     private lazy var view0: UIView = {
         let view = Onboarding01()
@@ -75,6 +76,16 @@ class OnboardingViewController: UIViewController {
         pageControl.pinTo(view)
         
     }
+    
+    func setCoreDataManager(_ aCoreData: CoreDataManagerProtocol) {
+        coreDataManager = aCoreData
+    }
+    
+//    func saveSelectedFood(selectedFood: [String]) {
+//        selectedFood.forEach { <#String#> in
+//            <#code#>
+//        }
+//    }
 }
 
 extension OnboardingViewController: UIScrollViewDelegate {

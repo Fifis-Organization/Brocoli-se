@@ -31,7 +31,7 @@ class OnboardingCoordinator: OnboardingCoodinatorProtocol {
     }
     
     func showOnboardingViewController() {
-        let onboardingVC = OnboardingViewController()
+        let onboardingVC = FactoryControllers.createOnboardingViewController()
         onboardingVC.didSendContinue = { [weak self] in
             self?.finish()
         }

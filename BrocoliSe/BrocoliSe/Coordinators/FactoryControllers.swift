@@ -16,7 +16,9 @@ struct FactoryControllers {
         
     }
     
-    static func createOnboardingViewController() {
-        
+    static func createOnboardingViewController() -> OnboardingViewController {
+        let onboardingVC = OnboardingViewController()
+        onboardingVC.setCoreDataManager(CoreDataManager())
+        return onboardingVC
     }
 }

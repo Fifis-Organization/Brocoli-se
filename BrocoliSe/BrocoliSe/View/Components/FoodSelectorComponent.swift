@@ -9,45 +9,52 @@ import UIKit
 
 class FoodSelectorComponent: UIView {
     
-    private let buttonFood01: UIButton = {
-        let button = UIButton(type: .custom)
-        let image = UIImage(named: "carne-icon")
+    private var selectedFood:[String] = []
+    
+    private let buttonCarne: IconButtonComponent = {
+        let button = IconButtonComponent(type: .custom)
+        button.identifier = IconNames.carne
+        let image = UIImage(named: IconNames.carne)
         let imageconfig = image?.withRenderingMode(.alwaysTemplate)
         button.setImage(imageconfig, for: .normal)
         button.tintColor = UIColor.blueDark?.withAlphaComponent(0.4)
         return button
     }()
     
-    private let buttonFood02: UIButton = {
-        let button = UIButton(type: .custom)
-        let image = UIImage(named: "ovo-icon")
+    private let buttonOvo: IconButtonComponent = {
+        let button = IconButtonComponent(type: .custom)
+        button.identifier = IconNames.ovos
+        let image = UIImage(named: IconNames.ovos)
         let imageconfig = image?.withRenderingMode(.alwaysTemplate)
         button.setImage(imageconfig, for: .normal)
         button.tintColor = UIColor.blueDark?.withAlphaComponent(0.4)
         return button
     }()
     
-    private let buttonFood03: UIButton = {
-        let button = UIButton(type: .custom)
-        let image = UIImage(named: "leite-icon")
+    private let buttonLeite: IconButtonComponent = {
+        let button = IconButtonComponent(type: .custom)
+        button.identifier = IconNames.leite
+        let image = UIImage(named: IconNames.leite)
         let imageconfig = image?.withRenderingMode(.alwaysTemplate)
         button.setImage(imageconfig, for: .normal)
         button.tintColor = UIColor.blueDark?.withAlphaComponent(0.4)
         return button
     }()
     
-    private let buttonFood04: UIButton = {
-        let button = UIButton(type: .custom)
-        let image = UIImage(named: "frango-icon")
+    private let buttonFrango: IconButtonComponent = {
+        let button = IconButtonComponent(type: .custom)
+        button.identifier = IconNames.frango
+        let image = UIImage(named: IconNames.frango)
         let imageconfig = image?.withRenderingMode(.alwaysTemplate)
         button.setImage(imageconfig, for: .normal)
         button.tintColor = UIColor.blueDark?.withAlphaComponent(0.4)
         return button
     }()
     
-    private let buttonFood05: UIButton = {
-        let button = UIButton(type: .custom)
-        let image = UIImage(named: "peixe-icon")
+    private let buttonPeixe: IconButtonComponent = {
+        let button = IconButtonComponent(type: .custom)
+        button.identifier = IconNames.peixe
+        let image = UIImage(named: IconNames.peixe)
         let imageconfig = image?.withRenderingMode(.alwaysTemplate)
         button.setImage(imageconfig, for: .normal)
         button.tintColor = UIColor.blueDark?.withAlphaComponent(0.4)
@@ -69,78 +76,74 @@ class FoodSelectorComponent: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    @objc func button01(_ sender: UIButton) {
-        buttonFood01.tintColor = .greenMedium
+    @objc func selectFood(_ sender: IconButtonComponent) {
+        sender.isSelected.toggle()
+        if sender.isSelected {
+            selectedFood.append(sender.identifier)
+            sender.tintColor = .greenMedium
+        } else {
+            selectedFood.removeAll { $0 == sender.identifier }
+            sender.tintColor = .blueDark?.withAlphaComponent(0.4)
+        }
     }
     
-    @objc func button02(_ sender: UIButton) {
-        buttonFood02.tintColor = .greenMedium
-    }
-    
-    @objc func button03(_ sender: UIButton) {
-        buttonFood03.tintColor = .greenMedium
-    }
-    
-    @objc func button04(_ sender: UIButton) {
-        buttonFood04.tintColor = .greenMedium
-    }
-    
-    @objc func button05(_ sender: UIButton) {
-        buttonFood05.tintColor = .greenMedium
-    }
     
     private func buttonFoodStyle() {
-        buttonFood03.translatesAutoresizingMaskIntoConstraints = false
-        addSubview(buttonFood03)
+        buttonLeite.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(buttonLeite)
         NSLayoutConstraint.activate([
-            buttonFood03.centerYAnchor.constraint(equalTo: self.centerYAnchor),
-            buttonFood03.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-            buttonFood03.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.48),
-            buttonFood03.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.11)
+            buttonLeite.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+            buttonLeite.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            buttonLeite.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.48),
+            buttonLeite.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.11)
         ])
-        buttonFood03.addTarget(self, action: #selector(button03), for: .touchUpInside)
+        buttonLeite.addTarget(self, action: #selector(selectFood), for: .touchUpInside)
         
-        buttonFood02.translatesAutoresizingMaskIntoConstraints = false
-        addSubview(buttonFood02)
+        buttonOvo.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(buttonOvo)
         NSLayoutConstraint.activate([
-            buttonFood02.trailingAnchor.constraint(equalTo: buttonFood03.leadingAnchor, constant: -22),
-            buttonFood02.centerYAnchor.constraint(equalTo: self.centerYAnchor),
-            buttonFood02.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.45),
-            buttonFood02.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.11)
+            buttonOvo.trailingAnchor.constraint(equalTo: buttonLeite.leadingAnchor, constant: -22),
+            buttonOvo.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+            buttonOvo.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.45),
+            buttonOvo.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.11)
         ])
         
-        buttonFood02.addTarget(self, action: #selector(button02), for: .touchUpInside)
+        buttonOvo.addTarget(self, action: #selector(selectFood), for: .touchUpInside)
         
-        buttonFood04.translatesAutoresizingMaskIntoConstraints = false
-        addSubview(buttonFood04)
+        buttonFrango.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(buttonFrango)
         NSLayoutConstraint.activate([
-            buttonFood04.leadingAnchor.constraint(equalTo: buttonFood03.trailingAnchor, constant: 22),
-            buttonFood04.centerYAnchor.constraint(equalTo: self.centerYAnchor),
-            buttonFood04.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.48),
-            buttonFood04.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.11)
+            buttonFrango.leadingAnchor.constraint(equalTo: buttonLeite.trailingAnchor, constant: 22),
+            buttonFrango.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+            buttonFrango.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.48),
+            buttonFrango.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.11)
             
         ])
         
-        buttonFood04.addTarget(self, action: #selector(button04), for: .touchUpInside)
+        buttonFrango.addTarget(self, action: #selector(selectFood), for: .touchUpInside)
         
-        buttonFood01.translatesAutoresizingMaskIntoConstraints = false
-        addSubview(buttonFood01)
+        buttonCarne.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(buttonCarne)
         NSLayoutConstraint.activate([
-            buttonFood01.trailingAnchor.constraint(equalTo: buttonFood02.leadingAnchor, constant: -22),
-            buttonFood01.centerYAnchor.constraint(equalTo: self.centerYAnchor),
-            buttonFood01.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.48),
-            buttonFood01.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.11)
+            buttonCarne.trailingAnchor.constraint(equalTo: buttonOvo.leadingAnchor, constant: -22),
+            buttonCarne.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+            buttonCarne.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.48),
+            buttonCarne.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.11)
         ])
-        buttonFood01.addTarget(self, action: #selector(button01), for: .touchUpInside)
+        buttonCarne.addTarget(self, action: #selector(selectFood), for: .touchUpInside)
         
-        buttonFood05.translatesAutoresizingMaskIntoConstraints = false
-        addSubview(buttonFood05)
+        buttonPeixe.translatesAutoresizingMaskIntoConstraints = false
+        addSubview(buttonPeixe)
         NSLayoutConstraint.activate([
-            buttonFood05.leadingAnchor.constraint(equalTo: buttonFood04.trailingAnchor, constant: 22),
-            buttonFood05.centerYAnchor.constraint(equalTo: self.centerYAnchor),
-            buttonFood05.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.48),
-            buttonFood05.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.11)
+            buttonPeixe.leadingAnchor.constraint(equalTo: buttonFrango.trailingAnchor, constant: 22),
+            buttonPeixe.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+            buttonPeixe.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.48),
+            buttonPeixe.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.11)
         ])
-        buttonFood05.addTarget(self, action: #selector(button05), for: .touchUpInside)
+        buttonPeixe.addTarget(self, action: #selector(selectFood), for: .touchUpInside)
+    }
+    
+    func getSelected() -> [String] {
+        return selectedFood
     }
 }
