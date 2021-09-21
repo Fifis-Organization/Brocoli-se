@@ -36,7 +36,7 @@ class ViewController: UIViewController {
     
     func setCoreDataManager(_ aCoreData: CoreDataManagerProtocol) {
         coreDataManager = aCoreData
-        //testCore()
+        // testCore()
     }
     
     func fetchFoodAll() {
