@@ -22,14 +22,14 @@ class AlbumScene: UIView {
         layout.sectionInset = UIEdgeInsets(top: 40, left: 40, bottom: 40, right: 40)
         layout.itemSize = CGSize(width: (frame.width/2) - 80, height: 130)
             
-            let collectionView = UICollectionView(frame: self.frame, collectionViewLayout: layout)
-            collectionView.translatesAutoresizingMaskIntoConstraints = false
-            collectionView.register(CollectionViewCell.self, forCellWithReuseIdentifier: CollectionViewCell.identifier)
-            collectionView.dataSource = self
-            collectionView.delegate = self
-            collectionView.isScrollEnabled = true
-            collectionView.backgroundColor = .clear
-            return collectionView
+        let collectionView = UICollectionView(frame: self.frame, collectionViewLayout: layout)
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        collectionView.register(CollectionViewCell.self, forCellWithReuseIdentifier: CollectionViewCell.identifier)
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        collectionView.isScrollEnabled = true
+        collectionView.backgroundColor = .clear
+        return collectionView
         }()
     
     override init(frame: CGRect) {
@@ -43,7 +43,7 @@ class AlbumScene: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setupCollectionView() {
+    private func setupCollectionView() {
         addSubview(collectionView)
         collectionView.isScrollEnabled = false
         collectionView.translatesAutoresizingMaskIntoConstraints = false
@@ -71,7 +71,7 @@ extension AlbumScene: UICollectionViewDelegate, UICollectionViewDataSource, UICo
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CollectionViewCell.identifier, for: indexPath) as? CollectionViewCell else {
             return UICollectionViewCell()
         }
-        cell.imageView.image = UIImage(named: stickers[indexPath.item][1])
+        cell.setImage(image: UIImage(named: stickers[indexPath.item][1]))
         return cell
         
     }

@@ -18,7 +18,7 @@ class AlbumViewController: UIViewController {
         self.setupNavigationBar()
     }
     
-    func setupSceneConstraints() {
+    private func setupSceneConstraints() {
         scene.translatesAutoresizingMaskIntoConstraints = false
         view.insetsLayoutMarginsFromSafeArea = false
         view.addSubview(scene)
@@ -30,7 +30,7 @@ class AlbumViewController: UIViewController {
         ])
     }
     
-    func setupNavigationBar() {
+    private func setupNavigationBar() {
         self.navigationItem.title = "Álbum"
         
         let attrs = [

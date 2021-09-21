@@ -10,7 +10,7 @@ import UIKit
 class CollectionViewCell: UICollectionViewCell {
     static let identifier = "CollectionViewCell"
     
-    var imageView: UIImageView = {
+    private var imageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
         imageView.clipsToBounds = true
@@ -34,5 +34,9 @@ class CollectionViewCell: UICollectionViewCell {
     override func prepareForReuse() {
         super.prepareForReuse()
         imageView.image = nil
+    }
+    
+    func setImage(image:UIImage?) {
+        self.imageView.image = image
     }
 }
