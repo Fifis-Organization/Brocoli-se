@@ -21,11 +21,14 @@ class AppCoordinator: AppCoordinatorProtocol {
     }
     
     func start() {
-        
-        showMainFlow()
+        showOnboardingFlow()
     }
     
     func showOnboardingFlow() {
+        let onboardingCoodinator = OnboardingCoordinator(navigationController: navigationController)
+        onboardingCoodinator.finishDelegate = self
+        onboardingCoodinator.start()
+        childCoordinators.append(onboardingCoodinator)
         
     }
     
@@ -40,5 +43,12 @@ class AppCoordinator: AppCoordinatorProtocol {
 extension AppCoordinator: CoordinatorFinishDelegate {
     func coordinatorDidFinish(childCoordinator: Coordinator) {
         childCoordinators = childCoordinators.filter({ $0.type != childCoordinator.type })
+        switch childCoordinator.type {
+        case .onboarding:
+            navigationController.viewControllers.removeAll()
+            showMainFlow()
+        default:
+            break
+        }
     }
 }

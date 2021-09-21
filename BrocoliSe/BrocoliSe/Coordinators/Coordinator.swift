@@ -1,7 +1,7 @@
 import UIKit
 import Foundation
 
-protocol Coordinator: class {
+protocol Coordinator: AnyObject {
     var finishDelegate: CoordinatorFinishDelegate? { get set }
     var childCoordinators: [Coordinator] {get set}
     var navigationController: UINavigationController {get set}
@@ -19,7 +19,7 @@ extension Coordinator {
     }
 }
 
-protocol CoordinatorFinishDelegate: class {
+protocol CoordinatorFinishDelegate: AnyObject {
     func coordinatorDidFinish(childCoordinator: Coordinator)
 }
 
