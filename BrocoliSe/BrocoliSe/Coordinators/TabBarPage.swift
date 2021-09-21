@@ -2,13 +2,13 @@ import Foundation
 import UIKit
 
 enum TabBarPage {
-    case daily
+    case diary
     case album
 
     init?(index: Int) {
         switch index {
         case 0:
-            self = .daily
+            self = .diary
         case 1:
             self = .album
         default:
@@ -18,7 +18,7 @@ enum TabBarPage {
     
     func pageTitleValue() -> String {
         switch self {
-        case .daily:
+        case .diary:
             return "Diário"
         case .album:
             return "Álbum"
@@ -27,7 +27,7 @@ enum TabBarPage {
 
     func pageOrderNumber() -> Int {
         switch self {
-        case .daily:
+        case .diary:
             return 0
         case .album:
             return 1
@@ -36,7 +36,7 @@ enum TabBarPage {
     
     func pageIcon() -> UIImage {
         switch self {
-        case .daily:
+        case .diary:
             return UIImage(named: "daily-icon") ?? UIImage()
         case .album:
             return UIImage(named: "album-icon") ?? UIImage()
