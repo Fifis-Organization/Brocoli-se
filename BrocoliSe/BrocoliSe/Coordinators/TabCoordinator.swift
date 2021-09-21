@@ -53,7 +53,8 @@ class TabCoordinator: NSObject, Coordinator {
             let dailyVC = ViewController()
             navController.pushViewController(dailyVC, animated: true)
         case .album:
-            break
+            let albumVC = AlbumViewController()
+            navController.pushViewController(albumVC, animated: true)
         }
         
         return navController

@@ -22,3 +22,15 @@ enum FoodNames {
     static let frango = "Frango"
     static let peixe = "Peixe"
 }
+
+enum StickersNames {
+    static let vaquinhaBlank = "vaquinha-blank"
+    static let patinhoBlank = "patinho-blank"
+    static let esquiloBlank = "esquilo-blank"
+    static let pintinhoBlank = "pintinho-blank"
+    static let vaquinhaSticker = "vaquinha-sticker"
+    static let patinhoSticker = "patinho-sticker"
+    static let esquiloSticker = "esquilo-sticker"
+    static let pintinhoSticker = "pintinho-sticker"
+    
+}
