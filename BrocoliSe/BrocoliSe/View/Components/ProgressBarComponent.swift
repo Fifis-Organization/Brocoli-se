@@ -57,7 +57,6 @@ class ProgressBarComponent: UIView {
         addSubview(progressBar)
         NSLayoutConstraint.activate([
             progressBar.centerYAnchor.constraint(equalTo: self.centerYAnchor),
-            progressBar.centerXAnchor.constraint(equalTo: self.centerXAnchor),
             progressBar.heightAnchor.constraint(equalToConstant: 22),
             progressBar.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -18),
             progressBar.leadingAnchor.constraint(equalTo: leadingAnchor)
