@@ -54,7 +54,8 @@ class TabCoordinator: NSObject, Coordinator {
             navController.navigationBar.isHidden = true
             navController.pushViewController(diaryVC, animated: false)
         case .album:
-            break
+            let albumVC = AlbumViewController()
+            navController.pushViewController(albumVC, animated: true)
         }
         
         return navController
