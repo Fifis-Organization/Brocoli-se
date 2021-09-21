@@ -19,12 +19,19 @@
 		3932586E26E8FF8800A44687 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3932586D26E8FF8800A44687 /* Model.swift */; };
 		3932587126E9008000A44687 /* ProgressBarComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3932587026E9008000A44687 /* ProgressBarComponent.swift */; };
 		3932587426E9008C00A44687 /* DiaryScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3932587326E9008C00A44687 /* DiaryScene.swift */; };
+		394AEB1F26F7ADD200C5D8E7 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 394AEB1D26F7ADD200C5D8E7 /* DataModel.xcdatamodeld */; };
+		394AEB2226F7ADF700C5D8E7 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394AEB2126F7ADF700C5D8E7 /* CoreDataManager.swift */; };
+		394AEB2626F7CE6D00C5D8E7 /* EntityCreateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394AEB2526F7CE6D00C5D8E7 /* EntityCreateProtocol.swift */; };
+		394AEB2A26F7CEBE00C5D8E7 /* EntitySaveProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394AEB2926F7CEBE00C5D8E7 /* EntitySaveProtocol.swift */; };
+		394AEB2D26F7CF0C00C5D8E7 /* EntityFetchProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394AEB2C26F7CF0C00C5D8E7 /* EntityFetchProtocol.swift */; };
 		3950D13326F3DFFC003D3E97 /* DiaryCardComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3950D13226F3DFFC003D3E97 /* DiaryCardComponent.swift */; };
 		3984BD3C26E8E9AB00C92824 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3984BD3B26E8E9AB00C92824 /* AppDelegate.swift */; };
 		3984BD3E26E8E9AB00C92824 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3984BD3D26E8E9AB00C92824 /* SceneDelegate.swift */; };
 		3984BD4026E8E9AB00C92824 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3984BD3F26E8E9AB00C92824 /* ViewController.swift */; };
 		3984BD4526E8E9AC00C92824 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3984BD4426E8E9AC00C92824 /* Assets.xcassets */; };
 		3984BD4826E8E9AC00C92824 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3984BD4626E8E9AC00C92824 /* LaunchScreen.storyboard */; };
+		39DA525C26F7E4DF00158880 /* FactoryControllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39DA525B26F7E4DF00158880 /* FactoryControllers.swift */; };
+		39DA526026F9FFEC00158880 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39DA525F26F9FFEC00158880 /* StringExtension.swift */; };
 		54109F1626F2959700EC4C10 /* DiaryTableViewCellComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54109F1526F2959700EC4C10 /* DiaryTableViewCellComponent.swift */; };
 		543DCF9926F36DCC00BDAF63 /* NamesEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543DCF9826F36DCC00BDAF63 /* NamesEnums.swift */; };
 		5F22C12D64DBC49B6281335B /* Pods_BrocoliSe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 339A77E77343AA9D6B45448B /* Pods_BrocoliSe.framework */; };
@@ -45,6 +52,11 @@
 		3932586D26E8FF8800A44687 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		3932587026E9008000A44687 /* ProgressBarComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarComponent.swift; sourceTree = "<group>"; };
 		3932587326E9008C00A44687 /* DiaryScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryScene.swift; sourceTree = "<group>"; };
+		394AEB1E26F7ADD200C5D8E7 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
+		394AEB2126F7ADF700C5D8E7 /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		394AEB2526F7CE6D00C5D8E7 /* EntityCreateProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityCreateProtocol.swift; sourceTree = "<group>"; };
+		394AEB2926F7CEBE00C5D8E7 /* EntitySaveProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntitySaveProtocol.swift; sourceTree = "<group>"; };
+		394AEB2C26F7CF0C00C5D8E7 /* EntityFetchProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityFetchProtocol.swift; sourceTree = "<group>"; };
 		3950D13226F3DFFC003D3E97 /* DiaryCardComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryCardComponent.swift; sourceTree = "<group>"; };
 		3984BD3826E8E9AB00C92824 /* BrocoliSe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BrocoliSe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3984BD3B26E8E9AB00C92824 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -53,6 +65,8 @@
 		3984BD4426E8E9AC00C92824 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3984BD4726E8E9AC00C92824 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3984BD4926E8E9AC00C92824 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		39DA525B26F7E4DF00158880 /* FactoryControllers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactoryControllers.swift; sourceTree = "<group>"; };
+		39DA525F26F9FFEC00158880 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		54109F1526F2959700EC4C10 /* DiaryTableViewCellComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryTableViewCellComponent.swift; sourceTree = "<group>"; };
 		543DCF9826F36DCC00BDAF63 /* NamesEnums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamesEnums.swift; sourceTree = "<group>"; };
 		7FA58FB81DD24388A0BB3880 /* Pods-BrocoliSe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BrocoliSe.debug.xcconfig"; path = "Target Support Files/Pods-BrocoliSe/Pods-BrocoliSe.debug.xcconfig"; sourceTree = "<group>"; };
@@ -77,8 +91,29 @@
 				3902B0E826EF977900FE2C8F /* AppCoordinator.swift */,
 				3902B0EE26F0B1BB00FE2C8F /* TabCoordinator.swift */,
 				3902B0F226F0DD0200FE2C8F /* TabBarPage.swift */,
+				39DA525B26F7E4DF00158880 /* FactoryControllers.swift */,
 			);
 			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		394AEB1C26F7AD9C00C5D8E7 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				394AEB2426F7CE4700C5D8E7 /* UseCases */,
+				394AEB2126F7ADF700C5D8E7 /* CoreDataManager.swift */,
+				394AEB1D26F7ADD200C5D8E7 /* DataModel.xcdatamodeld */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		394AEB2426F7CE4700C5D8E7 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				394AEB2526F7CE6D00C5D8E7 /* EntityCreateProtocol.swift */,
+				394AEB2926F7CEBE00C5D8E7 /* EntitySaveProtocol.swift */,
+				394AEB2C26F7CF0C00C5D8E7 /* EntityFetchProtocol.swift */,
+			);
+			path = UseCases;
 			sourceTree = "<group>";
 		};
 		3984BD2F26E8E9AB00C92824 = {
@@ -102,6 +137,7 @@
 		3984BD3A26E8E9AB00C92824 /* BrocoliSe */ = {
 			isa = PBXGroup;
 			children = (
+				394AEB1C26F7AD9C00C5D8E7 /* CoreData */,
 				543DCF9726F36DB600BDAF63 /* Utilities */,
 				3902B0E326EF96AB00FE2C8F /* Coordinators */,
 				3984BD5726E8FC9A00C92824 /* Protocols */,
@@ -201,6 +237,7 @@
 			isa = PBXGroup;
 			children = (
 				543DCF9826F36DCC00BDAF63 /* NamesEnums.swift */,
+				39DA525F26F9FFEC00158880 /* StringExtension.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -349,6 +386,7 @@
 				3932586E26E8FF8800A44687 /* Model.swift in Sources */,
 				3932587126E9008000A44687 /* ProgressBarComponent.swift in Sources */,
 				3902B0E526EF96BC00FE2C8F /* Coordinator.swift in Sources */,
+				394AEB2226F7ADF700C5D8E7 /* CoreDataManager.swift in Sources */,
 				3932587126E9008000A44687 /* ProgressBarComponent.swift in Sources */,
 				54109F1626F2959700EC4C10 /* DiaryTableViewCellComponent.swift in Sources */,
 				3932587426E9008C00A44687 /* DiaryScene.swift in Sources */,
@@ -360,8 +398,14 @@
 				3902B0F326F0DD0200FE2C8F /* TabBarPage.swift in Sources */,
 				3932586526E8FF3F00A44687 /* Colors.swift in Sources */,
 				3984BD3C26E8E9AB00C92824 /* AppDelegate.swift in Sources */,
+				39DA525C26F7E4DF00158880 /* FactoryControllers.swift in Sources */,
 				3984BD3E26E8E9AB00C92824 /* SceneDelegate.swift in Sources */,
+				394AEB1F26F7ADD200C5D8E7 /* DataModel.xcdatamodeld in Sources */,
+				394AEB2626F7CE6D00C5D8E7 /* EntityCreateProtocol.swift in Sources */,
+				394AEB2D26F7CF0C00C5D8E7 /* EntityFetchProtocol.swift in Sources */,
+				39DA526026F9FFEC00158880 /* StringExtension.swift in Sources */,
 				3902B0EF26F0B1BB00FE2C8F /* TabCoordinator.swift in Sources */,
+				394AEB2A26F7CEBE00C5D8E7 /* EntitySaveProtocol.swift in Sources */,
 				3932586B26E8FF7A00A44687 /* Protocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -560,6 +604,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		394AEB1D26F7ADD200C5D8E7 /* DataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				394AEB1E26F7ADD200C5D8E7 /* DataModel.xcdatamodel */,
+			);
+			currentVersion = 394AEB1E26F7ADD200C5D8E7 /* DataModel.xcdatamodel */;
+			path = DataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 3984BD3026E8E9AB00C92824 /* Project object */;
 }
