@@ -12,7 +12,6 @@ protocol CoreDataManagerProtocol: EntityCreateProtocol, EntitySaveProtocol, Enti
     func save()
 }
 
-
 class CoreDataManager: CoreDataManagerProtocol {
     private let container: NSPersistentContainer
     static var shared: CoreDataManagerProtocol = CoreDataManager()
