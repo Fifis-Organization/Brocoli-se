@@ -8,7 +8,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-    let scene = DiaryScene(frame: UIScreen.main.bounds)
+    private let scene = DiaryScene(frame: UIScreen.main.bounds)
 
     override func viewDidLoad() {
         super.viewDidLoad()
