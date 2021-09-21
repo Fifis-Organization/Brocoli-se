@@ -1,0 +1,15 @@
+name: SwiftLint
+
+on:
+  pull_request:
+    branches:
+      - main
+      - develop
+
+jobs:
+  SwiftLint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: SwiftLint
+        uses: norio-nomura/action-swiftlint@3.2.1
