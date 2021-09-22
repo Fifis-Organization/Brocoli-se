@@ -2,9 +2,12 @@ import Foundation
 
 struct FactoryControllers {
     static func createDiaryViewController() -> DiaryViewController {
+        let diaryScene = DiaryScene()
         let diaryVC = DiaryViewController()
         diaryVC.setCoreDataManager(CoreDataManager())
-        diaryVC.setDiaryScene(DiaryScene())
+        diaryVC.setDiaryScene(diaryScene)
+        diaryScene.setupDatas()
+        
         return diaryVC
     }
     
@@ -16,7 +19,9 @@ struct FactoryControllers {
         
     }
     
-    static func createOnboardingViewController() {
-        
+    static func createOnboardingViewController() -> OnboardingViewController {
+        let onboardingVC = OnboardingViewController()
+        onboardingVC.setCoreDataManager(CoreDataManager())
+        return onboardingVC
     }
 }

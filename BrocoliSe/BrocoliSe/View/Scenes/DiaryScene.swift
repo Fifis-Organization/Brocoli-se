@@ -10,7 +10,11 @@ import FOCalendar
 class DiaryScene: UIView {
     
     private var controller: DiaryViewController?
-    private var foods: [FoodOff]?
+    private var foods: [FoodOff]? {
+        didSet {
+            diaryTableView.reloadData()
+        }
+    }
     
     private let diaryCardComponent = DiaryCardComponent()
     
@@ -91,11 +95,11 @@ extension DiaryScene: UITableViewDelegate, UITableViewDataSource {
 }
 
 extension DiaryScene: DiarySceneDelegate {
-    func getDayAll(days: [Day]) {
+    func setDayAll(days: [Day]) {
         
     }
     
-    func getFoodAll(foods: [FoodOff]) {
+    func setFoodAll(foods: [FoodOff]) {
         self.foods = foods
     }
     
@@ -103,7 +107,12 @@ extension DiaryScene: DiarySceneDelegate {
         self.controller = controller
     }
     
+    func setUser(user: User?) {
+        diaryCardComponent.setUser(user: user)
+    }
+    
     func setupDatas() {
         controller?.fetchFoodAll()
+        controller?.fetchUser()
     }
 }

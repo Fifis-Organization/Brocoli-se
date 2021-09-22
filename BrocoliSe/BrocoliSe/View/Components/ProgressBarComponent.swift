@@ -10,7 +10,12 @@ import UBProgress
 
 class ProgressBarComponent: UIView {
     
-    var progressValue: Float = 0.90
+    private var progressValue: Float = 0.0 {
+        didSet {
+            progressTextSetup(progressValue: progressValue)
+            progressBar.setProgress(CGFloat(progressValue), animated: true)
+        }
+    }
     
     private let progressBar = UBProgress()
     
@@ -116,5 +121,9 @@ class ProgressBarComponent: UIView {
             image.heightAnchor.constraint(equalToConstant: 24),
             image.widthAnchor.constraint(equalToConstant: 24)
         ])
+    }
+    
+    func setProgressValue(value: Float) {
+        progressValue = value
     }
 }
