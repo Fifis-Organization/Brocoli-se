@@ -15,13 +15,21 @@ class AppCoordinator: AppCoordinatorProtocol {
     
     var type: CoordinatorType { .appInitial }
     
+    private let persistence = PersistenceService(defaults: UserDefaults())
+    
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
         navigationController.setNavigationBarHidden(true, animated: true)
     }
     
     func start() {
-        showOnboardingFlow()
+        if persistence.getFirstLoad() == false {
+            persistence.persist(firstLoad: true)
+            showOnboardingFlow()
+        } else {
+            showMainFlow()
+        }
+        
     }
     
     func showOnboardingFlow() {

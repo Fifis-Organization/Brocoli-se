@@ -39,6 +39,7 @@
 		562C91DD26F8B3CD00548428 /* AlbumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 562C91DC26F8B3CD00548428 /* AlbumViewController.swift */; };
 		562C91DF26F8B51D00548428 /* AlbumScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 562C91DE26F8B51D00548428 /* AlbumScene.swift */; };
 		562C91E126F8C85300548428 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 562C91E026F8C85300548428 /* CollectionViewCell.swift */; };
+		569B432B26FB66DB0084071E /* PersistenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569B432A26FB66DB0084071E /* PersistenceService.swift */; };
 		56D1AB5426FA2523001A2486 /* IconButtonComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D1AB5326FA2523001A2486 /* IconButtonComponent.swift */; };
 		5F22C12D64DBC49B6281335B /* Pods_BrocoliSe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 339A77E77343AA9D6B45448B /* Pods_BrocoliSe.framework */; };
 		A47C62FD26F8B48600D6A54B /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47C62FC26F8B48600D6A54B /* OnboardingViewController.swift */; };
@@ -87,6 +88,7 @@
 		562C91DC26F8B3CD00548428 /* AlbumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumViewController.swift; sourceTree = "<group>"; };
 		562C91DE26F8B51D00548428 /* AlbumScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumScene.swift; sourceTree = "<group>"; };
 		562C91E026F8C85300548428 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		569B432A26FB66DB0084071E /* PersistenceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceService.swift; sourceTree = "<group>"; };
 		56D1AB5326FA2523001A2486 /* IconButtonComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconButtonComponent.swift; sourceTree = "<group>"; };
 		7FA58FB81DD24388A0BB3880 /* Pods-BrocoliSe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BrocoliSe.debug.xcconfig"; path = "Target Support Files/Pods-BrocoliSe/Pods-BrocoliSe.debug.xcconfig"; sourceTree = "<group>"; };
 		A47C62FC26F8B48600D6A54B /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
@@ -183,6 +185,7 @@
 			children = (
 				394AEB2126F7ADF700C5D8E7 /* CoreDataManager.swift */,
 				394AEB2426F7CE4700C5D8E7 /* UseCases */,
+				569B432A26FB66DB0084071E /* PersistenceService.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -441,6 +444,7 @@
 				394AEB2226F7ADF700C5D8E7 /* CoreDataManager.swift in Sources */,
 				3932587126E9008000A44687 /* ProgressBarComponent.swift in Sources */,
 				54109F1626F2959700EC4C10 /* DiaryTableViewCellComponent.swift in Sources */,
+				569B432B26FB66DB0084071E /* PersistenceService.swift in Sources */,
 				3932587426E9008C00A44687 /* DiaryScene.swift in Sources */,
 				3984BD4026E8E9AB00C92824 /* DiaryViewController.swift in Sources */,
 				A47C62FD26F8B48600D6A54B /* OnboardingViewController.swift in Sources */,
@@ -608,7 +612,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 0.1.0;
-				DEVELOPMENT_TEAM = 975J2YVPPP;
+				DEVELOPMENT_TEAM = 2KUGC5CZ6Z;
 				INFOPLIST_FILE = BrocoliSe/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -629,7 +633,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 0.1.0;
-				DEVELOPMENT_TEAM = 975J2YVPPP;
+				DEVELOPMENT_TEAM = 2KUGC5CZ6Z;
 				INFOPLIST_FILE = BrocoliSe/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
