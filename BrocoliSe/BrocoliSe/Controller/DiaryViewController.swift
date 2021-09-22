@@ -49,16 +49,4 @@ class DiaryViewController: UIViewController {
         let user: [User] = coreDataManager.fetch()
         diaryScene?.setUser(user: user.first)
     }
-    
-    func testCore() {
-        guard let coreDataManager = coreDataManager else { return }
-        let food01: FoodOff = coreDataManager.createEntity()
-        food01.food = FoodNames.carne
-        let food02: FoodOff = coreDataManager.createEntity()
-        food02.food = FoodNames.ovos
-        let food03: FoodOff = coreDataManager.createEntity()
-        food03.food = FoodNames.frango
-        
-        coreDataManager.saveSync()
-    }
 }

@@ -9,20 +9,22 @@ import UIKit
 import Foundation
 
 class AlbumScene: UIView {
-    
-    let stickers = [
+    private var controller: AlbumViewController?
+    private let stickers = [
         [StickersNames.esquiloBlank, StickersNames.esquiloSticker],
         [StickersNames.patinhoBlank, StickersNames.patinhoSticker],
         [StickersNames.pintinhoBlank, StickersNames.pintinhoSticker],
         [StickersNames.vaquinhaBlank, StickersNames.vaquinhaSticker]
     ]
     
+    private var point: Int = 0
+    
     private lazy var collectionView: UICollectionView = {
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 40, left: 40, bottom: 40, right: 40)
         layout.itemSize = CGSize(width: (frame.width/2) - 80, height: 130)
             
-        let collectionView = UICollectionView(frame: self.frame, collectionViewLayout: layout)
+        let collectionView = UICollectionView(frame: UIScreen.main.bounds, collectionViewLayout: layout)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.register(CollectionViewCell.self, forCellWithReuseIdentifier: CollectionViewCell.identifier)
         collectionView.dataSource = self
@@ -55,7 +57,6 @@ class AlbumScene: UIView {
             collectionView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
         ])
         
-        
     }
 }
 
@@ -71,12 +72,29 @@ extension AlbumScene: UICollectionViewDelegate, UICollectionViewDataSource, UICo
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CollectionViewCell.identifier, for: indexPath) as? CollectionViewCell else {
             return UICollectionViewCell()
         }
-        cell.setImage(image: UIImage(named: stickers[indexPath.item][1]))
+        cell.setImage(image: UIImage(named: stickers[indexPath.item][0]))
         return cell
         
     }
+
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 50
     }
 
+}
+
+extension AlbumScene: AlbumSceneDelegate {
+    func setController(controller: AlbumViewController) {
+        self.controller = controller
+    }
+    
+    func setUser(user: User?) {
+        if let point = user?.point {
+            self.point = Int(point)
+        }
+    }
+    
+    func setupDatas() {
+        self.controller?.fetchUser()
+    }
 }
