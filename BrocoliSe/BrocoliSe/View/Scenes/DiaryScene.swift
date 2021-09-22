@@ -15,7 +15,11 @@ enum CardState {
 class DiaryScene: UIView {
     
     private var controller: DiaryViewController?
-    private var foods: [FoodOff]?
+    private var foods: [FoodOff]? {
+        didSet {
+            diaryTableView.reloadData()
+        }
+    }
     private var runningAnimations = [UIViewPropertyAnimator]()
     var animationProgressWhenInterrupted: CGFloat = 0
     var cardVisible: Bool = false
@@ -27,7 +31,6 @@ class DiaryScene: UIView {
     
     let collapsedCardHeight: CGFloat = UIScreen.main.bounds.width * 0.95
     let expandedCardheight: CGFloat = UIScreen.main.bounds.width * 1.3
-    
     
     private let diaryCardComponent = DiaryCardComponent()
     
@@ -124,11 +127,11 @@ extension DiaryScene: UITableViewDelegate, UITableViewDataSource {
 }
 
 extension DiaryScene: DiarySceneDelegate {
-    func getDayAll(days: [Day]) {
+    func setDayAll(days: [Day]) {
         
     }
     
-    func getFoodAll(foods: [FoodOff]) {
+    func setFoodAll(foods: [FoodOff]) {
         self.foods = foods
     }
     
@@ -136,8 +139,13 @@ extension DiaryScene: DiarySceneDelegate {
         self.controller = controller
     }
     
+    func setUser(user: User?) {
+        diaryCardComponent.setUser(user: user)
+    }
+    
     func setupDatas() {
         controller?.fetchFoodAll()
+        controller?.fetchUser()
     }
 }
 

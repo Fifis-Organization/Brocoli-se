@@ -7,10 +7,11 @@
 
 import UIKit
 
-protocol DiarySceneDelegate: class {
-    func getDayAll(days: [Day])
-    func getFoodAll(foods: [FoodOff])
+protocol DiarySceneDelegate: AnyObject {
+    func setDayAll(days: [Day])
+    func setFoodAll(foods: [FoodOff])
     func setController(controller: DiaryViewController)
+    func setUser(user: User?)
     func setupDatas()
 }
 
@@ -31,29 +32,21 @@ class DiaryViewController: UIViewController {
         diaryScene = aScene
         diaryScene?.setController(controller: self)
         view = diaryScene as? UIView
-        diaryScene?.setupDatas()
     }
     
     func setCoreDataManager(_ aCoreData: CoreDataManagerProtocol) {
         coreDataManager = aCoreData
-        // testCore()
     }
     
     func fetchFoodAll() {
         guard let coreDataManager = coreDataManager else { return }
-        let foods: [FoodOff] = coreDataManager.fectch()
-        diaryScene?.getFoodAll(foods: foods)
+        let foods: [FoodOff] = coreDataManager.fetch()
+        diaryScene?.setFoodAll(foods: foods)
     }
     
-    func testCore() {
+    func fetchUser() {
         guard let coreDataManager = coreDataManager else { return }
-        let food01: FoodOff = coreDataManager.createEntity()
-        food01.food = FoodNames.carne
-        let food02: FoodOff = coreDataManager.createEntity()
-        food02.food = FoodNames.ovos
-        let food03: FoodOff = coreDataManager.createEntity()
-        food03.food = FoodNames.frango
-        
-        coreDataManager.saveSync()
+        let user: [User] = coreDataManager.fetch()
+        diaryScene?.setUser(user: user.first)
     }
 }

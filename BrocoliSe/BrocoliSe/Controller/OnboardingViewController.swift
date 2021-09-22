@@ -14,6 +14,7 @@ protocol OnboardingViewControllerProtocol: AnyObject {
 class OnboardingViewController: UIViewController {
     
     var didSendContinue: (() -> Void)?
+    private var coreDataManager: CoreDataManagerProtocol?
     
     private lazy var view0: UIView = {
         let view = Onboarding01()
@@ -74,6 +75,30 @@ class OnboardingViewController: UIViewController {
         view.addSubview(pageControl)
         pageControl.pinTo(view)
         
+    }
+    
+    func setCoreDataManager(_ aCoreData: CoreDataManagerProtocol) {
+        coreDataManager = aCoreData
+    }
+    
+    func saveSelectedFood(selectedFood: [String]) {
+        guard let coreDataManager = coreDataManager else { return }
+        selectedFood.forEach {
+            let food: FoodOff = coreDataManager.createEntity()
+            food.food = $0
+            coreDataManager.save()
+        }
+    }
+    
+    func saveUser() {
+        guard let onboarding2 = view1 as? Onboarding02,
+              let coreDataManager = coreDataManager else { return }
+        
+        let user: User = coreDataManager.createEntity()
+        user.name = onboarding2.getTextFieldName()
+        user.point = 0
+        
+        coreDataManager.save()
     }
 }
 

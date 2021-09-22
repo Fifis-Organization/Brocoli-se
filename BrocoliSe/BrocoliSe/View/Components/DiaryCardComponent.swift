@@ -9,7 +9,7 @@ import FOCalendar
 
 class DiaryCardComponent: UIView {
     
-    lazy var imagePerfil: UIImageView = {
+    private lazy var imagePerfil: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(systemName: "person.crop.circle.fill")
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -17,12 +17,12 @@ class DiaryCardComponent: UIView {
         return imageView
     }()
     
-    lazy var nameLabel: UILabel = {
+    private lazy var nameLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.graviolaSoft(size: 20)
         label.textColor = .white
-        label.text = "Samuel"
+        label.text = ""
         return label
     }()
     
@@ -41,7 +41,7 @@ class DiaryCardComponent: UIView {
     
     let progressBarComponent = ProgressBarComponent()
     let calendar = FOCalendarView()
-    
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = UIColor.blueDark
@@ -65,7 +65,7 @@ class DiaryCardComponent: UIView {
         hierarchyView()
         setupConstraints()
     }
-    
+ 
     func setModeCalendar(_ status: CardState) {
         switch status {
         case .expanded:
@@ -75,7 +75,8 @@ class DiaryCardComponent: UIView {
         }
     }
     
-    func hierarchyView() {
+    private func hierarchyView() {
+
         addSubview(imagePerfil)
         addSubview(nameLabel)
         addSubview(progressBarComponent)
@@ -84,7 +85,7 @@ class DiaryCardComponent: UIView {
         handleArea.addSubview(indicator)
     }
     
-    func setupConstraints() {
+    private func setupConstraints() {
         imagePerfilSetupConstraints()
         nameLabelSetupConstraints()
         progressBarComponentSetupConstraints()
@@ -93,7 +94,7 @@ class DiaryCardComponent: UIView {
         indicatorSetupConstraints()
     }
     
-    func imagePerfilSetupConstraints() {
+    private func imagePerfilSetupConstraints() {
         NSLayoutConstraint.activate([
             imagePerfil.topAnchor.constraint(equalTo: topAnchor, constant: 60),
             imagePerfil.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
@@ -102,7 +103,7 @@ class DiaryCardComponent: UIView {
         ])
     }
     
-    func nameLabelSetupConstraints() {
+    private func nameLabelSetupConstraints() {
         NSLayoutConstraint.activate([
             nameLabel.topAnchor.constraint(equalTo: topAnchor, constant: 60),
             nameLabel.leadingAnchor.constraint(equalTo: imagePerfil.trailingAnchor, constant: 8),
@@ -111,7 +112,7 @@ class DiaryCardComponent: UIView {
         ])
     }
     
-    func progressBarComponentSetupConstraints() {
+    private func progressBarComponentSetupConstraints() {
         progressBarComponent.translatesAutoresizingMaskIntoConstraints = false
 
         NSLayoutConstraint.activate([
@@ -122,7 +123,7 @@ class DiaryCardComponent: UIView {
         ])
     }
     
-    func calendarSetupConstraints() {
+    private func calendarSetupConstraints() {
         calendar.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             calendar.topAnchor.constraint(equalTo: progressBarComponent.bottomAnchor, constant: 20),
@@ -150,9 +151,16 @@ class DiaryCardComponent: UIView {
         ])
     }
     
+    func setUser(user: User?) {
+        if let user = user {
+            nameLabel.text = user.name
+            let point: Float = Float(user.point > 100 ? user.point % 100 : user.point)
+            progressBarComponent.setProgressValue(value: point/100.0)
+        }
+    }
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
         
 }
