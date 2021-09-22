@@ -21,16 +21,16 @@ class DiaryScene: UIView {
         }
     }
     private var runningAnimations = [UIViewPropertyAnimator]()
-    var animationProgressWhenInterrupted: CGFloat = 0
-    var cardVisible: Bool = false
-    var nextState: CardState {
+    private var animationProgressWhenInterrupted: CGFloat = 0
+    private var cardVisible: Bool = false
+    private var nextState: CardState {
         cardVisible ? .collapsed : .expanded
     }
     
-    var cardViewHeightAnchor: NSLayoutConstraint!
+    private var cardViewHeightAnchor: NSLayoutConstraint!
     
-    let collapsedCardHeight: CGFloat = UIScreen.main.bounds.width * 0.95
-    let expandedCardheight: CGFloat = UIScreen.main.bounds.width * 1.3
+    private let collapsedCardHeight: CGFloat = UIScreen.main.bounds.width * 0.95
+    private let expandedCardheight: CGFloat = UIScreen.main.bounds.width * 1.3
     
     private let diaryCardComponent = DiaryCardComponent()
     
@@ -178,7 +178,7 @@ extension DiaryScene {
 
     }
     
-    func animateTransitionIfNeeded (state: CardState, duration: TimeInterval) {
+    private func animateTransitionIfNeeded (state: CardState, duration: TimeInterval) {
         if runningAnimations.isEmpty {
             let frameAnimator = UIViewPropertyAnimator(duration: duration, dampingRatio: 1) {
                 switch state {
@@ -204,7 +204,7 @@ extension DiaryScene {
         }
     }
     
-    func startInteractiveTransition(state: CardState, duration: TimeInterval) {
+    private func startInteractiveTransition(state: CardState, duration: TimeInterval) {
         if runningAnimations.isEmpty {
             animateTransitionIfNeeded(state: state, duration: duration)
         }
@@ -214,13 +214,13 @@ extension DiaryScene {
         }
     }
     
-    func updateInteractiveTransition(fractionCompleted: CGFloat) {
+    private func updateInteractiveTransition(fractionCompleted: CGFloat) {
         for animator in runningAnimations {
             animator.fractionComplete = fractionCompleted + animationProgressWhenInterrupted
         }
     }
     
-    func continueInteractiveTransition() {
+    private func continueInteractiveTransition() {
         for animator in runningAnimations {
             animator.continueAnimation(withTimingParameters: nil, durationFactor: 0)
         }

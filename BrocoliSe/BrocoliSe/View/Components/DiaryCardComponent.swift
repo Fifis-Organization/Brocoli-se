@@ -32,7 +32,7 @@ class DiaryCardComponent: UIView {
         return view
     }()
     
-    lazy var indicator: UIView = {
+    private lazy var indicator: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .white
@@ -133,7 +133,7 @@ class DiaryCardComponent: UIView {
         ])
     }
     
-    func handleAreaSetupConstraints() {
+    private func handleAreaSetupConstraints() {
         NSLayoutConstraint.activate([
             handleArea.leadingAnchor.constraint(equalTo: leadingAnchor),
             handleArea.trailingAnchor.constraint(equalTo: trailingAnchor),
@@ -142,7 +142,7 @@ class DiaryCardComponent: UIView {
         ])
     }
     
-    func indicatorSetupConstraints() {
+    private func indicatorSetupConstraints() {
         NSLayoutConstraint.activate([
             indicator.centerXAnchor.constraint(equalTo: handleArea.centerXAnchor),
             indicator.centerYAnchor.constraint(equalTo: handleArea.centerYAnchor),
