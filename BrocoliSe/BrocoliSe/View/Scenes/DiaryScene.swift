@@ -7,6 +7,11 @@
 import Foundation
 import FOCalendar
 
+enum CardState {
+    case expanded
+    case collapsed
+}
+
 class DiaryScene: UIView {
     
     private var controller: DiaryViewController?
@@ -15,6 +20,17 @@ class DiaryScene: UIView {
             diaryTableView.reloadData()
         }
     }
+    private var runningAnimations = [UIViewPropertyAnimator]()
+    private var animationProgressWhenInterrupted: CGFloat = 0
+    private var cardVisible: Bool = false
+    private var nextState: CardState {
+        cardVisible ? .collapsed : .expanded
+    }
+    
+    private var cardViewHeightAnchor: NSLayoutConstraint!
+    
+    private let collapsedCardHeight: CGFloat = UIScreen.main.bounds.width * 0.95
+    private let expandedCardheight: CGFloat = UIScreen.main.bounds.width * 1.3
     
     private let diaryCardComponent = DiaryCardComponent()
     
@@ -34,7 +50,24 @@ class DiaryScene: UIView {
         backgroundColor = UIColor.backgroundColor
         hierarchyView()
         setupConstraints()
+        setupCard()
     }
+    
+    private func setupCard() {
+        diaryCardComponent.translatesAutoresizingMaskIntoConstraints = false
+        cardViewHeightAnchor = diaryCardComponent.heightAnchor.constraint(equalToConstant: collapsedCardHeight)
+
+        NSLayoutConstraint.activate([
+            cardViewHeightAnchor
+        ])
+
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleCardTap(recognzier:)))
+        let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(handleCardPan(recognizer:)))
+        
+        diaryCardComponent.handleArea.addGestureRecognizer(tapGestureRecognizer)
+        diaryCardComponent.handleArea.addGestureRecognizer(panGestureRecognizer)
+    }
+    
     
     private func hierarchyView() {
         addSubview(diaryCardComponent)
@@ -51,8 +84,7 @@ class DiaryScene: UIView {
         NSLayoutConstraint.activate([
             diaryCardComponent.topAnchor.constraint(equalTo: topAnchor),
             diaryCardComponent.leadingAnchor.constraint(equalTo: leadingAnchor),
-            diaryCardComponent.trailingAnchor.constraint(equalTo: trailingAnchor),
-            diaryCardComponent.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.55)
+            diaryCardComponent.trailingAnchor.constraint(equalTo: trailingAnchor)
         ])
     }
     
@@ -114,5 +146,83 @@ extension DiaryScene: DiarySceneDelegate {
     func setupDatas() {
         controller?.fetchFoodAll()
         controller?.fetchUser()
+    }
+}
+
+extension DiaryScene {
+    @objc
+    func handleCardTap(recognzier: UITapGestureRecognizer) {
+        switch recognzier.state {
+        case .ended:
+            animateTransitionIfNeeded(state: nextState, duration: 0.9)
+        default:
+            break
+        }
+    }
+    
+    @objc
+    func handleCardPan (recognizer: UIPanGestureRecognizer) {
+        switch recognizer.state {
+        case .began:
+            startInteractiveTransition(state: nextState, duration: 0.9)
+        case .changed:
+            let translation = recognizer.translation(in: self.diaryCardComponent.handleArea)
+            var fractionComplete = translation.y / (324)
+            fractionComplete = cardVisible ? fractionComplete : -fractionComplete
+            updateInteractiveTransition(fractionCompleted: fractionComplete)
+        case .ended:
+            continueInteractiveTransition()
+        default:
+            break
+        }
+
+    }
+    
+    private func animateTransitionIfNeeded (state: CardState, duration: TimeInterval) {
+        if runningAnimations.isEmpty {
+            let frameAnimator = UIViewPropertyAnimator(duration: duration, dampingRatio: 1) {
+                switch state {
+                case .expanded:
+                    self.cardViewHeightAnchor.constant = self.collapsedCardHeight
+                    self.diaryCardComponent.setModeCalendar(.collapsed)
+                case .collapsed:
+                    self.cardViewHeightAnchor.constant = self.expandedCardheight
+                    self.diaryCardComponent.setModeCalendar(.expanded)
+                }
+                self.layoutIfNeeded()
+                self.diaryCardComponent.layoutSubviews()
+                self.diaryCardComponent.layoutIfNeeded()
+            }
+            
+            frameAnimator.addCompletion { _ in
+                self.cardVisible = !self.cardVisible
+                self.runningAnimations.removeAll()
+            }
+            
+            frameAnimator.startAnimation()
+            runningAnimations.append(frameAnimator)
+        }
+    }
+    
+    private func startInteractiveTransition(state: CardState, duration: TimeInterval) {
+        if runningAnimations.isEmpty {
+            animateTransitionIfNeeded(state: state, duration: duration)
+        }
+        for animator in runningAnimations {
+            animator.pauseAnimation()
+            animationProgressWhenInterrupted = animator.fractionComplete
+        }
+    }
+    
+    private func updateInteractiveTransition(fractionCompleted: CGFloat) {
+        for animator in runningAnimations {
+            animator.fractionComplete = fractionCompleted + animationProgressWhenInterrupted
+        }
+    }
+    
+    private func continueInteractiveTransition() {
+        for animator in runningAnimations {
+            animator.continueAnimation(withTimingParameters: nil, durationFactor: 0)
+        }
     }
 }
