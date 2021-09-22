@@ -8,9 +8,10 @@
 import UIKit
 
 protocol DiarySceneDelegate: AnyObject {
-    func getDayAll(days: [Day])
-    func getFoodAll(foods: [FoodOff])
+    func setDayAll(days: [Day])
+    func setFoodAll(foods: [FoodOff])
     func setController(controller: DiaryViewController)
+    func setUser(user: User?)
     func setupDatas()
 }
 
@@ -31,18 +32,22 @@ class DiaryViewController: UIViewController {
         diaryScene = aScene
         diaryScene?.setController(controller: self)
         view = diaryScene as? UIView
-        diaryScene?.setupDatas()
     }
     
     func setCoreDataManager(_ aCoreData: CoreDataManagerProtocol) {
         coreDataManager = aCoreData
-        // testCore()
     }
     
     func fetchFoodAll() {
         guard let coreDataManager = coreDataManager else { return }
-        let foods: [FoodOff] = coreDataManager.fectch()
-        diaryScene?.getFoodAll(foods: foods)
+        let foods: [FoodOff] = coreDataManager.fetch()
+        diaryScene?.setFoodAll(foods: foods)
+    }
+    
+    func fetchUser() {
+        guard let coreDataManager = coreDataManager else { return }
+        let user: [User] = coreDataManager.fetch()
+        diaryScene?.setUser(user: user.first)
     }
     
     func testCore() {

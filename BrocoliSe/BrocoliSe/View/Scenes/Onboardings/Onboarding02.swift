@@ -30,7 +30,7 @@ class Onboarding02: UIView {
         return title
     }()
     
-    let nameTextField = TextField(frame: UIScreen.main.bounds)
+    private let nameTextField = TextField(frame: UIScreen.main.bounds)
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -89,5 +89,9 @@ class Onboarding02: UIView {
             nameTextField.topAnchor.constraint(equalTo: welcomeText.bottomAnchor, constant: 10),
             nameTextField.centerXAnchor.constraint(equalTo: self.centerXAnchor)
         ])
+    }
+    
+    func getTextFieldName() -> String? {
+        return nameTextField.getnameTextField()
     }
 }

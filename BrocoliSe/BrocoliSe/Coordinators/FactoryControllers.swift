@@ -2,9 +2,12 @@ import Foundation
 
 struct FactoryControllers {
     static func createDiaryViewController() -> DiaryViewController {
+        let diaryScene = DiaryScene()
         let diaryVC = DiaryViewController()
         diaryVC.setCoreDataManager(CoreDataManager())
-        diaryVC.setDiaryScene(DiaryScene())
+        diaryVC.setDiaryScene(diaryScene)
+        diaryScene.setupDatas()
+        
         return diaryVC
     }
     

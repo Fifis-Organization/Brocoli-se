@@ -42,6 +42,10 @@ class TextField: UIView {
             textField.centerXAnchor.constraint(equalTo: self.centerXAnchor)
         ])
     }
+    
+    func getnameTextField() -> String? {
+        return nameTextField.text
+    }
 }
 
 extension TextField: UITextFieldDelegate {

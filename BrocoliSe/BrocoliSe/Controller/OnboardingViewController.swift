@@ -81,11 +81,25 @@ class OnboardingViewController: UIViewController {
         coreDataManager = aCoreData
     }
     
-//    func saveSelectedFood(selectedFood: [String]) {
-//        selectedFood.forEach { <#String#> in
-//            <#code#>
-//        }
-//    }
+    func saveSelectedFood(selectedFood: [String]) {
+        guard let coreDataManager = coreDataManager else { return }
+        selectedFood.forEach {
+            let food: FoodOff = coreDataManager.createEntity()
+            food.food = $0
+            coreDataManager.save()
+        }
+    }
+    
+    func saveUser() {
+        guard let onboarding2 = view1 as? Onboarding02,
+              let coreDataManager = coreDataManager else { return }
+        
+        let user: User = coreDataManager.createEntity()
+        user.name = onboarding2.getTextFieldName()
+        user.point = 0
+        
+        coreDataManager.save()
+    }
 }
 
 extension OnboardingViewController: UIScrollViewDelegate {

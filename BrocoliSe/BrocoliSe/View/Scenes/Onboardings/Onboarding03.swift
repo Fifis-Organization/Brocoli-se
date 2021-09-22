@@ -99,7 +99,8 @@ class Onboarding03: UIView {
 
 extension Onboarding03: OnboardingViewControllerProtocol {
     func buttonContinueAction() {
-        print(foodSelector.getSelected())
+        onboardingVC?.saveSelectedFood(selectedFood: foodSelector.getSelected())
+        onboardingVC?.saveUser()
         guard let onboardingVC = onboardingVC,
               let didSendContinue = onboardingVC.didSendContinue else {return}
         didSendContinue()

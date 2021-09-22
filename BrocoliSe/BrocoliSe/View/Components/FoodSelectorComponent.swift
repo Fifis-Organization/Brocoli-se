@@ -13,7 +13,7 @@ class FoodSelectorComponent: UIView {
     
     private let buttonCarne: IconButtonComponent = {
         let button = IconButtonComponent(type: .custom)
-        button.identifier = IconNames.carne
+        button.identifier = FoodNames.carne
         let image = UIImage(named: IconNames.carne)
         let imageconfig = image?.withRenderingMode(.alwaysTemplate)
         button.setImage(imageconfig, for: .normal)
@@ -23,7 +23,7 @@ class FoodSelectorComponent: UIView {
     
     private let buttonOvo: IconButtonComponent = {
         let button = IconButtonComponent(type: .custom)
-        button.identifier = IconNames.ovos
+        button.identifier = FoodNames.ovos
         let image = UIImage(named: IconNames.ovos)
         let imageconfig = image?.withRenderingMode(.alwaysTemplate)
         button.setImage(imageconfig, for: .normal)
@@ -33,7 +33,7 @@ class FoodSelectorComponent: UIView {
     
     private let buttonLeite: IconButtonComponent = {
         let button = IconButtonComponent(type: .custom)
-        button.identifier = IconNames.leite
+        button.identifier = FoodNames.leite
         let image = UIImage(named: IconNames.leite)
         let imageconfig = image?.withRenderingMode(.alwaysTemplate)
         button.setImage(imageconfig, for: .normal)
@@ -43,7 +43,7 @@ class FoodSelectorComponent: UIView {
     
     private let buttonFrango: IconButtonComponent = {
         let button = IconButtonComponent(type: .custom)
-        button.identifier = IconNames.frango
+        button.identifier = FoodNames.frango
         let image = UIImage(named: IconNames.frango)
         let imageconfig = image?.withRenderingMode(.alwaysTemplate)
         button.setImage(imageconfig, for: .normal)
@@ -53,7 +53,7 @@ class FoodSelectorComponent: UIView {
     
     private let buttonPeixe: IconButtonComponent = {
         let button = IconButtonComponent(type: .custom)
-        button.identifier = IconNames.peixe
+        button.identifier = FoodNames.peixe
         let image = UIImage(named: IconNames.peixe)
         let imageconfig = image?.withRenderingMode(.alwaysTemplate)
         button.setImage(imageconfig, for: .normal)
