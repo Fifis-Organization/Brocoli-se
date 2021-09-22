@@ -24,7 +24,7 @@ class AlbumScene: UIView {
         layout.sectionInset = UIEdgeInsets(top: 40, left: 40, bottom: 40, right: 40)
         layout.itemSize = CGSize(width: (frame.width/2) - 80, height: 130)
             
-        let collectionView = UICollectionView(frame: UIScreen.main.bounds, collectionViewLayout: layout)
+        let collectionView = UICollectionView(frame: self.frame, collectionViewLayout: layout)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.register(CollectionViewCell.self, forCellWithReuseIdentifier: CollectionViewCell.identifier)
         collectionView.dataSource = self
@@ -64,7 +64,7 @@ extension AlbumScene: UICollectionViewDelegate, UICollectionViewDataSource, UICo
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
+        return stickers.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

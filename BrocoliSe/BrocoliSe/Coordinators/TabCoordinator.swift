@@ -46,8 +46,6 @@ class TabCoordinator: NSObject, Coordinator {
                                                      image: page.pageIcon(),
                                                      tag: page.pageOrderNumber())
 
-        
-        
         switch page {
         case .diary:
             let diaryVC = FactoryControllers.createDiaryViewController()
@@ -55,8 +53,7 @@ class TabCoordinator: NSObject, Coordinator {
             navController.pushViewController(diaryVC, animated: false)
         case .album:
             let albumVC = FactoryControllers.createAlbumViewController()
-            navController.navigationItem.title = "Álbum"
-            
+            albumVC.title = "Álbum"
             let attrs = [
                 NSAttributedString.Key.foregroundColor: UIColor.white,
                 NSAttributedString.Key.font: UIFont.graviolaRegular(size: 34) ?? UIFont.systemFont(ofSize: 34)
@@ -66,7 +63,6 @@ class TabCoordinator: NSObject, Coordinator {
             navController.navigationBar.prefersLargeTitles = true
             navController.navigationBar.largeTitleTextAttributes = attrs
             navController.pushViewController(albumVC, animated: true)
-            
         }
         
         return navController

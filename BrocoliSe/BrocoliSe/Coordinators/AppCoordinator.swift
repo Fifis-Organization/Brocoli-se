@@ -21,7 +21,7 @@ class AppCoordinator: AppCoordinatorProtocol {
     }
     
     func start() {
-        //showOnboardingFlow()
+        // showOnboardingFlow()
         showMainFlow()
     }
     

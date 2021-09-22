@@ -1,4 +1,5 @@
 import Foundation
+import UIKit
 
 struct FactoryControllers {
     static func createDiaryViewController() -> DiaryViewController {
@@ -12,7 +13,7 @@ struct FactoryControllers {
     }
     
     static func createAlbumViewController() -> AlbumViewController {
-        let albumScene = AlbumScene()
+        let albumScene = AlbumScene(frame: UIScreen.main.bounds)
         let albumVC = AlbumViewController()
         albumVC.setCoreDataManager(CoreDataManager())
         albumVC.setAlbumScene(albumScene)
