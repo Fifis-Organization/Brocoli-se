@@ -22,15 +22,15 @@ class DiaryScene: UIView {
     }
     private var runningAnimations = [UIViewPropertyAnimator]()
     private var animationProgressWhenInterrupted: CGFloat = 0
-    private var cardVisible: Bool = false
+    private var cardVisible: Bool = true
     private var nextState: CardState {
         cardVisible ? .collapsed : .expanded
     }
     
     private var cardViewHeightAnchor: NSLayoutConstraint!
     
-    private let collapsedCardHeight: CGFloat = UIScreen.main.bounds.width * 0.95
-    private let expandedCardheight: CGFloat = UIScreen.main.bounds.width * 1.3
+    private let collapsedCardHeight: CGFloat = UIScreen.main.bounds.width * 0.8
+    private let expandedCardheight: CGFloat = UIScreen.main.bounds.width * 1.2
     
     private let diaryCardComponent = DiaryCardComponent()
     
