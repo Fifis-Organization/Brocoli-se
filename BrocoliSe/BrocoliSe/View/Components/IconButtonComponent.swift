@@ -9,5 +9,4 @@ import UIKit
 
 class IconButtonComponent: UIButton {
     var identifier = ""
-    var foodSelected: Bool = false
 }
