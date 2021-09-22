@@ -26,6 +26,19 @@ class DiaryCardComponent: UIView {
         return label
     }()
     
+    lazy var handleArea: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    lazy var indicator: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = .white
+        return view
+    }()
+    
     let progressBarComponent = ProgressBarComponent()
     let calendar = FOCalendarView()
     
@@ -35,14 +48,14 @@ class DiaryCardComponent: UIView {
         layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
         layer.masksToBounds = true
         layer.cornerRadius  = 20
-        calendar.setupCalendarView(modeCalendar: .expand,
+        calendar.setupCalendarView(modeCalendar: .compact,
                                    days: Set([]),
                                    titleFont: UIFont.graviolaRegular(size: 20) ?? .systemFont(ofSize: 20),
                                    titleColor: .white,
                                    weekStackFont: UIFont.graviolaSoft(size: 24) ?? .boldSystemFont(ofSize: 24),
                                    weekStackColor: .white,
                                    nextAndPreviousMonthColor: .white,
-                                   cellFont: UIFont.graviolaRegular(size: 24) ?? .systemFont(ofSize: 24),
+                                   cellFont: UIFont.graviolaRegular(size: 20) ?? .systemFont(ofSize: 20),
                                    cellTextColor: .white,
                                    selectionCellBackgroundColor: .white,
                                    selectionCellTextColor: UIColor.blueDark ?? .black,
@@ -53,11 +66,22 @@ class DiaryCardComponent: UIView {
         setupConstraints()
     }
     
+    func setModeCalendar(_ status: CardState) {
+        switch status {
+        case .expanded:
+            calendar.setupCalendarView(modeCalendar: .expand)
+        case .collapsed:
+            calendar.setupCalendarView(modeCalendar: .compact)
+        }
+    }
+    
     func hierarchyView() {
         addSubview(imagePerfil)
         addSubview(nameLabel)
         addSubview(progressBarComponent)
         addSubview(calendar)
+        addSubview(handleArea)
+        handleArea.addSubview(indicator)
     }
     
     func setupConstraints() {
@@ -65,6 +89,8 @@ class DiaryCardComponent: UIView {
         nameLabelSetupConstraints()
         progressBarComponentSetupConstraints()
         calendarSetupConstraints()
+        handleAreaSetupConstraints()
+        indicatorSetupConstraints()
     }
     
     func imagePerfilSetupConstraints() {
@@ -99,10 +125,28 @@ class DiaryCardComponent: UIView {
     func calendarSetupConstraints() {
         calendar.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            calendar.topAnchor.constraint(equalTo: progressBarComponent.bottomAnchor, constant: 25),
+            calendar.topAnchor.constraint(equalTo: progressBarComponent.bottomAnchor, constant: 20),
             calendar.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
             calendar.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
-            calendar.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -20)
+            calendar.bottomAnchor.constraint(equalTo: handleArea.topAnchor, constant: -10)
+        ])
+    }
+    
+    func handleAreaSetupConstraints() {
+        NSLayoutConstraint.activate([
+            handleArea.leadingAnchor.constraint(equalTo: leadingAnchor),
+            handleArea.trailingAnchor.constraint(equalTo: trailingAnchor),
+            handleArea.bottomAnchor.constraint(equalTo: bottomAnchor),
+            handleArea.heightAnchor.constraint(equalToConstant: 40)
+        ])
+    }
+    
+    func indicatorSetupConstraints() {
+        NSLayoutConstraint.activate([
+            indicator.centerXAnchor.constraint(equalTo: handleArea.centerXAnchor),
+            indicator.centerYAnchor.constraint(equalTo: handleArea.centerYAnchor),
+            indicator.widthAnchor.constraint(equalTo: handleArea.widthAnchor, multiplier: 0.3),
+            indicator.heightAnchor.constraint(equalToConstant: 4)
         ])
     }
     
