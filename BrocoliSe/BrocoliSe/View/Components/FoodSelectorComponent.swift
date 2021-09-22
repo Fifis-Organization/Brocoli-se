@@ -9,7 +9,7 @@ import UIKit
 
 class FoodSelectorComponent: UIView {
     
-    private var selectedFood:[String] = []
+    private var selectedFood: [String] = []
     
     private let buttonCarne: IconButtonComponent = {
         let button = IconButtonComponent(type: .custom)
