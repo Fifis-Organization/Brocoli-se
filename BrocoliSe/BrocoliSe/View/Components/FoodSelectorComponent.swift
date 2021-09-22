@@ -83,7 +83,7 @@ class FoodSelectorComponent: UIView {
             sender.tintColor = .greenMedium
         } else {
             selectedFood.removeAll { $0 == sender.identifier }
-            sender.tintColor = .blueDark?.withAlphaComponent(0.4)
+            sender.tintColor = UIColor.blueDark?.withAlphaComponent(0.4)
         }
     }
     

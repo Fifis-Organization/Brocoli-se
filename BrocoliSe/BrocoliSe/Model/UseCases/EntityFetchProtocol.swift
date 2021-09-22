@@ -4,16 +4,16 @@ import CoreData
 protocol EntityFetchProtocol {
     var viewContext: NSManagedObjectContext { get }
     func fetch<T: NSManagedObject>(predicate: NSPredicate?,
-                                    sortDescriptors: [NSSortDescriptor]?,
-                                    limit: Int?,
-                                    batchSize: Int?) -> [T]
+                                   sortDescriptors: [NSSortDescriptor]?,
+                                   limit: Int?,
+                                   batchSize: Int?) -> [T]
 }
 
 extension EntityFetchProtocol {
     func fetch<T: NSManagedObject>(predicate: NSPredicate? = nil,
-                                    sortDescriptors: [NSSortDescriptor]? = nil,
-                                    limit: Int? = nil,
-                                    batchSize: Int? = nil) -> [T] {
+                                   sortDescriptors: [NSSortDescriptor]? = nil,
+                                   limit: Int? = nil,
+                                   batchSize: Int? = nil) -> [T] {
         let request = NSFetchRequest<T>(entityName: T.entityName)
         request.predicate = predicate
         request.sortDescriptors = sortDescriptors
