@@ -67,6 +67,7 @@ class DiaryCardComponent: UIView {
         calendar.setCellStyle(cellFont: UIFont.graviolaRegular(size: 20) ?? .systemFont(ofSize: 20), cellColor: .white)
         calendar.setTitleStyle(titleFont: UIFont.graviolaRegular(size: 20) ?? .systemFont(ofSize: 20), titleColor: .white)
         calendar.setWeekStyle(weekStackFont: UIFont.graviolaSoft(size: 20) ?? .boldSystemFont(ofSize: 20), weekStackColor: .white)
+        calendar.setSelectionRangeStyle(selectionRangeBackgroundColor: UIColor.greenMedium ?? .green, selectionRangeBorderColor: .clear, selectionRangeTextColor: .white)
     }
     
     private func hierarchyView() {
@@ -123,7 +124,6 @@ class DiaryCardComponent: UIView {
             calendar.topAnchor.constraint(equalTo: progressBarComponent.bottomAnchor, constant: 15),
             calendar.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
             calendar.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
-            // calendar.bottomAnchor.constraint(equalTo: handleArea.topAnchor),
             calendar.heightAnchor.constraint(equalToConstant: 250)
         ])
     }

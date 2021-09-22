@@ -128,7 +128,8 @@ extension DiaryScene: UITableViewDelegate, UITableViewDataSource {
 
 extension DiaryScene: DiarySceneDelegate {
     func setDayAll(days: [Day]) {
-        
+        let dates: [Date] = days.map { return ($0.date ?? Date()) }
+        diaryCardComponent.calendar.setDays(Set(dates))
     }
     
     func setFoodAll(foods: [FoodOff]) {
@@ -146,6 +147,7 @@ extension DiaryScene: DiarySceneDelegate {
     func setupDatas() {
         controller?.fetchFoodAll()
         controller?.fetchUser()
+        controller?.fetchDayAll()
     }
 }
 

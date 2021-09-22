@@ -16,6 +16,12 @@ protocol DiarySceneDelegate: AnyObject {
 }
 
 class DiaryViewController: UIViewController {
+    fileprivate let gregorian = Calendar(identifier: .gregorian)
+    fileprivate let formatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        return formatter
+    }()
     private var diaryScene: DiarySceneDelegate?
     private var coreDataManager: CoreDataManagerProtocol?
     
@@ -36,6 +42,12 @@ class DiaryViewController: UIViewController {
     
     func setCoreDataManager(_ aCoreData: CoreDataManagerProtocol) {
         coreDataManager = aCoreData
+    }
+    
+    func fetchDayAll() {
+        guard let coreDataManager = coreDataManager else { return }
+        let days: [Day] = coreDataManager.fetch()
+        diaryScene?.setDayAll(days: days)
     }
     
     func fetchFoodAll() {
