@@ -38,6 +38,12 @@ class DiaryViewController: UIViewController {
         coreDataManager = aCoreData
     }
     
+    func fetchDayAll() {
+        guard let coreDataManager = coreDataManager else { return }
+        let days: [Day] = coreDataManager.fetch()
+        diaryScene?.setDayAll(days: days)
+    }
+    
     func fetchFoodAll() {
         guard let coreDataManager = coreDataManager else { return }
         let foods: [FoodOff] = coreDataManager.fetch()

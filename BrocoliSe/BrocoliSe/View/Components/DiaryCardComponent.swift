@@ -48,35 +48,29 @@ class DiaryCardComponent: UIView {
         layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
         layer.masksToBounds = true
         layer.cornerRadius  = 20
-        calendar.setupCalendarView(modeCalendar: .compact,
-                                   days: Set([]),
-                                   titleFont: UIFont.graviolaRegular(size: 20) ?? .systemFont(ofSize: 20),
-                                   titleColor: .white,
-                                   weekStackFont: UIFont.graviolaSoft(size: 24) ?? .boldSystemFont(ofSize: 24),
-                                   weekStackColor: .white,
-                                   nextAndPreviousMonthColor: .white,
-                                   cellFont: UIFont.graviolaRegular(size: 20) ?? .systemFont(ofSize: 20),
-                                   cellTextColor: .white,
-                                   selectionCellBackgroundColor: .white,
-                                   selectionCellTextColor: UIColor.blueDark ?? .black,
-                                   selectionRangeBackgroundColor: UIColor.green.withAlphaComponent(0.4),
-                                   selectionRangeBorderColor: UIColor.green.withAlphaComponent(0.4),
-                                   selectionRangeTextColor: .white)
         hierarchyView()
         setupConstraints()
+        setupCalendar()
     }
  
     func setModeCalendar(_ status: CardState) {
         switch status {
         case .expanded:
-            calendar.setupCalendarView(modeCalendar: .expand)
+            calendar.setTypeCalendar(.expand)
         case .collapsed:
-            calendar.setupCalendarView(modeCalendar: .compact)
+            calendar.setTypeCalendar(.compact)
         }
     }
     
+    private func setupCalendar() {
+        calendar.setTypeCalendar(.compact)
+        calendar.setCellStyle(cellFont: UIFont.graviolaRegular(size: 20) ?? .systemFont(ofSize: 20), cellColor: .white)
+        calendar.setTitleStyle(titleFont: UIFont.graviolaRegular(size: 20) ?? .systemFont(ofSize: 20), titleColor: .white)
+        calendar.setWeekStyle(weekStackFont: UIFont.graviolaSoft(size: 20) ?? .boldSystemFont(ofSize: 20), weekStackColor: .white)
+        calendar.setSelectionRangeStyle(selectionRangeBackgroundColor: UIColor.greenMedium ?? .green, selectionRangeBorderColor: .clear, selectionRangeTextColor: .white)
+    }
+    
     private func hierarchyView() {
-
         addSubview(imagePerfil)
         addSubview(nameLabel)
         addSubview(progressBarComponent)
@@ -95,6 +89,7 @@ class DiaryCardComponent: UIView {
     }
     
     private func imagePerfilSetupConstraints() {
+        
         NSLayoutConstraint.activate([
             imagePerfil.topAnchor.constraint(equalTo: topAnchor, constant: 60),
             imagePerfil.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
@@ -126,10 +121,10 @@ class DiaryCardComponent: UIView {
     private func calendarSetupConstraints() {
         calendar.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            calendar.topAnchor.constraint(equalTo: progressBarComponent.bottomAnchor, constant: 20),
+            calendar.topAnchor.constraint(equalTo: progressBarComponent.bottomAnchor, constant: 15),
             calendar.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
             calendar.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
-            calendar.bottomAnchor.constraint(equalTo: handleArea.topAnchor, constant: -10)
+            calendar.heightAnchor.constraint(equalToConstant: 250)
         ])
     }
     
@@ -138,7 +133,7 @@ class DiaryCardComponent: UIView {
             handleArea.leadingAnchor.constraint(equalTo: leadingAnchor),
             handleArea.trailingAnchor.constraint(equalTo: trailingAnchor),
             handleArea.bottomAnchor.constraint(equalTo: bottomAnchor),
-            handleArea.heightAnchor.constraint(equalToConstant: 40)
+            handleArea.heightAnchor.constraint(equalToConstant: 30)
         ])
     }
     
