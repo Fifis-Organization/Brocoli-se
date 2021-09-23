@@ -131,6 +131,7 @@ extension DiaryScene: UITableViewDelegate, UITableViewDataSource {
             }
             
            // MARK: chamar a função de salvar aqui
+            self.controller?.saveFood(ingestedFood: self.ingestedFood, noIngestedFood: self.noIngestedFood)
         }
 
         return cell
