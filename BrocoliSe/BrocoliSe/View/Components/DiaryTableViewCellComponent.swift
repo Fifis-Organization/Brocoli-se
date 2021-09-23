@@ -91,9 +91,17 @@ class DiaryTableViewCellComponent: UITableViewCell {
     }
 
     // MARK: Create method to get name and state to save it on the viewController
-    func isSelected() -> Bool {
+    func toggleSelected() {
         checkButton.isSelected.toggle()
-        return checkButton.isSelected
+    }
+    
+    func getIsCheck() -> Bool {
+        return isChecked
+    }
+    
+    func changeSelected(_ check: Bool) {
+        self.isChecked = check
+        checkButton.setImage(UIImage(systemName: isChecked ? "checkmark.circle.fill":"circle"), for: .normal)
     }
     
     func getFoodName() -> String? {

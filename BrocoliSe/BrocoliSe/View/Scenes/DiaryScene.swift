@@ -18,12 +18,16 @@ class DiaryScene: UIView {
     private var foods: [FoodOff]? {
         didSet {
             diaryTableView.reloadData()
-            noIngestedFood = foods ?? []
         }
     }
     private var ingestedFood: [FoodOff] = []
     private var noIngestedFood: [FoodOff] = []
-    private var dayActual: Day?
+    private var dayActual: Day? {
+        didSet {
+            diaryTableView.reloadData()
+            print("Test -> ", dayActual)
+        }
+    }
     private var runningAnimations = [UIViewPropertyAnimator]()
     private var animationProgressWhenInterrupted: CGFloat = 0
     private var cardVisible: Bool = true
@@ -121,8 +125,33 @@ extension DiaryScene: UITableViewDelegate, UITableViewDataSource {
         cell.setData(iconName: foodName.iconTable(), foodName:  foodName)
        
         cell.checkButtonCallBack = {
+            
+//            if self.dayActual != nil {
+//                print("Test2-> ", self.dayActual?.date)
+//                self.dayActual = self.controller?.createToday()
+//            }
+            
+            // MARK: o que ta salvo in [carne, ovo] no [lat]
+            guard let dayActual = self.dayActual,
+                  let ingesteds: Set<FoodOff> = dayActual.ingested as? Set<FoodOff>,
+                  let noIngesteds: Set<FoodOff> = dayActual.noIngested as? Set<FoodOff> else { return }
+            
+            ingesteds.forEach {
+                if !self.ingestedFood.contains($0) {
+                    self.ingestedFood.append($0)
+                }
+            }
+            
+            noIngesteds.forEach {
+                if !self.noIngestedFood.contains($0) {
+                    self.noIngestedFood.append($0)
+                }
+            }
+            
             if let food = self.foods?.first(where: {$0.food == cell.getFoodName()}) {
-                if cell.isSelected() {
+                // MARK: in local = [carne, lat](in salvo)
+                cell.toggleSelected()
+                if cell.getIsCheck() {
                     if !self.ingestedFood.contains(food) {
                         self.ingestedFood.append(food)
                         self.noIngestedFood.removeAll { $0 == food }
@@ -134,21 +163,45 @@ extension DiaryScene: UITableViewDelegate, UITableViewDataSource {
                     }
                 }
             }
-            if let dayActual = self.dayActual {
-            self.controller?.saveFood(ingestedFood: self.ingestedFood, noIngestedFood: self.noIngestedFood, today: dayActual)
+            
+            // MARK: [carne, ovo](in salvo) + [](in local) - [ovo](no local) = [carne]
+            ingesteds.forEach {
+                if !self.ingestedFood.contains($0) {
+                    self.ingestedFood.append($0)
+                }
             }
+            self.noIngestedFood.forEach { noFood in
+                if self.ingestedFood.contains(noFood) {
+                    self.ingestedFood.removeAll { $0 == noFood }
+                }
+            }
+            
+            // MARK: [lat](no Salvo) + [ovo](no local) - [](in local) = [lat, ovo]
+            noIngesteds.forEach {
+                if !self.noIngestedFood.contains($0) {
+                    self.noIngestedFood.append($0)
+                }
+            }
+            
+            self.ingestedFood.forEach { food in
+                if self.noIngestedFood.contains(food) {
+                    self.noIngestedFood.removeAll { $0 == food }
+                }
+            }
+            
+            // MARK: o ideal in [carne] no [ovo, lat]
+            self.controller?.saveFood(ingestedFood: self.ingestedFood, noIngestedFood: self.noIngestedFood, today: dayActual)
+    
         }
         
         guard let dayActual = self.dayActual,
               let ingesteds = dayActual.ingested as? Set<FoodOff> else {
             return cell
         }
-        print(dayActual)
-       
         
         ingesteds.forEach {
             if $0.food == cell.getFoodName() {
-                
+                cell.changeSelected(true)
             }
         }
         return cell
@@ -160,6 +213,10 @@ extension DiaryScene: UITableViewDelegate, UITableViewDataSource {
 }
 
 extension DiaryScene: DiarySceneDelegate {
+    func presenterModal(_ modal: ModalViewController) {
+        controller?.present(modal, animated: true, completion: nil)
+    }
+    
     func setDay(daySelected: Day?) {
         guard let daySelected = daySelected,
               let foodsHelper = daySelected.foods as? Set<FoodOff> else {
@@ -169,11 +226,12 @@ extension DiaryScene: DiarySceneDelegate {
         self.dayActual = daySelected
         let foodsHelper2: [FoodOff] = foodsHelper.map { return $0 }
         self.foods = foodsHelper2
+        diaryTableView.reloadData()
     }
     
     func setDayAll(days: [Day]) {
-        let dates: [Date] = days.map { return ($0.date ?? Date()) }
-        diaryCardComponent.calendar.setDays(Set(dates))
+        // let dates: [Date] = days.map { return ($0.date ?? Date()) }
+        // diaryCardComponent.calendar.setDays(Set(dates))
     }
     
     func setFoodAll(foods: [FoodOff]) {
@@ -207,9 +265,9 @@ extension DiaryScene: FOCalendarDelegate {
            monthSelected == calendar.component(.month, from: Date()) &&
            yearSelected == calendar.component(.year, from: Date()) {
             controller?.fetchFoodAll()
-            self.dayActual = controller?.createToday()
+            // self.dayActual = controller?.createToday()
         } else {
-            controller?.fetchDay(date)
+            // controller?.fetchDay(date)
         }
     }
 }
