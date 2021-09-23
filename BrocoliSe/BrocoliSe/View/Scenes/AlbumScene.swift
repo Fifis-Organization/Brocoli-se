@@ -58,6 +58,21 @@ class AlbumScene: UIView {
         ])
         
     }
+    
+    private func isStickerAble(indexSticker: Int) -> Int {
+        switch indexSticker {
+        case 0:
+            return self.point >= 100 ? 1 : 0
+        case 1:
+            return self.point >= 200 ? 1 : 0
+        case 2:
+            return self.point >= 300 ? 1 : 0
+        case 3:
+            return self.point >= 400 ? 1 : 0
+        default:
+            return 0
+        }
+    }
 }
 
 extension AlbumScene: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -72,7 +87,7 @@ extension AlbumScene: UICollectionViewDelegate, UICollectionViewDataSource, UICo
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CollectionViewCell.identifier, for: indexPath) as? CollectionViewCell else {
             return UICollectionViewCell()
         }
-        cell.setImage(image: UIImage(named: stickers[indexPath.item][0]))
+        cell.setImage(image: UIImage(named: stickers[indexPath.item][isStickerAble(indexSticker: indexPath.item)]))
         return cell
         
     }

@@ -18,15 +18,17 @@ class DiaryScene: UIView {
     private var foods: [FoodOff]? {
         didSet {
             diaryTableView.reloadData()
+            noIngestedFood = foods ?? []
         }
     }
+    private var ingestedFood: [FoodOff] = []
+    private var noIngestedFood: [FoodOff] = []
     private var runningAnimations = [UIViewPropertyAnimator]()
     private var animationProgressWhenInterrupted: CGFloat = 0
     private var cardVisible: Bool = true
     private var nextState: CardState {
         cardVisible ? .collapsed : .expanded
     }
-    
     private var cardViewHeightAnchor: NSLayoutConstraint!
     
     private let collapsedCardHeight: CGFloat = UIScreen.main.bounds.width * 0.8
@@ -115,8 +117,20 @@ extension DiaryScene: UITableViewDelegate, UITableViewDataSource {
         let foodName = food.food ?? ""
         cell.setData(iconName: foodName.iconTable(), foodName:  foodName)
         cell.checkButtonCallBack = {
-            // MARK: Teoricamente pega os dados da célula clicada pra salvar no CoreData aqui
-            cell.getData()
+            if let food = self.foods?.first(where: {$0.food == cell.getFoodName()}) {
+                if cell.isSelected() {
+                    if !self.ingestedFood.contains(food) {
+                        self.ingestedFood.append(food)
+                        self.noIngestedFood.removeAll { $0 == food }
+                    }
+                } else {
+                    if !self.noIngestedFood.contains(food) {
+                        self.noIngestedFood.append(food)
+                        self.ingestedFood.removeAll { $0 == food }
+                    }
+                }
+            }
+            self.controller?.saveFood(ingestedFood: self.ingestedFood, noIngestedFood: self.noIngestedFood)
         }
 
         return cell
