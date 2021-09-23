@@ -46,6 +46,8 @@ class DiaryViewController: UIViewController {
         today.removeFromNoIngested(NSSet(array: ingestedFood))
         today.addToNoIngested(NSSet(array: noIngestedFood))
         coreDataManager.save()
+        let days: [Day] = coreDataManager.fetch()
+        print(days)
     }
     
     private func createToday() -> Day? {
@@ -58,14 +60,14 @@ class DiaryViewController: UIViewController {
         let yearSelected = calendar.component(.year, from:  Date())
         
         var validator: Bool = false
-        var test: Day?
+        var today: Day?
         days.forEach {
             if let dayDate = $0.date {
                 if daySelected == calendar.component(.day, from: dayDate) &&
                    monthSelected == calendar.component(.month, from: dayDate) &&
                    yearSelected == calendar.component(.year, from: dayDate) {
                     validator = true
-                    test = $0
+                    today = $0
                 }
             }
         }
@@ -79,7 +81,7 @@ class DiaryViewController: UIViewController {
             return today
         }
         
-        return test
+        return today
     }
 
     func fetchDayAll() {
