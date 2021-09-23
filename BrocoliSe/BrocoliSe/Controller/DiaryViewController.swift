@@ -33,26 +33,25 @@ class DiaryViewController: UIViewController {
         diaryScene = aScene
         diaryScene?.setController(controller: self)
         view = diaryScene as? UIView
-        testSaveDays()
+        //testSaveDays()
     }
     
     func setCoreDataManager(_ aCoreData: CoreDataManagerProtocol) {
         coreDataManager = aCoreData
     }
     
-    func saveFood(ingestedFood: [FoodOff], noIngestedFood: [FoodOff]) {
-        guard let coreDataManager = coreDataManager,
-              let today: Day = createToday() else { return }
+    func saveFood(ingestedFood: [FoodOff], noIngestedFood: [FoodOff], today: Day) {
+        guard let coreDataManager = coreDataManager else { return }
         today.removeFromIngested(NSSet(array: noIngestedFood))
         today.addToIngested(NSSet(array: ingestedFood))
         today.removeFromNoIngested(NSSet(array: ingestedFood))
         today.addToNoIngested(NSSet(array: noIngestedFood))
         coreDataManager.save()
         let days: [Day] = coreDataManager.fetch()
-        print(days)
+        //print(days)
     }
     
-    private func createToday() -> Day? {
+    func createToday() -> Day? {
         let calendar = Calendar(identifier: .gregorian)
         guard let coreDataManager = coreDataManager else { return nil }
         let days: [Day] = coreDataManager.fetch()

@@ -23,6 +23,7 @@ class DiaryScene: UIView {
     }
     private var ingestedFood: [FoodOff] = []
     private var noIngestedFood: [FoodOff] = []
+    private var dayActual: Day?
     private var runningAnimations = [UIViewPropertyAnimator]()
     private var animationProgressWhenInterrupted: CGFloat = 0
     private var cardVisible: Bool = true
@@ -50,9 +51,11 @@ class DiaryScene: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = UIColor.backgroundColor
+        dayActual = controller?.createToday()
         hierarchyView()
         setupConstraints()
         setupCard()
+        
     }
     
     private func setupCard() {
@@ -116,6 +119,7 @@ extension DiaryScene: UITableViewDelegate, UITableViewDataSource {
 
         let foodName = food.food ?? ""
         cell.setData(iconName: foodName.iconTable(), foodName:  foodName)
+       
         cell.checkButtonCallBack = {
             if let food = self.foods?.first(where: {$0.food == cell.getFoodName()}) {
                 if cell.isSelected() {
@@ -130,9 +134,23 @@ extension DiaryScene: UITableViewDelegate, UITableViewDataSource {
                     }
                 }
             }
-            self.controller?.saveFood(ingestedFood: self.ingestedFood, noIngestedFood: self.noIngestedFood)
+            if let dayActual = self.dayActual {
+            self.controller?.saveFood(ingestedFood: self.ingestedFood, noIngestedFood: self.noIngestedFood, today: dayActual)
+            }
         }
-
+        
+        guard let dayActual = self.dayActual,
+              let ingesteds = dayActual.ingested as? Set<FoodOff> else {
+            return cell
+        }
+        print(dayActual)
+       
+        
+        ingesteds.forEach {
+            if $0.food == cell.getFoodName() {
+                
+            }
+        }
         return cell
     }
 
@@ -148,6 +166,7 @@ extension DiaryScene: DiarySceneDelegate {
             self.foods = []
             return
         }
+        self.dayActual = daySelected
         let foodsHelper2: [FoodOff] = foodsHelper.map { return $0 }
         self.foods = foodsHelper2
     }
@@ -188,6 +207,7 @@ extension DiaryScene: FOCalendarDelegate {
            monthSelected == calendar.component(.month, from: Date()) &&
            yearSelected == calendar.component(.year, from: Date()) {
             controller?.fetchFoodAll()
+            self.dayActual = controller?.createToday()
         } else {
             controller?.fetchDay(date)
         }
