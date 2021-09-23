@@ -12,6 +12,7 @@ protocol DiarySceneDelegate: AnyObject {
     func setFoodAll(foods: [FoodOff])
     func setController(controller: DiaryViewController)
     func setUser(user: User?)
+    func setDay(daySelected: Day?)
     func setupDatas()
 }
 
@@ -32,6 +33,7 @@ class DiaryViewController: UIViewController {
         diaryScene = aScene
         diaryScene?.setController(controller: self)
         view = diaryScene as? UIView
+        testSaveDays()
     }
     
     func setCoreDataManager(_ aCoreData: CoreDataManagerProtocol) {
@@ -54,5 +56,54 @@ class DiaryViewController: UIViewController {
         guard let coreDataManager = coreDataManager else { return }
         let user: [User] = coreDataManager.fetch()
         diaryScene?.setUser(user: user.first)
+    }
+    
+    func fetchDay(_ date: Date) {
+        let calendar = Calendar(identifier: .gregorian)
+        guard let coreDataManager = coreDataManager else { return }
+        let days: [Day] = coreDataManager.fetch()
+        
+        let daySelected = calendar.component(.day, from: date)
+        let monthSelected = calendar.component(.month, from: date)
+        let yearSelected = calendar.component(.year, from: date)
+        
+        var validator = false
+        var today: Day?
+        
+        days.forEach {
+            if let dayDate = $0.date {
+                if daySelected == calendar.component(.day, from: dayDate) &&
+                   monthSelected == calendar.component(.month, from: dayDate) &&
+                   yearSelected == calendar.component(.year, from: dayDate) {
+                    validator = true
+                    today = $0
+                }
+            }
+        }
+        
+        validator ? diaryScene?.setDay(daySelected: today) : diaryScene?.setDay(daySelected: nil)
+    }
+    
+    func testSaveDays() {
+        guard let coreDataManager = coreDataManager else { return }
+        let calendar = Calendar(identifier: .gregorian)
+        
+        let day01: Day = coreDataManager.createEntity()
+        day01.date = calendar.date(byAdding: .day, value: -2, to: Date())
+        let foods01: [FoodOff] = coreDataManager.fetch()
+        day01.addToFoods(NSSet(array: foods01))
+
+        let day02: Day = coreDataManager.createEntity()
+        day02.date = calendar.date(byAdding: .day, value: -1, to: Date())
+        let foods02: [FoodOff] = coreDataManager.fetch()
+        day02.addToFoods(NSSet(array: foods02))
+
+//
+//        let day03: Day = coreDataManager.createEntity()
+//        day03.date = Date()
+//        let foods03: [FoodOff] = coreDataManager.fetch()
+//        day03.addToFoods(NSSet(array: foods03))
+
+        coreDataManager.save()
     }
 }

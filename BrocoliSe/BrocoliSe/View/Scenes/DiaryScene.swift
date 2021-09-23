@@ -54,6 +54,7 @@ class DiaryScene: UIView {
     }
     
     private func setupCard() {
+        diaryCardComponent.calendar.setCalendarDelegate(self)
         diaryCardComponent.translatesAutoresizingMaskIntoConstraints = false
         cardViewHeightAnchor = diaryCardComponent.heightAnchor.constraint(equalToConstant: collapsedCardHeight)
 
@@ -127,6 +128,16 @@ extension DiaryScene: UITableViewDelegate, UITableViewDataSource {
 }
 
 extension DiaryScene: DiarySceneDelegate {
+    func setDay(daySelected: Day?) {
+        guard let daySelected = daySelected,
+              let foodsHelper = daySelected.foods as? Set<FoodOff> else {
+            self.foods = []
+            return
+        }
+        let foodsHelper2: [FoodOff] = foodsHelper.map { return $0 }
+        self.foods = foodsHelper2
+    }
+    
     func setDayAll(days: [Day]) {
         let dates: [Date] = days.map { return ($0.date ?? Date()) }
         diaryCardComponent.calendar.setDays(Set(dates))
@@ -148,6 +159,24 @@ extension DiaryScene: DiarySceneDelegate {
         controller?.fetchFoodAll()
         controller?.fetchUser()
         controller?.fetchDayAll()
+    }
+}
+
+extension DiaryScene: FOCalendarDelegate {
+    func captureCell(date: Date?) {
+        guard let date = date else { return }
+        let calendar = Calendar(identifier: .gregorian)
+        let daySelected = calendar.component(.day, from: date)
+        let monthSelected = calendar.component(.month, from: date)
+        let yearSelected = calendar.component(.year, from: date)
+        
+        if daySelected == calendar.component(.day, from: Date()) &&
+           monthSelected == calendar.component(.month, from: Date()) &&
+           yearSelected == calendar.component(.year, from: Date()) {
+            controller?.fetchFoodAll()
+        } else {
+            controller?.fetchDay(date)
+        }
     }
 }
 

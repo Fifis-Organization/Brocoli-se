@@ -8,12 +8,13 @@
     <entity name="Day" representedClassName="Day" syncable="YES" codeGenerationType="class">
         <attribute name="concluded" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
-        <relationship name="foods" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="FoodOff"/>
+        <relationship name="foods" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="FoodOff" inverseName="day" inverseEntity="FoodOff"/>
         <relationship name="ingested" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="FoodOff"/>
         <relationship name="noIngested" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="FoodOff"/>
     </entity>
     <entity name="FoodOff" representedClassName="FoodOff" syncable="YES" codeGenerationType="class">
         <attribute name="food" optional="YES" attributeType="String"/>
+        <relationship name="day" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Day" inverseName="foods" inverseEntity="Day"/>
     </entity>
     <entity name="User" representedClassName="User" syncable="YES" codeGenerationType="class">
         <attribute name="icon" optional="YES" attributeType="Binary"/>
@@ -22,8 +23,8 @@
     </entity>
     <elements>
         <element name="Collectible" positionX="25.61541748046875" positionY="-283.1111755371094" width="128" height="74"/>
+        <element name="Day" positionX="22.101806640625" positionY="-173.2327880859375" width="128" height="104"/>
+        <element name="FoodOff" positionX="275.6854248046875" positionY="-91.00640869140625" width="128" height="59"/>
         <element name="User" positionX="201.6327514648438" positionY="-279.517578125" width="128" height="43"/>
-        <element name="Day" positionX="22.101806640625" positionY="-173.2327880859375" width="128" height="118"/>
-        <element name="FoodOff" positionX="275.6854248046875" positionY="-91.00640869140625" width="128" height="58"/>
     </elements>
 </model>
