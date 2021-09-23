@@ -91,7 +91,14 @@ class DiaryTableViewCellComponent: UITableViewCell {
     }
 
     // MARK: Create method to get name and state to save it on the viewController
-    func getData() {}
+    func isSelected() -> Bool {
+        checkButton.isSelected.toggle()
+        return checkButton.isSelected
+    }
+    
+    func getFoodName() -> String? {
+        return foodLabel.text
+    }
 
     private func configureCheckButton() {
         self.contentView.addSubview(checkButton)

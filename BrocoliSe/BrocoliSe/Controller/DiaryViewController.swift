@@ -38,6 +38,15 @@ class DiaryViewController: UIViewController {
         coreDataManager = aCoreData
     }
     
+    func saveFood(ingestedFood: [FoodOff], noIngestedFood: [FoodOff], today: Day) {
+        guard let coreDataManager = coreDataManager else { return }
+        today.addToIngested(NSSet(array: ingestedFood))
+        today.addToNoIngested(NSSet(array: noIngestedFood))
+        coreDataManager.save()
+        let days: [Day] = coreDataManager.fetch()
+        print(days)
+    }
+    
     func fetchFoodAll() {
         guard let coreDataManager = coreDataManager else { return }
         let foods: [FoodOff] = coreDataManager.fetch()
