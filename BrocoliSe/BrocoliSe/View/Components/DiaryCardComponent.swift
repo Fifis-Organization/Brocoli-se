@@ -150,7 +150,7 @@ class DiaryCardComponent: UIView {
     func setUser(user: User?) {
         if let user = user {
             nameLabel.text = user.name
-            let point: Float = Float(user.point > 100 ? user.point % 100 : user.point)
+            let point: Float = Float(user.point >= 100 ? user.point % 100 : user.point)
             progressBarComponent.setProgressValue(value: point/100.0)
         }
     }

@@ -16,7 +16,6 @@ class AlbumScene: UIView {
         [StickersNames.pintinhoBlank, StickersNames.pintinhoSticker],
         [StickersNames.vaquinhaBlank, StickersNames.vaquinhaSticker]
     ]
-    
     private var point: Int = 0
     
     private lazy var collectionView: UICollectionView = {
@@ -99,6 +98,11 @@ extension AlbumScene: UICollectionViewDelegate, UICollectionViewDataSource, UICo
 }
 
 extension AlbumScene: AlbumSceneDelegate {
+    func reloadCollection() {
+        self.controller?.fetchUser()
+        self.collectionView.reloadData()
+    }
+    
     func setController(controller: AlbumViewController) {
         self.controller = controller
     }

@@ -107,6 +107,14 @@ class DiaryScene: UIView {
         ])
     }
     
+    func setValueProgressBar(_ value: Float) {
+        diaryCardComponent.progressBarComponent.setProgressValue(value: value)
+    }
+    
+    func setTextLabelProgress(_ text: String) {
+        diaryCardComponent.progressBarComponent.setTitleLabelProgress(text)
+    }
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

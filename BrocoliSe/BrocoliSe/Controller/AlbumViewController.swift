@@ -12,6 +12,7 @@ protocol AlbumSceneDelegate: AnyObject {
     func setController(controller: AlbumViewController)
     func setUser(user: User?)
     func setupDatas()
+    func reloadCollection()
 }
 
 class AlbumViewController: UIViewController {
@@ -21,6 +22,14 @@ class AlbumViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.scene?.reloadCollection()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        self.scene?.reloadCollection()
     }
     
     func setAlbumScene(_ scene: AlbumSceneDelegate) {
@@ -39,4 +48,7 @@ class AlbumViewController: UIViewController {
         scene?.setUser(user: user.first)
     }
     
+    func reload() {
+        self.scene?.reloadCollection()
+    }
 }
