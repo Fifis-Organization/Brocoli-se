@@ -68,6 +68,7 @@ class DiaryCardComponent: UIView {
         calendar.setTitleStyle(titleFont: UIFont.graviolaRegular(size: 20) ?? .systemFont(ofSize: 20), titleColor: .white)
         calendar.setWeekStyle(weekStackFont: UIFont.graviolaSoft(size: 20) ?? .boldSystemFont(ofSize: 20), weekStackColor: .white)
         calendar.setSelectionRangeStyle(selectionRangeBackgroundColor: UIColor.greenMedium ?? .green, selectionRangeBorderColor: .clear, selectionRangeTextColor: .white)
+        calendar.setSelectionDateStyle(color: .clear, border: 0)
     }
     
     private func hierarchyView() {
