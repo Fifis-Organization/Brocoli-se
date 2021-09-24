@@ -15,6 +15,7 @@ protocol DiarySceneDelegate: AnyObject {
     func setDay(daySelected: Day?)
     func presenterModal(_ modal: ModalViewController)
     func setupDatas()
+    func setTextLabelProgress(_ text: String)
 }
 
 class DiaryViewController: UIViewController {
@@ -63,13 +64,16 @@ class DiaryViewController: UIViewController {
         }
         fetchUser()
         coreDataManager.save()
-        if user.first?.point == 100 {
-            let modalVC = ModalViewController()
-           modalVC.modalPresentationStyle = .formSheet
-                // Keep animated value as false
-                // Custom Modal presentation animation will be handled in VC itself
-            self.present(modalVC, animated: false)
-        }
+//        if user.first?.point == 100 && today.concluded {
+//            DispatchQueue.main.asyncAfter(deadline: .now() + 0.7) {
+//                self.diaryScene?.setTextLabelProgress(<#T##text: String##String#>)
+//            }
+//            // let modalVC = ModalViewController()
+//            // modalVC.modalPresentationStyle = .formSheet
+//                // Keep animated value as false
+//                // Custom Modal presentation animation will be handled in VC itself
+//            // self.present(modalVC, animated: false)
+//        }
     }
     
     

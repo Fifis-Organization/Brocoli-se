@@ -91,7 +91,7 @@ class ProgressBarComponent: UIView {
     private func progressTextSetup(progressValue: Float) {
         
         if progressValue == 1 {
-            progressText.text = "Ciclo Completo"
+            progressText.text = "Você ganhou um sticker!"
         } else {
             progressText.text = "\(Int(((1.0 - progressValue)*10).rounded(.toNearestOrEven))) dias restantes"
         }
@@ -125,5 +125,9 @@ class ProgressBarComponent: UIView {
     
     func setProgressValue(value: Float) {
         progressValue = value
+    }
+    
+    func setTitleLabelProgress(_ text: String) {
+        progressText.text = text
     }
 }
