@@ -31,6 +31,7 @@
 		3984BD4826E8E9AC00C92824 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3984BD4626E8E9AC00C92824 /* LaunchScreen.storyboard */; };
 		39DA525C26F7E4DF00158880 /* FactoryControllers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39DA525B26F7E4DF00158880 /* FactoryControllers.swift */; };
 		39DA526026F9FFEC00158880 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39DA525F26F9FFEC00158880 /* StringExtension.swift */; };
+		39DA538A26FD584500158880 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39DA538926FD584400158880 /* UIViewExtension.swift */; };
 		54109F1626F2959700EC4C10 /* DiaryTableViewCellComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54109F1526F2959700EC4C10 /* DiaryTableViewCellComponent.swift */; };
 		543DCF9926F36DCC00BDAF63 /* NamesEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543DCF9826F36DCC00BDAF63 /* NamesEnums.swift */; };
 		54BA499526F8B0D000201438 /* ModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BA499426F8B0D000201438 /* ModalViewController.swift */; };
@@ -80,6 +81,7 @@
 		3984BD4926E8E9AC00C92824 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		39DA525B26F7E4DF00158880 /* FactoryControllers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactoryControllers.swift; sourceTree = "<group>"; };
 		39DA525F26F9FFEC00158880 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		39DA538926FD584400158880 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		54109F1526F2959700EC4C10 /* DiaryTableViewCellComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryTableViewCellComponent.swift; sourceTree = "<group>"; };
 		543DCF9826F36DCC00BDAF63 /* NamesEnums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamesEnums.swift; sourceTree = "<group>"; };
 		54BA499426F8B0D000201438 /* ModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalViewController.swift; sourceTree = "<group>"; };
@@ -278,6 +280,7 @@
 			children = (
 				543DCF9826F36DCC00BDAF63 /* NamesEnums.swift */,
 				39DA525F26F9FFEC00158880 /* StringExtension.swift */,
+				39DA538926FD584400158880 /* UIViewExtension.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -442,6 +445,7 @@
 				A47C630026F8B4E600D6A54B /* Onboarding01.swift in Sources */,
 				3902B0E526EF96BC00FE2C8F /* Coordinator.swift in Sources */,
 				394AEB2226F7ADF700C5D8E7 /* CoreDataManager.swift in Sources */,
+				39DA538A26FD584500158880 /* UIViewExtension.swift in Sources */,
 				3932587126E9008000A44687 /* ProgressBarComponent.swift in Sources */,
 				54109F1626F2959700EC4C10 /* DiaryTableViewCellComponent.swift in Sources */,
 				569B432B26FB66DB0084071E /* PersistenceService.swift in Sources */,

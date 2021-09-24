@@ -53,7 +53,11 @@ class Onboarding03: UIView {
     }
     
     @objc func targetContiue(_ sender: UIButton) {
-        buttonContinueAction()
+        if foodSelector.getSelected().isEmpty {
+            foodSelector.shakeEffect(horizontaly: 4)
+        } else {
+            buttonContinueAction()
+        }
     }
     
     func style() {
