@@ -100,7 +100,7 @@ class DiaryScene: UIView {
     
     private func diaryTableViewSetupConstraints() {
         NSLayoutConstraint.activate([
-            diaryTableView.topAnchor.constraint(equalTo: diaryCardComponent.bottomAnchor),
+            diaryTableView.topAnchor.constraint(equalTo: diaryCardComponent.bottomAnchor, constant: 20),
             diaryTableView.leadingAnchor.constraint(equalTo: leadingAnchor),
             diaryTableView.trailingAnchor.constraint(equalTo: trailingAnchor),
             diaryTableView.bottomAnchor.constraint(equalTo: bottomAnchor)
@@ -162,8 +162,8 @@ extension DiaryScene: UITableViewDelegate, UITableViewDataSource {
         headerView.backgroundColor = .white
         NSLayoutConstraint.activate([
             label.leadingAnchor.constraint(equalTo: headerView.leadingAnchor, constant: 20),
-            label.topAnchor.constraint(equalTo: headerView.topAnchor),
             label.trailingAnchor.constraint(equalTo: headerView.trailingAnchor, constant: -20),
+            label.topAnchor.constraint(equalTo: headerView.topAnchor),
             label.bottomAnchor.constraint(equalTo: headerView.bottomAnchor, constant: -10)
         ])
         
