@@ -92,7 +92,7 @@ class DiaryCardComponent: UIView {
     private func imagePerfilSetupConstraints() {
         
         NSLayoutConstraint.activate([
-            imagePerfil.topAnchor.constraint(equalTo: topAnchor, constant: 60),
+            imagePerfil.topAnchor.constraint(equalTo: topAnchor, constant: UIScreen.main.bounds.height * 0.07),
             imagePerfil.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
             imagePerfil.heightAnchor.constraint(equalToConstant: 38),
             imagePerfil.widthAnchor.constraint(equalTo: imagePerfil.heightAnchor)
@@ -101,7 +101,7 @@ class DiaryCardComponent: UIView {
     
     private func nameLabelSetupConstraints() {
         NSLayoutConstraint.activate([
-            nameLabel.topAnchor.constraint(equalTo: topAnchor, constant: 60),
+            nameLabel.topAnchor.constraint(equalTo: topAnchor, constant:  UIScreen.main.bounds.height * 0.07),
             nameLabel.leadingAnchor.constraint(equalTo: imagePerfil.trailingAnchor, constant: 8),
             nameLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
             nameLabel.centerYAnchor.constraint(equalTo: imagePerfil.centerYAnchor)
@@ -112,7 +112,7 @@ class DiaryCardComponent: UIView {
         progressBarComponent.translatesAutoresizingMaskIntoConstraints = false
 
         NSLayoutConstraint.activate([
-            progressBarComponent.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 20),
+            progressBarComponent.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: UIScreen.main.bounds.height * 0.02),
             progressBarComponent.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
             progressBarComponent.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
             progressBarComponent.heightAnchor.constraint(equalToConstant: 20)
@@ -122,10 +122,10 @@ class DiaryCardComponent: UIView {
     private func calendarSetupConstraints() {
         calendar.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            calendar.topAnchor.constraint(equalTo: progressBarComponent.bottomAnchor, constant: 15),
+            calendar.topAnchor.constraint(equalTo: progressBarComponent.bottomAnchor, constant: UIScreen.main.bounds.height * 0.02),
             calendar.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
             calendar.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
-            calendar.heightAnchor.constraint(equalToConstant: 250)
+            calendar.heightAnchor.constraint(equalTo: widthAnchor, multiplier: 0.7)
         ])
     }
     

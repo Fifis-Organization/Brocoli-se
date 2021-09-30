@@ -6,6 +6,7 @@
 //
 import Foundation
 import FOCalendar
+import UIKit
 
 enum CardState {
     case expanded
@@ -36,7 +37,7 @@ class DiaryScene: UIView {
     }
     private var cardViewHeightAnchor: NSLayoutConstraint!
     
-    private let collapsedCardHeight: CGFloat = UIScreen.main.bounds.width * 0.8
+    private let collapsedCardHeight: CGFloat = UIScreen.main.bounds.width * 0.75
     private let expandedCardheight: CGFloat = UIScreen.main.bounds.width * 1.2
     
     private let diaryCardComponent = DiaryCardComponent()
@@ -59,7 +60,6 @@ class DiaryScene: UIView {
         hierarchyView()
         setupConstraints()
         setupCard()
-        
     }
     
     private func setupCard() {
@@ -145,6 +145,27 @@ extension DiaryScene: UITableViewDelegate, UITableViewDataSource {
             }
         }
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: tableView.frame.width, height: 50))
+        
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "O que você conseguiu cortar hoje?"
+        label.font = UIFont.graviolaRegular(size: 20)
+        label.numberOfLines = 1
+        label.adjustsFontSizeToFitWidth = true
+        
+        headerView.addSubview(label)
+        headerView.backgroundColor = .white
+        NSLayoutConstraint.activate([
+            label.leadingAnchor.constraint(equalTo: headerView.leadingAnchor, constant: 20),
+            label.centerYAnchor.constraint(equalTo: headerView.centerYAnchor),
+            label.trailingAnchor.constraint(equalTo: headerView.trailingAnchor, constant: -20)
+        ])
+        
+        return headerView
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
