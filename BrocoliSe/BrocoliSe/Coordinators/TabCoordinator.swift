@@ -21,7 +21,7 @@ class TabCoordinator: NSObject, Coordinator {
     }
 
     func start() {
-        let pages: [TabBarPage] = [.daily, .album]
+        let pages: [TabBarPage] = [.diary, .album]
             .sorted(by: { $0.pageOrderNumber() < $1.pageOrderNumber() })
         let controllers: [UINavigationController] = pages.map({ getTabController($0) })
         
@@ -31,7 +31,7 @@ class TabCoordinator: NSObject, Coordinator {
     private func prepareTabBarController(withTabControllers tabControllers: [UIViewController]) {
         tabBarController.delegate = self
         tabBarController.setViewControllers(tabControllers, animated: true)
-        tabBarController.selectedIndex = TabBarPage.daily.pageOrderNumber()
+        tabBarController.selectedIndex = TabBarPage.diary.pageOrderNumber()
         tabBarController.tabBar.isTranslucent = false
         tabBarController.tabBar.tintColor = UIColor.greenMedium
         tabBarController.tabBar.unselectedItemTintColor = UIColor.blueDark?.withAlphaComponent(0.4)
@@ -46,14 +46,23 @@ class TabCoordinator: NSObject, Coordinator {
                                                      image: page.pageIcon(),
                                                      tag: page.pageOrderNumber())
 
-        
-        
         switch page {
-        case .daily:
-            let dailyVC = ViewController()
-            navController.pushViewController(dailyVC, animated: true)
+        case .diary:
+            let diaryVC = FactoryControllers.createDiaryViewController()
+            navController.navigationBar.isHidden = true
+            navController.pushViewController(diaryVC, animated: false)
         case .album:
-            break
+            let albumVC = FactoryControllers.createAlbumViewController()
+            albumVC.title = "Álbum"
+            let attrs = [
+                NSAttributedString.Key.foregroundColor: UIColor.white,
+                NSAttributedString.Key.font: UIFont.graviolaRegular(size: 34) ?? UIFont.systemFont(ofSize: 34)
+            ]
+            
+            navController.navigationItem.largeTitleDisplayMode = .always
+            navController.navigationBar.prefersLargeTitles = true
+            navController.navigationBar.largeTitleTextAttributes = attrs
+            navController.pushViewController(albumVC, animated: true)
         }
         
         return navController

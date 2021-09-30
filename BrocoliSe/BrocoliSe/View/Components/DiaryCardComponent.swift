@@ -9,7 +9,7 @@ import FOCalendar
 
 class DiaryCardComponent: UIView {
     
-    lazy var imagePerfil: UIImageView = {
+    private lazy var imagePerfil: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(systemName: "person.crop.circle.fill")
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -17,57 +17,80 @@ class DiaryCardComponent: UIView {
         return imageView
     }()
     
-    lazy var nameLabel: UILabel = {
+    private lazy var nameLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.graviolaSoft(size: 20)
         label.textColor = .white
-        label.text = "Samuel"
+        label.text = ""
         return label
+    }()
+    
+    lazy var handleArea: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    private lazy var indicator: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = .white
+        return view
     }()
     
     let progressBarComponent = ProgressBarComponent()
     let calendar = FOCalendarView()
-    
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = UIColor.blueDark
         layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
         layer.masksToBounds = true
         layer.cornerRadius  = 20
-        calendar.setupCalendarView(modeCalendar: .expand,
-                                   days: Set([]),
-                                   titleFont: UIFont.graviolaRegular(size: 20) ?? .systemFont(ofSize: 20),
-                                   titleColor: .white,
-                                   weekStackFont: UIFont.graviolaSoft(size: 24) ?? .boldSystemFont(ofSize: 24),
-                                   weekStackColor: .white,
-                                   nextAndPreviousMonthColor: .white,
-                                   cellFont: UIFont.graviolaRegular(size: 24) ?? .systemFont(ofSize: 24),
-                                   cellTextColor: .white,
-                                   selectionCellBackgroundColor: .white,
-                                   selectionCellTextColor: UIColor.blueDark ?? .black,
-                                   selectionRangeBackgroundColor: UIColor.green.withAlphaComponent(0.4),
-                                   selectionRangeBorderColor: UIColor.green.withAlphaComponent(0.4),
-                                   selectionRangeTextColor: .white)
         hierarchyView()
         setupConstraints()
+        setupCalendar()
+    }
+ 
+    func setModeCalendar(_ status: CardState) {
+        switch status {
+        case .expanded:
+            calendar.setTypeCalendar(.expand)
+        case .collapsed:
+            calendar.setTypeCalendar(.compact)
+        }
     }
     
-    func hierarchyView() {
+    private func setupCalendar() {
+        calendar.setTypeCalendar(.compact)
+        calendar.setCellStyle(cellFont: UIFont.graviolaRegular(size: 20) ?? .systemFont(ofSize: 20), cellColor: .white)
+        calendar.setTitleStyle(titleFont: UIFont.graviolaRegular(size: 20) ?? .systemFont(ofSize: 20), titleColor: .white)
+        calendar.setWeekStyle(weekStackFont: UIFont.graviolaSoft(size: 20) ?? .boldSystemFont(ofSize: 20), weekStackColor: .white)
+        calendar.setSelectionRangeStyle(selectionRangeBackgroundColor: UIColor.greenMedium ?? .green, selectionRangeBorderColor: .clear, selectionRangeTextColor: .white)
+        calendar.setSelectionDateStyle(color: .clear, border: 0)
+    }
+    
+    private func hierarchyView() {
         addSubview(imagePerfil)
         addSubview(nameLabel)
         addSubview(progressBarComponent)
         addSubview(calendar)
+        addSubview(handleArea)
+        handleArea.addSubview(indicator)
     }
     
-    func setupConstraints() {
+    private func setupConstraints() {
         imagePerfilSetupConstraints()
         nameLabelSetupConstraints()
         progressBarComponentSetupConstraints()
         calendarSetupConstraints()
+        handleAreaSetupConstraints()
+        indicatorSetupConstraints()
     }
     
-    func imagePerfilSetupConstraints() {
+    private func imagePerfilSetupConstraints() {
+        
         NSLayoutConstraint.activate([
             imagePerfil.topAnchor.constraint(equalTo: topAnchor, constant: 60),
             imagePerfil.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
@@ -76,7 +99,7 @@ class DiaryCardComponent: UIView {
         ])
     }
     
-    func nameLabelSetupConstraints() {
+    private func nameLabelSetupConstraints() {
         NSLayoutConstraint.activate([
             nameLabel.topAnchor.constraint(equalTo: topAnchor, constant: 60),
             nameLabel.leadingAnchor.constraint(equalTo: imagePerfil.trailingAnchor, constant: 8),
@@ -85,7 +108,7 @@ class DiaryCardComponent: UIView {
         ])
     }
     
-    func progressBarComponentSetupConstraints() {
+    private func progressBarComponentSetupConstraints() {
         progressBarComponent.translatesAutoresizingMaskIntoConstraints = false
 
         NSLayoutConstraint.activate([
@@ -96,19 +119,44 @@ class DiaryCardComponent: UIView {
         ])
     }
     
-    func calendarSetupConstraints() {
+    private func calendarSetupConstraints() {
         calendar.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            calendar.topAnchor.constraint(equalTo: progressBarComponent.bottomAnchor, constant: 25),
+            calendar.topAnchor.constraint(equalTo: progressBarComponent.bottomAnchor, constant: 15),
             calendar.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
             calendar.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
-            calendar.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -20)
+            calendar.heightAnchor.constraint(equalToConstant: 250)
         ])
+    }
+    
+    private func handleAreaSetupConstraints() {
+        NSLayoutConstraint.activate([
+            handleArea.leadingAnchor.constraint(equalTo: leadingAnchor),
+            handleArea.trailingAnchor.constraint(equalTo: trailingAnchor),
+            handleArea.bottomAnchor.constraint(equalTo: bottomAnchor),
+            handleArea.heightAnchor.constraint(equalToConstant: 30)
+        ])
+    }
+    
+    private func indicatorSetupConstraints() {
+        NSLayoutConstraint.activate([
+            indicator.centerXAnchor.constraint(equalTo: handleArea.centerXAnchor),
+            indicator.centerYAnchor.constraint(equalTo: handleArea.centerYAnchor),
+            indicator.widthAnchor.constraint(equalTo: handleArea.widthAnchor, multiplier: 0.3),
+            indicator.heightAnchor.constraint(equalToConstant: 4)
+        ])
+    }
+    
+    func setUser(user: User?) {
+        if let user = user {
+            nameLabel.text = user.name
+            let point: Float = Float(user.point >= 100 ? user.point % 100 : user.point)
+            progressBarComponent.setProgressValue(value: point/100.0)
+        }
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
         
 }

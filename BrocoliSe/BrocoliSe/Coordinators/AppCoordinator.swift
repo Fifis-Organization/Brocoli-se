@@ -15,17 +15,28 @@ class AppCoordinator: AppCoordinatorProtocol {
     
     var type: CoordinatorType { .appInitial }
     
+    private let persistence = PersistenceService(defaults: UserDefaults())
+    
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
         navigationController.setNavigationBarHidden(true, animated: true)
     }
     
     func start() {
+        if persistence.getFirstLoad() == false {
+            persistence.persist(firstLoad: true)
+            showOnboardingFlow()
+        } else {
+            showMainFlow()
+        }
         
-        showMainFlow()
     }
     
     func showOnboardingFlow() {
+        let onboardingCoodinator = OnboardingCoordinator(navigationController: navigationController)
+        onboardingCoodinator.finishDelegate = self
+        onboardingCoodinator.start()
+        childCoordinators.append(onboardingCoodinator)
         
     }
     
@@ -40,5 +51,12 @@ class AppCoordinator: AppCoordinatorProtocol {
 extension AppCoordinator: CoordinatorFinishDelegate {
     func coordinatorDidFinish(childCoordinator: Coordinator) {
         childCoordinators = childCoordinators.filter({ $0.type != childCoordinator.type })
+        switch childCoordinator.type {
+        case .onboarding:
+            navigationController.viewControllers.removeAll()
+            showMainFlow()
+        default:
+            break
+        }
     }
 }

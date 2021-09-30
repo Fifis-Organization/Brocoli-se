@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "brocolis-sticker.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
