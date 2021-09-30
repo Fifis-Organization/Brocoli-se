@@ -148,12 +148,13 @@ extension DiaryScene: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let headerView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: tableView.frame.width, height: 50))
+        let headerView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: tableView.frame.width, height: 30))
         
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "O que você conseguiu cortar hoje?"
         label.font = UIFont.graviolaRegular(size: 20)
+        label.textColor = .blueDark
         label.numberOfLines = 1
         label.adjustsFontSizeToFitWidth = true
         
@@ -161,8 +162,9 @@ extension DiaryScene: UITableViewDelegate, UITableViewDataSource {
         headerView.backgroundColor = .white
         NSLayoutConstraint.activate([
             label.leadingAnchor.constraint(equalTo: headerView.leadingAnchor, constant: 20),
-            label.centerYAnchor.constraint(equalTo: headerView.centerYAnchor),
-            label.trailingAnchor.constraint(equalTo: headerView.trailingAnchor, constant: -20)
+            label.topAnchor.constraint(equalTo: headerView.topAnchor),
+            label.trailingAnchor.constraint(equalTo: headerView.trailingAnchor, constant: -20),
+            label.bottomAnchor.constraint(equalTo: headerView.bottomAnchor, constant: -10)
         ])
         
         return headerView
