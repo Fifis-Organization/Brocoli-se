@@ -60,7 +60,6 @@ class DiaryScene: UIView {
         hierarchyView()
         setupConstraints()
         setupCard()
-        print(UIScreen.main.bounds)
     }
     
     private func setupCard() {
