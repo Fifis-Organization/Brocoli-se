@@ -58,7 +58,7 @@ class ProgressBarComponent: UIView {
     
     private func addProgress() {
         
-        progressBar.translatesAutoresizingMaskIntoConstraints = false
+        progressBar.translatesAutoresizingMaskIntoConstraints = fals
         addSubview(progressBar)
         NSLayoutConstraint.activate([
             progressBar.centerYAnchor.constraint(equalTo: self.centerYAnchor),
