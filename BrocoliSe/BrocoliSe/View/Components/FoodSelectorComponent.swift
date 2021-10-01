@@ -87,7 +87,6 @@ class FoodSelectorComponent: UIView {
         }
     }
     
-    
     private func buttonFoodStyle() {
         buttonLeite.translatesAutoresizingMaskIntoConstraints = false
         addSubview(buttonLeite)
