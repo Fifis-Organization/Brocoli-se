@@ -14,7 +14,7 @@ class ModalComponent: UIView {
     private let maxDimmedAlpha: CGFloat = 0.6
 
     private let defaultHeight: CGFloat = UIScreen.main.bounds.height * 0.66
-    private let dismissibleHeight: CGFloat = UIScreen.main.bounds.height * 0.36
+    private let dismissibleHeight: CGFloat = UIScreen.main.bounds.height * 0.4
     private var currentContainerHeight: CGFloat = UIScreen.main.bounds.height * 0.66
 
     lazy var containerView: UIView = {
@@ -63,9 +63,11 @@ class ModalComponent: UIView {
 
             containerView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             containerView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-            containerView.heightAnchor.constraint(equalToConstant: defaultHeight),
-            containerView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: defaultHeight)
+            containerView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: 0)
         ])
+
+        containerViewHeightConstraint = containerView.heightAnchor.constraint(equalToConstant: defaultHeight)
+        containerViewHeightConstraint?.isActive = true
     }
 
     func animatePresentContainer() {
@@ -118,6 +120,7 @@ class ModalComponent: UIView {
         let isDraggingDown = translation.y > 0
         let newHeight = currentContainerHeight - translation.y
 
+        print("Pan gesture y offset: \(translation.y)")
         switch gesture.state {
         case .changed:
             if newHeight < defaultHeight {
