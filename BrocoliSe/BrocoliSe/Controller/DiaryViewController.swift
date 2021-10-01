@@ -21,6 +21,8 @@ protocol DiarySceneDelegate: AnyObject {
 class DiaryViewController: UIViewController {
     private var diaryScene: DiarySceneDelegate?
     private var coreDataManager: CoreDataManagerProtocol?
+
+    var tabCoordinator: TabCoordinatorProtocol?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,16 +66,15 @@ class DiaryViewController: UIViewController {
         }
         fetchUser()
         coreDataManager.save()
-//        if user.first?.point == 100 && today.concluded {
+        if user.first?.point == 100 && today.concluded {
 //            DispatchQueue.main.asyncAfter(deadline: .now() + 0.7) {
-//                self.diaryScene?.setTextLabelProgress(<#T##text: String##String#>)
+//                self.diaryScene?.setTextLabelProgress("brabo")
 //            }
-//            // let modalVC = ModalViewController()
-//            // modalVC.modalPresentationStyle = .formSheet
-//                // Keep animated value as false
-//                // Custom Modal presentation animation will be handled in VC itself
-//            // self.present(modalVC, animated: false)
-//        }
+            let modalVC = ModalViewController()
+            modalVC.tabCoordinator = self.tabCoordinator
+            modalVC.modalPresentationStyle = .overFullScreen
+            self.present(modalVC, animated: false)
+        }
     }
     
     

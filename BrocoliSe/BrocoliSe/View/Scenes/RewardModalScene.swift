@@ -131,5 +131,7 @@ class RewardModalScene: UIView {
 
     @objc func goToAlbum() {
         // MARK: Add push to album view controller
+        self.viewController?.tabCoordinator?.setSelectedIndex(1)
+        self.viewController?.dismiss(animated: false)
     }
 }
