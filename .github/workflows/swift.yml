@@ -38,4 +38,4 @@ jobs:
 
       - name: Build and Test
         run: |
-          xcodebuild test -scheme BrocoliSe -workspace BrocoliSe.xcworkspace -destination platform="iOS Simulator",name="iPhone 12",OS=latest | xcpretty
+          xcodebuild test -scheme BrocoliSe -workspace BrocoliSe.xcworkspace -destination platform="iOS Simulator",name="iPhone 12",OS=latest
