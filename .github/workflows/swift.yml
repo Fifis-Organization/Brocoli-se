@@ -1,0 +1,41 @@
+name: Cache, Build & Test
+
+on:
+  pull_request:
+    branches: 
+      - main
+      - develop
+
+jobs:
+  test:
+
+    name: Cache, Build & Test
+    runs-on: macos-latest
+    defaults:
+      run:
+        working-directory: ./BrocoliSe
+    env:
+      SCHEME: "BrocoliSe"
+      DEVICE: "iPhone 12"
+      DERIVED_DATA_PATH: "DerivedData"
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@master
+
+      - name: Cache
+        uses: actions/cache@v2
+        id: pods-cache
+        with:
+            path: Pods
+            key: ${{ runner.os }}-pods-${{ hashFiles('**/Podfile.lock') }}
+            restore-keys: |
+              ${{ runner.os }}-pods-
+
+      - name: Install Pods
+        run: |
+          pod install
+
+      - name: Build and Test
+        run: |
+          xcodebuild test -scheme BrocoliSe -workspace BrocoliSe.xcworkspace -destination platform="iOS Simulator",name="iPhone 12",OS=latest | xcpretty
