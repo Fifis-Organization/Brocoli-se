@@ -42,7 +42,8 @@ class TabCoordinator: NSObject, Coordinator {
             appearance.backgroundColor = .white
             
             tabBarController.tabBar.standardAppearance = appearance
-            // tabBarController.tabBar.scrollEdgeAppearance = tabBarController.tabBar.standardAppearance
+            
+            tabBarController.tabBar.scrollEdgeAppearance = tabBarController.tabBar.standardAppearance
         }
         
         navigationController.viewControllers = [tabBarController]
