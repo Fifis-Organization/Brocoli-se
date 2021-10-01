@@ -78,7 +78,6 @@ class DiaryScene: UIView {
         diaryCardComponent.handleArea.addGestureRecognizer(panGestureRecognizer)
     }
     
-    
     private func hierarchyView() {
         addSubview(diaryCardComponent)
         addSubview(diaryTableView)
@@ -127,7 +126,7 @@ extension DiaryScene: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: DiaryTableViewCellComponent.reuseIdentifier, for: indexPath) as? DiaryTableViewCellComponent,
-              let food = foods?[indexPath.row] else { fatalError() }
+              let food = foods?[indexPath.row] else { fatalError("ERROR: Array(foods) Index indisponível") }
         let foodName = food.food ?? ""
         cell.setData(iconName: foodName.iconTable(), foodName:  foodName)
         cell.checkButtonCallBack = {
@@ -175,7 +174,6 @@ extension DiaryScene: UITableViewDelegate, UITableViewDataSource {
     }
     
     private func setupCell(_ cell: DiaryTableViewCellComponent) {
-        
             // MARK: o que ta salvo in [carne, ovo] no [lat]
             guard let dayActual = self.dayActual,
                   let ingesteds: Set<FoodOff> = dayActual.ingested as? Set<FoodOff>,

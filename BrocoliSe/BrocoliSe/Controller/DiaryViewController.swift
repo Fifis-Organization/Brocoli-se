@@ -76,7 +76,6 @@ class DiaryViewController: UIViewController {
 //        }
     }
     
-    
     func createToday() -> Day? {
         let calendar = Calendar(identifier: .gregorian)
         guard let coreDataManager = coreDataManager else { return nil }
