@@ -43,8 +43,8 @@ class TextField: UIView {
         ])
     }
     
-    func getnameTextField() -> String? {
-        return nameTextField.text
+    func getnameTextField() -> String {
+        return nameTextField.text ?? ""
     }
 }
 
