@@ -41,6 +41,7 @@
 		562C91DF26F8B51D00548428 /* AlbumScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 562C91DE26F8B51D00548428 /* AlbumScene.swift */; };
 		562C91E126F8C85300548428 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 562C91E026F8C85300548428 /* CollectionViewCell.swift */; };
 		569B432B26FB66DB0084071E /* PersistenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569B432A26FB66DB0084071E /* PersistenceService.swift */; };
+		56B831D62707494F00490908 /* BrocoliSeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B831D52707494F00490908 /* BrocoliSeTests.swift */; };
 		56D1AB5426FA2523001A2486 /* IconButtonComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D1AB5326FA2523001A2486 /* IconButtonComponent.swift */; };
 		5F22C12D64DBC49B6281335B /* Pods_BrocoliSe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 339A77E77343AA9D6B45448B /* Pods_BrocoliSe.framework */; };
 		A47C62FD26F8B48600D6A54B /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47C62FC26F8B48600D6A54B /* OnboardingViewController.swift */; };
@@ -51,6 +52,16 @@
 		A47C630826F8B58100D6A54B /* FoodSelectorComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47C630726F8B58100D6A54B /* FoodSelectorComponent.swift */; };
 		A47C630A26F8B66000D6A54B /* OnboardingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47C630926F8B66000D6A54B /* OnboardingCoordinator.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		56B831D72707494F00490908 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3984BD3026E8E9AB00C92824 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3984BD3726E8E9AB00C92824;
+			remoteInfo = BrocoliSe;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		02A9E034F88539424516D3FD /* Pods-BrocoliSe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BrocoliSe.release.xcconfig"; path = "Target Support Files/Pods-BrocoliSe/Pods-BrocoliSe.release.xcconfig"; sourceTree = "<group>"; };
@@ -91,6 +102,8 @@
 		562C91DE26F8B51D00548428 /* AlbumScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumScene.swift; sourceTree = "<group>"; };
 		562C91E026F8C85300548428 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		569B432A26FB66DB0084071E /* PersistenceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceService.swift; sourceTree = "<group>"; };
+		56B831D32707494F00490908 /* BrocoliSeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BrocoliSeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		56B831D52707494F00490908 /* BrocoliSeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrocoliSeTests.swift; sourceTree = "<group>"; };
 		56D1AB5326FA2523001A2486 /* IconButtonComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconButtonComponent.swift; sourceTree = "<group>"; };
 		7FA58FB81DD24388A0BB3880 /* Pods-BrocoliSe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BrocoliSe.debug.xcconfig"; path = "Target Support Files/Pods-BrocoliSe/Pods-BrocoliSe.debug.xcconfig"; sourceTree = "<group>"; };
 		A47C62FC26F8B48600D6A54B /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
@@ -109,6 +122,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				5F22C12D64DBC49B6281335B /* Pods_BrocoliSe.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		56B831D02707494F00490908 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -150,6 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				3984BD3A26E8E9AB00C92824 /* BrocoliSe */,
+				56B831D42707494F00490908 /* BrocoliSeTests */,
 				3984BD3926E8E9AB00C92824 /* Products */,
 				51F8D0A3306B81203B7F79CE /* Pods */,
 				F5092037EE03D133043F77A8 /* Frameworks */,
@@ -160,6 +181,7 @@
 			isa = PBXGroup;
 			children = (
 				3984BD3826E8E9AB00C92824 /* BrocoliSe.app */,
+				56B831D32707494F00490908 /* BrocoliSeTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -286,6 +308,14 @@
 			path = Utilities;
 			sourceTree = "<group>";
 		};
+		56B831D42707494F00490908 /* BrocoliSeTests */ = {
+			isa = PBXGroup;
+			children = (
+				56B831D52707494F00490908 /* BrocoliSeTests.swift */,
+			);
+			path = BrocoliSeTests;
+			sourceTree = "<group>";
+		};
 		A47C62FE26F8B4C600D6A54B /* Onboardings */ = {
 			isa = PBXGroup;
 			children = (
@@ -327,17 +357,39 @@
 			productReference = 3984BD3826E8E9AB00C92824 /* BrocoliSe.app */;
 			productType = "com.apple.product-type.application";
 		};
+		56B831D22707494F00490908 /* BrocoliSeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 56B831DB2707494F00490908 /* Build configuration list for PBXNativeTarget "BrocoliSeTests" */;
+			buildPhases = (
+				56B831CF2707494F00490908 /* Sources */,
+				56B831D02707494F00490908 /* Frameworks */,
+				56B831D12707494F00490908 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				56B831D82707494F00490908 /* PBXTargetDependency */,
+			);
+			name = BrocoliSeTests;
+			productName = BrocoliSeTests;
+			productReference = 56B831D32707494F00490908 /* BrocoliSeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		3984BD3026E8E9AB00C92824 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1240;
+				LastSwiftUpdateCheck = 1300;
 				LastUpgradeCheck = 1240;
 				TargetAttributes = {
 					3984BD3726E8E9AB00C92824 = {
 						CreatedOnToolsVersion = 12.4;
+					};
+					56B831D22707494F00490908 = {
+						CreatedOnToolsVersion = 13.0;
+						TestTargetID = 3984BD3726E8E9AB00C92824;
 					};
 				};
 			};
@@ -356,6 +408,7 @@
 			projectRoot = "";
 			targets = (
 				3984BD3726E8E9AB00C92824 /* BrocoliSe */,
+				56B831D22707494F00490908 /* BrocoliSeTests */,
 			);
 		};
 /* End PBXProject section */
@@ -369,6 +422,13 @@
 				3902B0DB26EF7AEB00FE2C8F /* GraviolaSoft-Medium.otf in Resources */,
 				3984BD4526E8E9AC00C92824 /* Assets.xcassets in Resources */,
 				3902B0D826EF7AD500FE2C8F /* Graviola-Regular.otf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		56B831D12707494F00490908 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -480,7 +540,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		56B831CF2707494F00490908 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				56B831D62707494F00490908 /* BrocoliSeTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		56B831D82707494F00490908 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3984BD3726E8E9AB00C92824 /* BrocoliSe */;
+			targetProxy = 56B831D72707494F00490908 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		3984BD4626E8E9AC00C92824 /* LaunchScreen.storyboard */ = {
@@ -655,6 +731,54 @@
 			};
 			name = Release;
 		};
+		56B831D92707494F00490908 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = nathalia.BrocoliSeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BrocoliSe.app/BrocoliSe";
+			};
+			name = Debug;
+		};
+		56B831DA2707494F00490908 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = nathalia.BrocoliSeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BrocoliSe.app/BrocoliSe";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -672,6 +796,15 @@
 			buildConfigurations = (
 				3984BD4D26E8E9AC00C92824 /* Debug */,
 				3984BD4E26E8E9AC00C92824 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		56B831DB2707494F00490908 /* Build configuration list for PBXNativeTarget "BrocoliSeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				56B831D92707494F00490908 /* Debug */,
+				56B831DA2707494F00490908 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

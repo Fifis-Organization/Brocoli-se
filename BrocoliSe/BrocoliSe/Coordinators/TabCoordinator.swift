@@ -42,6 +42,7 @@ class TabCoordinator: NSObject, TabCoordinatorProtocol {
             appearance.backgroundColor = .white
             
             tabBarController.tabBar.standardAppearance = appearance
+            
             tabBarController.tabBar.scrollEdgeAppearance = tabBarController.tabBar.standardAppearance
         }
         
