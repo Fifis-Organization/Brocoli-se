@@ -35,13 +35,14 @@ class TabCoordinator: NSObject, TabCoordinatorProtocol {
         tabBarController.tabBar.isTranslucent = false
         tabBarController.tabBar.tintColor = UIColor.greenMedium
         tabBarController.tabBar.unselectedItemTintColor = UIColor.blueDark?.withAlphaComponent(0.4)
-        
+
         if #available(iOS 15.0, *) {
             let appearance = UITabBarAppearance()
             appearance.configureWithTransparentBackground()
             appearance.backgroundColor = .white
             
             tabBarController.tabBar.standardAppearance = appearance
+            
             tabBarController.tabBar.scrollEdgeAppearance = tabBarController.tabBar.standardAppearance
         }
         
@@ -61,6 +62,7 @@ class TabCoordinator: NSObject, TabCoordinatorProtocol {
             let diaryVC = FactoryControllers.createDiaryViewController()
             diaryVC.tabCoordinator = self
             navController.navigationBar.isHidden = true
+            navController.navigationBar.barStyle = .black
             navController.pushViewController(diaryVC, animated: false)
         case .album:
             let albumVC = FactoryControllers.createAlbumViewController()
@@ -69,7 +71,7 @@ class TabCoordinator: NSObject, TabCoordinatorProtocol {
                 NSAttributedString.Key.foregroundColor: UIColor.white,
                 NSAttributedString.Key.font: UIFont.graviolaRegular(size: 34) ?? UIFont.systemFont(ofSize: 34)
             ]
-            
+            navController.navigationBar.barStyle = .black
             navController.navigationItem.largeTitleDisplayMode = .always
             navController.navigationBar.prefersLargeTitles = true
             navController.navigationBar.largeTitleTextAttributes = attrs
