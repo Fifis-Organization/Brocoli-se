@@ -3,9 +3,14 @@ disabled_rules: # rule identifiers to exclude from running
   - comma
   - control_statement
   - trailing_whitespace
-  - vertical_whitespace
+  - cyclomatic_complexity
 opt_in_rules: # some rules are only opt-in
   - empty_count
+  - force_cast
+  - force_unwrapping
+  - empty_collection_literal
+  - fatal_error_message
+  - empty_string
   # Find all the available rules by running:
   # swiftlint rules
 included: # paths to include during linting. `--path` is ignored if present.
@@ -20,9 +25,9 @@ analyzer_rules: # Rules run by `swiftlint analyze` (experimental)
   - explicit_self
 # configurable rules can be customized from this configuration file
 # binary rules can set their severity level
+force_unwrapping: warning
 force_cast: warning # implicitly
-force_try:
-  severity: warning # explicitly
+force_try: warning # explicitly
 # rules that have both warning and error levels, can set just the warning level
 # implicitly
 line_length: 250

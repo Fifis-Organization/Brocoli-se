@@ -43,7 +43,6 @@ class ProgressBarComponent: UIView {
         return image
     }()
     
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         addProgress()

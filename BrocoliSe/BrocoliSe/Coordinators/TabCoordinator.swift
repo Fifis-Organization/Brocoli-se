@@ -8,7 +8,7 @@ protocol TabCoordinatorProtocol: Coordinator {
     func currentPage() -> TabBarPage?
 }
 
-class TabCoordinator: NSObject, Coordinator {
+class TabCoordinator: NSObject, TabCoordinatorProtocol {
     weak var finishDelegate: CoordinatorFinishDelegate? 
     var type: CoordinatorType { .tabBar }
     var childCoordinators: [Coordinator] = []
@@ -59,6 +59,7 @@ class TabCoordinator: NSObject, Coordinator {
         switch page {
         case .diary:
             let diaryVC = FactoryControllers.createDiaryViewController()
+            diaryVC.tabCoordinator = self
             navController.navigationBar.isHidden = true
             navController.navigationBar.barStyle = .black
             navController.pushViewController(diaryVC, animated: false)
