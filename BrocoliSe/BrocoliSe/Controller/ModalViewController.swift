@@ -11,6 +11,8 @@ class ModalViewController: UIViewController {
 
     private let scene = RewardModalScene(frame: UIScreen.main.bounds)
 
+    weak var tabCoordinator: TabCoordinatorProtocol?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         view.insetsLayoutMarginsFromSafeArea = false

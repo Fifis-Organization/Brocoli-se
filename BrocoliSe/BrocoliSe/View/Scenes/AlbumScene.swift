@@ -76,7 +76,6 @@ class AlbumScene: UIView {
 
 extension AlbumScene: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return stickers.count
     }

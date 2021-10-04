@@ -8,7 +8,7 @@ protocol TabCoordinatorProtocol: Coordinator {
     func currentPage() -> TabBarPage?
 }
 
-class TabCoordinator: NSObject, Coordinator {
+class TabCoordinator: NSObject, TabCoordinatorProtocol {
     weak var finishDelegate: CoordinatorFinishDelegate? 
     var type: CoordinatorType { .tabBar }
     var childCoordinators: [Coordinator] = []
@@ -35,7 +35,7 @@ class TabCoordinator: NSObject, Coordinator {
         tabBarController.tabBar.isTranslucent = false
         tabBarController.tabBar.tintColor = UIColor.greenMedium
         tabBarController.tabBar.unselectedItemTintColor = UIColor.blueDark?.withAlphaComponent(0.4)
-        
+
         if #available(iOS 15.0, *) {
             let appearance = UITabBarAppearance()
             appearance.configureWithTransparentBackground()
@@ -60,7 +60,9 @@ class TabCoordinator: NSObject, Coordinator {
         switch page {
         case .diary:
             let diaryVC = FactoryControllers.createDiaryViewController()
+            diaryVC.tabCoordinator = self
             navController.navigationBar.isHidden = true
+            navController.navigationBar.barStyle = .black
             navController.pushViewController(diaryVC, animated: false)
         case .album:
             let albumVC = FactoryControllers.createAlbumViewController()
@@ -69,7 +71,7 @@ class TabCoordinator: NSObject, Coordinator {
                 NSAttributedString.Key.foregroundColor: UIColor.white,
                 NSAttributedString.Key.font: UIFont.graviolaRegular(size: 34) ?? UIFont.systemFont(ofSize: 34)
             ]
-            
+            navController.navigationBar.barStyle = .black
             navController.navigationItem.largeTitleDisplayMode = .always
             navController.navigationBar.prefersLargeTitles = true
             navController.navigationBar.largeTitleTextAttributes = attrs

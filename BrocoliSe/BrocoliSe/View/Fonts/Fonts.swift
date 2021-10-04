@@ -8,7 +8,6 @@
 import Foundation
 import UIKit
 
-
 extension UIFont {
     
     static func graviolaRegular(size: CGFloat) -> UIFont? {
