@@ -19,9 +19,11 @@ class AlbumViewController: UIViewController {
     
     private var scene: AlbumSceneDelegate?
     private var coreDataManager: CoreDataManagerProtocol?
+    var tabCoordinator: TabCoordinatorProtocol?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -30,6 +32,9 @@ class AlbumViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         self.scene?.reloadCollection()
+        
+        tabCoordinator?.configTabBar(color: .white.withAlphaComponent(0.08))
+       
     }
     
     func setAlbumScene(_ scene: AlbumSceneDelegate) {

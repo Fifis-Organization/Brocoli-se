@@ -29,6 +29,13 @@ class DiaryViewController: UIViewController {
         view.insetsLayoutMarginsFromSafeArea = false
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        tabCoordinator?.configTabBar(color: .white)
+        
+    }
+    
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
