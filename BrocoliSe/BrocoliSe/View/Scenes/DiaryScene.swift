@@ -55,7 +55,7 @@ class DiaryScene: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        insetsLayoutMarginsFromSafeArea = false 
+     
         backgroundColor = UIColor.backgroundColor
         dayActual = controller?.createToday()
         hierarchyView()

@@ -19,9 +19,11 @@ class AlbumViewController: UIViewController {
     
     private var scene: AlbumSceneDelegate?
     private var coreDataManager: CoreDataManagerProtocol?
+    var tabCoordinator: TabCoordinatorProtocol?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -31,16 +33,8 @@ class AlbumViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         self.scene?.reloadCollection()
         
-        self.tabBarController?.tabBar.backgroundColor = .white.withAlphaComponent(0.08)
-        
-        if #available(iOS 15.0, *) {
-            let appearance = UITabBarAppearance()
-            appearance.configureWithTransparentBackground()
-            appearance.backgroundColor = .white.withAlphaComponent(0.08)
-            
-            self.tabBarController?.tabBar.standardAppearance = appearance
-            self.tabBarController?.tabBar.scrollEdgeAppearance = self.tabBarController?.tabBar.standardAppearance
-        }
+        tabCoordinator?.configTabBar(color: .white.withAlphaComponent(0.08))
+       
     }
     
     func setAlbumScene(_ scene: AlbumSceneDelegate) {
