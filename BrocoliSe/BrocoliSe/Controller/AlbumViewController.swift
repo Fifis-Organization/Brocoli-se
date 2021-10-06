@@ -30,6 +30,17 @@ class AlbumViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         self.scene?.reloadCollection()
+        
+        self.tabBarController?.tabBar.backgroundColor = .white.withAlphaComponent(0.08)
+        
+        if #available(iOS 15.0, *) {
+            let appearance = UITabBarAppearance()
+            appearance.configureWithTransparentBackground()
+            appearance.backgroundColor = .white.withAlphaComponent(0.08)
+            
+            self.tabBarController?.tabBar.standardAppearance = appearance
+            self.tabBarController?.tabBar.scrollEdgeAppearance = self.tabBarController?.tabBar.standardAppearance
+        }
     }
     
     func setAlbumScene(_ scene: AlbumSceneDelegate) {

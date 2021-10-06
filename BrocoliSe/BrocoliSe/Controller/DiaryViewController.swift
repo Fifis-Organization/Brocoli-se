@@ -29,6 +29,21 @@ class DiaryViewController: UIViewController {
         view.insetsLayoutMarginsFromSafeArea = false
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        self.tabBarController?.tabBar.backgroundColor = .white
+        
+        if #available(iOS 15.0, *) {
+            let appearance = UITabBarAppearance()
+            appearance.configureWithTransparentBackground()
+            appearance.backgroundColor = .white.withAlphaComponent(0.08)
+            
+            self.tabBarController?.tabBar.standardAppearance = appearance
+            self.tabBarController?.tabBar.scrollEdgeAppearance = self.tabBarController?.tabBar.standardAppearance
+        }
+    }
+    
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }

@@ -32,20 +32,8 @@ class TabCoordinator: NSObject, TabCoordinatorProtocol {
         tabBarController.delegate = self
         tabBarController.setViewControllers(tabControllers, animated: true)
         tabBarController.selectedIndex = TabBarPage.diary.pageOrderNumber()
-        tabBarController.tabBar.isTranslucent = false
         tabBarController.tabBar.tintColor = UIColor.greenMedium
-        tabBarController.tabBar.unselectedItemTintColor = UIColor.blueDark?.withAlphaComponent(0.4)
-
-        if #available(iOS 15.0, *) {
-            let appearance = UITabBarAppearance()
-            appearance.configureWithTransparentBackground()
-            appearance.backgroundColor = .white
-            
-            tabBarController.tabBar.standardAppearance = appearance
-            
-            tabBarController.tabBar.scrollEdgeAppearance = tabBarController.tabBar.standardAppearance
-        }
-        
+    
         navigationController.viewControllers = [tabBarController]
     }
       
