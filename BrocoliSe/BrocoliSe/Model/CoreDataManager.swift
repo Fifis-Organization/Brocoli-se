@@ -7,7 +7,7 @@ extension NSManagedObject {
     }
 }
 
-protocol CoreDataManagerProtocol: EntityCreateProtocol, EntitySaveProtocol, EntityFetchProtocol {
+protocol CoreDataManagerProtocol: EntityCreateProtocol, EntitySaveProtocol, EntityFetchProtocol, EntityDeleteProtocol {
     var viewContext: NSManagedObjectContext { get }
     func save()
 }
