@@ -28,13 +28,7 @@ class AlbumViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         self.scene?.reloadCollection()
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        self.scene?.reloadCollection()
-        
         tabCoordinator?.configTabBar(color: .white.withAlphaComponent(0.08))
-       
     }
     
     func setAlbumScene(_ scene: AlbumSceneDelegate) {
