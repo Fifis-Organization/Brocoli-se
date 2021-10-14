@@ -24,7 +24,6 @@ class AppCoordinator: AppCoordinatorProtocol {
     
     func start() {
         if persistence.getFirstLoad() == false {
-            persistence.persist(firstLoad: true)
             showOnboardingFlow()
         } else {
             showMainFlow()
