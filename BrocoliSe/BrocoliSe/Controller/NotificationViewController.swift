@@ -67,9 +67,20 @@ class NotificationViewController: UIViewController {
 //            print("The attachment could not be loaded")
 //        }
         
+        var dateComponents = DateComponents()
+        dateComponents.calendar = Calendar.current
+
+//        dateComponents.weekday = 6  // Friday
+        dateComponents.hour = 10    // 10:00 hours
+//        dateComponents.minute = 00
+           
+        // Create the trigger as a repeating event.
+        let trigger = UNCalendarNotificationTrigger(
+                 dateMatching: dateComponents, repeats: true)
+        
         // -------- Create the request ------------
         let uuidString = UUID().uuidString
-        let request = UNNotificationRequest(identifier: uuidString, content: content, trigger: UNTimeIntervalNotificationTrigger(timeInterval: 180, repeats: true))
+        let request = UNNotificationRequest(identifier: uuidString, content: content, trigger: trigger)
         UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
               
         // -------- Register the request -----------
