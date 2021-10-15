@@ -22,7 +22,7 @@ class AlbumSceneMock: AlbumSceneDelegate {
     }
     
     func setupDatas() {
-        
+        controller?.fetchUser()
     }
     
     func reloadCollection() {

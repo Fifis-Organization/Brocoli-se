@@ -15,6 +15,8 @@ class DiarySceneMock: DiarySceneDelegate {
     var controller: DiaryViewController?
     var daySelected: Day?
     var user: User?
+    var textLabel: String?
+    var isPresent = false
     
     func setDayAll(days: [Day]) {
         self.days = days
@@ -37,14 +39,16 @@ class DiarySceneMock: DiarySceneDelegate {
     }
     
     func presenterModal(_ modal: ModalViewController) {
-        
+        isPresent = true
     }
     
     func setupDatas() {
-        
+        controller?.fetchUser()
+        controller?.fetchDayAll()
+        controller?.fetchFoodAll()
     }
     
     func setTextLabelProgress(_ text: String) {
-        
+        textLabel = text
     }
 }

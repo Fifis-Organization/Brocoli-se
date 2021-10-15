@@ -8,6 +8,7 @@
 import XCTest
 import CoreData
 @testable import BrocoliSe
+// swiftlint:disable large_tupla
 
 class DiaryViewControllerTests: XCTestCase {
     
