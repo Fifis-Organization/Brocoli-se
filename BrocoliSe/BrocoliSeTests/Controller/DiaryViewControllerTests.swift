@@ -101,7 +101,6 @@ class DiaryViewControllerTests: XCTestCase {
         let food2: FoodOff = coreData.createEntity()
         food2.food = "Frutas"
         
-        
         controller.saveFood(ingestedFood: [food1], noIngestedFood: [food2], today: today)
         controller.fetchDay(Date())
         let dayReceive: Day? = scene.daySelected
@@ -120,7 +119,7 @@ class DiaryViewControllerTests: XCTestCase {
         let yearSelected = calendar.component(.year, from: Date())
         
         guard let dateReceived = today?.date else {
-            XCTFail()
+            XCTFail("No expected nil")
             return
         }
         let dayReceived = calendar.component(.day, from: dateReceived)
