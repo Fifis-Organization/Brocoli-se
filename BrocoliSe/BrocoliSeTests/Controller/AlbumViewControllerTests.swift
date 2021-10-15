@@ -9,7 +9,7 @@ import Foundation
 import CoreData
 @testable import BrocoliSe
 import XCTest
-// swiftlint:disable large_tupla
+// swiftlint:disable large_tuple
 
 class AlbumViewControllerTests: XCTestCase {
     
