@@ -12,12 +12,16 @@ import CoreData
 class PersistenceServiceTests: XCTestCase {
     
     func test_persistenceService() {
-        let persistenceService = PersistenceService()
+        let persistenceService = PersistenceService(defaults: UserDefaults())
+        let valueInitial: Bool = persistenceService.getFirstLoad() ? true : false
+    
         persistenceService.persist(firstLoad: true)
         XCTAssertTrue(persistenceService.getFirstLoad())
         
         persistenceService.persist(firstLoad: false)
         XCTAssertFalse(persistenceService.getFirstLoad())
+        
+        persistenceService.persist(firstLoad: valueInitial)
     }
     
 }

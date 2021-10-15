@@ -82,6 +82,12 @@ class DiaryViewControllerTests: XCTestCase {
         XCTAssertEqual(daySelected, dayReceived)
         XCTAssertEqual(monthSelected, monthReceived)
         XCTAssertEqual(yearSelected, yearReceived)
+        
+        let dateNotExist = calendar.date(byAdding: .day, value: -3, to: Date()) ?? Date()
+        controller.fetchDay(dateNotExist)
+        
+        XCTAssertNil(scene.daySelected?.date)
+        
         removeDatas(coreDataManagerMock: coreData)
     }
     
