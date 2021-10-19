@@ -32,9 +32,15 @@ class AlbumScene: UIView {
         collectionView.register(CollectionViewCell.self, forCellWithReuseIdentifier: CollectionViewCell.identifier)
         collectionView.dataSource = self
         collectionView.delegate = self
+        
         collectionView.isPagingEnabled = true
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.backgroundColor = .clear
+        
+        collectionView.allowsSelection = true
+        collectionView.allowsMultipleSelection = false
+        collectionView.isScrollEnabled = true
+        
         return collectionView
     }()
 
@@ -44,6 +50,7 @@ class AlbumScene: UIView {
         pageControl.numberOfPages = 3
         pageControl.currentPage = 0
         pageControl.translatesAutoresizingMaskIntoConstraints = false
+        pageControl.addTarget(self, action: #selector(testPage), for: .touchUpInside)
 
         return pageControl
     }()
@@ -85,6 +92,10 @@ class AlbumScene: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    @objc func testPage(sender: UIPageControl) {
+        print(sender.currentPage)
+    }
 
     func setupViews() {
         [btnNext, btnPrev, pageControl].forEach {
@@ -104,7 +115,6 @@ class AlbumScene: UIView {
     
     private func setupCollectionView() {
         addSubview(collectionView)
-        collectionView.isScrollEnabled = false
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
@@ -133,9 +143,13 @@ class AlbumScene: UIView {
         }
         print(current)
         indexPath = IndexPath(item: current, section: 0)
+        
         print(indexPath)
-
-        self.collectionView.selectItem(at: indexPath, animated: true, scrollPosition: .centeredHorizontally)
+        
+        self.collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+        self.collectionView.scrollTo(horizontalPage: current, verticalPage: nil, animated: true)
+        
+        self.collectionView(self.collectionView, didSelectItemAt: indexPath)
     }
     
     private func isStickerAble(indexSticker: Int) -> Int {
@@ -177,7 +191,17 @@ extension AlbumScene: UICollectionViewDelegate, UICollectionViewDataSource, UICo
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
             return CGSize(width: self.frame.width, height: self.frame.height)
     }
-
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.pageControl.currentPage = indexPath.item
+    }
+    
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        let scrollPos = scrollView.contentOffset.x / frame.width
+        print(scrollPos)
+        print(scrollView.contentOffset)
+        selectPage(page: Int(scrollPos))
+    }
 }
 
 extension AlbumScene: AlbumSceneDelegate {
