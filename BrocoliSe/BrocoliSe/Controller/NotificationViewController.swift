@@ -31,7 +31,7 @@ class NotificationViewController {
         content.body = {
             switch content.title {
             case Title.morning.rawValue:
-                let text = MessagesMorning.allCases.randomElement()!.rawValue
+                let text = MessagesMorning.allCases.randomElement()?.rawValue ?? "Não vamos perder o foco, cada dia é um avanço importante!"
                 return text
             default:
                 let text = "Não vamos perder o foco, cada dia é um avanço importante!"
@@ -59,7 +59,7 @@ class NotificationViewController {
         content.body = {
             switch content.title {
             case Title.night.rawValue:
-                let text = MessagesNight.allCases.randomElement()!.rawValue
+                let text = MessagesNight.allCases.randomElement()?.rawValue ?? "Lembre-se de marcar os item que você não consumiu hoje!"
                 return text
             default:
                 let text = "Lembre-se de marcar os item que você não consumiu hoje!"

@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         UserDefaults.standard.set(true, forKey: "First Launch")
         
         UNUserNotificationCenter.current()
-            .requestAuthorization(options: [.alert, .sound]) { granted, error  in
+            .requestAuthorization(options: [.alert, .sound]) { _ , error  in
             if let error = error {
                 print(error.localizedDescription)
             }
