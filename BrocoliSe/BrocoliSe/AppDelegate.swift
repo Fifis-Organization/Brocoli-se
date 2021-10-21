@@ -8,10 +8,39 @@
 import UIKit
 
 @main
-class AppDelegate: UIResponder, UIApplicationDelegate {
-
+class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
+    
+    let notification = NotificationViewController()
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        UserDefaults.standard.set(true, forKey: "First Launch")
+        
+        UNUserNotificationCenter.current()
+            .requestAuthorization(options: [.alert, .sound]) { _ , error  in
+            if let error = error {
+                print(error.localizedDescription)
+            }
+        }
+
+        UNUserNotificationCenter.current().delegate = self
+        
+        var dateComponents = DateComponents()
+        dateComponents.calendar = Calendar.current
+        dateComponents.hour = 9
+           
+        let trigger = UNCalendarNotificationTrigger(
+                 dateMatching: dateComponents, repeats: true)
+        
+        var dateComponents2 = DateComponents()
+        dateComponents2.calendar = Calendar.current
+        dateComponents2.hour = 21
+           
+        let trigger2 = UNCalendarNotificationTrigger(
+                 dateMatching: dateComponents2, repeats: true)
+        
+        notification.schenduleNotificationMorning(trigger: trigger)
+        notification.schenduleNotificationNight(trigger: trigger2)
         return true
     }
 

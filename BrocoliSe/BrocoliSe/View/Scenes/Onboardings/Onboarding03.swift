@@ -119,6 +119,8 @@ extension Onboarding03: OnboardingViewControllerProtocol {
         onboardingVC?.saveUser()
         guard let onboardingVC = onboardingVC,
               let didSendContinue = onboardingVC.didSendContinue else {return}
+        let persistence = PersistenceService()
+        persistence.persist(firstLoad: true)
         didSendContinue()
     }
     func disableContinueButton() {
