@@ -44,73 +44,36 @@ class AlbumScene: UIView {
         return collectionView
     }()
 
-    let pageControl: UIPageControl = {
+    private let pageControl: UIPageControl = {
         let pageControl = UIPageControl()
 
         pageControl.numberOfPages = 3
         pageControl.currentPage = 0
         pageControl.translatesAutoresizingMaskIntoConstraints = false
-        pageControl.addTarget(self, action: #selector(testPage), for: .touchUpInside)
+        pageControl.isUserInteractionEnabled = false
 
         return pageControl
     }()
 
-    let btnNext: UIButton = {
-        let button = UIButton(type: .system)
-
-        button.setTitle("NEXT", for: .normal)
-        button.setTitleColor(.white, for: .normal)
-        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.addTarget(self, action: #selector(handleNextPage), for: .touchUpInside)
-        button.tag = 1
-
-        return button
-    }()
-
-    let btnPrev: UIButton = {
-        let button = UIButton(type: .system)
-
-        button.setTitle("PREV", for: .normal)
-        button.setTitleColor(.white, for: .normal)
-        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.addTarget(self, action: #selector(handleNextPage), for: .touchUpInside)
-        button.tag = 0
-
-        return button
-    }()
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.backgroundColor = UIColor.blueDark
         
         setupCollectionView()
-        setupViews()
+        setupPageControl()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    @objc func testPage(sender: UIPageControl) {
-        print(sender.currentPage)
-    }
 
-    func setupViews() {
-        [btnNext, btnPrev, pageControl].forEach {
-            self.addSubview($0) }
+    private func setupPageControl() {
+        addSubview(pageControl)
 
-        btnNext.heightAnchor.constraint(equalToConstant: 48).isActive = true
-        btnNext.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -32).isActive = true
-        btnNext.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor).isActive = true
-
-        btnPrev.heightAnchor.constraint(equalToConstant: 48).isActive = true
-        btnPrev.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 32).isActive = true
-        btnPrev.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor).isActive = true
-
-        pageControl.centerYAnchor.constraint(equalTo: btnNext.centerYAnchor).isActive = true
-        pageControl.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
+        NSLayoutConstraint.activate([
+            pageControl.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor),
+            pageControl.centerXAnchor.constraint(equalTo: self.centerXAnchor)
+        ])
     }
     
     private func setupCollectionView() {
@@ -123,35 +86,8 @@ class AlbumScene: UIView {
             collectionView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
             collectionView.bottomAnchor.constraint(equalTo: self.bottomAnchor)
         ])
-        
     }
 
-    @objc func handleNextPage(button: UIButton) {
-        var indexPath: IndexPath!
-        var current = pageControl.currentPage
-        print(">>>>>>>>>>ENTREI")
-        if button.tag == 0 {
-            current -= 1
-            if current < 0 {
-                current = 0
-            }
-        } else {
-            current += 1
-            if current > 2 {
-                current = 0
-            }
-        }
-        print(current)
-        indexPath = IndexPath(item: current, section: 0)
-        
-        print(indexPath)
-        
-        self.collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
-        self.collectionView.scrollTo(horizontalPage: current, verticalPage: nil, animated: true)
-        
-        self.collectionView(self.collectionView, didSelectItemAt: indexPath)
-    }
-    
     private func isStickerAble(indexSticker: Int) -> Int {
         switch indexSticker {
         case 0:
@@ -162,6 +98,18 @@ class AlbumScene: UIView {
             return self.point >= 300 ? 1 : 0
         case 3:
             return self.point >= 400 ? 1 : 0
+        case 4:
+            return self.point >= 500 ? 1 : 0
+        case 5:
+            return self.point >= 600 ? 1 : 0
+        case 6:
+            return self.point >= 700 ? 1 : 0
+        case 7:
+            return self.point >= 800 ? 1 : 0
+        case 8:
+            return self.point >= 900 ? 1 : 0
+        case 9:
+            return self.point >= 1000 ? 1 : 0
         default:
             return 0
         }
@@ -179,9 +127,26 @@ extension AlbumScene: UICollectionViewDelegate, UICollectionViewDataSource, UICo
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CollectionViewCell.identifier, for: indexPath) as? CollectionViewCell else {
             return UICollectionViewCell()
         }
-        cell.setImage(image: UIImage(named: stickers[indexPath.item][isStickerAble(indexSticker: indexPath.item)]))
+
+        var pageStickers: [String] = []
+
+        switch indexPath.item {
+        case 0:
+            for index in 0...3 {
+                pageStickers.append(stickers[index][isStickerAble(indexSticker: index)])
+            }
+        case 1:
+            for index in 4...7 {
+                pageStickers.append(stickers[index][isStickerAble(indexSticker: index)])
+            }
+        case 2:
+            pageStickers.append(stickers[8][isStickerAble(indexSticker: 8)])
+        default:
+            pageStickers.append("")
+        }
+
+        cell.setStickers(stickers: pageStickers)
         return cell
-        
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
@@ -189,26 +154,19 @@ extension AlbumScene: UICollectionViewDelegate, UICollectionViewDataSource, UICo
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-            return CGSize(width: self.frame.width, height: self.frame.height)
+        return CGSize(width: self.frame.width, height: self.frame.height)
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         self.pageControl.currentPage = indexPath.item
     }
-    
-    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        let scrollPos = scrollView.contentOffset.x / frame.width
-        print(scrollPos)
-        print(scrollView.contentOffset)
-        selectPage(page: Int(scrollPos))
+
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        pageControl.currentPage = Int(scrollView.contentOffset.x) / Int(scrollView.frame.width)
     }
 }
 
 extension AlbumScene: AlbumSceneDelegate {
-    func selectPage(page: Int) {
-        self.pageControl.currentPage = page
-    }
-
     func reloadCollection() {
         self.controller?.fetchUser()
         self.collectionView.reloadData()

@@ -13,7 +13,6 @@ protocol AlbumSceneDelegate: AnyObject {
     func setUser(user: User?)
     func setupDatas()
     func reloadCollection()
-    func selectPage(page: Int)
 }
 
 class AlbumViewController: UICollectionViewController {
@@ -35,11 +34,6 @@ class AlbumViewController: UICollectionViewController {
         
         tabCoordinator?.configTabBar(color: .white.withAlphaComponent(0.08))
        
-    }
-
-    override func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let scrollPos = scrollView.contentOffset.x / self.view.frame.width
-        self.scene?.selectPage(page: Int(scrollPos))
     }
     
     func setAlbumScene(_ scene: AlbumSceneDelegate) {
