@@ -50,7 +50,6 @@ extension AlbumViewControllerTests {
         
         controller.setCoreDataManager(coreDataManagerMock)
         controller.setAlbumScene(albumSceneMock)
-        controller.loadViewIfNeeded()
         
         return (controller, coreDataManagerMock, albumSceneMock)
     }
