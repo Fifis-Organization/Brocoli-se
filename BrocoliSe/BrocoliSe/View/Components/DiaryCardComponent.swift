@@ -9,10 +9,15 @@ import FOCalendar
 
 class DiaryCardComponent: UIView {
     
+    var controller: ProfileViewController?
+    
     private lazy var imagePerfil: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(systemName: "person.crop.circle.fill")
         imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.isUserInteractionEnabled = true
+        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(showProfile))
+        imageView.addGestureRecognizer(tapRecognizer)
         imageView.tintColor = .white
         return imageView
     }()
@@ -157,6 +162,12 @@ class DiaryCardComponent: UIView {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    @objc func showProfile() {
+        // let profileVC = FactoryControllers.createProfileViewController()
+
+        // self.contro
     }
         
 }

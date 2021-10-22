@@ -17,7 +17,6 @@ class ProfileSelectionCell: UITableViewCell {
     
     private var nameLabel: UILabel = {
         let label = UILabel()
-        label.text = "Informações pessoais"
         label.textColor = .black
         label.font = UIFont.graviolaRegular(size: 16) ?? UIFont.systemFont(ofSize: 16)
         label.textAlignment = .left
@@ -26,10 +25,21 @@ class ProfileSelectionCell: UITableViewCell {
     
     private var infoLabel: UILabel = {
         let label = UILabel()
+        label.text = "Informações pessoais"
         label.textColor = .blueDark
         label.font = UIFont.graviolaRegular(size: 16) ?? UIFont.systemFont(ofSize: 16)
         label.textAlignment = .left
         return label
+    }()
+    // por enquanto, depois vai ser um custom button
+    private var customNextButton: UIButton = {
+        let button = UIButton()
+        button.setImage(UIImage(systemName: "forward"), for: .normal)
+        button.imageView?.contentMode = .scaleAspectFit
+        button.contentHorizontalAlignment = .fill
+        button.contentVerticalAlignment = .fill
+        
+        return button
     }()
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {

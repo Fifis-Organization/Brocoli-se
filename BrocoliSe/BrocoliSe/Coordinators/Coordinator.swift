@@ -24,5 +24,5 @@ protocol CoordinatorFinishDelegate: AnyObject {
 }
 
 enum CoordinatorType {
-    case appInitial, onboarding, tabBar
+    case appInitial, onboarding, tabBar, profile
 }

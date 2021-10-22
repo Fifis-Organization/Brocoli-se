@@ -42,6 +42,10 @@
 		562C91DF26F8B51D00548428 /* AlbumScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 562C91DE26F8B51D00548428 /* AlbumScene.swift */; };
 		562C91E126F8C85300548428 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 562C91E026F8C85300548428 /* CollectionViewCell.swift */; };
 		568DDD8F27185C920067B94C /* ProfileSelectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568DDD8E27185C920067B94C /* ProfileSelectionCell.swift */; };
+		56937A182721943200615042 /* SettingsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56937A172721943100615042 /* SettingsCell.swift */; };
+		56937A1A27219EA600615042 /* ProfileScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56937A1927219EA600615042 /* ProfileScene.swift */; };
+		56937A1C27219F2300615042 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56937A1B27219F2300615042 /* ProfileViewController.swift */; };
+		56937A1E2721A8DE00615042 /* ProfileCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56937A1D2721A8DE00615042 /* ProfileCoordinator.swift */; };
 		569B432B26FB66DB0084071E /* PersistenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569B432A26FB66DB0084071E /* PersistenceService.swift */; };
 		56B831D62707494F00490908 /* BrocoliSeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B831D52707494F00490908 /* BrocoliSeTests.swift */; };
 		56D1AB5426FA2523001A2486 /* IconButtonComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D1AB5326FA2523001A2486 /* IconButtonComponent.swift */; };
@@ -105,6 +109,10 @@
 		562C91DE26F8B51D00548428 /* AlbumScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumScene.swift; sourceTree = "<group>"; };
 		562C91E026F8C85300548428 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		568DDD8E27185C920067B94C /* ProfileSelectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSelectionCell.swift; sourceTree = "<group>"; };
+		56937A172721943100615042 /* SettingsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCell.swift; sourceTree = "<group>"; };
+		56937A1927219EA600615042 /* ProfileScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScene.swift; sourceTree = "<group>"; };
+		56937A1B27219F2300615042 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		56937A1D2721A8DE00615042 /* ProfileCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCoordinator.swift; sourceTree = "<group>"; };
 		569B432A26FB66DB0084071E /* PersistenceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceService.swift; sourceTree = "<group>"; };
 		56B831D32707494F00490908 /* BrocoliSeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BrocoliSeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		56B831D52707494F00490908 /* BrocoliSeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrocoliSeTests.swift; sourceTree = "<group>"; };
@@ -148,6 +156,7 @@
 				3902B0F226F0DD0200FE2C8F /* TabBarPage.swift */,
 				39DA525B26F7E4DF00158880 /* FactoryControllers.swift */,
 				A47C630926F8B66000D6A54B /* OnboardingCoordinator.swift */,
+				56937A1D2721A8DE00615042 /* ProfileCoordinator.swift */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -227,6 +236,7 @@
 				562C91DC26F8B3CD00548428 /* AlbumViewController.swift */,
 				A47C62FC26F8B48600D6A54B /* OnboardingViewController.swift */,
 				54BA499426F8B0D000201438 /* ModalViewController.swift */,
+				56937A1B27219F2300615042 /* ProfileViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -270,6 +280,7 @@
 				54BA499626F8B1B300201438 /* ModalComponent.swift */,
 				56D1AB5326FA2523001A2486 /* IconButtonComponent.swift */,
 				568DDD8E27185C920067B94C /* ProfileSelectionCell.swift */,
+				56937A172721943100615042 /* SettingsCell.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -291,6 +302,7 @@
 				3932587326E9008C00A44687 /* DiaryScene.swift */,
 				562C91DE26F8B51D00548428 /* AlbumScene.swift */,
 				54BA499826F8C2D900201438 /* RewardModalScene.swift */,
+				56937A1927219EA600615042 /* ProfileScene.swift */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -509,8 +521,11 @@
 				54BA499926F8C2D900201438 /* RewardModalScene.swift in Sources */,
 				3932587126E9008000A44687 /* ProgressBarComponent.swift in Sources */,
 				A47C630226F8B4F800D6A54B /* Onboarding02.swift in Sources */,
+				56937A1A27219EA600615042 /* ProfileScene.swift in Sources */,
+				56937A1C27219F2300615042 /* ProfileViewController.swift in Sources */,
 				A47C630826F8B58100D6A54B /* FoodSelectorComponent.swift in Sources */,
 				A47C630026F8B4E600D6A54B /* Onboarding01.swift in Sources */,
+				56937A182721943200615042 /* SettingsCell.swift in Sources */,
 				3902B0E526EF96BC00FE2C8F /* Coordinator.swift in Sources */,
 				394AEB2226F7ADF700C5D8E7 /* CoreDataManager.swift in Sources */,
 				39DA538A26FD584500158880 /* UIViewExtension.swift in Sources */,
@@ -544,6 +559,7 @@
 				3902B0EF26F0B1BB00FE2C8F /* TabCoordinator.swift in Sources */,
 				394AEB2A26F7CEBE00C5D8E7 /* EntitySaveProtocol.swift in Sources */,
 				54BA499526F8B0D000201438 /* ModalViewController.swift in Sources */,
+				56937A1E2721A8DE00615042 /* ProfileCoordinator.swift in Sources */,
 				3932586B26E8FF7A00A44687 /* Protocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
