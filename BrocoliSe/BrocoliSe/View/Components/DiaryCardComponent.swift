@@ -9,7 +9,7 @@ import FOCalendar
 
 class DiaryCardComponent: UIView {
     
-    var controller: ProfileViewController?
+    var controller: DiaryViewController?
     
     private lazy var imagePerfil: UIImageView = {
         let imageView = UIImageView()
@@ -56,6 +56,11 @@ class DiaryCardComponent: UIView {
         hierarchyView()
         setupConstraints()
         setupCalendar()
+    }
+    
+    init(controller: DiaryViewController) {
+        super.init(frame: .zero)
+        self.controller = controller
     }
  
     func setModeCalendar(_ status: CardState) {
@@ -165,9 +170,8 @@ class DiaryCardComponent: UIView {
     }
     
     @objc func showProfile() {
-        // let profileVC = FactoryControllers.createProfileViewController()
-
-        // self.contro
+        print("aqui")
+        controller?.tabCoordinator?.showSettingsCoordinator()
     }
         
 }

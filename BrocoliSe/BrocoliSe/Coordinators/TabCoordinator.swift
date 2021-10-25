@@ -7,6 +7,7 @@ protocol TabCoordinatorProtocol: Coordinator {
     func setSelectedIndex(_ index: Int)
     func currentPage() -> TabBarPage?
     func configTabBar(color: UIColor)
+    func showSettingsCoordinator()
 }
 
 class TabCoordinator: NSObject, TabCoordinatorProtocol {
@@ -95,6 +96,13 @@ class TabCoordinator: NSObject, TabCoordinatorProtocol {
         
         tabBarController.selectedIndex = page.pageOrderNumber()
     }
+    
+    func showSettingsCoordinator() {
+        let settingsCoordinator = SettingsCoordinator(navigationController: self.navigationController)
+        settingsCoordinator.finishDelegate = self
+        settingsCoordinator.start()
+        childCoordinators.append(settingsCoordinator)
+    }
 }
 
 extension TabCoordinator: UITabBarControllerDelegate {
@@ -102,4 +110,10 @@ extension TabCoordinator: UITabBarControllerDelegate {
                           didSelect viewController: UIViewController) {
     }
 
+}
+
+extension TabCoordinator: CoordinatorFinishDelegate {
+    func coordinatorDidFinish(childCoordinator: Coordinator) {
+        //
+    }
 }

@@ -7,11 +7,11 @@
 
 import UIKit
 
-protocol ProfileSceneDelegate: AnyObject {
+protocol SettingsSceneDelegate: AnyObject {
     
 }
 
-class ProfileScene: UIView {
+class SettingsScene: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.backgroundColor = .blue
@@ -22,6 +22,6 @@ class ProfileScene: UIView {
     }
 }
 
-extension ProfileScene: ProfileSceneDelegate {
+extension SettingsScene: SettingsSceneDelegate {
     
 }

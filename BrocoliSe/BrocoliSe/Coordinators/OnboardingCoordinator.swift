@@ -8,11 +8,11 @@
 import Foundation
 import UIKit
 
-protocol ProfileCoodinatorProtocol: Coordinator {
+protocol OnboardingCoodinatorProtocol: Coordinator {
     func showOnboardingViewController()
 }
 
-class OnboardingCoordinator: ProfileCoodinatorProtocol {
+class OnboardingCoordinator: OnboardingCoodinatorProtocol {
     
     weak var finishDelegate: CoordinatorFinishDelegate?
     

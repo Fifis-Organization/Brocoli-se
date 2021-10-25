@@ -8,11 +8,11 @@
 import Foundation
 import UIKit
 
-protocol ProfileCoodinatorProtocol: Coordinator {
-    func showProfileViewController()
+protocol SettingsCoodinatorProtocol: Coordinator {
+    func showSettingsViewController()
 }
 
-class ProfileCoordinator: ProfileCoodinatorProtocol {
+class SettingsCoordinator: SettingsCoodinatorProtocol {
     
     weak var finishDelegate: CoordinatorFinishDelegate?
     
@@ -27,13 +27,12 @@ class ProfileCoordinator: ProfileCoodinatorProtocol {
     }
     
     func start() {
-        showProfileViewController()
+        showSettingsViewController()
     }
     
-    func showProfileViewController() {
-        let profileVC = FactoryControllers.createProfileViewController()
-        navigationController.pushViewController(profileVC, animated: false)
+    func showSettingsViewController() {
+        let settingsVC = FactoryControllers.createSettingsViewController()
+        navigationController.pushViewController(settingsVC, animated: false)
     }
     
 }
-

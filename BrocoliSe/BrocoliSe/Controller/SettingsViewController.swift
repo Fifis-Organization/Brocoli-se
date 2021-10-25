@@ -7,15 +7,15 @@
 
 import UIKit
 
-class ProfileViewController: UIViewController {
+class SettingsViewController: UIViewController {
     
-    private var scene: ProfileSceneDelegate?
+    private var scene: SettingsSceneDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
-    func setProfileScene(_ scene: ProfileSceneDelegate) {
+    func setProfileScene(_ scene: SettingsSceneDelegate) {
         self.scene = scene
         self.view = scene as? UIView
     }
