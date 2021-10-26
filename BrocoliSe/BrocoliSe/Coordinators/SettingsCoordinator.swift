@@ -10,17 +10,15 @@ import UIKit
 
 protocol SettingsCoodinatorProtocol: Coordinator {
     func showSettingsViewController()
+    func showProfileViewController()
 }
 
 class SettingsCoordinator: SettingsCoodinatorProtocol {
     
     weak var finishDelegate: CoordinatorFinishDelegate?
-    
     var childCoordinators: [Coordinator] = []
-    
     var navigationController: UINavigationController
-    
-    var type: CoordinatorType {.profile}
+    var type: CoordinatorType {.settings}
     
     init (navigationController: UINavigationController) {
         self.navigationController = navigationController
@@ -32,7 +30,13 @@ class SettingsCoordinator: SettingsCoodinatorProtocol {
     
     func showSettingsViewController() {
         let settingsVC = FactoryControllers.createSettingsViewController()
-        navigationController.pushViewController(settingsVC, animated: false)
+        settingsVC.settingsCoodinator = self
+        settingsVC.title = "Ajustes"
+        navigationController.pushViewController(settingsVC, animated: true)
+    }
+    
+    func showProfileViewController() {
+        
     }
     
 }
