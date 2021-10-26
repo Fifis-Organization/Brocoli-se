@@ -10,9 +10,27 @@ import UIKit
 class SettingsViewController: UIViewController {
     
     private var scene: SettingsSceneDelegate?
+    var settingsCoodinator: SettingsCoodinatorProtocol?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.isHidden = false
+        navigationController?.navigationBar.barStyle = .default
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.navigationBar.isHidden = true
+        navigationController?.navigationBar.barStyle = .black
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        settingsCoodinator?.finish()
     }
     
     func setProfileScene(_ scene: SettingsSceneDelegate) {

@@ -14,7 +14,7 @@ protocol SettingsSceneDelegate: AnyObject {
 class SettingsScene: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.backgroundColor = .blue
+        self.backgroundColor = .white
     }
     
     required init?(coder: NSCoder) {
