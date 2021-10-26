@@ -28,15 +28,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         var dateComponents = DateComponents()
         dateComponents.calendar = Calendar.current
         dateComponents.hour = 9
-        dateComponents.minute = 40
-        
+           
         let trigger = UNCalendarNotificationTrigger(
                  dateMatching: dateComponents, repeats: true)
         
         var dateComponents2 = DateComponents()
         dateComponents2.calendar = Calendar.current
-        dateComponents2.hour = 9
-        dateComponents.minute = 42
+        dateComponents2.hour = 21
            
         let trigger2 = UNCalendarNotificationTrigger(
                  dateMatching: dateComponents2, repeats: true)
