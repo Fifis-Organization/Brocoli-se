@@ -31,7 +31,6 @@ class SettingsCoordinator: SettingsCoodinatorProtocol {
     func showSettingsViewController() {
         let settingsVC = FactoryControllers.createSettingsViewController()
         settingsVC.settingsCoodinator = self
-        settingsVC.title = "Ajustes"
         navigationController.pushViewController(settingsVC, animated: true)
     }
     

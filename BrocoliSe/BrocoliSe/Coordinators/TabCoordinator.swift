@@ -64,7 +64,7 @@ class TabCoordinator: NSObject, TabCoordinatorProtocol {
         case .diary:
             let diaryVC = FactoryControllers.createDiaryViewController()
             diaryVC.tabCoordinator = self
-            diaryVC.title = "Diário"
+            diaryVC.title = ""
             navController.navigationBar.isHidden = true
             navController.navigationBar.barStyle = .black
             navController.navigationBar.tintColor = .black
