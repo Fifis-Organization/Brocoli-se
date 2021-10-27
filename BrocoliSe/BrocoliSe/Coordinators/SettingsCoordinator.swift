@@ -35,7 +35,8 @@ class SettingsCoordinator: SettingsCoodinatorProtocol {
     }
     
     func showProfileViewController() {
-        
+        let profileVC = FactoryControllers.createProfileViewController()
+        profileVC.title = "Perfil"
+        navigationController.pushViewController(profileVC, animated: true)
     }
-    
 }

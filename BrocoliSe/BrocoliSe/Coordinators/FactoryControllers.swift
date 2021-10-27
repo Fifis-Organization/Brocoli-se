@@ -33,7 +33,7 @@ struct FactoryControllers {
     }
 
     static func createProfileViewController() -> ProfileViewController {
-        let profileScene = ProfileScene()
+        let profileScene = ProfileScene(frame: UIScreen.main.bounds)
         let profileVC = ProfileViewController()
         profileVC.setCoreDataManager(CoreDataManager())
         profileVC.setProfileScene(profileScene)

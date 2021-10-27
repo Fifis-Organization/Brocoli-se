@@ -8,11 +8,11 @@
 import UIKit
 
 protocol SettingsSceneDelegate: AnyObject {
-    
+    func setController(controller: SettingsViewController)
 }
 
 class SettingsScene: UIView {
-    
+    private var controller: SettingsViewController?
     let items = [
         ["Vibrações","iphone.radiowaves.left.and.right.circle.fill"],
         ["Notificações", "bell.circle.fill"],
@@ -22,7 +22,7 @@ class SettingsScene: UIView {
     lazy var tableView: UITableView = {
         let table = UITableView()
         table.translatesAutoresizingMaskIntoConstraints = false
-        table.allowsSelection = false
+        table.allowsSelection = true
         table.delegate = self
         table.dataSource = self
         table.separatorStyle = UITableViewCell.SeparatorStyle.none
@@ -51,10 +51,6 @@ class SettingsScene: UIView {
             tableView.rightAnchor.constraint(equalTo: self.rightAnchor)
         ])
     }
-}
-
-extension SettingsScene: SettingsSceneDelegate {
-    
 }
 
 extension SettingsScene: UITableViewDelegate, UITableViewDataSource {
@@ -116,5 +112,20 @@ extension SettingsScene: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        switch indexPath.section {
+        case 0:
+            self.controller?.settingsCoodinator?.showProfileViewController()
+        default:
+            return
+        }
+    }
+}
+
+extension SettingsScene: SettingsSceneDelegate {
+    func setController(controller: SettingsViewController) {
+        self.controller = controller
     }
 }

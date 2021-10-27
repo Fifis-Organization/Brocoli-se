@@ -14,10 +14,13 @@ protocol SelectPhotoDelegate: AnyObject {
 class CustomImagePicker: UIView {
     weak var selectPhotoDelegate: SelectPhotoDelegate?
 
-    private let profileImageView: UIImageView = {
+    private lazy var profileImageView: UIImageView = {
         let imgView = UIImageView()
-        imgView.contentMode = .scaleAspectFit
-        imgView.image = UIImage(named: "brocolis-animado")
+        imgView.image = UIImage(systemName: "person.crop.circle.fill")
+        imgView.tintColor = .blueDark
+        imgView.contentMode = .scaleAspectFill
+        imgView.layer.masksToBounds = false
+        imgView.layer.cornerRadius = (self.frame.width*0.23)/2
         imgView.clipsToBounds = true
         return imgView
     }()
@@ -52,10 +55,14 @@ class CustomImagePicker: UIView {
 
     private func setupConstraints() {
         addSubview(contentStackView)
+        profileImageView.translatesAutoresizingMaskIntoConstraints = false
 
         NSLayoutConstraint.activate([
             contentStackView.widthAnchor.constraint(equalTo: widthAnchor),
-            contentStackView.heightAnchor.constraint(equalTo: heightAnchor)
+            contentStackView.heightAnchor.constraint(equalTo: heightAnchor),
+
+            profileImageView.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.25),
+            profileImageView.heightAnchor.constraint(equalTo: profileImageView.widthAnchor)
         ])
     }
 

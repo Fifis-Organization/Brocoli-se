@@ -20,6 +20,7 @@ class SettingsViewController: UIViewController {
         super.viewWillAppear(animated)
         navigationController?.navigationBar.isHidden = false
         navigationController?.navigationBar.barStyle = .default
+        navigationController?.navigationBar.tintColor = .greenMedium
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -35,6 +36,7 @@ class SettingsViewController: UIViewController {
     
     func setProfileScene(_ scene: SettingsSceneDelegate) {
         self.scene = scene
+        self.scene?.setController(controller: self)
         self.view = scene as? UIView
     }
 }

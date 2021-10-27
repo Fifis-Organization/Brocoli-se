@@ -64,7 +64,6 @@ class TabCoordinator: NSObject, TabCoordinatorProtocol {
         case .diary:
             let diaryVC = FactoryControllers.createDiaryViewController()
             diaryVC.tabCoordinator = self
-            diaryVC.title = ""
             navController.navigationBar.isHidden = true
             navController.navigationBar.barStyle = .black
             navController.navigationBar.tintColor = .black
@@ -75,7 +74,7 @@ class TabCoordinator: NSObject, TabCoordinatorProtocol {
             albumVC.title = "Álbum"
             let attrs = [
                 NSAttributedString.Key.foregroundColor: UIColor.white,
-                NSAttributedString.Key.font: UIFont.graviolaRegular(size: 34) ?? UIFont.systemFont(ofSize: 34)
+                NSAttributedString.Key.font: UIFont.graviolaSoft(size: 34) ?? UIFont.systemFont(ofSize: 34)
             ]
             navController.navigationBar.barStyle = .black
             navController.navigationItem.largeTitleDisplayMode = .always

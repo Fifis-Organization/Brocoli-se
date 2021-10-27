@@ -11,28 +11,29 @@ class ProfileScene: UIView {
     private var isActiveKeyboard: Bool = false
     private var controller: ProfileViewController?
 
-    private let photoLabel: UILabel = {
+    private lazy var photoLabel: UILabel = {
         let label = UILabel()
         label.text = "Foto"
-        label.font = .graviolaSoft(size: 20)
+        label.font = self.frame.height > 667 ? .graviolaSoft(size: 20) : .graviolaSoft(size: 17)
         label.textColor = .blueDark
         return label
     }()
-    private let customImagePicker: CustomImagePicker = CustomImagePicker()
+    private lazy var customImagePicker: CustomImagePicker = CustomImagePicker(frame: CGRect(x: 0, y: 0, width: self.frame.width, height: self.frame.height*0.25))
 
-    private let nameLabel: UILabel = {
+    private lazy var nameLabel: UILabel = {
         let label = UILabel()
         label.text = "Nome"
-        label.font = .graviolaSoft(size: 20)
+        label.font = self.frame.height > 667 ? .graviolaSoft(size: 20) : .graviolaSoft(size: 17)
         label.textColor = .blueDark
         return label
     }()
     private let nameTextField: TextField = TextField()
 
-    private let foodSelectorLabel: UILabel = {
+    private lazy var foodSelectorLabel: UILabel = {
         let label = UILabel()
         label.text = "Selecione os alimentos não consumidos"
-        label.font = .graviolaSoft(size: 20)
+        label.numberOfLines = 0
+        label.font = self.frame.height > 667 ? .graviolaSoft(size: 20) : .graviolaSoft(size: 17)
         label.textColor = .blueDark
         return label
     }()
@@ -128,8 +129,8 @@ class ProfileScene: UIView {
         setupImagePickerConstraints()
 
         NSLayoutConstraint.activate([
-            contentStackView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 20),
-            contentStackView.bottomAnchor.constraint(equalTo: bottomAnchor),
+            contentStackView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
+            contentStackView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor),
             contentStackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
             contentStackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20)
         ])
@@ -140,7 +141,7 @@ class ProfileScene: UIView {
 
         NSLayoutConstraint.activate([
             nameTextField.widthAnchor.constraint(equalTo: contentStackView.widthAnchor),
-            nameTextField.heightAnchor.constraint(equalToConstant: 35)
+            nameTextField.heightAnchor.constraint(equalToConstant: 40)
         ])
     }
 
@@ -149,7 +150,7 @@ class ProfileScene: UIView {
 
         NSLayoutConstraint.activate([
             foodSelector.widthAnchor.constraint(equalTo: contentStackView.widthAnchor),
-            foodSelector.heightAnchor.constraint(equalTo: contentStackView.heightAnchor, multiplier: 0.11)
+            foodSelector.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.1)
         ])
     }
 
@@ -157,8 +158,7 @@ class ProfileScene: UIView {
         customImagePicker.translatesAutoresizingMaskIntoConstraints = false
 
         NSLayoutConstraint.activate([
-            customImagePicker.widthAnchor.constraint(equalTo: contentStackView.widthAnchor),
-            customImagePicker.heightAnchor.constraint(equalToConstant: 80)
+            customImagePicker.widthAnchor.constraint(equalTo: contentStackView.widthAnchor)
         ])
     }
 }

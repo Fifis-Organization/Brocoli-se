@@ -14,15 +14,21 @@ protocol ProfileSceneDelegate: AnyObject {
 }
 
 class ProfileViewController: UIViewController {
-    private var profileScene: ProfileScene = ProfileScene()
     private var scene: ProfileSceneDelegate?
     private var coreDataManager: CoreDataManagerProtocol?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        profileScene.setController(controller: self)
-        self.view = profileScene
-        title = "Perfil"
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        configureNavigationStyle()
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        disconfigureNavigationStyle()
     }
 
     func setProfileScene(_ scene: ProfileSceneDelegate) {
@@ -43,5 +49,24 @@ class ProfileViewController: UIViewController {
 
     func reload() {
 
+    }
+
+    private func configureNavigationStyle() {
+        navigationController?.navigationBar.isHidden = false
+        navigationController?.navigationBar.barStyle = .default
+        navigationController?.navigationItem.largeTitleDisplayMode = .always
+        navigationController?.navigationBar.prefersLargeTitles = true
+        let attrs = [
+            NSAttributedString.Key.foregroundColor: UIColor.blueDark,
+            NSAttributedString.Key.font: UIFont.graviolaSoft(size: 34) ?? UIFont.systemFont(ofSize: 34)
+        ]
+        navigationController?.navigationBar.largeTitleTextAttributes = attrs as [NSAttributedString.Key : Any]
+    }
+
+    private func disconfigureNavigationStyle() {
+        navigationController?.navigationBar.isHidden = true
+        navigationController?.navigationBar.barStyle = .black
+        navigationController?.navigationItem.largeTitleDisplayMode = .never
+        navigationController?.navigationBar.prefersLargeTitles = false
     }
 }
