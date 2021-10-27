@@ -15,7 +15,7 @@ class SettingsViewController: UIViewController {
         super.viewDidLoad()
     }
     
-    func setProfileScene(_ scene: SettingsSceneDelegate) {
+    func setSettingsScene(_ scene: SettingsSceneDelegate) {
         self.scene = scene
         self.view = scene as? UIView
     }

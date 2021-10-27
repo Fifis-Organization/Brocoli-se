@@ -12,16 +12,95 @@ protocol SettingsSceneDelegate: AnyObject {
 }
 
 class SettingsScene: UIView {
+    
+    lazy var tableView: UITableView = {
+        let table = UITableView()
+        table.translatesAutoresizingMaskIntoConstraints = false
+        table.allowsSelection = false
+        table.delegate = self
+        table.dataSource = self
+        // table.separatorStyle = UITableViewCell.SeparatorStyle.none
+        table.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        table.register(SettingsCell.self, forCellReuseIdentifier: SettingsCell.identifier)
+        table.register(ProfileSelectionCell.self, forCellReuseIdentifier: ProfileSelectionCell.identifier)
+        return table
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.backgroundColor = .blue
+        self.backgroundColor = .white
+        self.addSubview(tableView)
+        setupTableView()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    func setupTableView() {
+        NSLayoutConstraint.activate([
+            tableView.topAnchor.constraint(equalTo: self.topAnchor),
+            tableView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
+            tableView.leftAnchor.constraint(equalTo: self.leftAnchor),
+            tableView.rightAnchor.constraint(equalTo: self.rightAnchor)
+        ])
+    }
 }
 
 extension SettingsScene: SettingsSceneDelegate {
     
+}
+
+extension SettingsScene: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        switch section {
+        case 0:
+            return 1
+        case 1:
+            return 3
+        default:
+            return 0
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        switch indexPath.section {
+        case 0:
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: ProfileSelectionCell.identifier) as? ProfileSelectionCell else {
+                return UITableViewCell()
+            }
+            
+            return cell
+        case 1:
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: SettingsCell.identifier) as? SettingsCell else {
+                return UITableViewCell()
+            }
+            
+            return cell
+        default:
+            break
+        }
+        
+        return UITableViewCell()
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        switch section {
+        case 0:
+            return "Perfil"
+        case 1:
+            return "Ajustes"
+        default:
+            return ""
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
+    }
 }

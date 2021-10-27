@@ -8,15 +8,34 @@
 import UIKit
 
 class ProfileSelectionCell: UITableViewCell {
+    
+    private var backgroundButton: UIView = {
+        let view = UIView()
+        view.backgroundColor = .backgroundColor
+        view.layer.masksToBounds = false
+        view.layer.cornerRadius = 8
+        view.clipsToBounds = true
+        
+        // let imageView =
+        return view
+    }()
+    
+    static let identifier = String(describing: ProfileSelectionCell.self)
+    
     private var profileImageView: UIImageView = {
         let imageView = UIImageView()
+        imageView.image = UIImage(systemName: "person.crop.circle.fill")
+        imageView.tintColor = .blueDark
         imageView.contentMode = .scaleAspectFit
+        imageView.layer.masksToBounds = false
+        imageView.layer.cornerRadius = 30
         imageView.clipsToBounds = true
         return imageView
     }()
     
     private var nameLabel: UILabel = {
         let label = UILabel()
+        label.text = "Larissa"
         label.textColor = .black
         label.font = UIFont.graviolaRegular(size: 16) ?? UIFont.systemFont(ofSize: 16)
         label.textAlignment = .left
@@ -26,24 +45,58 @@ class ProfileSelectionCell: UITableViewCell {
     private var infoLabel: UILabel = {
         let label = UILabel()
         label.text = "Informações pessoais"
-        label.textColor = .blueDark
+        label.textColor = .blueDark?.withAlphaComponent(0.8)
         label.font = UIFont.graviolaRegular(size: 16) ?? UIFont.systemFont(ofSize: 16)
         label.textAlignment = .left
         return label
     }()
-    // por enquanto, depois vai ser um custom button
-    private var customNextButton: UIButton = {
-        let button = UIButton()
-        button.setImage(UIImage(systemName: "forward"), for: .normal)
-        button.imageView?.contentMode = .scaleAspectFit
-        button.contentHorizontalAlignment = .fill
-        button.contentVerticalAlignment = .fill
-        
-        return button
+    
+    private var customNextButton = CustomViewButton()
+    
+    private lazy var labelStackView: UIStackView = {
+        let stackView = UIStackView(arrangedSubviews: [nameLabel, infoLabel])
+        stackView.axis = .vertical
+        stackView.alignment = .leading
+        return stackView
     }()
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        addSubview(profileImageView)
+        addSubview(labelStackView)
+        addSubview(customNextButton)
+        setupImageView()
+        setupCustomNextButton()
+        setupLabelStackView()
+    }
+    
+    func setupImageView() {
+        profileImageView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            profileImageView.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 20),
+            profileImageView.widthAnchor.constraint(equalToConstant: 60),
+            profileImageView.heightAnchor.constraint(equalToConstant: 60),
+            profileImageView.centerYAnchor.constraint(equalTo: self.centerYAnchor)
+        ])
+    }
+    
+    func setupLabelStackView() {
+        labelStackView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            labelStackView.leftAnchor.constraint(equalTo: profileImageView.rightAnchor, constant: 20),
+            labelStackView.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+            labelStackView.rightAnchor.constraint(equalTo: customNextButton.leftAnchor)
+        ])
+    }
+    
+    func setupCustomNextButton() {
+        customNextButton.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            customNextButton.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -20),
+            customNextButton.heightAnchor.constraint(equalTo: labelStackView.heightAnchor, multiplier: 0.8),
+            customNextButton.widthAnchor.constraint(equalTo: customNextButton.heightAnchor),
+            customNextButton.centerYAnchor.constraint(equalTo: self.centerYAnchor)
+        ])
     }
     
     required init?(coder: NSCoder) {

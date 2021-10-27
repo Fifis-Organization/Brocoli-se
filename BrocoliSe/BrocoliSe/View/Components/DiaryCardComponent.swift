@@ -170,7 +170,6 @@ class DiaryCardComponent: UIView {
     }
     
     @objc func showProfile() {
-        print("aqui")
         controller?.tabCoordinator?.showSettingsCoordinator()
     }
         

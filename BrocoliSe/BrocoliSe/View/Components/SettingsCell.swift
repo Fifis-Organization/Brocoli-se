@@ -8,6 +8,9 @@
 import UIKit
 
 class SettingsCell: UITableViewCell {
+    
+    static let identifier = String(describing: SettingsCell.self)
+    
     private var iconImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
