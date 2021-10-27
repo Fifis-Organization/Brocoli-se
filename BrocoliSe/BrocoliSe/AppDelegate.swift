@@ -39,6 +39,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         let trigger2 = UNCalendarNotificationTrigger(
                  dateMatching: dateComponents2, repeats: true)
         
+        UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
         notification.schenduleNotificationMorning(trigger: trigger)
         notification.schenduleNotificationNight(trigger: trigger2)
         return true
