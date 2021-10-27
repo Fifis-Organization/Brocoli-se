@@ -16,9 +16,9 @@
 		392DA367270F2C0D00426712 /* AlbumViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392DA366270F2C0D00426712 /* AlbumViewControllerTests.swift */; };
 		392DA36A270F2D0100426712 /* CoreDataManagerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392DA369270F2D0100426712 /* CoreDataManagerMock.swift */; };
 		392DA36C270F2E0F00426712 /* DiarySceneMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392DA36B270F2E0F00426712 /* DiarySceneMock.swift */; };
+		392DA3982716FDBC00426712 /* EntityDeleteProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392DA3972716FDBC00426712 /* EntityDeleteProtocol.swift */; };
 		392DA39F27172B3B00426712 /* AlbumSceneMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392DA39E27172B3B00426712 /* AlbumSceneMock.swift */; };
 		392DA3A32718527100426712 /* PersistenceServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392DA3A22718527100426712 /* PersistenceServiceTests.swift */; };
-		392DA3982716FDBC00426712 /* EntityDeleteProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392DA3972716FDBC00426712 /* EntityDeleteProtocol.swift */; };
 		3932586526E8FF3F00A44687 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3932586426E8FF3F00A44687 /* Colors.swift */; };
 		3932586826E8FF4900A44687 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3932586726E8FF4900A44687 /* Fonts.swift */; };
 		3932586B26E8FF7A00A44687 /* Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3932586A26E8FF7A00A44687 /* Protocol.swift */; };
@@ -43,6 +43,9 @@
 		54BA499526F8B0D000201438 /* ModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BA499426F8B0D000201438 /* ModalViewController.swift */; };
 		54BA499726F8B1B300201438 /* ModalComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BA499626F8B1B300201438 /* ModalComponent.swift */; };
 		54BA499926F8C2D900201438 /* RewardModalScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BA499826F8C2D900201438 /* RewardModalScene.swift */; };
+		54CDC6262728CADA007CA4D5 /* ProfileScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54CDC6252728CADA007CA4D5 /* ProfileScene.swift */; };
+		54CDC6282728D095007CA4D5 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54CDC6272728D095007CA4D5 /* ProfileViewController.swift */; };
+		54CDC62A2728D6DF007CA4D5 /* CustomImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54CDC6292728D6DF007CA4D5 /* CustomImagePicker.swift */; };
 		562C91DD26F8B3CD00548428 /* AlbumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 562C91DC26F8B3CD00548428 /* AlbumViewController.swift */; };
 		562C91DF26F8B51D00548428 /* AlbumScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 562C91DE26F8B51D00548428 /* AlbumScene.swift */; };
 		562C91E126F8C85300548428 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 562C91E026F8C85300548428 /* CollectionViewCell.swift */; };
@@ -82,9 +85,9 @@
 		392DA366270F2C0D00426712 /* AlbumViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumViewControllerTests.swift; sourceTree = "<group>"; };
 		392DA369270F2D0100426712 /* CoreDataManagerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManagerMock.swift; sourceTree = "<group>"; };
 		392DA36B270F2E0F00426712 /* DiarySceneMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiarySceneMock.swift; sourceTree = "<group>"; };
+		392DA3972716FDBC00426712 /* EntityDeleteProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityDeleteProtocol.swift; sourceTree = "<group>"; };
 		392DA39E27172B3B00426712 /* AlbumSceneMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumSceneMock.swift; sourceTree = "<group>"; };
 		392DA3A22718527100426712 /* PersistenceServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceServiceTests.swift; sourceTree = "<group>"; };
-		392DA3972716FDBC00426712 /* EntityDeleteProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityDeleteProtocol.swift; sourceTree = "<group>"; };
 		3932586426E8FF3F00A44687 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		3932586726E8FF4900A44687 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		3932586A26E8FF7A00A44687 /* Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocol.swift; sourceTree = "<group>"; };
@@ -111,6 +114,9 @@
 		54BA499426F8B0D000201438 /* ModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalViewController.swift; sourceTree = "<group>"; };
 		54BA499626F8B1B300201438 /* ModalComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalComponent.swift; sourceTree = "<group>"; };
 		54BA499826F8C2D900201438 /* RewardModalScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardModalScene.swift; sourceTree = "<group>"; };
+		54CDC6252728CADA007CA4D5 /* ProfileScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScene.swift; sourceTree = "<group>"; };
+		54CDC6272728D095007CA4D5 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		54CDC6292728D6DF007CA4D5 /* CustomImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomImagePicker.swift; sourceTree = "<group>"; };
 		562C91DC26F8B3CD00548428 /* AlbumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumViewController.swift; sourceTree = "<group>"; };
 		562C91DE26F8B51D00548428 /* AlbumScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumScene.swift; sourceTree = "<group>"; };
 		562C91E026F8C85300548428 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
@@ -267,6 +273,7 @@
 				A47C62FC26F8B48600D6A54B /* OnboardingViewController.swift */,
 				54BA499426F8B0D000201438 /* ModalViewController.swift */,
 				A496A9322716FFD600B80622 /* NotificationViewController.swift */,
+				54CDC6272728D095007CA4D5 /* ProfileViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -309,6 +316,7 @@
 				A47C630726F8B58100D6A54B /* FoodSelectorComponent.swift */,
 				54BA499626F8B1B300201438 /* ModalComponent.swift */,
 				56D1AB5326FA2523001A2486 /* IconButtonComponent.swift */,
+				54CDC6292728D6DF007CA4D5 /* CustomImagePicker.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -330,6 +338,7 @@
 				3932587326E9008C00A44687 /* DiaryScene.swift */,
 				562C91DE26F8B51D00548428 /* AlbumScene.swift */,
 				54BA499826F8C2D900201438 /* RewardModalScene.swift */,
+				54CDC6252728CADA007CA4D5 /* ProfileScene.swift */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -555,6 +564,7 @@
 				3902B0E526EF96BC00FE2C8F /* Coordinator.swift in Sources */,
 				394AEB2226F7ADF700C5D8E7 /* CoreDataManager.swift in Sources */,
 				39DA538A26FD584500158880 /* UIViewExtension.swift in Sources */,
+				54CDC62A2728D6DF007CA4D5 /* CustomImagePicker.swift in Sources */,
 				A496A9332716FFD600B80622 /* NotificationViewController.swift in Sources */,
 				3932587126E9008000A44687 /* ProgressBarComponent.swift in Sources */,
 				54109F1626F2959700EC4C10 /* DiaryTableViewCellComponent.swift in Sources */,
@@ -579,11 +589,13 @@
 				39DA525C26F7E4DF00158880 /* FactoryControllers.swift in Sources */,
 				3984BD3E26E8E9AB00C92824 /* SceneDelegate.swift in Sources */,
 				394AEB1F26F7ADD200C5D8E7 /* DataModel.xcdatamodeld in Sources */,
+				54CDC6262728CADA007CA4D5 /* ProfileScene.swift in Sources */,
 				394AEB2626F7CE6D00C5D8E7 /* EntityCreateProtocol.swift in Sources */,
 				394AEB2D26F7CF0C00C5D8E7 /* EntityFetchProtocol.swift in Sources */,
 				39DA526026F9FFEC00158880 /* StringExtension.swift in Sources */,
 				3902B0EF26F0B1BB00FE2C8F /* TabCoordinator.swift in Sources */,
 				394AEB2A26F7CEBE00C5D8E7 /* EntitySaveProtocol.swift in Sources */,
+				54CDC6282728D095007CA4D5 /* ProfileViewController.swift in Sources */,
 				54BA499526F8B0D000201438 /* ModalViewController.swift in Sources */,
 				3932586B26E8FF7A00A44687 /* Protocol.swift in Sources */,
 			);
