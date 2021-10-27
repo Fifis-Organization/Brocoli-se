@@ -31,9 +31,7 @@ class DiaryViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
         tabCoordinator?.configTabBar(color: .white)
-        
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {

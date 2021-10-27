@@ -16,7 +16,8 @@ class TabCoordinator: NSObject, TabCoordinatorProtocol {
     var childCoordinators: [Coordinator] = []
     var navigationController: UINavigationController
     var tabBarController: UITabBarController
-        
+    private var controllers: [UINavigationController] = []
+    
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
         self.tabBarController = .init()
@@ -25,8 +26,7 @@ class TabCoordinator: NSObject, TabCoordinatorProtocol {
     func start() {
         let pages: [TabBarPage] = [.diary, .album]
             .sorted(by: { $0.pageOrderNumber() < $1.pageOrderNumber() })
-        let controllers: [UINavigationController] = pages.map({ getTabController($0) })
-        
+        controllers = pages.map({ getTabController($0) })
         prepareTabBarController(withTabControllers: controllers)
     }
     
@@ -64,8 +64,10 @@ class TabCoordinator: NSObject, TabCoordinatorProtocol {
         case .diary:
             let diaryVC = FactoryControllers.createDiaryViewController()
             diaryVC.tabCoordinator = self
+            diaryVC.title = ""
             navController.navigationBar.isHidden = true
             navController.navigationBar.barStyle = .black
+            navController.navigationBar.tintColor = .black
             navController.pushViewController(diaryVC, animated: false)
         case .album:
             let albumVC = FactoryControllers.createAlbumViewController()
@@ -98,7 +100,16 @@ class TabCoordinator: NSObject, TabCoordinatorProtocol {
     }
     
     func showSettingsCoordinator() {
-        let settingsCoordinator = SettingsCoordinator(navigationController: self.navigationController)
+        let navController = controllers.first ?? self.navigationController
+        navController.navigationBar.isHidden = false
+        navController.navigationBar.backgroundColor = .white
+        navController.navigationBar.tintColor = .blueDark
+        navController.navigationBar.barStyle = .default
+        navController.navigationBar.titleTextAttributes = [
+            NSAttributedString.Key.foregroundColor: UIColor.blueDark ?? .black
+        ]
+        
+        let settingsCoordinator = SettingsCoordinator(navigationController: navController)
         settingsCoordinator.finishDelegate = self
         settingsCoordinator.start()
         childCoordinators.append(settingsCoordinator)
@@ -114,6 +125,6 @@ extension TabCoordinator: UITabBarControllerDelegate {
 
 extension TabCoordinator: CoordinatorFinishDelegate {
     func coordinatorDidFinish(childCoordinator: Coordinator) {
-        //
+        self.childCoordinators.removeAll()
     }
 }

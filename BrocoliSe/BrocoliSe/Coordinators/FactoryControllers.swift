@@ -26,7 +26,8 @@ struct FactoryControllers {
         let settingsScene = SettingsScene(frame: UIScreen.main.bounds)
         let settingsVC = SettingsViewController()
         // profileVC.setCoreDataManager(CoreDataManager())
-        settingsVC.setSettingsScene(settingsScene)
+        settingsVC.setProfileScene(settingsScene
+        )
         
         return settingsVC
     }

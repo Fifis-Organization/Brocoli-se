@@ -13,13 +13,19 @@ protocol SettingsSceneDelegate: AnyObject {
 
 class SettingsScene: UIView {
     
+    let items = [
+        ["Vibrações","iphone.radiowaves.left.and.right.circle.fill"],
+        ["Notificações", "bell.circle.fill"],
+        ["Brocoli-se no Instagram", "instagram-icon"]
+    ]
+    
     lazy var tableView: UITableView = {
         let table = UITableView()
         table.translatesAutoresizingMaskIntoConstraints = false
         table.allowsSelection = false
         table.delegate = self
         table.dataSource = self
-        // table.separatorStyle = UITableViewCell.SeparatorStyle.none
+        table.separatorStyle = UITableViewCell.SeparatorStyle.none
         table.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         table.register(SettingsCell.self, forCellReuseIdentifier: SettingsCell.identifier)
         table.register(ProfileSelectionCell.self, forCellReuseIdentifier: ProfileSelectionCell.identifier)
@@ -57,7 +63,7 @@ extension SettingsScene: UITableViewDelegate, UITableViewDataSource {
         case 0:
             return 1
         case 1:
-            return 3
+            return items.count
         default:
             return 0
         }
@@ -76,6 +82,8 @@ extension SettingsScene: UITableViewDelegate, UITableViewDataSource {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: SettingsCell.identifier) as? SettingsCell else {
                 return UITableViewCell()
             }
+            cell.setSettingsLabel(text: items[indexPath.row][0])
+            cell.setIconImageView(imageName: items[indexPath.row][1])
             
             return cell
         default:
@@ -89,15 +97,21 @@ extension SettingsScene: UITableViewDelegate, UITableViewDataSource {
         return 2
     }
     
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let label = UILabel()
+        label.textColor = UIColor.blueDark
+        label.font = UIFont.graviolaSoft(size: 20)
+        
         switch section {
         case 0:
-            return "Perfil"
+            label.text = "  Perfil"
         case 1:
-            return "Ajustes"
+            label.text = "  Ajustes"
         default:
-            return ""
+            label.text = ""
         }
+        
+        return label
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

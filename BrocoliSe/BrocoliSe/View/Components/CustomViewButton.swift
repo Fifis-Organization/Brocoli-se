@@ -29,9 +29,9 @@ class CustomViewButton: UIView {
         self.layer.masksToBounds = false
         self.layer.cornerRadius = 8
         self.clipsToBounds = true
-//        self.layer.shadowOffset = CGSize(width: -1, height: 1)
-//        self.layer.shadowColor = UIColor.black.cgColor
-//        self.layer.shadowOpacity = 0.8
+        self.layer.shadowColor = UIColor.black.cgColor
+        self.layer.shadowOpacity = 0.06
+        self.layer.masksToBounds = false
 
     }
     

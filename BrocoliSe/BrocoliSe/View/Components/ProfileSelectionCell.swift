@@ -15,8 +15,6 @@ class ProfileSelectionCell: UITableViewCell {
         view.layer.masksToBounds = false
         view.layer.cornerRadius = 8
         view.clipsToBounds = true
-        
-        // let imageView =
         return view
     }()
     
@@ -93,7 +91,7 @@ class ProfileSelectionCell: UITableViewCell {
         customNextButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             customNextButton.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -20),
-            customNextButton.heightAnchor.constraint(equalTo: labelStackView.heightAnchor, multiplier: 0.8),
+            customNextButton.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.4),
             customNextButton.widthAnchor.constraint(equalTo: customNextButton.heightAnchor),
             customNextButton.centerYAnchor.constraint(equalTo: self.centerYAnchor)
         ])
