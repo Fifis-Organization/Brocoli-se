@@ -33,6 +33,10 @@ class DiaryViewController: UIViewController {
         super.viewDidAppear(animated)
         tabCoordinator?.configTabBar(color: .white)
     }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
 
     func setDiaryScene(_ aScene: DiarySceneDelegate) {
         diaryScene = aScene

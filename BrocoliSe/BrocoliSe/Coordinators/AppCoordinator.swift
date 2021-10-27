@@ -45,6 +45,7 @@ class AppCoordinator: AppCoordinatorProtocol {
             tabCoordinator.start()
             childCoordinators.append(tabCoordinator)
     }
+    
 }
 
 extension AppCoordinator: CoordinatorFinishDelegate {
