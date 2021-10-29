@@ -1,15 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "patinho.png",
+      "filename" : "zebrinha-blank.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "zebrinha-blank@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "zebrinha-blank@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

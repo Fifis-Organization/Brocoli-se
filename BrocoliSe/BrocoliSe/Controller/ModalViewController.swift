@@ -10,7 +10,6 @@ import UIKit
 class ModalViewController: UIViewController {
 
     private let scene = RewardModalScene(frame: UIScreen.main.bounds)
-
     weak var tabCoordinator: TabCoordinatorProtocol?
 
     override func viewDidLoad() {
@@ -31,16 +30,7 @@ class ModalViewController: UIViewController {
     }
 
     private func setupScene() {
-        view.addSubview(scene)
-        scene.translatesAutoresizingMaskIntoConstraints = false
-
-        NSLayoutConstraint.activate([
-            scene.topAnchor.constraint(equalTo: view.topAnchor),
-            scene.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            scene.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            scene.bottomAnchor.constraint(equalTo: view.bottomAnchor)
-        ])
-
+        view = scene
         scene.viewController = self
         scene.modal.setupPanGesture()
     }

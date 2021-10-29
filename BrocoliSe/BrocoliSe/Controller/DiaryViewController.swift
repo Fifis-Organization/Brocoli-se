@@ -43,7 +43,6 @@ class DiaryViewController: UIViewController {
         diaryScene?.setController(controller: self)
         view = diaryScene as? UIView
         diaryScene?.setDay(daySelected: createToday())
-        // testSaveDays()
     }
     
     func setCoreDataManager(_ aCoreData: CoreDataManagerProtocol) {
@@ -72,9 +71,6 @@ class DiaryViewController: UIViewController {
         fetchUser()
         coreDataManager.save()
         if user.first?.point == 100 && today.concluded {
-//            DispatchQueue.main.asyncAfter(deadline: .now() + 0.7) {
-//                self.diaryScene?.setTextLabelProgress("brabo")
-//            }
             let modalVC = ModalViewController()
             modalVC.tabCoordinator = self.tabCoordinator
             modalVC.modalPresentationStyle = .overFullScreen
@@ -86,8 +82,6 @@ class DiaryViewController: UIViewController {
         let calendar = Calendar(identifier: .gregorian)
         guard let coreDataManager = coreDataManager else { return nil }
         let days: [Day] = coreDataManager.fetch()
-       
-        // let dateTest = calendar.date(byAdding: .day, value: 9, to: Date())
         
         let daySelected = calendar.component(.day, from: Date())
         let monthSelected = calendar.component(.month, from: Date())
@@ -107,10 +101,9 @@ class DiaryViewController: UIViewController {
         }
         
         if !validator {
-            // let calendar = Calendar(identifier: .gregorian)
             let today: Day = coreDataManager.createEntity()
             let foods: [FoodOff] = coreDataManager.fetch()
-            today.date = Date() // calendar.date(byAdding: .day, value: 9, to: Date())
+            today.date = Date()
             today.addToFoods(NSSet(array: foods))
             today.addToNoIngested(NSSet(array: foods))
             coreDataManager.save()
@@ -162,28 +155,5 @@ class DiaryViewController: UIViewController {
         }
         
         validator ? diaryScene?.setDay(daySelected: today) : diaryScene?.setDay(daySelected: nil)
-    }
-    
-    func testSaveDays() {
-        guard let coreDataManager = coreDataManager else { return }
-        let calendar = Calendar(identifier: .gregorian)
-        
-        let day01: Day = coreDataManager.createEntity()
-        day01.date = calendar.date(byAdding: .day, value: -2, to: Date())
-        let foods01: [FoodOff] = coreDataManager.fetch()
-        day01.addToFoods(NSSet(array: foods01))
-
-        let day02: Day = coreDataManager.createEntity()
-        day02.date = calendar.date(byAdding: .day, value: -1, to: Date())
-        let foods02: [FoodOff] = coreDataManager.fetch()
-        day02.addToFoods(NSSet(array: foods02))
-
-//
-//        let day03: Day = coreDataManager.createEntity()
-//        day03.date = Date()
-//        let foods03: [FoodOff] = coreDataManager.fetch()
-//        day03.addToFoods(NSSet(array: foods03))
-
-        coreDataManager.save()
     }
 }

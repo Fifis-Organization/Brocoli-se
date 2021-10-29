@@ -13,7 +13,12 @@
 		3902B0E926EF977900FE2C8F /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3902B0E826EF977900FE2C8F /* AppCoordinator.swift */; };
 		3902B0EF26F0B1BB00FE2C8F /* TabCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3902B0EE26F0B1BB00FE2C8F /* TabCoordinator.swift */; };
 		3902B0F326F0DD0200FE2C8F /* TabBarPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3902B0F226F0DD0200FE2C8F /* TabBarPage.swift */; };
+		392DA367270F2C0D00426712 /* AlbumViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392DA366270F2C0D00426712 /* AlbumViewControllerTests.swift */; };
+		392DA36A270F2D0100426712 /* CoreDataManagerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392DA369270F2D0100426712 /* CoreDataManagerMock.swift */; };
+		392DA36C270F2E0F00426712 /* DiarySceneMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392DA36B270F2E0F00426712 /* DiarySceneMock.swift */; };
 		392DA3982716FDBC00426712 /* EntityDeleteProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392DA3972716FDBC00426712 /* EntityDeleteProtocol.swift */; };
+		392DA39F27172B3B00426712 /* AlbumSceneMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392DA39E27172B3B00426712 /* AlbumSceneMock.swift */; };
+		392DA3A32718527100426712 /* PersistenceServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392DA3A22718527100426712 /* PersistenceServiceTests.swift */; };
 		3932586526E8FF3F00A44687 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3932586426E8FF3F00A44687 /* Colors.swift */; };
 		3932586826E8FF4900A44687 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3932586726E8FF4900A44687 /* Fonts.swift */; };
 		3932586B26E8FF7A00A44687 /* Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3932586A26E8FF7A00A44687 /* Protocol.swift */; };
@@ -38,6 +43,9 @@
 		54BA499526F8B0D000201438 /* ModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BA499426F8B0D000201438 /* ModalViewController.swift */; };
 		54BA499726F8B1B300201438 /* ModalComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BA499626F8B1B300201438 /* ModalComponent.swift */; };
 		54BA499926F8C2D900201438 /* RewardModalScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BA499826F8C2D900201438 /* RewardModalScene.swift */; };
+		54CDC6262728CADA007CA4D5 /* ProfileScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54CDC6252728CADA007CA4D5 /* ProfileScene.swift */; };
+		54CDC6282728D095007CA4D5 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54CDC6272728D095007CA4D5 /* ProfileViewController.swift */; };
+		54CDC62A2728D6DF007CA4D5 /* CustomImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54CDC6292728D6DF007CA4D5 /* CustomImagePicker.swift */; };
 		562216142726F879004AF110 /* CustomViewButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 562216132726F879004AF110 /* CustomViewButton.swift */; };
 		562C91DD26F8B3CD00548428 /* AlbumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 562C91DC26F8B3CD00548428 /* AlbumViewController.swift */; };
 		562C91DF26F8B51D00548428 /* AlbumScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 562C91DE26F8B51D00548428 /* AlbumScene.swift */; };
@@ -48,7 +56,7 @@
 		56937A1C27219F2300615042 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56937A1B27219F2300615042 /* SettingsViewController.swift */; };
 		56937A1E2721A8DE00615042 /* SettingsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56937A1D2721A8DE00615042 /* SettingsCoordinator.swift */; };
 		569B432B26FB66DB0084071E /* PersistenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569B432A26FB66DB0084071E /* PersistenceService.swift */; };
-		56B831D62707494F00490908 /* BrocoliSeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B831D52707494F00490908 /* BrocoliSeTests.swift */; };
+		56B831D62707494F00490908 /* DiaryViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B831D52707494F00490908 /* DiaryViewControllerTests.swift */; };
 		56D1AB5426FA2523001A2486 /* IconButtonComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D1AB5326FA2523001A2486 /* IconButtonComponent.swift */; };
 		5F22C12D64DBC49B6281335B /* Pods_BrocoliSe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 339A77E77343AA9D6B45448B /* Pods_BrocoliSe.framework */; };
 		A47C62FD26F8B48600D6A54B /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47C62FC26F8B48600D6A54B /* OnboardingViewController.swift */; };
@@ -58,6 +66,7 @@
 		A47C630626F8B56A00D6A54B /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47C630526F8B56A00D6A54B /* TextField.swift */; };
 		A47C630826F8B58100D6A54B /* FoodSelectorComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47C630726F8B58100D6A54B /* FoodSelectorComponent.swift */; };
 		A47C630A26F8B66000D6A54B /* OnboardingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47C630926F8B66000D6A54B /* OnboardingCoordinator.swift */; };
+		A496A9332716FFD600B80622 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A496A9322716FFD600B80622 /* NotificationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,7 +88,12 @@
 		3902B0E826EF977900FE2C8F /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		3902B0EE26F0B1BB00FE2C8F /* TabCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabCoordinator.swift; sourceTree = "<group>"; };
 		3902B0F226F0DD0200FE2C8F /* TabBarPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarPage.swift; sourceTree = "<group>"; };
+		392DA366270F2C0D00426712 /* AlbumViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumViewControllerTests.swift; sourceTree = "<group>"; };
+		392DA369270F2D0100426712 /* CoreDataManagerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManagerMock.swift; sourceTree = "<group>"; };
+		392DA36B270F2E0F00426712 /* DiarySceneMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiarySceneMock.swift; sourceTree = "<group>"; };
 		392DA3972716FDBC00426712 /* EntityDeleteProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityDeleteProtocol.swift; sourceTree = "<group>"; };
+		392DA39E27172B3B00426712 /* AlbumSceneMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumSceneMock.swift; sourceTree = "<group>"; };
+		392DA3A22718527100426712 /* PersistenceServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceServiceTests.swift; sourceTree = "<group>"; };
 		3932586426E8FF3F00A44687 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		3932586726E8FF4900A44687 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		3932586A26E8FF7A00A44687 /* Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocol.swift; sourceTree = "<group>"; };
@@ -106,6 +120,9 @@
 		54BA499426F8B0D000201438 /* ModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalViewController.swift; sourceTree = "<group>"; };
 		54BA499626F8B1B300201438 /* ModalComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalComponent.swift; sourceTree = "<group>"; };
 		54BA499826F8C2D900201438 /* RewardModalScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardModalScene.swift; sourceTree = "<group>"; };
+		54CDC6252728CADA007CA4D5 /* ProfileScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScene.swift; sourceTree = "<group>"; };
+		54CDC6272728D095007CA4D5 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		54CDC6292728D6DF007CA4D5 /* CustomImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomImagePicker.swift; sourceTree = "<group>"; };
 		562216132726F879004AF110 /* CustomViewButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewButton.swift; sourceTree = "<group>"; };
 		562C91DC26F8B3CD00548428 /* AlbumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumViewController.swift; sourceTree = "<group>"; };
 		562C91DE26F8B51D00548428 /* AlbumScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumScene.swift; sourceTree = "<group>"; };
@@ -117,7 +134,7 @@
 		56937A1D2721A8DE00615042 /* SettingsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCoordinator.swift; sourceTree = "<group>"; };
 		569B432A26FB66DB0084071E /* PersistenceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceService.swift; sourceTree = "<group>"; };
 		56B831D32707494F00490908 /* BrocoliSeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BrocoliSeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		56B831D52707494F00490908 /* BrocoliSeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrocoliSeTests.swift; sourceTree = "<group>"; };
+		56B831D52707494F00490908 /* DiaryViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryViewControllerTests.swift; sourceTree = "<group>"; };
 		56D1AB5326FA2523001A2486 /* IconButtonComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconButtonComponent.swift; sourceTree = "<group>"; };
 		7FA58FB81DD24388A0BB3880 /* Pods-BrocoliSe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BrocoliSe.debug.xcconfig"; path = "Target Support Files/Pods-BrocoliSe/Pods-BrocoliSe.debug.xcconfig"; sourceTree = "<group>"; };
 		A47C62FC26F8B48600D6A54B /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
@@ -128,6 +145,8 @@
 		A47C630726F8B58100D6A54B /* FoodSelectorComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodSelectorComponent.swift; sourceTree = "<group>"; };
 		A47C630926F8B66000D6A54B /* OnboardingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCoordinator.swift; sourceTree = "<group>"; };
 		A48BD8472705DE6100A265D8 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		A496A9322716FFD600B80622 /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
+		A496A9342717095D00B80622 /* BrocoliSe.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BrocoliSe.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +180,33 @@
 				56937A1D2721A8DE00615042 /* SettingsCoordinator.swift */,
 			);
 			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		392DA365270F2BB400426712 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				56B831D52707494F00490908 /* DiaryViewControllerTests.swift */,
+				392DA366270F2C0D00426712 /* AlbumViewControllerTests.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		392DA368270F2CE400426712 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				392DA369270F2D0100426712 /* CoreDataManagerMock.swift */,
+				392DA36B270F2E0F00426712 /* DiarySceneMock.swift */,
+				392DA39E27172B3B00426712 /* AlbumSceneMock.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		392DA3A12718517A00426712 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				392DA3A22718527100426712 /* PersistenceServiceTests.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		394AEB1C26F7AD9C00C5D8E7 /* CoreData */ = {
@@ -205,6 +251,7 @@
 		3984BD3A26E8E9AB00C92824 /* BrocoliSe */ = {
 			isa = PBXGroup;
 			children = (
+				A496A9342717095D00B80622 /* BrocoliSe.entitlements */,
 				394AEB1C26F7AD9C00C5D8E7 /* CoreData */,
 				543DCF9726F36DB600BDAF63 /* Utilities */,
 				3902B0E326EF96AB00FE2C8F /* Coordinators */,
@@ -238,6 +285,8 @@
 				562C91DC26F8B3CD00548428 /* AlbumViewController.swift */,
 				A47C62FC26F8B48600D6A54B /* OnboardingViewController.swift */,
 				54BA499426F8B0D000201438 /* ModalViewController.swift */,
+				A496A9322716FFD600B80622 /* NotificationViewController.swift */,
+				54CDC6272728D095007CA4D5 /* ProfileViewController.swift */,
 				56937A1B27219F2300615042 /* SettingsViewController.swift */,
 				3984BD5A26E8FCF400C92824 /* Fonts */,
 			);
@@ -281,6 +330,7 @@
 				A47C630726F8B58100D6A54B /* FoodSelectorComponent.swift */,
 				54BA499626F8B1B300201438 /* ModalComponent.swift */,
 				56D1AB5326FA2523001A2486 /* IconButtonComponent.swift */,
+				54CDC6292728D6DF007CA4D5 /* CustomImagePicker.swift */,
 				568DDD8E27185C920067B94C /* ProfileSelectionCell.swift */,
 				56937A172721943100615042 /* SettingsCell.swift */,
 				562216132726F879004AF110 /* CustomViewButton.swift */,
@@ -305,6 +355,7 @@
 				3932587326E9008C00A44687 /* DiaryScene.swift */,
 				562C91DE26F8B51D00548428 /* AlbumScene.swift */,
 				54BA499826F8C2D900201438 /* RewardModalScene.swift */,
+				54CDC6252728CADA007CA4D5 /* ProfileScene.swift */,
 				56937A1927219EA600615042 /* SettingsScene.swift */,
 			);
 			path = Scenes;
@@ -332,7 +383,9 @@
 		56B831D42707494F00490908 /* BrocoliSeTests */ = {
 			isa = PBXGroup;
 			children = (
-				56B831D52707494F00490908 /* BrocoliSeTests.swift */,
+				392DA368270F2CE400426712 /* Mocks */,
+				392DA365270F2BB400426712 /* Controller */,
+				392DA3A12718517A00426712 /* Model */,
 			);
 			path = BrocoliSeTests;
 			sourceTree = "<group>";
@@ -532,6 +585,8 @@
 				3902B0E526EF96BC00FE2C8F /* Coordinator.swift in Sources */,
 				394AEB2226F7ADF700C5D8E7 /* CoreDataManager.swift in Sources */,
 				39DA538A26FD584500158880 /* UIViewExtension.swift in Sources */,
+				54CDC62A2728D6DF007CA4D5 /* CustomImagePicker.swift in Sources */,
+				A496A9332716FFD600B80622 /* NotificationViewController.swift in Sources */,
 				3932587126E9008000A44687 /* ProgressBarComponent.swift in Sources */,
 				54109F1626F2959700EC4C10 /* DiaryTableViewCellComponent.swift in Sources */,
 				569B432B26FB66DB0084071E /* PersistenceService.swift in Sources */,
@@ -557,11 +612,13 @@
 				39DA525C26F7E4DF00158880 /* FactoryControllers.swift in Sources */,
 				3984BD3E26E8E9AB00C92824 /* SceneDelegate.swift in Sources */,
 				394AEB1F26F7ADD200C5D8E7 /* DataModel.xcdatamodeld in Sources */,
+				54CDC6262728CADA007CA4D5 /* ProfileScene.swift in Sources */,
 				394AEB2626F7CE6D00C5D8E7 /* EntityCreateProtocol.swift in Sources */,
 				394AEB2D26F7CF0C00C5D8E7 /* EntityFetchProtocol.swift in Sources */,
 				39DA526026F9FFEC00158880 /* StringExtension.swift in Sources */,
 				3902B0EF26F0B1BB00FE2C8F /* TabCoordinator.swift in Sources */,
 				394AEB2A26F7CEBE00C5D8E7 /* EntitySaveProtocol.swift in Sources */,
+				54CDC6282728D095007CA4D5 /* ProfileViewController.swift in Sources */,
 				54BA499526F8B0D000201438 /* ModalViewController.swift in Sources */,
 				56937A1E2721A8DE00615042 /* SettingsCoordinator.swift in Sources */,
 				3932586B26E8FF7A00A44687 /* Protocol.swift in Sources */,
@@ -572,7 +629,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				56B831D62707494F00490908 /* BrocoliSeTests.swift in Sources */,
+				392DA39F27172B3B00426712 /* AlbumSceneMock.swift in Sources */,
+				392DA36C270F2E0F00426712 /* DiarySceneMock.swift in Sources */,
+				392DA367270F2C0D00426712 /* AlbumViewControllerTests.swift in Sources */,
+				392DA3A32718527100426712 /* PersistenceServiceTests.swift in Sources */,
+				392DA36A270F2D0100426712 /* CoreDataManagerMock.swift in Sources */,
+				56B831D62707494F00490908 /* DiaryViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -723,6 +785,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = BrocoliSe/BrocoliSe.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1.2.0;
 				DEVELOPMENT_TEAM = 975J2YVPPP;
@@ -745,6 +808,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = BrocoliSe/BrocoliSe.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1.2.0;
 				DEVELOPMENT_TEAM = 975J2YVPPP;

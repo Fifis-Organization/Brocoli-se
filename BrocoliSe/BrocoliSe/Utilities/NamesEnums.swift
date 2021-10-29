@@ -32,5 +32,14 @@ enum StickersNames {
     static let patinhoSticker = "patinho-sticker"
     static let esquiloSticker = "esquilo-sticker"
     static let pintinhoSticker = "pintinho-sticker"
-    
+    static let jacarezinhoSticker = "jacarezinho-sticker"
+    static let jacarezinhoBlank = "jacarezinho-blank"
+    static let ovelhinhaSticker = "ovelhinha-sticker"
+    static let ovelhinhaBlank = "ovelhinha-blank"
+    static let porquinhoSticker = "porquinho-sticker"
+    static let porquinhoBlank = "porquinho-blank"
+    static let sapinhoSticker = "sapinho-sticker"
+    static let sapinhoBlank = "sapinho-blank"
+    static let zebrinhaSticker = "zebrinha-sticker"
+    static let zebrinhaBlank = "zebrinha-blank"
 }

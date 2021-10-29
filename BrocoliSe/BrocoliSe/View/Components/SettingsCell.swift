@@ -96,7 +96,7 @@ class SettingsCell: UITableViewCell {
     func setupStatusLabel() {
         statusLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            statusLabel.widthAnchor.constraint(equalToConstant: 50),
+            statusLabel.widthAnchor.constraint(equalToConstant: 40),
             statusLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor),
             statusLabel.rightAnchor.constraint(equalTo: slider.leftAnchor, constant: -10)
         ])

@@ -31,6 +31,16 @@ struct FactoryControllers {
         
         return settingsVC
     }
+
+    static func createProfileViewController() -> ProfileViewController {
+        let profileScene = ProfileScene(frame: UIScreen.main.bounds)
+        let profileVC = ProfileViewController()
+        profileVC.setCoreDataManager(CoreDataManager())
+        profileVC.setProfileScene(profileScene)
+        profileScene.setupDatas()
+
+        return profileVC
+    }
     
     static func createOnboardingViewController() -> OnboardingViewController {
         let onboardingVC = OnboardingViewController()
