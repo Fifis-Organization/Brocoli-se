@@ -14,8 +14,8 @@ protocol SettingsSceneDelegate: AnyObject {
 class SettingsScene: UIView {
     
     let items = [
-        ["Vibrações","iphone.radiowaves.left.and.right.circle.fill"],
-        ["Notificações", "bell.circle.fill"],
+        ["Vibrações","vibracoes-icon"],
+        ["Notificações", "notificacoes-icon"],
         ["Brocoli-se no Instagram", "instagram-icon"]
     ]
     
