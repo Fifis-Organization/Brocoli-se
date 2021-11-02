@@ -25,9 +25,9 @@ struct FactoryControllers {
     static func createSettingsViewController() -> SettingsViewController {
         let settingsScene = SettingsScene(frame: UIScreen.main.bounds)
         let settingsVC = SettingsViewController()
-        // profileVC.setCoreDataManager(CoreDataManager())
-        settingsVC.setProfileScene(settingsScene
-        )
+        settingsVC.setCoreDataManager(CoreDataManager())
+        settingsVC.setProfileScene(settingsScene)
+        settingsScene.setupData()
         
         return settingsVC
     }

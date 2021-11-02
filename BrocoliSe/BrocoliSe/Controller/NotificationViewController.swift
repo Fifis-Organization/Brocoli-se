@@ -77,4 +77,11 @@ class NotificationViewController {
             }
         }
     }
+    
+    func setAuthorization() {
+//        let center = UNUserNotificationCenter.current()
+//        center.getNotificationSettings { (settings) in
+//            
+//        }
+    }
 }

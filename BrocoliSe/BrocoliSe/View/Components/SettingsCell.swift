@@ -11,6 +11,8 @@ class SettingsCell: UITableViewCell {
     
     static let identifier = String(describing: SettingsCell.self)
     
+    var didSwitchButton: ((_ value: Bool) -> Void)?
+    
     private var customNextButton = CustomViewButton()
     
     private var iconImageView: UIImageView = {
@@ -58,8 +60,10 @@ class SettingsCell: UITableViewCell {
     @objc func switchChanged() {
         if slider.isOn {
             statusLabel.text = "ON"
+            self.didSwitchButton?(true)
         } else {
             statusLabel.text = "OFF"
+            self.didSwitchButton?(false)
         }
     }
     
@@ -131,6 +135,11 @@ class SettingsCell: UITableViewCell {
     
     func setSettingsLabel(text: String) {
         self.settingsLabel.text = text
+    }
+    
+    func initSwitchStatus(value: Bool) {
+        self.slider.isOn = value
+        self.statusLabel.text = value ? "ON" : "OFF"
     }
     
     func checkInstagramCell() {

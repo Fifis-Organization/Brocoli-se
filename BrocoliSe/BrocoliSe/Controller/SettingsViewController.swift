@@ -11,6 +11,7 @@ class SettingsViewController: UIViewController {
     
     private var scene: SettingsSceneDelegate?
     var settingsCoodinator: SettingsCoodinatorProtocol?
+    private var coreDataManager: CoreDataManagerProtocol?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +35,16 @@ class SettingsViewController: UIViewController {
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         settingsCoodinator?.finish()
+    }
+    
+    func setCoreDataManager(_ aCoreData: CoreDataManagerProtocol) {
+        self.coreDataManager = aCoreData
+    }
+    
+    func fetchUser() {
+        guard let coreDataManager = coreDataManager else { return }
+        let user: [User] = coreDataManager.fetch()
+        scene?.setUser(user: user.first)
     }
     
     func setProfileScene(_ scene: SettingsSceneDelegate) {

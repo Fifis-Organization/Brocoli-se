@@ -9,10 +9,15 @@ import UIKit
 
 protocol SettingsSceneDelegate: AnyObject {
     func setController(controller: SettingsViewController)
+    func setUser(user: User?)
+    func setupData()
 }
 
 class SettingsScene: UIView {
     private var controller: SettingsViewController?
+    private var profileModel: ProfileModel?
+    private let persistentService = PersistenceService()
+    
     let items = [
         ["Vibrações","vibracoes-icon"],
         ["Notificações", "notificacoes-icon"],
@@ -72,14 +77,33 @@ extension SettingsScene: UITableViewDelegate, UITableViewDataSource {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: ProfileSelectionCell.identifier) as? ProfileSelectionCell else {
                 return UITableViewCell()
             }
+            if let profileModel = profileModel {
+                cell.setupProfile(model: profileModel)
+            }
             
             return cell
         case 1:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: SettingsCell.identifier) as? SettingsCell else {
                 return UITableViewCell()
             }
+            
+            var udKey: UserDefaultsKeys?
+            
+            if indexPath.row == 0 {
+                udKey = .vibrations
+            } else if indexPath.row == 1 {
+                udKey = .notifications
+            }
+
             cell.setSettingsLabel(text: items[indexPath.row][0])
             cell.setIconImageView(imageName: items[indexPath.row][1])
+            
+            if let udKey = udKey {
+                cell.initSwitchStatus(value: persistentService.getKeyValue(udKey: udKey))
+                cell.didSwitchButton = { (_ value: Bool) -> Void in
+                    self.persistentService.persist(udKey: udKey, value: value)
+                }
+            }
             
             return cell
         default:
@@ -126,6 +150,15 @@ extension SettingsScene: UITableViewDelegate, UITableViewDataSource {
 }
 
 extension SettingsScene: SettingsSceneDelegate {
+    func setupData() {
+        self.controller?.fetchUser()
+    }
+    
+    func setUser(user: User?) {
+        guard let name = user?.name else { return }
+        self.profileModel = ProfileModel(name: name, icon: user?.icon)
+    }
+    
     func setController(controller: SettingsViewController) {
         self.controller = controller
     }

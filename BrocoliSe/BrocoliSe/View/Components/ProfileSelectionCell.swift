@@ -7,6 +7,11 @@
 
 import UIKit
 
+struct ProfileModel {
+    var name: String
+    var icon: Data?
+}
+
 class ProfileSelectionCell: UITableViewCell {
     
     private var backgroundButton: UIView = {
@@ -33,7 +38,6 @@ class ProfileSelectionCell: UITableViewCell {
     
     private var nameLabel: UILabel = {
         let label = UILabel()
-        label.text = "Larissa"
         label.textColor = .black
         label.font = UIFont.graviolaRegular(size: 16) ?? UIFont.systemFont(ofSize: 16)
         label.textAlignment = .left
@@ -68,7 +72,7 @@ class ProfileSelectionCell: UITableViewCell {
         setupLabelStackView()
     }
     
-    func setupImageView() {
+    private func setupImageView() {
         profileImageView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             profileImageView.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 20),
@@ -78,7 +82,7 @@ class ProfileSelectionCell: UITableViewCell {
         ])
     }
     
-    func setupLabelStackView() {
+    private func setupLabelStackView() {
         labelStackView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             labelStackView.leftAnchor.constraint(equalTo: profileImageView.rightAnchor, constant: 20),
@@ -87,7 +91,7 @@ class ProfileSelectionCell: UITableViewCell {
         ])
     }
     
-    func setupCustomNextButton() {
+    private func setupCustomNextButton() {
         customNextButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             customNextButton.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -20),
@@ -95,6 +99,13 @@ class ProfileSelectionCell: UITableViewCell {
             customNextButton.widthAnchor.constraint(equalTo: customNextButton.heightAnchor),
             customNextButton.centerYAnchor.constraint(equalTo: self.centerYAnchor)
         ])
+    }
+    
+    func setupProfile(model: ProfileModel) {
+        self.nameLabel.text = model.name
+        if let icon = model.icon {
+            self.profileImageView.image = UIImage(data: icon)
+        }
     }
     
     required init?(coder: NSCoder) {
