@@ -29,25 +29,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         
         UNUserNotificationCenter.current().delegate = self
         
-        if persistentService.getKeyValue(udKey: .notifications) {
-            var dateComponents = DateComponents()
-            dateComponents.calendar = Calendar.current
-            dateComponents.hour = 9
-               
-            let trigger = UNCalendarNotificationTrigger(
-                     dateMatching: dateComponents, repeats: true)
-            
-            var dateComponents2 = DateComponents()
-            dateComponents2.calendar = Calendar.current
-            dateComponents2.hour = 21
-               
-            let trigger2 = UNCalendarNotificationTrigger(
-                     dateMatching: dateComponents2, repeats: true)
-            notification.schenduleNotificationMorning(trigger: trigger)
-            notification.schenduleNotificationNight(trigger: trigger2)
-        }
-
+        var dateComponents = DateComponents()
+        dateComponents.calendar = Calendar.current
+        dateComponents.hour = 9
+        
+        let trigger = UNCalendarNotificationTrigger(
+            dateMatching: dateComponents, repeats: true)
+        
+        var dateComponents2 = DateComponents()
+        dateComponents2.calendar = Calendar.current
+        dateComponents2.hour = 21
+        
+        let trigger2 = UNCalendarNotificationTrigger(
+            dateMatching: dateComponents2, repeats: true)
+        
+        UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
+        notification.schenduleNotificationMorning(trigger: trigger)
+        notification.schenduleNotificationNight(trigger: trigger2)
         persistentService.persist(udKey: .firstLaunch, value: true)
+
         return true
     }
 

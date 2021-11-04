@@ -12,7 +12,7 @@ enum MessagesMorning: String, CaseIterable {
     case morning = "Não vamos perder o foco, cada dia é um avanço importante!"
 }
 enum MessagesNight: String, CaseIterable {
-    case night = "Lembre-se de marcar os item que você não consumiu hoje!"
+    case night = "Lembre-se de marcar os itens que você não consumiu hoje!"
 }
 
 enum Title: String, CaseIterable {
@@ -59,10 +59,10 @@ class NotificationViewController {
         content.body = {
             switch content.title {
             case Title.night.rawValue:
-                let text = MessagesNight.allCases.randomElement()?.rawValue ?? "Lembre-se de marcar os item que você não consumiu hoje!"
+                let text = MessagesNight.allCases.randomElement()?.rawValue ?? "Lembre-se de marcar os itens que você não consumiu hoje!"
                 return text
             default:
-                let text = "Lembre-se de marcar os item que você não consumiu hoje!"
+                let text = "Lembre-se de marcar os itens que você não consumiu hoje!"
                 return text
             }
         }()
