@@ -20,7 +20,7 @@ class SettingsCell: UITableViewCell {
         imageView.layer.masksToBounds = false
         imageView.layer.cornerRadius = 20
         imageView.clipsToBounds = true
-        imageView.contentMode = .scaleAspectFit
+        imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
         imageView.tintColor = .blueDark?.withAlphaComponent(0.2)
         return imageView
@@ -37,18 +37,19 @@ class SettingsCell: UITableViewCell {
     
     private var statusLabel: UILabel = {
         let label = UILabel()
-        label.text = "OFF"
+        label.text = "ON"
         label.textAlignment = .right
         label.textColor = .blueSoft
         label.font = UIFont.graviolaRegular(size: 14) ?? UIFont.systemFont(ofSize: 14)
         return label
     }()
 
-    private var slider: UISwitch = {
+    private lazy var slider: UISwitch = {
         let switchSlider = UISwitch()
         switchSlider.onTintColor = .greenMedium
         switchSlider.isEnabled = true
-        switchSlider.addTarget(self, action: #selector(switchChanged), for: UIControl.Event.valueChanged)
+        switchSlider.addTarget(self, action: #selector(switchChanged), for: .valueChanged)
+        switchSlider.isOn = true
         return switchSlider
     }()
 

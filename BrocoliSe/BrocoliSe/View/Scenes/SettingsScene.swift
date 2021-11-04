@@ -11,6 +11,7 @@ protocol SettingsSceneDelegate: AnyObject {
     func setController(controller: SettingsViewController)
     func setUser(user: User?)
     func setupData()
+    func reloadTable()
 }
 
 class SettingsScene: UIView {
@@ -18,13 +19,13 @@ class SettingsScene: UIView {
     private var profileModel: ProfileModel?
     private let persistentService = PersistenceService()
     
-    let items = [
+    private let items = [
         ["Vibrações","vibracoes-icon"],
         ["Notificações", "notificacoes-icon"],
         ["Brocoli-se no Instagram", "instagram-icon"]
     ]
     
-    lazy var tableView: UITableView = {
+    private lazy var tableView: UITableView = {
         let table = UITableView()
         table.translatesAutoresizingMaskIntoConstraints = false
         table.allowsSelection = true
@@ -48,7 +49,7 @@ class SettingsScene: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setupTableView() {
+    private func setupTableView() {
         NSLayoutConstraint.activate([
             tableView.topAnchor.constraint(equalTo: self.topAnchor),
             tableView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
@@ -139,10 +140,24 @@ extension SettingsScene: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: false)
         switch indexPath.section {
         case 0:
             self.controller?.settingsCoodinator?.showProfileViewController()
-            tableView.deselectRow(at: indexPath, animated: false)
+        case 1:
+            if indexPath.row == 2 {
+                let application = UIApplication.shared
+                let username =  "brocoli.se"
+                if let appURL = URL(string: "instagram://user?username=\(username)") {
+                    if application.canOpenURL(appURL) {
+                        application.open(appURL)
+                    } else {
+                        if let webURL = URL(string: "https://instagram.com/\(username)") {
+                            application.open(webURL)
+                        }
+                    }
+                }
+            }
         default:
             return
         }
@@ -161,5 +176,9 @@ extension SettingsScene: SettingsSceneDelegate {
     
     func setController(controller: SettingsViewController) {
         self.controller = controller
+    }
+    
+    func reloadTable() {
+        self.tableView.reloadData()
     }
 }
