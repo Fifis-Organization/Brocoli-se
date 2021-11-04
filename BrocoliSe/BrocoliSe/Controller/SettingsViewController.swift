@@ -25,6 +25,7 @@ class SettingsViewController: UIViewController {
         navigationController?.navigationBar.barStyle = .default
         navigationController?.navigationBar.tintColor = .greenMedium
         scene?.reloadTable()
+        self.fetchUser()
     }
     
     override func viewWillDisappear(_ animated: Bool) {

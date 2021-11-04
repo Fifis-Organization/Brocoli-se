@@ -20,7 +20,6 @@ class SettingsCell: UITableViewCell {
         imageView.layer.masksToBounds = false
         imageView.layer.cornerRadius = 20
         imageView.clipsToBounds = true
-        imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
         imageView.tintColor = .blueDark?.withAlphaComponent(0.2)
         return imageView

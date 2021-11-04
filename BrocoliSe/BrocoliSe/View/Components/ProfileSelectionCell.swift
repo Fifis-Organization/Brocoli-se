@@ -29,7 +29,7 @@ class ProfileSelectionCell: UITableViewCell {
         let imageView = UIImageView()
         imageView.image = UIImage(systemName: "person.crop.circle.fill")
         imageView.tintColor = .blueDark
-        imageView.contentMode = .scaleAspectFit
+        imageView.contentMode = .scaleAspectFill
         imageView.layer.masksToBounds = false
         imageView.layer.cornerRadius = 30
         imageView.clipsToBounds = true
