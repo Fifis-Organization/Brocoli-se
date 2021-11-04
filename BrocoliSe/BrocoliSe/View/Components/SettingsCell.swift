@@ -58,7 +58,7 @@ class SettingsCell: UITableViewCell {
         setupView()
     }
     
-    @objc func switchChanged() {
+    @objc private func switchChanged() {
         if slider.isOn {
             statusLabel.text = "ON"
             self.didSwitchButton?(true)
@@ -68,7 +68,7 @@ class SettingsCell: UITableViewCell {
         }
     }
     
-    func setupView() {
+    private func setupView() {
         contentView.addSubview(iconImageView)
         contentView.addSubview(slider)
         contentView.addSubview(statusLabel)
@@ -79,7 +79,7 @@ class SettingsCell: UITableViewCell {
         setupSettingsLabel()
     }
     
-    func setupIconImageView() {
+    private func setupIconImageView() {
         iconImageView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             iconImageView.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 20),
@@ -89,7 +89,7 @@ class SettingsCell: UITableViewCell {
         ])
     }
     
-    func setupSettingsLabel() {
+    private func setupSettingsLabel() {
         settingsLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             settingsLabel.leftAnchor.constraint(equalTo: iconImageView.rightAnchor, constant: 20),
@@ -98,7 +98,7 @@ class SettingsCell: UITableViewCell {
         ])
     }
     
-    func setupStatusLabel() {
+    private func setupStatusLabel() {
         statusLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             statusLabel.widthAnchor.constraint(equalToConstant: 40),
@@ -107,7 +107,7 @@ class SettingsCell: UITableViewCell {
         ])
     }
     
-    func setupSlider() {
+    private func setupSlider() {
         slider.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             slider.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -20),
@@ -115,7 +115,7 @@ class SettingsCell: UITableViewCell {
         ])
     }
     
-    func setupCustomNextButton() {
+    private func setupCustomNextButton() {
         customNextButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             customNextButton.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -20),
@@ -143,7 +143,7 @@ class SettingsCell: UITableViewCell {
         self.statusLabel.text = value ? "ON" : "OFF"
     }
     
-    func checkInstagramCell() {
+    private func checkInstagramCell() {
         if self.settingsLabel.text == "Brocoli-se no Instagram" {
             statusLabel.isHidden = true
             slider.isHidden = true

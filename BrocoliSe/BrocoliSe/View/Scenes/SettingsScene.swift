@@ -21,7 +21,6 @@ class SettingsScene: UIView {
     
     private let items = [
         ["Vibrações","vibracoes-icon"],
-        ["Notificações", "notificacoes-icon"],
         ["Brocoli-se no Instagram", "instagram-icon"]
     ]
     
@@ -92,8 +91,6 @@ extension SettingsScene: UITableViewDelegate, UITableViewDataSource {
             
             if indexPath.row == 0 {
                 udKey = .vibrations
-            } else if indexPath.row == 1 {
-                udKey = .notifications
             }
 
             cell.setSettingsLabel(text: items[indexPath.row][0])
@@ -145,7 +142,7 @@ extension SettingsScene: UITableViewDelegate, UITableViewDataSource {
         case 0:
             self.controller?.settingsCoodinator?.showProfileViewController()
         case 1:
-            if indexPath.row == 2 {
+            if indexPath.row == 1 {
                 let application = UIApplication.shared
                 let username =  "brocoli.se"
                 if let appURL = URL(string: "instagram://user?username=\(username)") {
