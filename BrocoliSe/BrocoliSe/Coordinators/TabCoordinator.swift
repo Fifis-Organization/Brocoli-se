@@ -6,15 +6,16 @@ protocol TabCoordinatorProtocol: Coordinator {
     func selectPage(_ page: TabBarPage)
     func setSelectedIndex(_ index: Int)
     func currentPage() -> TabBarPage?
+    func configTabBar(color: UIColor)
 }
 
-class TabCoordinator: NSObject, Coordinator {
+class TabCoordinator: NSObject, TabCoordinatorProtocol {
     weak var finishDelegate: CoordinatorFinishDelegate? 
     var type: CoordinatorType { .tabBar }
     var childCoordinators: [Coordinator] = []
     var navigationController: UINavigationController
     var tabBarController: UITabBarController
-    
+        
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
         self.tabBarController = .init()
@@ -32,10 +33,22 @@ class TabCoordinator: NSObject, Coordinator {
         tabBarController.delegate = self
         tabBarController.setViewControllers(tabControllers, animated: true)
         tabBarController.selectedIndex = TabBarPage.diary.pageOrderNumber()
-        tabBarController.tabBar.isTranslucent = false
         tabBarController.tabBar.tintColor = UIColor.greenMedium
-        tabBarController.tabBar.unselectedItemTintColor = UIColor.blueDark?.withAlphaComponent(0.4)
+    
         navigationController.viewControllers = [tabBarController]
+    }
+    
+    func configTabBar(color: UIColor) {
+        tabBarController.tabBar.backgroundColor = color
+        
+        if #available(iOS 15.0, *) {
+            let appearance = UITabBarAppearance()
+            appearance.configureWithTransparentBackground()
+            appearance.backgroundColor = color
+            
+            tabBarController.tabBar.standardAppearance = appearance
+            tabBarController.tabBar.scrollEdgeAppearance = self.tabBarController.tabBar.standardAppearance
+        }
     }
       
     private func getTabController(_ page: TabBarPage) -> UINavigationController {
@@ -49,16 +62,19 @@ class TabCoordinator: NSObject, Coordinator {
         switch page {
         case .diary:
             let diaryVC = FactoryControllers.createDiaryViewController()
+            diaryVC.tabCoordinator = self
             navController.navigationBar.isHidden = true
+            navController.navigationBar.barStyle = .black
             navController.pushViewController(diaryVC, animated: false)
         case .album:
             let albumVC = FactoryControllers.createAlbumViewController()
+            albumVC.tabCoordinator = self
             albumVC.title = "Álbum"
             let attrs = [
                 NSAttributedString.Key.foregroundColor: UIColor.white,
                 NSAttributedString.Key.font: UIFont.graviolaRegular(size: 34) ?? UIFont.systemFont(ofSize: 34)
             ]
-            
+            navController.navigationBar.barStyle = .black
             navController.navigationItem.largeTitleDisplayMode = .always
             navController.navigationBar.prefersLargeTitles = true
             navController.navigationBar.largeTitleTextAttributes = attrs
@@ -85,4 +101,5 @@ extension TabCoordinator: UITabBarControllerDelegate {
     func tabBarController(_ tabBarController: UITabBarController,
                           didSelect viewController: UIViewController) {
     }
+
 }

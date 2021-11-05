@@ -3,11 +3,11 @@ import CoreData
 
 extension NSManagedObject {
     class var entityName: String {
-        return String(describing: self).components(separatedBy: ".").last!
+        return String(describing: self).components(separatedBy: ".").last ?? "error"
     }
 }
 
-protocol CoreDataManagerProtocol: EntityCreateProtocol, EntitySaveProtocol, EntityFetchProtocol {
+protocol CoreDataManagerProtocol: EntityCreateProtocol, EntitySaveProtocol, EntityFetchProtocol, EntityDeleteProtocol {
     var viewContext: NSManagedObjectContext { get }
     func save()
 }

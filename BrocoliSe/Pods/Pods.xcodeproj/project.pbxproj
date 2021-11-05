@@ -71,10 +71,10 @@
 		77DB1BFC9F99C9392A79F1E1F008EBB3 /* Pods-BrocoliSe-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-BrocoliSe-Info.plist"; sourceTree = "<group>"; };
 		7B9DB8D01FFDBD9DBBB9B9D3A2F4FA04 /* Pods-BrocoliSe-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-BrocoliSe-acknowledgements.plist"; sourceTree = "<group>"; };
 		807B034A7B112291D686194A59270EC0 /* Pods-BrocoliSe-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-BrocoliSe-acknowledgements.markdown"; sourceTree = "<group>"; };
-		8D0FDBA02A1853C1BC8E4B54AFD8BB15 /* Pods-BrocoliSe */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-BrocoliSe"; path = Pods_BrocoliSe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D0FDBA02A1853C1BC8E4B54AFD8BB15 /* Pods_BrocoliSe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BrocoliSe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		92FBEF55272C2A010249CA926EC0BB43 /* FOCalendar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FOCalendar.release.xcconfig; sourceTree = "<group>"; };
 		995CD8C7973E4630698359CFD162290D /* CalendarHeaderView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CalendarHeaderView.swift; path = FOCalendar/View/CalendarHeaderView.swift; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A387CFF6266E11A996B7FE00F8130C4A /* FOCalendarView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FOCalendarView.swift; path = FOCalendar/View/FOCalendarView.swift; sourceTree = "<group>"; };
 		A86697CC98B5C3EF330000E0A13665FC /* Pods-BrocoliSe.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-BrocoliSe.modulemap"; sourceTree = "<group>"; };
 		B46F219AE169801169FDEA28CE073E40 /* UBProgress-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "UBProgress-Info.plist"; sourceTree = "<group>"; };
@@ -152,7 +152,6 @@
 				5239C4BDCEF6446079AF3382AC1D14B7 /* UBProgress.m */,
 				87AAF69646A1149432707E6FE3701860 /* Support Files */,
 			);
-			name = UBProgress;
 			path = UBProgress;
 			sourceTree = "<group>";
 		};
@@ -183,7 +182,7 @@
 			isa = PBXGroup;
 			children = (
 				4373E7CD5E7E49A0AF11AABCE66EBE13 /* FOCalendar */,
-				8D0FDBA02A1853C1BC8E4B54AFD8BB15 /* Pods-BrocoliSe */,
+				8D0FDBA02A1853C1BC8E4B54AFD8BB15 /* Pods_BrocoliSe.framework */,
 				DF95775FD49637B20932D430C32120BC /* UBProgress */,
 			);
 			name = Products;
@@ -214,7 +213,6 @@
 				C09694465A311A17F6187B154C3076EC /* RemoteGeneratorDate.swift */,
 				FDCFCB687F10EE6FEBD4E1A61BC6E8DE /* Support Files */,
 			);
-			name = FOCalendar;
 			path = FOCalendar;
 			sourceTree = "<group>";
 		};
@@ -337,7 +335,7 @@
 			);
 			name = "Pods-BrocoliSe";
 			productName = Pods_BrocoliSe;
-			productReference = 8D0FDBA02A1853C1BC8E4B54AFD8BB15 /* Pods-BrocoliSe */;
+			productReference = 8D0FDBA02A1853C1BC8E4B54AFD8BB15 /* Pods_BrocoliSe.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */

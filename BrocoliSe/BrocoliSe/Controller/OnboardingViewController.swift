@@ -21,7 +21,7 @@ class OnboardingViewController: UIViewController {
         return view
     }()
     
-    private lazy var view1: UIView = {
+    lazy var view1: UIView = {
         let view = Onboarding02()
         return view
     }()
@@ -75,6 +75,14 @@ class OnboardingViewController: UIViewController {
         view.addSubview(pageControl)
         pageControl.pinTo(view)
         
+    }
+    
+    func alertConfirm(message: String) {
+        let alert = UIAlertController(title: "Olá", message: message, preferredStyle: UIAlertController.Style.alert)
+
+        alert.addAction(UIAlertAction(title: "Entendi", style: UIAlertAction.Style.default, handler: nil))
+        alert.view.tintColor = .greenMedium
+        self.present(alert, animated: true)
     }
     
     func setCoreDataManager(_ aCoreData: CoreDataManagerProtocol) {

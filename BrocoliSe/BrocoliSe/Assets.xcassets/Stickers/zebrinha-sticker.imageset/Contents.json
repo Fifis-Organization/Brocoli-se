@@ -1,15 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "pintinho.png",
+      "filename" : "zebrinha-sticker.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "zebrinha-sticker@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "zebrinha-sticker@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

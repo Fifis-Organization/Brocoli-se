@@ -43,7 +43,7 @@ class Onboarding03: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.isUserInteractionEnabled = true 
+        self.isUserInteractionEnabled = true
         style()
         layout()
     }
@@ -53,10 +53,22 @@ class Onboarding03: UIView {
     }
     
     @objc func targetContiue(_ sender: UIButton) {
-        if foodSelector.getSelected().isEmpty {
+        guard let onboarding2 = onboardingVC?.view1 as? Onboarding02 else {return}
+        if foodSelector.getSelected().isEmpty && onboarding2.getTextFieldName().isEmpty {
             foodSelector.shakeEffect(horizontaly: 4)
+            buttonConfirm.shakeEffect(horizontaly: 4)
+            onboardingVC?.alertConfirm(message: "Você deve inserir um nome e escolher algum alimento!")
+        } else if foodSelector.getSelected().isEmpty {
+            foodSelector.shakeEffect(horizontaly: 4)
+            buttonConfirm.shakeEffect(horizontaly: 4)
+            onboardingVC?.alertConfirm(message: "Você deve escolher algum alimento!")
+        } else if onboarding2.getTextFieldName().isEmpty {
+            foodSelector.shakeEffect(horizontaly: 4)
+            buttonConfirm.shakeEffect(horizontaly: 4)
+            onboardingVC?.alertConfirm(message: "Você deve inserir um nome!")
         } else {
             buttonContinueAction()
+            
         }
     }
     
@@ -107,6 +119,19 @@ extension Onboarding03: OnboardingViewControllerProtocol {
         onboardingVC?.saveUser()
         guard let onboardingVC = onboardingVC,
               let didSendContinue = onboardingVC.didSendContinue else {return}
+        let persistence = PersistenceService()
+        persistence.persist(firstLoad: true)
         didSendContinue()
+    }
+    func disableContinueButton() {
+        guard let onboarding2 = onboardingVC?.view1 as? Onboarding02 else {return}
+        
+        if foodSelector.getSelected().isEmpty || onboarding2.getTextFieldName().isEmpty {
+            buttonConfirm.isEnabled = false
+            buttonConfirm.backgroundColor = UIColor.blueDark?.withAlphaComponent(0.4)
+        } else {
+            buttonConfirm.isEnabled = true
+            buttonConfirm.backgroundColor = .greenMedium
+        }
     }
 }

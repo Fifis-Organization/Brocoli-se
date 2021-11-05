@@ -13,6 +13,9 @@ extension UIView {
         
         let animation = CABasicAnimation(keyPath: "position")
         
+        let haptic = UIImpactFeedbackGenerator(style: .light)
+        haptic.impactOccurred()
+        
         animation.duration = 0.05
         animation.repeatCount = 4
         animation.autoreverses = true
