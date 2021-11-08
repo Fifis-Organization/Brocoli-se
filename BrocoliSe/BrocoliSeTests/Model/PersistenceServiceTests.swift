@@ -13,15 +13,15 @@ class PersistenceServiceTests: XCTestCase {
     
     func test_persistenceService() {
         let persistenceService = PersistenceService(defaults: UserDefaults())
-        let valueInitial: Bool = persistenceService.getFirstLoad() ? true : false
+        let valueInitial: Bool = persistenceService.getKeyValue(udKey: UserDefaultsKeys.firstLoad) ? true : false
     
-        persistenceService.persist(firstLoad: true)
-        XCTAssertTrue(persistenceService.getFirstLoad())
+        persistenceService.persist(udKey: UserDefaultsKeys.firstLoad, value: true)
+        XCTAssertTrue(persistenceService.getKeyValue(udKey: UserDefaultsKeys.firstLoad))
         
-        persistenceService.persist(firstLoad: false)
-        XCTAssertFalse(persistenceService.getFirstLoad())
+        persistenceService.persist(udKey: UserDefaultsKeys.firstLoad, value: false)
+        XCTAssertFalse(persistenceService.getKeyValue(udKey: UserDefaultsKeys.firstLoad))
         
-        persistenceService.persist(firstLoad: valueInitial)
+        persistenceService.persist(udKey: UserDefaultsKeys.firstLoad, value: valueInitial)
     }
     
 }

@@ -6,11 +6,16 @@
 //
 
 import UIKit
+import CoreData
 
 protocol ProfileSceneDelegate: AnyObject {
     func setController(controller: ProfileViewController)
     func setUser(user: User?)
     func setupDatas()
+    func updatedImage() -> Data?
+    func getTextFieldName() -> String
+    func setSelectedFood(selectedFood: [String])
+    func getSelectedFood() -> [String]
 }
 
 class ProfileViewController: UIViewController {
@@ -31,12 +36,6 @@ class ProfileViewController: UIViewController {
         disconfigureNavigationStyle()
     }
 
-    func setProfileScene(_ scene: ProfileSceneDelegate) {
-        self.scene = scene
-        self.scene?.setController(controller: self)
-        self.view = scene as? UIView
-    }
-
     func setCoreDataManager(_ aCoreData: CoreDataManagerProtocol) {
         self.coreDataManager = aCoreData
     }
@@ -47,8 +46,20 @@ class ProfileViewController: UIViewController {
         scene?.setUser(user: user.first)
     }
 
-    func reload() {
+    func fetchFood() {
+        guard let coreDataManager = coreDataManager else { return }
+        let foods: [FoodOff] = coreDataManager.fetch()
+        var selectedFood: [String] = []
+        foods.forEach { food in
+            selectedFood.append(food.food ?? "")
+        }
+        scene?.setSelectedFood(selectedFood: selectedFood)
+    }
 
+    func setProfileScene(_ scene: ProfileSceneDelegate) {
+        self.scene = scene
+        self.scene?.setController(controller: self)
+        self.view = scene as? UIView
     }
 
     private func configureNavigationStyle() {
@@ -61,6 +72,7 @@ class ProfileViewController: UIViewController {
             NSAttributedString.Key.font: UIFont.graviolaSoft(size: 34) ?? UIFont.systemFont(ofSize: 34)
         ]
         navigationController?.navigationBar.largeTitleTextAttributes = attrs as [NSAttributedString.Key : Any]
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Salvar", style: .plain, target: self, action: #selector(saveUser))
     }
 
     private func disconfigureNavigationStyle() {
@@ -68,5 +80,23 @@ class ProfileViewController: UIViewController {
         navigationController?.navigationBar.barStyle = .black
         navigationController?.navigationItem.largeTitleDisplayMode = .never
         navigationController?.navigationBar.prefersLargeTitles = false
+    }
+
+    @objc func saveUser() {
+        guard let coreDataManager = coreDataManager else { return }
+        let user: [User] = coreDataManager.fetch()
+        user.first?.icon = scene?.updatedImage()
+        user.first?.name = scene?.getTextFieldName()
+
+        let selectedFoods = scene?.getSelectedFood()
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: FoodOff.entityName)
+        coreDataManager.removeEntity(request: request)
+        selectedFoods?.forEach {
+            let food: FoodOff = coreDataManager.createEntity()
+            food.food = $0
+            coreDataManager.save()
+        }
+        
+        coreDataManager.save()
     }
 }

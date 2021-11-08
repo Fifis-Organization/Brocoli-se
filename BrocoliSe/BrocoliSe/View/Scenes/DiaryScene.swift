@@ -276,6 +276,10 @@ extension DiaryScene: DiarySceneDelegate {
         controller?.fetchUser()
         controller?.fetchDayAll()
     }
+
+    func reloadTable() {
+        self.diaryTableView.reloadData()
+    }
 }
 
 extension DiaryScene: FOCalendarDelegate {
