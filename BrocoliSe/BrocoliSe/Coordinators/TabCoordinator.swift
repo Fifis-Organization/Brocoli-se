@@ -42,12 +42,13 @@ class TabCoordinator: NSObject, TabCoordinatorProtocol {
     func configTabBar(color: UIColor) {
         tabBarController.tabBar.backgroundColor = color
         
+        let appearance = UITabBarAppearance()
+        appearance.configureWithTransparentBackground()
+        appearance.backgroundColor = .clear
+        
+        tabBarController.tabBar.standardAppearance = appearance
+        
         if #available(iOS 15.0, *) {
-            let appearance = UITabBarAppearance()
-            appearance.configureWithTransparentBackground()
-            appearance.backgroundColor = color
-            
-            tabBarController.tabBar.standardAppearance = appearance
             tabBarController.tabBar.scrollEdgeAppearance = self.tabBarController.tabBar.standardAppearance
         }
     }
