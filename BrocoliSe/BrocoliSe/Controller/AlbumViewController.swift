@@ -15,7 +15,7 @@ protocol AlbumSceneDelegate: AnyObject {
     func reloadCollection()
 }
 
-class AlbumViewController: UIViewController {
+class AlbumViewController: UICollectionViewController {
     
     private var scene: AlbumSceneDelegate?
     private var coreDataManager: CoreDataManagerProtocol?
@@ -23,7 +23,6 @@ class AlbumViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
     
     override func viewWillAppear(_ animated: Bool) {

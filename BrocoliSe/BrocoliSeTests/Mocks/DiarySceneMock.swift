@@ -51,4 +51,8 @@ class DiarySceneMock: DiarySceneDelegate {
     func setTextLabelProgress(_ text: String) {
         textLabel = text
     }
+
+    func reloadTable() {
+
+    }
 }

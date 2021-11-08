@@ -46,6 +46,10 @@ class TextField: UIView {
     func getnameTextField() -> String {
         return nameTextField.text ?? ""
     }
+
+    func setPlaceHolder(userName: String) {
+        self.nameTextField.placeholder = userName
+    }
 }
 
 extension TextField: UITextFieldDelegate {

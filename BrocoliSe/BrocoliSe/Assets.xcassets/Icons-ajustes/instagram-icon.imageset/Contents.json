@@ -1,15 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "vaquinha.png",
+      "filename" : "instagram-icon.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "instagram-icon@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "instagram-icon@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
