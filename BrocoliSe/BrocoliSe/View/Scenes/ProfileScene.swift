@@ -10,10 +10,12 @@ import UIKit
 class ProfileScene: UIView {
     private var isActiveKeyboard: Bool = false
     private var controller: ProfileViewController?
+    private var profileModel: ProfileModel?
 
     private lazy var photoLabel: UILabel = {
         let label = UILabel()
         label.text = "Foto"
+        label.textAlignment = .left
         label.font = self.frame.height > 667 ? .graviolaSoft(size: 20) : .graviolaSoft(size: 17)
         label.textColor = .blueDark
         return label
@@ -23,6 +25,7 @@ class ProfileScene: UIView {
     private lazy var nameLabel: UILabel = {
         let label = UILabel()
         label.text = "Nome"
+        label.textAlignment = .left
         label.font = self.frame.height > 667 ? .graviolaSoft(size: 20) : .graviolaSoft(size: 17)
         label.textColor = .blueDark
         return label
@@ -33,6 +36,7 @@ class ProfileScene: UIView {
         let label = UILabel()
         label.text = "Selecione os alimentos não consumidos"
         label.numberOfLines = 0
+        label.textAlignment = .left
         label.font = self.frame.height > 667 ? .graviolaSoft(size: 20) : .graviolaSoft(size: 17)
         label.textColor = .blueDark
         return label
@@ -43,8 +47,8 @@ class ProfileScene: UIView {
         let spacer = UIView()
         let stackView = UIStackView(arrangedSubviews: [photoLabel, customImagePicker, nameLabel, nameTextField, foodSelectorLabel, foodSelector, spacer])
         stackView.axis = .vertical
-        stackView.alignment = .leading
-        stackView.spacing = 20.0
+        stackView.alignment = .center
+        stackView.spacing = self.frame.height > 667 ? 20 : 16
         stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
     }()
@@ -72,13 +76,11 @@ class ProfileScene: UIView {
 
     @objc func keyboardWillShow(notification: NSNotification) {
         if ((notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue) != nil {
-            frame.origin.y -= (self.isActiveKeyboard ? 0 : 80)
             isActiveKeyboard = true
         }
     }
 
     @objc func keyboardWillHide(notification: NSNotification) {
-        frame.origin.y += (self.isActiveKeyboard ? 80 : 0)
         isActiveKeyboard = false
         nameTextField.dismissKeyborad()
     }
@@ -90,9 +92,9 @@ class ProfileScene: UIView {
     }
 
     private func showImagePickerOptions() {
-        let alertVC = UIAlertController(title: "Escolha uma foto", message: "Camera ou Galeria", preferredStyle: .actionSheet)
+        let alertVC = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
 
-        let cameraAction = UIAlertAction(title: "Camera", style: .default) { [weak self] _ in
+        let cameraAction = UIAlertAction(title: "Tirar foto", style: .default) { [weak self] _ in
             guard let self = self else {
                 return
             }
@@ -101,7 +103,7 @@ class ProfileScene: UIView {
             self.controller?.present(cameraImagePicker, animated: true)
         }
 
-        let libraryAction = UIAlertAction(title: "Galeria", style: .default) { [weak self] _ in
+        let libraryAction = UIAlertAction(title: "Escolher da galeria", style: .default) { [weak self] _ in
             guard let self = self else {
                 return
             }
@@ -118,15 +120,12 @@ class ProfileScene: UIView {
         self.controller?.present(alertVC, animated: true, completion: nil)
     }
 
-    func getTextFieldName() -> String {
-        return nameTextField.getnameTextField()
-    }
-
     private func setupConstraints() {
         addSubview(contentStackView)
         setupTextFieldConstraints()
         setupFoodSelectorConstraints()
         setupImagePickerConstraints()
+        setupLabelsConstraints()
 
         NSLayoutConstraint.activate([
             contentStackView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
@@ -141,7 +140,7 @@ class ProfileScene: UIView {
 
         NSLayoutConstraint.activate([
             nameTextField.widthAnchor.constraint(equalTo: contentStackView.widthAnchor),
-            nameTextField.heightAnchor.constraint(equalToConstant: 40)
+            nameTextField.heightAnchor.constraint(equalToConstant: 45)
         ])
     }
 
@@ -150,7 +149,7 @@ class ProfileScene: UIView {
 
         NSLayoutConstraint.activate([
             foodSelector.widthAnchor.constraint(equalTo: contentStackView.widthAnchor),
-            foodSelector.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.1)
+            foodSelector.heightAnchor.constraint(equalTo: foodSelector.widthAnchor, multiplier: 0.233)
         ])
     }
 
@@ -161,12 +160,25 @@ class ProfileScene: UIView {
             customImagePicker.widthAnchor.constraint(equalTo: contentStackView.widthAnchor)
         ])
     }
+
+    private func setupLabelsConstraints() {
+        photoLabel.translatesAutoresizingMaskIntoConstraints = false
+        nameLabel.translatesAutoresizingMaskIntoConstraints = false
+        foodSelectorLabel.translatesAutoresizingMaskIntoConstraints = false
+
+        NSLayoutConstraint.activate([
+            photoLabel.widthAnchor.constraint(equalTo: contentStackView.widthAnchor),
+            nameLabel.widthAnchor.constraint(equalTo: contentStackView.widthAnchor),
+            foodSelectorLabel.widthAnchor.constraint(equalTo: contentStackView.widthAnchor)
+        ])
+    }
 }
 
 extension ProfileScene: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         guard let image = info[.originalImage] as? UIImage else { return }
         self.customImagePicker.setNewPhoto(image: image)
+        self.profileModel?.icon = image.pngData()
         self.controller?.dismiss(animated: true, completion: nil)
     }
 }
@@ -182,11 +194,41 @@ extension ProfileScene: ProfileSceneDelegate {
         self.controller = controller
     }
 
-    func setUser(user: User?) {
-        
-    }
-
     func setupDatas() {
         self.controller?.fetchUser()
+        self.controller?.fetchFood()
+    }
+
+    func setUser(user: User?) {
+        guard let name = user?.name else { return }
+        self.profileModel = ProfileModel(name: name, icon: user?.icon)
+        self.nameTextField.setPlaceHolder(userName: name)
+
+        if let imageData = user?.icon {
+            self.customImagePicker.setNewPhoto(image: UIImage(data: imageData) ?? UIImage())
+        } else {
+            self.customImagePicker.setNewPhoto(image: UIImage(systemName: "person.crop.circle.fill") ?? UIImage())
+        }
+    }
+
+    func updatedImage() -> Data? {
+        return self.profileModel?.icon
+    }
+
+    func getTextFieldName() -> String {
+        if self.nameTextField.getnameTextField().isEmpty {
+            if let profileModel = profileModel {
+                return profileModel.name
+            }
+        }
+        return self.nameTextField.getnameTextField()
+    }
+
+    func setSelectedFood(selectedFood: [String]) {
+        self.foodSelector.setSelected(selectedFood: selectedFood)
+    }
+
+    func getSelectedFood() -> [String] {
+        return self.foodSelector.getSelected()
     }
 }

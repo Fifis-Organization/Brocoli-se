@@ -16,6 +16,7 @@ protocol DiarySceneDelegate: AnyObject {
     func presenterModal(_ modal: ModalViewController)
     func setupDatas()
     func setTextLabelProgress(_ text: String)
+    func reloadTable()
 }
 
 class DiaryViewController: UIViewController {
@@ -27,6 +28,12 @@ class DiaryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.insetsLayoutMarginsFromSafeArea = false
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        self.fetchUser()
+        self.fetchFoodAll()
+        diaryScene?.reloadTable()
     }
     
     override func viewDidAppear(_ animated: Bool) {
