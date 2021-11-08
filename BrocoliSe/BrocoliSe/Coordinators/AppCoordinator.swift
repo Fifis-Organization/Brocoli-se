@@ -23,7 +23,7 @@ class AppCoordinator: AppCoordinatorProtocol {
     }
     
     func start() {
-        if persistence.getFirstLoad() == false {
+        if persistence.getKeyValue(udKey: UserDefaultsKeys.firstLoad) == false {
             showOnboardingFlow()
         } else {
             showMainFlow()
@@ -45,6 +45,7 @@ class AppCoordinator: AppCoordinatorProtocol {
             tabCoordinator.start()
             childCoordinators.append(tabCoordinator)
     }
+    
 }
 
 extension AppCoordinator: CoordinatorFinishDelegate {

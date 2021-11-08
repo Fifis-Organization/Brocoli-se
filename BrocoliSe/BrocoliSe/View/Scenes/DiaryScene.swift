@@ -264,6 +264,7 @@ extension DiaryScene: DiarySceneDelegate {
     
     func setController(controller: DiaryViewController) {
         self.controller = controller
+        diaryCardComponent.controller = controller
     }
     
     func setUser(user: User?) {
@@ -274,6 +275,10 @@ extension DiaryScene: DiarySceneDelegate {
         controller?.fetchFoodAll()
         controller?.fetchUser()
         controller?.fetchDayAll()
+    }
+
+    func reloadTable() {
+        self.diaryTableView.reloadData()
     }
 }
 

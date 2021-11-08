@@ -7,23 +7,26 @@
 
 import Foundation
 
+enum UserDefaultsKeys: String {
+    case firstLoad
+    case vibrations
+    case notifications
+    case firstLaunch
+}
+
 class PersistenceService {
     
     private let defaults: UserDefaults
-    
-    private enum Keys: String {
-        case firstLoad
-    }
     
     init(defaults: UserDefaults = UserDefaults()) {
         self.defaults = defaults
     }
     
-    func persist(firstLoad: Bool) {
-        defaults.set(firstLoad, forKey: Keys.firstLoad.rawValue)
+    func persist(udKey: UserDefaultsKeys, value: Bool) {
+        defaults.set(value, forKey: udKey.rawValue)
     }
     
-    func getFirstLoad() -> Bool {
-        return defaults.bool(forKey: Keys.firstLoad.rawValue)
+    func getKeyValue(udKey: UserDefaultsKeys) -> Bool {
+        return defaults.bool(forKey: udKey.rawValue)
     }
 }

@@ -9,11 +9,22 @@ import FOCalendar
 
 class DiaryCardComponent: UIView {
     
+    var controller: DiaryViewController?
+    
     private lazy var imagePerfil: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(systemName: "person.crop.circle.fill")
-        imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.tintColor = .white
+        imageView.contentMode = .scaleAspectFill
+        imageView.layer.masksToBounds = false
+        imageView.layer.cornerRadius = 20
+        imageView.clipsToBounds = true
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+
+        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(showProfile))
+        imageView.isUserInteractionEnabled = true
+        imageView.addGestureRecognizer(tapRecognizer)
+
         return imageView
     }()
     
@@ -51,6 +62,11 @@ class DiaryCardComponent: UIView {
         hierarchyView()
         setupConstraints()
         setupCalendar()
+    }
+    
+    init(controller: DiaryViewController) {
+        super.init(frame: .zero)
+        self.controller = controller
     }
  
     func setModeCalendar(_ status: CardState) {
@@ -152,11 +168,19 @@ class DiaryCardComponent: UIView {
             nameLabel.text = user.name
             let point: Float = Float(user.point >= 100 ? user.point % 100 : user.point)
             progressBarComponent.setProgressValue(value: point/100.0)
+
+            if let imageData = user.icon {
+                imagePerfil.image = UIImage(data: imageData)
+            }
         }
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    @objc func showProfile() {
+        controller?.tabCoordinator?.showSettingsCoordinator()
     }
         
 }
