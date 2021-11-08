@@ -18,6 +18,7 @@ class DiaryScene: UIView {
     private var controller: DiaryViewController?
     private var foods: [FoodOff]? {
         didSet {
+            foods = foods?.sorted(by: { $0.food ?? "" > $1.food ?? ""})
             diaryTableView.reloadData()
         }
     }
@@ -55,7 +56,6 @@ class DiaryScene: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-     
         backgroundColor = UIColor.backgroundColor
         dayActual = controller?.createToday()
         hierarchyView()
@@ -64,7 +64,6 @@ class DiaryScene: UIView {
     }
     
     private func setupCard() {
-        diaryCardComponent.calendar.setCalendarDelegate(self)
         diaryCardComponent.translatesAutoresizingMaskIntoConstraints = false
         cardViewHeightAnchor = diaryCardComponent.heightAnchor.constraint(equalToConstant: collapsedCardHeight)
 
@@ -128,10 +127,17 @@ extension DiaryScene: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: DiaryTableViewCellComponent.reuseIdentifier, for: indexPath) as? DiaryTableViewCellComponent,
               let food = foods?[indexPath.row] else { fatalError("ERROR: Array(foods) Index indisponível") }
+        cell.changeSelected(false)
+        
         let foodName = food.food ?? ""
+        
         cell.setData(iconName: foodName.iconTable(), foodName:  foodName)
         cell.checkButtonCallBack = {
-            self.setupCell(cell)
+            cell.toggleSelected()
+            if let dayActual = self.dayActual {
+                self.controller?.saveFood(today: dayActual, food: food, isCheck: cell.getIsCheck())
+            }
+            self.controller?.fetchDayAll()
         }
         
         guard let dayActual = self.dayActual,
@@ -149,13 +155,24 @@ extension DiaryScene: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: tableView.frame.width, height: 30))
+        let calendar = Calendar(identifier: .gregorian)
+        let dateComponents = calendar.dateComponents([.day, .month], from: dayActual?.date ?? Date())
         
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "O que você conseguiu cortar hoje?"
+        
+        if let today = dateComponents.day,
+           let month = dateComponents.month {
+            
+            let dateComponentsToday = calendar.dateComponents([.day, .month], from: Date())
+            
+            label.text = dateComponentsToday == dateComponents ? "O que você conseguiu cortar hoje?" : "O que você conseguiu cortar em \(today)/\(month)?"
+        } else {
+            label.text = "Nenhum registro nessa data!"
+        }
         label.font = UIFont.graviolaRegular(size: 20)
         label.textColor = .blueDark
-        label.numberOfLines = 1
+        label.numberOfLines = 2
         label.adjustsFontSizeToFitWidth = true
         
         headerView.addSubview(label)
@@ -173,67 +190,6 @@ extension DiaryScene: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 90
     }
-    
-    private func setupCell(_ cell: DiaryTableViewCellComponent) {
-            // MARK: o que ta salvo in [carne, ovo] no [lat]
-            guard let dayActual = self.dayActual,
-                  let ingesteds: Set<FoodOff> = dayActual.ingested as? Set<FoodOff>,
-                  let noIngesteds: Set<FoodOff> = dayActual.noIngested as? Set<FoodOff> else { return }
-            
-            ingesteds.forEach {
-                if !self.ingestedFood.contains($0) {
-                    self.ingestedFood.append($0)
-                }
-            }
-            noIngesteds.forEach {
-                if !self.noIngestedFood.contains($0) {
-                    self.noIngestedFood.append($0)
-                }
-            }
-            if let food = self.foods?.first(where: {$0.food == cell.getFoodName()}) {
-                // MARK: in local = [carne, lat](in salvo)
-                cell.toggleSelected()
-                if cell.getIsCheck() {
-                    if !self.ingestedFood.contains(food) {
-                        self.ingestedFood.append(food)
-                        self.noIngestedFood.removeAll { $0 == food }
-                    }
-                } else {
-                    if !self.noIngestedFood.contains(food) {
-                        self.noIngestedFood.append(food)
-                        self.ingestedFood.removeAll { $0 == food }
-                    }
-                }
-            }
-            
-            // MARK: [carne, ovo](in salvo) + [](in local) - [ovo](no local) = [carne]
-            ingesteds.forEach {
-                if !self.ingestedFood.contains($0) {
-                    self.ingestedFood.append($0)
-                }
-            }
-            self.noIngestedFood.forEach { noFood in
-                if self.ingestedFood.contains(noFood) {
-                    self.ingestedFood.removeAll { $0 == noFood }
-                }
-            }
-            
-            // MARK: [lat](no Salvo) + [ovo](no local) - [](in local) = [lat, ovo]
-            noIngesteds.forEach {
-                if !self.noIngestedFood.contains($0) {
-                    self.noIngestedFood.append($0)
-                }
-            }
-            
-            self.ingestedFood.forEach { food in
-                if self.noIngestedFood.contains(food) {
-                    self.noIngestedFood.removeAll { $0 == food }
-                }
-            }
-            
-            // MARK: o ideal in [carne] no [ovo, lat]
-            self.controller?.saveFood(ingestedFood: self.ingestedFood, noIngestedFood: self.noIngestedFood, today: dayActual)
-    }
 }
 
 extension DiaryScene: DiarySceneDelegate {
@@ -243,19 +199,25 @@ extension DiaryScene: DiarySceneDelegate {
     
     func setDay(daySelected: Day?) {
         guard let daySelected = daySelected,
-              let foodsHelper = daySelected.foods as? Set<FoodOff> else {
+              let foods = daySelected.foods as? Set<FoodOff> else {
             self.foods = []
             return
         }
         self.dayActual = daySelected
-        let foodsHelper2: [FoodOff] = foodsHelper.map { return $0 }
-        self.foods = foodsHelper2
+        let foodsArray: [FoodOff] = foods.map { return $0 }
+        self.foods = foodsArray
         diaryTableView.reloadData()
     }
     
     func setDayAll(days: [Day]) {
-        // let dates: [Date] = days.map { return ($0.date ?? Date()) }
-        // diaryCardComponent.calendar.setDays(Set(dates))
+        var daysConcluded = [Day]()
+        days.forEach {
+            if $0.concluded {
+                daysConcluded.append($0)
+            }
+        }
+        let dates: [Date] = daysConcluded.map { return ($0.date ?? Date()) }
+        diaryCardComponent.calendar.setDays(Set(dates))
     }
     
     func setFoodAll(foods: [FoodOff]) {
@@ -274,25 +236,6 @@ extension DiaryScene: DiarySceneDelegate {
         controller?.fetchFoodAll()
         controller?.fetchUser()
         controller?.fetchDayAll()
-    }
-}
-
-extension DiaryScene: FOCalendarDelegate {
-    func captureCell(date: Date?) {
-        guard let date = date else { return }
-        let calendar = Calendar(identifier: .gregorian)
-        let daySelected = calendar.component(.day, from: date)
-        let monthSelected = calendar.component(.month, from: date)
-        let yearSelected = calendar.component(.year, from: date)
-        
-        if daySelected == calendar.component(.day, from: Date()) &&
-           monthSelected == calendar.component(.month, from: Date()) &&
-           yearSelected == calendar.component(.year, from: Date()) {
-            controller?.fetchFoodAll()
-            // self.dayActual = controller?.createToday()
-        } else {
-            // controller?.fetchDay(date)
-        }
     }
 }
 

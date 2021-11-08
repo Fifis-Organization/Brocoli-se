@@ -63,12 +63,12 @@ class DiaryCardComponent: UIView {
     }
     
     private func setupCalendar() {
-        calendar.setTypeCalendar(.compact)
         calendar.setCellStyle(cellFont: UIFont.graviolaRegular(size: 20) ?? .systemFont(ofSize: 20), cellColor: .white)
         calendar.setTitleStyle(titleFont: UIFont.graviolaRegular(size: 20) ?? .systemFont(ofSize: 20), titleColor: .white)
         calendar.setWeekStyle(weekStackFont: UIFont.graviolaSoft(size: 20) ?? .boldSystemFont(ofSize: 20), weekStackColor: .white)
         calendar.setSelectionRangeStyle(selectionRangeBackgroundColor: UIColor.greenMedium ?? .green, selectionRangeBorderColor: .clear, selectionRangeTextColor: .white)
-        calendar.setSelectionDateStyle(color: .clear, border: 0)
+        calendar.setSelectionDateStyle(color: .white, border: 0)
+        calendar.setTypeCalendar(.compact)
     }
     
     private func hierarchyView() {
@@ -153,6 +153,10 @@ class DiaryCardComponent: UIView {
             let point: Float = Float(user.point >= 100 ? user.point % 100 : user.point)
             progressBarComponent.setProgressValue(value: point/100.0)
         }
+    }
+    
+    func reloadCalendar() {
+        calendar.reloadCalendarCollection()
     }
     
     required init?(coder: NSCoder) {

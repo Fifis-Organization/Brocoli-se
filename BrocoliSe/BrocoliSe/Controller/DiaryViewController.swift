@@ -45,17 +45,20 @@ class DiaryViewController: UIViewController {
         coreDataManager = aCoreData
     }
     
-    func saveFood(ingestedFood: [FoodOff], noIngestedFood: [FoodOff], today: Day) {
+    func saveFood(today: Day, food: FoodOff, isCheck: Bool) {
         guard let coreDataManager = coreDataManager else { return }
-    
-        today.removeFromIngested(NSSet(array: noIngestedFood))
-        today.addToIngested(NSSet(array: ingestedFood))
         
-        today.removeFromNoIngested(NSSet(array: ingestedFood))
-        today.addToNoIngested(NSSet(array: noIngestedFood))
+        if !isCheck {
+            today.removeFromIngested(food)
+            today.addToNoIngested(food)
+        } else {
+            today.addToIngested(food)
+            today.removeFromNoIngested(food)
+        }
+        coreDataManager.save()
         
         let user: [User] = coreDataManager.fetch()
-        if noIngestedFood.isEmpty {
+        if today.noIngested?.count ?? -1 == 0 {
             today.concluded = true
             user.first?.point += 10
         } else {
