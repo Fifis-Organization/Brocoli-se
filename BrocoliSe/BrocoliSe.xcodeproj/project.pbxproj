@@ -16,9 +16,9 @@
 		392DA367270F2C0D00426712 /* AlbumViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392DA366270F2C0D00426712 /* AlbumViewControllerTests.swift */; };
 		392DA36A270F2D0100426712 /* CoreDataManagerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392DA369270F2D0100426712 /* CoreDataManagerMock.swift */; };
 		392DA36C270F2E0F00426712 /* DiarySceneMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392DA36B270F2E0F00426712 /* DiarySceneMock.swift */; };
+		392DA3982716FDBC00426712 /* EntityDeleteProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392DA3972716FDBC00426712 /* EntityDeleteProtocol.swift */; };
 		392DA39F27172B3B00426712 /* AlbumSceneMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392DA39E27172B3B00426712 /* AlbumSceneMock.swift */; };
 		392DA3A32718527100426712 /* PersistenceServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392DA3A22718527100426712 /* PersistenceServiceTests.swift */; };
-		392DA3982716FDBC00426712 /* EntityDeleteProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392DA3972716FDBC00426712 /* EntityDeleteProtocol.swift */; };
 		3932586526E8FF3F00A44687 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3932586426E8FF3F00A44687 /* Colors.swift */; };
 		3932586826E8FF4900A44687 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3932586726E8FF4900A44687 /* Fonts.swift */; };
 		3932586B26E8FF7A00A44687 /* Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3932586A26E8FF7A00A44687 /* Protocol.swift */; };
@@ -50,6 +50,8 @@
 		56B831D62707494F00490908 /* DiaryViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B831D52707494F00490908 /* DiaryViewControllerTests.swift */; };
 		56D1AB5426FA2523001A2486 /* IconButtonComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D1AB5326FA2523001A2486 /* IconButtonComponent.swift */; };
 		5F22C12D64DBC49B6281335B /* Pods_BrocoliSe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 339A77E77343AA9D6B45448B /* Pods_BrocoliSe.framework */; };
+		A456AC7B273560F0003CC5F6 /* SiriUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = A456AC7A273560F0003CC5F6 /* SiriUtil.swift */; };
+		A456AC7D2735610D003CC5F6 /* SiriActivities.swift in Sources */ = {isa = PBXBuildFile; fileRef = A456AC7C2735610D003CC5F6 /* SiriActivities.swift */; };
 		A47C62FD26F8B48600D6A54B /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47C62FC26F8B48600D6A54B /* OnboardingViewController.swift */; };
 		A47C630026F8B4E600D6A54B /* Onboarding01.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47C62FF26F8B4E600D6A54B /* Onboarding01.swift */; };
 		A47C630226F8B4F800D6A54B /* Onboarding02.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47C630126F8B4F800D6A54B /* Onboarding02.swift */; };
@@ -57,6 +59,8 @@
 		A47C630626F8B56A00D6A54B /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47C630526F8B56A00D6A54B /* TextField.swift */; };
 		A47C630826F8B58100D6A54B /* FoodSelectorComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47C630726F8B58100D6A54B /* FoodSelectorComponent.swift */; };
 		A47C630A26F8B66000D6A54B /* OnboardingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47C630926F8B66000D6A54B /* OnboardingCoordinator.swift */; };
+		A47EDFA6272E77150055286B /* IntentsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A47EDFA4272E77150055286B /* IntentsUI.framework */; };
+		A47EDFA7272E77150055286B /* Intents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A47EDFA5272E77150055286B /* Intents.framework */; };
 		A496A9332716FFD600B80622 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A496A9322716FFD600B80622 /* NotificationViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -82,9 +86,9 @@
 		392DA366270F2C0D00426712 /* AlbumViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumViewControllerTests.swift; sourceTree = "<group>"; };
 		392DA369270F2D0100426712 /* CoreDataManagerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManagerMock.swift; sourceTree = "<group>"; };
 		392DA36B270F2E0F00426712 /* DiarySceneMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiarySceneMock.swift; sourceTree = "<group>"; };
+		392DA3972716FDBC00426712 /* EntityDeleteProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityDeleteProtocol.swift; sourceTree = "<group>"; };
 		392DA39E27172B3B00426712 /* AlbumSceneMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumSceneMock.swift; sourceTree = "<group>"; };
 		392DA3A22718527100426712 /* PersistenceServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceServiceTests.swift; sourceTree = "<group>"; };
-		392DA3972716FDBC00426712 /* EntityDeleteProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityDeleteProtocol.swift; sourceTree = "<group>"; };
 		3932586426E8FF3F00A44687 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		3932586726E8FF4900A44687 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		3932586A26E8FF7A00A44687 /* Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocol.swift; sourceTree = "<group>"; };
@@ -119,6 +123,8 @@
 		56B831D52707494F00490908 /* DiaryViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryViewControllerTests.swift; sourceTree = "<group>"; };
 		56D1AB5326FA2523001A2486 /* IconButtonComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconButtonComponent.swift; sourceTree = "<group>"; };
 		7FA58FB81DD24388A0BB3880 /* Pods-BrocoliSe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BrocoliSe.debug.xcconfig"; path = "Target Support Files/Pods-BrocoliSe/Pods-BrocoliSe.debug.xcconfig"; sourceTree = "<group>"; };
+		A456AC7A273560F0003CC5F6 /* SiriUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiriUtil.swift; sourceTree = "<group>"; };
+		A456AC7C2735610D003CC5F6 /* SiriActivities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiriActivities.swift; sourceTree = "<group>"; };
 		A47C62FC26F8B48600D6A54B /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		A47C62FF26F8B4E600D6A54B /* Onboarding01.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding01.swift; sourceTree = "<group>"; };
 		A47C630126F8B4F800D6A54B /* Onboarding02.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding02.swift; sourceTree = "<group>"; };
@@ -126,6 +132,8 @@
 		A47C630526F8B56A00D6A54B /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		A47C630726F8B58100D6A54B /* FoodSelectorComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodSelectorComponent.swift; sourceTree = "<group>"; };
 		A47C630926F8B66000D6A54B /* OnboardingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCoordinator.swift; sourceTree = "<group>"; };
+		A47EDFA4272E77150055286B /* IntentsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IntentsUI.framework; path = System/Library/Frameworks/IntentsUI.framework; sourceTree = SDKROOT; };
+		A47EDFA5272E77150055286B /* Intents.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Intents.framework; path = System/Library/Frameworks/Intents.framework; sourceTree = SDKROOT; };
 		A48BD8472705DE6100A265D8 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		A496A9322716FFD600B80622 /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
 		A496A9342717095D00B80622 /* BrocoliSe.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BrocoliSe.entitlements; sourceTree = "<group>"; };
@@ -136,6 +144,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A47EDFA7272E77150055286B /* Intents.framework in Frameworks */,
+				A47EDFA6272E77150055286B /* IntentsUI.framework in Frameworks */,
 				5F22C12D64DBC49B6281335B /* Pods_BrocoliSe.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -349,6 +359,8 @@
 				543DCF9826F36DCC00BDAF63 /* NamesEnums.swift */,
 				39DA525F26F9FFEC00158880 /* StringExtension.swift */,
 				39DA538926FD584400158880 /* UIViewExtension.swift */,
+				A456AC7A273560F0003CC5F6 /* SiriUtil.swift */,
+				A456AC7C2735610D003CC5F6 /* SiriActivities.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -376,6 +388,8 @@
 		F5092037EE03D133043F77A8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A47EDFA5272E77150055286B /* Intents.framework */,
+				A47EDFA4272E77150055286B /* IntentsUI.framework */,
 				339A77E77343AA9D6B45448B /* Pods_BrocoliSe.framework */,
 			);
 			name = Frameworks;
@@ -550,6 +564,7 @@
 				54BA499926F8C2D900201438 /* RewardModalScene.swift in Sources */,
 				3932587126E9008000A44687 /* ProgressBarComponent.swift in Sources */,
 				A47C630226F8B4F800D6A54B /* Onboarding02.swift in Sources */,
+				A456AC7D2735610D003CC5F6 /* SiriActivities.swift in Sources */,
 				A47C630826F8B58100D6A54B /* FoodSelectorComponent.swift in Sources */,
 				A47C630026F8B4E600D6A54B /* Onboarding01.swift in Sources */,
 				3902B0E526EF96BC00FE2C8F /* Coordinator.swift in Sources */,
@@ -559,6 +574,7 @@
 				3932587126E9008000A44687 /* ProgressBarComponent.swift in Sources */,
 				54109F1626F2959700EC4C10 /* DiaryTableViewCellComponent.swift in Sources */,
 				569B432B26FB66DB0084071E /* PersistenceService.swift in Sources */,
+				A456AC7B273560F0003CC5F6 /* SiriUtil.swift in Sources */,
 				3932587426E9008C00A44687 /* DiaryScene.swift in Sources */,
 				3984BD4026E8E9AB00C92824 /* DiaryViewController.swift in Sources */,
 				392DA3982716FDBC00426712 /* EntityDeleteProtocol.swift in Sources */,
@@ -752,7 +768,7 @@
 				CODE_SIGN_ENTITLEMENTS = BrocoliSe/BrocoliSe.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1.2.0;
-				DEVELOPMENT_TEAM = 975J2YVPPP;
+				DEVELOPMENT_TEAM = Y8XB2TQUP3;
 				INFOPLIST_FILE = BrocoliSe/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -775,7 +791,7 @@
 				CODE_SIGN_ENTITLEMENTS = BrocoliSe/BrocoliSe.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1.2.0;
-				DEVELOPMENT_TEAM = 975J2YVPPP;
+				DEVELOPMENT_TEAM = Y8XB2TQUP3;
 				INFOPLIST_FILE = BrocoliSe/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

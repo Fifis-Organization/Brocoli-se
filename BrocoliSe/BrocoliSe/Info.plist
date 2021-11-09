@@ -22,6 +22,11 @@
 	<string>$(CURRENT_PROJECT_VERSION)</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSUserActivityTypes</key>
+	<dict>
+		<key>CheckList</key>
+		<string>com.brocolise.checklist</string>
+	</dict>
 	<key>UIAppFonts</key>
 	<array>
 		<string>GraviolaSoft-Medium.otf</string>

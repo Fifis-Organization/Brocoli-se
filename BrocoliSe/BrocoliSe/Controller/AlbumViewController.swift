@@ -7,6 +7,8 @@
 
 import Foundation
 import UIKit
+import Intents
+import IntentsUI
 
 protocol AlbumSceneDelegate: AnyObject {
     func setController(controller: AlbumViewController)
@@ -17,17 +19,51 @@ protocol AlbumSceneDelegate: AnyObject {
 
 class AlbumViewController: UICollectionViewController {
     
+    private let siriButton = INUIAddVoiceShortcutButton(style: .automatic)
     private var scene: AlbumSceneDelegate?
     private var coreDataManager: CoreDataManagerProtocol?
     var tabCoordinator: TabCoordinatorProtocol?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+//        prepareSiriButton()
+        NotificationCenter.default.addObserver(self, selector: #selector(addToSiri), name: Notification.Name(rawValue: "CheckList"), object: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         self.scene?.reloadCollection()
         tabCoordinator?.configTabBar(color: .white.withAlphaComponent(0.08))
+    }
+    
+    @objc func addToSiri(sender: Any) {
+        print(#function)
+        
+        guard let sender = sender as? INUIAddVoiceShortcutButton else { return }
+        
+        print(sender)
+        
+        guard let shortcutFromButton = sender.shortcut else { return }
+        
+        print(shortcutFromButton)
+        
+        SiriUtil.openShortcutViewController(caller: self, shortcut: shortcutFromButton) { (shortcutViewController) in
+//            as we are on a closure, we need to call the main thread to present the modal
+            DispatchQueue.main.async {
+                self.present(shortcutViewController, animated: true, completion: nil)
+            }
+        }
+    }
+    
+    func prepareSiriButton() {
+        //gets the our activity
+        let openSecondVC = SiriActivities.openSecondVCActivity(thumbnail: nil)
+        //create the shortcut using the activity
+        let shortcut = INShortcut(userActivity: openSecondVC)
+        //set that this button will manage this shortcut
+        siriButton.shortcut = shortcut
+        
+        //set the callback of the button
+//        siriButton.addTarget(self, action: #selector(addToSiri), for: .touchUpInside)
     }
     
     func setAlbumScene(_ scene: AlbumSceneDelegate) {
@@ -48,5 +84,35 @@ class AlbumViewController: UICollectionViewController {
     
     func reload() {
         self.scene?.reloadCollection()
+    }
+}
+
+extension AlbumViewController: INUIAddVoiceShortcutViewControllerDelegate {
+    //1
+    func addVoiceShortcutViewController(_ controller: INUIAddVoiceShortcutViewController,
+                                        didFinishWith voiceShortcut: INVoiceShortcut?,
+                                        error: Error?) {
+        controller.dismiss(animated: true, completion: nil)
+    }
+    //2
+    func addVoiceShortcutViewControllerDidCancel(_ controller: INUIAddVoiceShortcutViewController) {
+        controller.dismiss(animated: true, completion: nil)
+    }
+}
+
+extension AlbumViewController: INUIEditVoiceShortcutViewControllerDelegate{
+    
+    //When the edit option is to update the shortcut
+    func editVoiceShortcutViewController(_ controller: INUIEditVoiceShortcutViewController, didUpdate voiceShortcut: INVoiceShortcut?, error: Error?) {
+        controller.dismiss(animated: true, completion: nil)
+    }
+    //When the edit option is to delete the shortcut
+    func editVoiceShortcutViewController(_ controller: INUIEditVoiceShortcutViewController, didDeleteVoiceShortcutWithIdentifier deletedVoiceShortcutIdentifier: UUID) {
+        controller.dismiss(animated: true, completion: nil)
+    }
+    
+    //When modal Cancel button is tapped
+    func editVoiceShortcutViewControllerDidCancel(_ controller: INUIEditVoiceShortcutViewController) {
+        controller.dismiss(animated: true, completion: nil)
     }
 }

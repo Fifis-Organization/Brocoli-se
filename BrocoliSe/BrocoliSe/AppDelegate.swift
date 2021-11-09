@@ -6,16 +6,18 @@
 //
 
 import UIKit
+import IntentsUI
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
     
     let notification = NotificationViewController()
+    let controller = DiaryViewController()
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         UserDefaults.standard.set(true, forKey: "First Launch")
-        
+//        controller.test()
         UNUserNotificationCenter.current()
             .requestAuthorization(options: [.alert, .sound]) { _ , error  in
             if let error = error {
@@ -58,5 +60,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
+    
+//    func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {
+//       if #available(iOS 12.0, *) {
+////           if userActivity.activityType == "com.brocolise.checklist" {
+////               NotificationCenter.default.post(Notification(name: Notification.Name(rawValue: "CheckList")))
+////           }
+//  
+////        controller.test()
+//
+//       }
+//       return true
+//    }
 
 }

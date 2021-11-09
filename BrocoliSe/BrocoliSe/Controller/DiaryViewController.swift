@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import IntentsUI
+import Intents
 
 protocol DiarySceneDelegate: AnyObject {
     func setDayAll(days: [Day])
@@ -18,21 +20,63 @@ protocol DiarySceneDelegate: AnyObject {
     func setTextLabelProgress(_ text: String)
 }
 
-class DiaryViewController: UIViewController {
+protocol DiaryShortcutDelegate: AnyObject {
+    func test()
+    func setupIntentsForSiri()
+}
+
+class DiaryViewController: UIViewController, DiaryShortcutDelegate {
+        
     private var diaryScene: DiarySceneDelegate?
     private var coreDataManager: CoreDataManagerProtocol?
-
+    private let siriButton = INUIAddVoiceShortcutButton(style: .automatic)
+    
     var tabCoordinator: TabCoordinatorProtocol?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.insetsLayoutMarginsFromSafeArea = false
+//        setupIntentsForSiri()
+////        displaySiriShortcutPopup()
+//        NotificationCenter.default.addObserver(self, selector: #selector(self.test), name: Notification.Name(rawValue: "CheckList"), object: nil)
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         tabCoordinator?.configTabBar(color: .white)
+//        test()
+//        displaySiriShortcutPopup()
+//        NotificationCenter.default.addObserver(self, selector: #selector(self.test), name: Notification.Name(rawValue: "CheckList"), object: nil)
     }
+        
+//    func test () {
+//        print("eae meu bom")
+////        setupIntentsForSiri()
+////        let controller = AlbumViewController(
+////        navigationController?.pushViewController(controller, animated: true)
+//        setupIntentsForSiri()
+//    }
+    
+//    func setupIntentsForSiri() {
+//        let actionIdentifier = "com.brocolise.checklist"
+//        let activity = NSUserActivity(activityType: actionIdentifier)
+//        activity.title = "Marcar itens"
+////        activity.userInfo = ["speech" : "Marcar itens"]
+////        activity.suggestedInvocationPhrase = "Marcar itens"
+//        activity.isEligibleForSearch = true
+////        if #available(iOS 12.0, *) {
+//        activity.isEligibleForPrediction = true
+////        activity.persistentIdentifier = NSUserActivityPersistentIdentifier(actionIdentifier)
+////        }
+//        self.userActivity = activity
+//        activity.becomeCurrent()
+//
+////        guard let userActivity = view.userActivity else { return }
+////        let shortcut = INShortcut(userActivity: userActivity)
+////        let controller = INUIAddVoiceShortcutViewController(shortcut: shortcut)
+////        controller.delegate = self
+////        present(controller, animated: true, completion: nil)
+//     }
 
     func setDiaryScene(_ aScene: DiarySceneDelegate) {
         diaryScene = aScene

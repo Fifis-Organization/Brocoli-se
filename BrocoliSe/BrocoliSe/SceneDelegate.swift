@@ -16,6 +16,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
+        if let userAct = connectionOptions.userActivities.first{
+            dealWithUserActivities(userActivity: userAct, isContinuing: false)
+        }
         
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
@@ -56,6 +59,33 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Called as the scene transitions from the foreground to the background.
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
+    }
+    
+    func scene(_ scene: UIScene, continue userActivity: NSUserActivity) {
+        dealWithUserActivities(userActivity: userActivity, isContinuing: true)
+    }
+    
+    fileprivate func openSecondVC() {
+        // Loads SecondViewController from main.storyboard
+        let secondVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "second") as! AlbumViewController
+        // Loads the Navigation Controller from main.storyboard
+        let navController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "navController") as! UINavigationController
+        // sets the initial window to navigation controller, otherwise it would lose the navigation items (like back button)
+        self.window!.rootViewController = navController
+        // navigate to the secondVC
+        navController.pushViewController(secondVC, animated: true)
+        // turns the app visible
+        self.window!.makeKeyAndVisible()
+    }
+    
+    func dealWithUserActivities(userActivity: NSUserActivity, isContinuing: Bool) {
+        switch userActivity.activityType {
+        case SiriActivitiesType.openSecondVCActivity.rawValue:
+                openSecondVC()
+            break
+        default:
+            break
+        }
     }
 
 }
