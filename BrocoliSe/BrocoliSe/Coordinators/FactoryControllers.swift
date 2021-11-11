@@ -47,4 +47,11 @@ struct FactoryControllers {
         onboardingVC.setCoreDataManager(CoreDataManager())
         return onboardingVC
     }
+
+    static func createRecipeListViewController() -> RecipeListViewController {
+        let recipeListScene = RecipeListScene()
+        let recipeVC = RecipeListViewController()
+        recipeVC.setRecipeListScene(recipeListScene)
+        return recipeVC
+    }
 }
