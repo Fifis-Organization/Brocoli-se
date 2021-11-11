@@ -115,12 +115,17 @@ class DiaryScene: UIView {
         diaryCardComponent.progressBarComponent.setTitleLabelProgress(text)
     }
     
+    func setupSiri() {
+        print("Deu certo")
+    }
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 }
 
 extension DiaryScene: UITableViewDelegate, UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return foods?.count ?? 0
     }

@@ -18,16 +18,12 @@ protocol DiarySceneDelegate: AnyObject {
     func presenterModal(_ modal: ModalViewController)
     func setupDatas()
     func setTextLabelProgress(_ text: String)
+    func setupSiri()
 }
 
-protocol DiaryShortcutDelegate: AnyObject {
-    func test()
-    func setupIntentsForSiri()
-}
-
-class DiaryViewController: UIViewController, DiaryShortcutDelegate {
+class DiaryViewController: UIViewController {
         
-    private var diaryScene: DiarySceneDelegate?
+    var diaryScene: DiarySceneDelegate?
     private var coreDataManager: CoreDataManagerProtocol?
     private let siriButton = INUIAddVoiceShortcutButton(style: .automatic)
     
@@ -36,47 +32,38 @@ class DiaryViewController: UIViewController, DiaryShortcutDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.insetsLayoutMarginsFromSafeArea = false
-//        setupIntentsForSiri()
-////        displaySiriShortcutPopup()
-//        NotificationCenter.default.addObserver(self, selector: #selector(self.test), name: Notification.Name(rawValue: "CheckList"), object: nil)
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         tabCoordinator?.configTabBar(color: .white)
-//        test()
-//        displaySiriShortcutPopup()
-//        NotificationCenter.default.addObserver(self, selector: #selector(self.test), name: Notification.Name(rawValue: "CheckList"), object: nil)
-    }
+        setupSiriAlbum()
+        setupSiriChecklist()
         
-//    func test () {
-//        print("eae meu bom")
-////        setupIntentsForSiri()
-////        let controller = AlbumViewController(
-////        navigationController?.pushViewController(controller, animated: true)
-//        setupIntentsForSiri()
-//    }
+    }
     
-//    func setupIntentsForSiri() {
-//        let actionIdentifier = "com.brocolise.checklist"
-//        let activity = NSUserActivity(activityType: actionIdentifier)
-//        activity.title = "Marcar itens"
-////        activity.userInfo = ["speech" : "Marcar itens"]
-////        activity.suggestedInvocationPhrase = "Marcar itens"
-//        activity.isEligibleForSearch = true
-////        if #available(iOS 12.0, *) {
-//        activity.isEligibleForPrediction = true
-////        activity.persistentIdentifier = NSUserActivityPersistentIdentifier(actionIdentifier)
-////        }
-//        self.userActivity = activity
-//        activity.becomeCurrent()
-//
-////        guard let userActivity = view.userActivity else { return }
-////        let shortcut = INShortcut(userActivity: userActivity)
-////        let controller = INUIAddVoiceShortcutViewController(shortcut: shortcut)
-////        controller.delegate = self
-////        present(controller, animated: true, completion: nil)
-//     }
+    
+    func setupSiriAlbum() {
+        let actionIdentifier = "com.brocolise.album"
+        let activity = NSUserActivity(activityType: actionIdentifier)
+        activity.title = "Album Brocolise"
+        activity.suggestedInvocationPhrase = "Tela Album Brocolise"
+        activity.isEligibleForSearch = true
+        activity.isEligibleForPrediction = true
+        self.userActivity = activity
+        activity.becomeCurrent()
+     }
+    
+    func setupSiriChecklist() {
+        let actionIdentifier = "com.brocolise.checklist"
+        let activity = NSUserActivity(activityType: actionIdentifier)
+        activity.title = "Marcar itens"
+        activity.suggestedInvocationPhrase = "Marcar itens"
+        activity.isEligibleForSearch = true
+        activity.isEligibleForPrediction = true
+        self.userActivity = activity
+        activity.becomeCurrent()
+    }
 
     func setDiaryScene(_ aScene: DiarySceneDelegate) {
         diaryScene = aScene

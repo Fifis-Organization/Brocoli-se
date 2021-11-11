@@ -26,6 +26,8 @@
 	<dict>
 		<key>CheckList</key>
 		<string>com.brocolise.checklist</string>
+		<key>Album</key>
+		<string>com.brocolise.album</string>
 	</dict>
 	<key>UIAppFonts</key>
 	<array>

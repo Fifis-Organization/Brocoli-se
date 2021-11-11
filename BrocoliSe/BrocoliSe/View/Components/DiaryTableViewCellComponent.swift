@@ -13,7 +13,6 @@ class DiaryTableViewCellComponent: UITableViewCell {
 
     var checkButtonCallBack: () -> Void  = { }
 
-    weak var delegate: DiaryShortcutDelegate?
     private var isChecked: Bool = false
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -83,7 +82,6 @@ class DiaryTableViewCellComponent: UITableViewCell {
     @objc func didCheck() {
         self.isChecked.toggle()
         checkButton.setImage(UIImage(systemName: isChecked ? "checkmark.circle.fill":"circle"), for: .normal)
-        delegate?.test()
         checkButtonCallBack()
     }
 
