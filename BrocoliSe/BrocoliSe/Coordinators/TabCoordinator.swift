@@ -16,7 +16,7 @@ class TabCoordinator: NSObject, TabCoordinatorProtocol {
     var childCoordinators: [Coordinator] = []
     var navigationController: UINavigationController
     var tabBarController: UITabBarController
-    private var controllers: [UINavigationController] = []
+    var controllers: [UINavigationController] = []
     
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController

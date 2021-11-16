@@ -7,39 +7,39 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1A4361E5FB58161E066E639FE9395C43 /* UBProgress-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6DAEF807F1700E6FC033D7797999E1BD /* UBProgress-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2A590A5A8C0D0A6A2B552502B5957E09 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		383B809B9046F5E47781653159444AA6 /* GeneratorDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A37179553B7D22A9ACC25B5302E372F /* GeneratorDate.swift */; };
-		4AF6FE6014817D5B3DED5C2002D1F507 /* FOCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A387CFF6266E11A996B7FE00F8130C4A /* FOCalendarView.swift */; };
-		5038384D38D81F1DC80C6219DD4615B0 /* RemoteGeneratorDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C09694465A311A17F6187B154C3076EC /* RemoteGeneratorDate.swift */; };
-		55CD084B7A875997759347798FDFBE4A /* CalendarHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995CD8C7973E4630698359CFD162290D /* CalendarHeaderView.swift */; };
-		599EE7D7143B59853F9AF14E0CD63597 /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C34ACB93FE0E4CA38875D42ACD0491 /* Day.swift */; };
-		8EFBAE969164E3EA2EC182357174243E /* UBProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = 5239C4BDCEF6446079AF3382AC1D14B7 /* UBProgress.m */; };
-		9694387C3DECE76B057FE502DBC20DE5 /* FOCalendar-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 21F48620AB93458E254086A1E922C651 /* FOCalendar-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B0EA47C4FD051365FDA5CD06C7822A1C /* CalendarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B784BA4903A40B4227BC9E5EE2CEBAFA /* CalendarCollectionViewCell.swift */; };
-		C24AD3BCC417AAE9B93C35AE7869C459 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		C74783913D2370FAF7D3472EBFAD78AF /* FOCalendar-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 75D43CB3EF21CAC1A235F049C5B9789C /* FOCalendar-dummy.m */; };
-		CE69A3CA3AF581552604B0B6BE84D18E /* FOCalendar.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E3A889984DDE0847B3B4F923C0C78C2 /* FOCalendar.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D5DCDE4251BB9A5F8E191413F502136A /* Pods-BrocoliSe-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 09E871FBA6656B1485D05B3C8E9651BC /* Pods-BrocoliSe-dummy.m */; };
-		D7078578E3CD3171998EBECB11613CD7 /* CalendarPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FEF72A5558217BAFBA286C7F128F79D /* CalendarPresenter.swift */; };
-		DDAEA1359B32044911D771596A951DCB /* ModelError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B5F6E6DB9B33F6946A465C6D1B78E3 /* ModelError.swift */; };
-		E5B00E75CB9CB29E2A3D64F12A76BD19 /* DataExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C4D636012DDCC9EE822B4EE9891512 /* DataExtension.swift */; };
-		E95D5A3E74B4DC6D341EE077FE1BD633 /* UBProgress-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = EDF24307F44E7D0BCA6D26A33BDACA08 /* UBProgress-dummy.m */; };
-		EFD575A0F7D5C2803EDFC8B1DA49BBF7 /* UBProgress.h in Headers */ = {isa = PBXBuildFile; fileRef = 30FA6193BB086385A45836612A61069F /* UBProgress.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		FACD9FBAB4289D45C464476B9AE51D62 /* Pods-BrocoliSe-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 162778A06CBD6787B9BCEFF704703462 /* Pods-BrocoliSe-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		FB9C121D7F0FC33024E85014C416919B /* Month.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E784801C48750045B4F9528CDE0C13A /* Month.swift */; };
-		FC278CECEB9F4F4F000515B33EA8D15E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		00C4BD69476D43FB17338123EB318C8F /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C34ACB93FE0E4CA38875D42ACD0491 /* Day.swift */; };
+		0E7AE4C484170995857DE57E82FD1E6C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		19F67D14049BFE4D2D78B9B594A10AFA /* Month.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E784801C48750045B4F9528CDE0C13A /* Month.swift */; };
+		24BE5B5A9B5773B9EDC4C447BF09436B /* ModelError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B5F6E6DB9B33F6946A465C6D1B78E3 /* ModelError.swift */; };
+		286D9C58ED49AF446BE8629BE68C34F9 /* CalendarHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995CD8C7973E4630698359CFD162290D /* CalendarHeaderView.swift */; };
+		2F893AE6A3FB74D43805E47E51C23FF5 /* UBProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = 5239C4BDCEF6446079AF3382AC1D14B7 /* UBProgress.m */; };
+		43E0A2E26DA56B974D607F28540FB3BB /* Pods-BrocoliSe-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 162778A06CBD6787B9BCEFF704703462 /* Pods-BrocoliSe-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4461133CC29EE211D5E4D8D550591C5F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		486860936052DBEA21D4F46A2BE603DF /* CalendarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B784BA4903A40B4227BC9E5EE2CEBAFA /* CalendarCollectionViewCell.swift */; };
+		51F077500965DF7E911AA1DF173908D2 /* UBProgress-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = EDF24307F44E7D0BCA6D26A33BDACA08 /* UBProgress-dummy.m */; };
+		544C9FB89876CC241FF6C64525188725 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		634BAAFCAA15022672831A76BF1D8930 /* CalendarPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FEF72A5558217BAFBA286C7F128F79D /* CalendarPresenter.swift */; };
+		7ED1DB3D8785C0CEA8C94932BAB0E624 /* FOCalendar.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E3A889984DDE0847B3B4F923C0C78C2 /* FOCalendar.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8A8DEBB9433710B52B16C97C266B4571 /* RemoteGeneratorDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C09694465A311A17F6187B154C3076EC /* RemoteGeneratorDate.swift */; };
+		95BA3B8D0634BAA4F70E0F8550377B5F /* FOCalendar-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 21F48620AB93458E254086A1E922C651 /* FOCalendar-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B4722D1EFB97E2F8E7CA40A6E587BAF9 /* GeneratorDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A37179553B7D22A9ACC25B5302E372F /* GeneratorDate.swift */; };
+		B74344AB49DFC1E27F16695887039201 /* UBProgress.h in Headers */ = {isa = PBXBuildFile; fileRef = 30FA6193BB086385A45836612A61069F /* UBProgress.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BA316C5D3B680C216C7854029815D4AE /* Pods-BrocoliSe-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 09E871FBA6656B1485D05B3C8E9651BC /* Pods-BrocoliSe-dummy.m */; };
+		DC2653CD71F1CD2CC4E3F8F6C92AD549 /* FOCalendar-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 75D43CB3EF21CAC1A235F049C5B9789C /* FOCalendar-dummy.m */; };
+		DF6EF1C6517EB87C180689010D1EFD90 /* FOCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A387CFF6266E11A996B7FE00F8130C4A /* FOCalendarView.swift */; };
+		EC4764EA0EEF90437209097E9B0872EA /* UBProgress-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6DAEF807F1700E6FC033D7797999E1BD /* UBProgress-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FC472561F002FBF8FE3E4E3431501B1E /* DataExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C4D636012DDCC9EE822B4EE9891512 /* DataExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		CC500E4E88B36C0C514F07C21C85BF41 /* PBXContainerItemProxy */ = {
+		0BFC35BA9CCDEB4358AD2DD501656805 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 98E4E31ACF70C75F787980E1CA266898;
 			remoteInfo = FOCalendar;
 		};
-		EACD6DF40D6C33674795C63688B22816 /* PBXContainerItemProxy */ = {
+		1F9C9853516EBA4E186E287E49BA5B20 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
@@ -60,7 +60,7 @@
 		30FA6193BB086385A45836612A61069F /* UBProgress.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = UBProgress.h; path = UBProgress/UBProgress.h; sourceTree = "<group>"; };
 		3A37179553B7D22A9ACC25B5302E372F /* GeneratorDate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GeneratorDate.swift; path = FOCalendar/Model/GeneratorDate.swift; sourceTree = "<group>"; };
 		3E3A889984DDE0847B3B4F923C0C78C2 /* FOCalendar.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FOCalendar.h; path = FOCalendar/FOCalendar.h; sourceTree = "<group>"; };
-		4373E7CD5E7E49A0AF11AABCE66EBE13 /* FOCalendar */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = FOCalendar; path = FOCalendar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4373E7CD5E7E49A0AF11AABCE66EBE13 /* FOCalendar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = FOCalendar.framework; path = FOCalendar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		44B95E372BD24E8632A49AB003DF1778 /* UBProgress.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = UBProgress.release.xcconfig; sourceTree = "<group>"; };
 		5239C4BDCEF6446079AF3382AC1D14B7 /* UBProgress.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = UBProgress.m; path = UBProgress/UBProgress.m; sourceTree = "<group>"; };
 		5FEF72A5558217BAFBA286C7F128F79D /* CalendarPresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CalendarPresenter.swift; path = FOCalendar/Presenter/CalendarPresenter.swift; sourceTree = "<group>"; };
@@ -71,10 +71,10 @@
 		77DB1BFC9F99C9392A79F1E1F008EBB3 /* Pods-BrocoliSe-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-BrocoliSe-Info.plist"; sourceTree = "<group>"; };
 		7B9DB8D01FFDBD9DBBB9B9D3A2F4FA04 /* Pods-BrocoliSe-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-BrocoliSe-acknowledgements.plist"; sourceTree = "<group>"; };
 		807B034A7B112291D686194A59270EC0 /* Pods-BrocoliSe-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-BrocoliSe-acknowledgements.markdown"; sourceTree = "<group>"; };
-		8D0FDBA02A1853C1BC8E4B54AFD8BB15 /* Pods_BrocoliSe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BrocoliSe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D0FDBA02A1853C1BC8E4B54AFD8BB15 /* Pods_BrocoliSe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_BrocoliSe.framework; path = "Pods-BrocoliSe.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		92FBEF55272C2A010249CA926EC0BB43 /* FOCalendar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FOCalendar.release.xcconfig; sourceTree = "<group>"; };
 		995CD8C7973E4630698359CFD162290D /* CalendarHeaderView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CalendarHeaderView.swift; path = FOCalendar/View/CalendarHeaderView.swift; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A387CFF6266E11A996B7FE00F8130C4A /* FOCalendarView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FOCalendarView.swift; path = FOCalendar/View/FOCalendarView.swift; sourceTree = "<group>"; };
 		A86697CC98B5C3EF330000E0A13665FC /* Pods-BrocoliSe.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-BrocoliSe.modulemap"; sourceTree = "<group>"; };
 		B46F219AE169801169FDEA28CE073E40 /* UBProgress-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "UBProgress-Info.plist"; sourceTree = "<group>"; };
@@ -85,7 +85,7 @@
 		C26726A53BEC6E0DE07FD26F0803896C /* FOCalendar-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "FOCalendar-Info.plist"; sourceTree = "<group>"; };
 		CEAF6F4ADBEEAE7AEC11D1CC4A99EB3E /* FOCalendar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FOCalendar.debug.xcconfig; sourceTree = "<group>"; };
 		D3B5F6E6DB9B33F6946A465C6D1B78E3 /* ModelError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ModelError.swift; path = FOCalendar/Helpers/ModelError.swift; sourceTree = "<group>"; };
-		DF95775FD49637B20932D430C32120BC /* UBProgress */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = UBProgress; path = UBProgress.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DF95775FD49637B20932D430C32120BC /* UBProgress.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = UBProgress.framework; path = UBProgress.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9207FBAC19F05703F565E52D179C543 /* UBProgress.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = UBProgress.modulemap; sourceTree = "<group>"; };
 		EDF24307F44E7D0BCA6D26A33BDACA08 /* UBProgress-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UBProgress-dummy.m"; sourceTree = "<group>"; };
 		EF1CCAD4B9EA34418ACA8375BC6273DB /* FOCalendar.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = FOCalendar.modulemap; sourceTree = "<group>"; };
@@ -93,27 +93,27 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		0BAB53860A88364DFEC13A3E0110A7A4 /* Frameworks */ = {
+		3B436DB2D5996EA2C2E68CE7A5FC0594 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C24AD3BCC417AAE9B93C35AE7869C459 /* Foundation.framework in Frameworks */,
+				4461133CC29EE211D5E4D8D550591C5F /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B22E7BE0A2C31D3A7924F29403A6C218 /* Frameworks */ = {
+		BA23305D8DC29D9FAED54064FE6C1A08 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2A590A5A8C0D0A6A2B552502B5957E09 /* Foundation.framework in Frameworks */,
+				544C9FB89876CC241FF6C64525188725 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C0F5B02B3648596D267D31DA27BD3E8D /* Frameworks */ = {
+		FE54FA02F989790CF8013A1BFC5CD8F3 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FC278CECEB9F4F4F000515B33EA8D15E /* Foundation.framework in Frameworks */,
+				0E7AE4C484170995857DE57E82FD1E6C /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -152,6 +152,7 @@
 				5239C4BDCEF6446079AF3382AC1D14B7 /* UBProgress.m */,
 				87AAF69646A1149432707E6FE3701860 /* Support Files */,
 			);
+			name = UBProgress;
 			path = UBProgress;
 			sourceTree = "<group>";
 		};
@@ -176,16 +177,6 @@
 			);
 			name = "Support Files";
 			path = "../Target Support Files/UBProgress";
-			sourceTree = "<group>";
-		};
-		A6A957A11A4F259F99542E0DD52F651C /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				4373E7CD5E7E49A0AF11AABCE66EBE13 /* FOCalendar */,
-				8D0FDBA02A1853C1BC8E4B54AFD8BB15 /* Pods_BrocoliSe.framework */,
-				DF95775FD49637B20932D430C32120BC /* UBProgress */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		B4F1C04ACD6220298A8F535EFB9D8B89 /* Pods */ = {
@@ -213,6 +204,7 @@
 				C09694465A311A17F6187B154C3076EC /* RemoteGeneratorDate.swift */,
 				FDCFCB687F10EE6FEBD4E1A61BC6E8DE /* Support Files */,
 			);
+			name = FOCalendar;
 			path = FOCalendar;
 			sourceTree = "<group>";
 		};
@@ -222,7 +214,7 @@
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
 				B4F1C04ACD6220298A8F535EFB9D8B89 /* Pods */,
-				A6A957A11A4F259F99542E0DD52F651C /* Products */,
+				F95C2B7013E5E53FA24F19923CB48DD0 /* Products */,
 				6A47CADD723C2378338F0D65F5D6A3AA /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
@@ -233,6 +225,16 @@
 				578452D2E740E91742655AC8F1636D1F /* iOS */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F95C2B7013E5E53FA24F19923CB48DD0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4373E7CD5E7E49A0AF11AABCE66EBE13 /* FOCalendar.framework */,
+				8D0FDBA02A1853C1BC8E4B54AFD8BB15 /* Pods_BrocoliSe.framework */,
+				DF95775FD49637B20932D430C32120BC /* UBProgress.framework */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		FDCFCB687F10EE6FEBD4E1A61BC6E8DE /* Support Files */ = {
@@ -253,29 +255,29 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		109274B25D68951B2076D909F623E4FA /* Headers */ = {
+		3F1F4B03F901D425515A640E1976C0F6 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FACD9FBAB4289D45C464476B9AE51D62 /* Pods-BrocoliSe-umbrella.h in Headers */,
+				EC4764EA0EEF90437209097E9B0872EA /* UBProgress-umbrella.h in Headers */,
+				B74344AB49DFC1E27F16695887039201 /* UBProgress.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		25293C95D6BC04FD04D5ACCE0A0155A5 /* Headers */ = {
+		8156155B6911453A46A88D1092943B1A /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EFD575A0F7D5C2803EDFC8B1DA49BBF7 /* UBProgress.h in Headers */,
-				1A4361E5FB58161E066E639FE9395C43 /* UBProgress-umbrella.h in Headers */,
+				95BA3B8D0634BAA4F70E0F8550377B5F /* FOCalendar-umbrella.h in Headers */,
+				7ED1DB3D8785C0CEA8C94932BAB0E624 /* FOCalendar.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		ECF894FFE2CE4D658ACDC5FF58A49C22 /* Headers */ = {
+		8C92B4F43FFEE6DBA19C16E86C0828B2 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE69A3CA3AF581552604B0B6BE84D18E /* FOCalendar.h in Headers */,
-				9694387C3DECE76B057FE502DBC20DE5 /* FOCalendar-umbrella.h in Headers */,
+				43E0A2E26DA56B974D607F28540FB3BB /* Pods-BrocoliSe-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,12 +286,12 @@
 /* Begin PBXNativeTarget section */
 		60D354207883A696E54CF0054A6EFDE3 /* UBProgress */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 09E4F53624AC8F077B070D22C0FE600B /* Build configuration list for PBXNativeTarget "UBProgress" */;
+			buildConfigurationList = B3167168534C18A65BDD84FA0C6A9E31 /* Build configuration list for PBXNativeTarget "UBProgress" */;
 			buildPhases = (
-				25293C95D6BC04FD04D5ACCE0A0155A5 /* Headers */,
-				E632EADCA6AB4572D55B9DE98C0DB810 /* Sources */,
-				C0F5B02B3648596D267D31DA27BD3E8D /* Frameworks */,
-				EB9D8EE122B68832FFC1F80E787D0C65 /* Resources */,
+				3F1F4B03F901D425515A640E1976C0F6 /* Headers */,
+				F4073B250DD964B955DFE176C7C1EF70 /* Sources */,
+				FE54FA02F989790CF8013A1BFC5CD8F3 /* Frameworks */,
+				4355D7E0E6A908CDE31E253FA5E35912 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -297,17 +299,17 @@
 			);
 			name = UBProgress;
 			productName = UBProgress;
-			productReference = DF95775FD49637B20932D430C32120BC /* UBProgress */;
+			productReference = DF95775FD49637B20932D430C32120BC /* UBProgress.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		98E4E31ACF70C75F787980E1CA266898 /* FOCalendar */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9B2050764C1709DC82D34E2855A917AE /* Build configuration list for PBXNativeTarget "FOCalendar" */;
+			buildConfigurationList = F6D02BEE90557B48336F2B684059B5B8 /* Build configuration list for PBXNativeTarget "FOCalendar" */;
 			buildPhases = (
-				ECF894FFE2CE4D658ACDC5FF58A49C22 /* Headers */,
-				BF076CE2B04749A437ECF99279C28FBB /* Sources */,
-				0BAB53860A88364DFEC13A3E0110A7A4 /* Frameworks */,
-				582D4115148CBF2258CEF31DA6BFAE93 /* Resources */,
+				8156155B6911453A46A88D1092943B1A /* Headers */,
+				088A8BC8369779FE6A5D878B6BED001E /* Sources */,
+				BA23305D8DC29D9FAED54064FE6C1A08 /* Frameworks */,
+				17AE09EF02998DCFC094CFA84B0AFC17 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -315,26 +317,26 @@
 			);
 			name = FOCalendar;
 			productName = FOCalendar;
-			productReference = 4373E7CD5E7E49A0AF11AABCE66EBE13 /* FOCalendar */;
+			productReference = 4373E7CD5E7E49A0AF11AABCE66EBE13 /* FOCalendar.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		F882F501E130699A66242F82314E78E8 /* Pods-BrocoliSe */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = EC567D36F7833D4EC98AD7601FBD27FC /* Build configuration list for PBXNativeTarget "Pods-BrocoliSe" */;
+			buildConfigurationList = 2006747DA62B709727B5845594FF8E04 /* Build configuration list for PBXNativeTarget "Pods-BrocoliSe" */;
 			buildPhases = (
-				109274B25D68951B2076D909F623E4FA /* Headers */,
-				43E3997B4E6A222EF66B123E6405F3F1 /* Sources */,
-				B22E7BE0A2C31D3A7924F29403A6C218 /* Frameworks */,
-				B6C754987E768DB1D777EC952592B383 /* Resources */,
+				8C92B4F43FFEE6DBA19C16E86C0828B2 /* Headers */,
+				F99F20B3B787BB1EE02D79B0D0A6EDEB /* Sources */,
+				3B436DB2D5996EA2C2E68CE7A5FC0594 /* Frameworks */,
+				B43E93963F52B5CD8CA4E64D8EF21AD1 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				80874ED562D4DD0F8250EFF54EC9C045 /* PBXTargetDependency */,
-				71A772CCFC9737184A8CA415F2D85078 /* PBXTargetDependency */,
+				BB8977207274610D05B280DB4DF54E12 /* PBXTargetDependency */,
+				5B6D4E90A2BD856E5FE2EAB4EC716D21 /* PBXTargetDependency */,
 			);
 			name = "Pods-BrocoliSe";
-			productName = Pods_BrocoliSe;
+			productName = "Pods-BrocoliSe";
 			productReference = 8D0FDBA02A1853C1BC8E4B54AFD8BB15 /* Pods_BrocoliSe.framework */;
 			productType = "com.apple.product-type.framework";
 		};
@@ -352,11 +354,11 @@
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				Base,
 				en,
+				Base,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = A6A957A11A4F259F99542E0DD52F651C /* Products */;
+			productRefGroup = F95C2B7013E5E53FA24F19923CB48DD0 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -368,21 +370,21 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		582D4115148CBF2258CEF31DA6BFAE93 /* Resources */ = {
+		17AE09EF02998DCFC094CFA84B0AFC17 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B6C754987E768DB1D777EC952592B383 /* Resources */ = {
+		4355D7E0E6A908CDE31E253FA5E35912 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		EB9D8EE122B68832FFC1F80E787D0C65 /* Resources */ = {
+		B43E93963F52B5CD8CA4E64D8EF21AD1 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -392,62 +394,62 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		43E3997B4E6A222EF66B123E6405F3F1 /* Sources */ = {
+		088A8BC8369779FE6A5D878B6BED001E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D5DCDE4251BB9A5F8E191413F502136A /* Pods-BrocoliSe-dummy.m in Sources */,
+				486860936052DBEA21D4F46A2BE603DF /* CalendarCollectionViewCell.swift in Sources */,
+				286D9C58ED49AF446BE8629BE68C34F9 /* CalendarHeaderView.swift in Sources */,
+				634BAAFCAA15022672831A76BF1D8930 /* CalendarPresenter.swift in Sources */,
+				FC472561F002FBF8FE3E4E3431501B1E /* DataExtension.swift in Sources */,
+				00C4BD69476D43FB17338123EB318C8F /* Day.swift in Sources */,
+				DC2653CD71F1CD2CC4E3F8F6C92AD549 /* FOCalendar-dummy.m in Sources */,
+				DF6EF1C6517EB87C180689010D1EFD90 /* FOCalendarView.swift in Sources */,
+				B4722D1EFB97E2F8E7CA40A6E587BAF9 /* GeneratorDate.swift in Sources */,
+				24BE5B5A9B5773B9EDC4C447BF09436B /* ModelError.swift in Sources */,
+				19F67D14049BFE4D2D78B9B594A10AFA /* Month.swift in Sources */,
+				8A8DEBB9433710B52B16C97C266B4571 /* RemoteGeneratorDate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BF076CE2B04749A437ECF99279C28FBB /* Sources */ = {
+		F4073B250DD964B955DFE176C7C1EF70 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B0EA47C4FD051365FDA5CD06C7822A1C /* CalendarCollectionViewCell.swift in Sources */,
-				55CD084B7A875997759347798FDFBE4A /* CalendarHeaderView.swift in Sources */,
-				D7078578E3CD3171998EBECB11613CD7 /* CalendarPresenter.swift in Sources */,
-				E5B00E75CB9CB29E2A3D64F12A76BD19 /* DataExtension.swift in Sources */,
-				599EE7D7143B59853F9AF14E0CD63597 /* Day.swift in Sources */,
-				C74783913D2370FAF7D3472EBFAD78AF /* FOCalendar-dummy.m in Sources */,
-				4AF6FE6014817D5B3DED5C2002D1F507 /* FOCalendarView.swift in Sources */,
-				383B809B9046F5E47781653159444AA6 /* GeneratorDate.swift in Sources */,
-				DDAEA1359B32044911D771596A951DCB /* ModelError.swift in Sources */,
-				FB9C121D7F0FC33024E85014C416919B /* Month.swift in Sources */,
-				5038384D38D81F1DC80C6219DD4615B0 /* RemoteGeneratorDate.swift in Sources */,
+				51F077500965DF7E911AA1DF173908D2 /* UBProgress-dummy.m in Sources */,
+				2F893AE6A3FB74D43805E47E51C23FF5 /* UBProgress.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E632EADCA6AB4572D55B9DE98C0DB810 /* Sources */ = {
+		F99F20B3B787BB1EE02D79B0D0A6EDEB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8EFBAE969164E3EA2EC182357174243E /* UBProgress.m in Sources */,
-				E95D5A3E74B4DC6D341EE077FE1BD633 /* UBProgress-dummy.m in Sources */,
+				BA316C5D3B680C216C7854029815D4AE /* Pods-BrocoliSe-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		71A772CCFC9737184A8CA415F2D85078 /* PBXTargetDependency */ = {
+		5B6D4E90A2BD856E5FE2EAB4EC716D21 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = UBProgress;
 			target = 60D354207883A696E54CF0054A6EFDE3 /* UBProgress */;
-			targetProxy = EACD6DF40D6C33674795C63688B22816 /* PBXContainerItemProxy */;
+			targetProxy = 1F9C9853516EBA4E186E287E49BA5B20 /* PBXContainerItemProxy */;
 		};
-		80874ED562D4DD0F8250EFF54EC9C045 /* PBXTargetDependency */ = {
+		BB8977207274610D05B280DB4DF54E12 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = FOCalendar;
 			target = 98E4E31ACF70C75F787980E1CA266898 /* FOCalendar */;
-			targetProxy = CC500E4E88B36C0C514F07C21C85BF41 /* PBXContainerItemProxy */;
+			targetProxy = 0BFC35BA9CCDEB4358AD2DD501656805 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		3442522DD6EB9CEAEE2993618997E159 /* Release */ = {
+		0CC868DF35E1EBE0C074AE433813B906 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 92FBEF55272C2A010249CA926EC0BB43 /* FOCalendar.release.xcconfig */;
+			baseConfigurationReference = CEAF6F4ADBEEAE7AEC11D1CC4A99EB3E /* FOCalendar.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -475,82 +477,12 @@
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		3ED375B81EADB05F33A3EEA2AD82ECAC /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = F1A41E13DBFE8EAA97E7D534A2FD4B62 /* UBProgress.debug.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/UBProgress/UBProgress-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/UBProgress/UBProgress-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/UBProgress/UBProgress.modulemap";
-				PRODUCT_MODULE_NAME = UBProgress;
-				PRODUCT_NAME = UBProgress;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
 		};
-		7D4F9C0E41B01B8823C8C7F68D2713CD /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 44B95E372BD24E8632A49AB003DF1778 /* UBProgress.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/UBProgress/UBProgress-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/UBProgress/UBProgress-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MODULEMAP_FILE = "Target Support Files/UBProgress/UBProgress.modulemap";
-				PRODUCT_MODULE_NAME = UBProgress;
-				PRODUCT_NAME = UBProgress;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		7F91F16DFE3A58EC7F9835203F15E118 /* Release */ = {
+		20968ACAB87FD49CEE7F7E8D8693745D /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C1713464E1F0BDAC44977F75E3D68FF4 /* Pods-BrocoliSe.release.xcconfig */;
 			buildSettings = {
@@ -588,10 +520,11 @@
 			};
 			name = Release;
 		};
-		898AE738510259F506E6D513DC36CF61 /* Debug */ = {
+		3BA7B314AA7025704B9DD4B9F71AFE4D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CEAF6F4ADBEEAE7AEC11D1CC4A99EB3E /* FOCalendar.debug.xcconfig */;
+			baseConfigurationReference = 1F7F9FA3D99F529D625D63C7C7E7AC65 /* Pods-BrocoliSe.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -601,8 +534,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/FOCalendar/FOCalendar-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/FOCalendar/FOCalendar-Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-BrocoliSe/Pods-BrocoliSe-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -610,13 +542,15 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MODULEMAP_FILE = "Target Support Files/FOCalendar/FOCalendar.modulemap";
-				PRODUCT_MODULE_NAME = FOCalendar;
-				PRODUCT_NAME = FOCalendar;
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-BrocoliSe/Pods-BrocoliSe.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -751,11 +685,44 @@
 			};
 			name = Release;
 		};
-		DE6A6118BD7F0889D6F6A2B458394E8E /* Debug */ = {
+		B69F5AE44935AF5B9A00A64B22DB4B03 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1F7F9FA3D99F529D625D63C7C7E7AC65 /* Pods-BrocoliSe.debug.xcconfig */;
+			baseConfigurationReference = F1A41E13DBFE8EAA97E7D534A2FD4B62 /* UBProgress.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/UBProgress/UBProgress-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/UBProgress/UBProgress-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/UBProgress/UBProgress.modulemap";
+				PRODUCT_MODULE_NAME = UBProgress;
+				PRODUCT_NAME = UBProgress;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		B8DABF29CBA7E6756AC93DC932AB631E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 92FBEF55272C2A010249CA926EC0BB43 /* FOCalendar.release.xcconfig */;
+			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -765,7 +732,8 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-BrocoliSe/Pods-BrocoliSe-Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/FOCalendar/FOCalendar-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/FOCalendar/FOCalendar-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -773,29 +741,63 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-BrocoliSe/Pods-BrocoliSe.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				MODULEMAP_FILE = "Target Support Files/FOCalendar/FOCalendar.modulemap";
+				PRODUCT_MODULE_NAME = FOCalendar;
+				PRODUCT_NAME = FOCalendar;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Debug;
+			name = Release;
+		};
+		C1504409144A3812360D9CBE2693226F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 44B95E372BD24E8632A49AB003DF1778 /* UBProgress.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/UBProgress/UBProgress-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/UBProgress/UBProgress-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/UBProgress/UBProgress.modulemap";
+				PRODUCT_MODULE_NAME = UBProgress;
+				PRODUCT_NAME = UBProgress;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		09E4F53624AC8F077B070D22C0FE600B /* Build configuration list for PBXNativeTarget "UBProgress" */ = {
+		2006747DA62B709727B5845594FF8E04 /* Build configuration list for PBXNativeTarget "Pods-BrocoliSe" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				3ED375B81EADB05F33A3EEA2AD82ECAC /* Debug */,
-				7D4F9C0E41B01B8823C8C7F68D2713CD /* Release */,
+				3BA7B314AA7025704B9DD4B9F71AFE4D /* Debug */,
+				20968ACAB87FD49CEE7F7E8D8693745D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -809,20 +811,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9B2050764C1709DC82D34E2855A917AE /* Build configuration list for PBXNativeTarget "FOCalendar" */ = {
+		B3167168534C18A65BDD84FA0C6A9E31 /* Build configuration list for PBXNativeTarget "UBProgress" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				898AE738510259F506E6D513DC36CF61 /* Debug */,
-				3442522DD6EB9CEAEE2993618997E159 /* Release */,
+				B69F5AE44935AF5B9A00A64B22DB4B03 /* Debug */,
+				C1504409144A3812360D9CBE2693226F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		EC567D36F7833D4EC98AD7601FBD27FC /* Build configuration list for PBXNativeTarget "Pods-BrocoliSe" */ = {
+		F6D02BEE90557B48336F2B684059B5B8 /* Build configuration list for PBXNativeTarget "FOCalendar" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				DE6A6118BD7F0889D6F6A2B458394E8E /* Debug */,
-				7F91F16DFE3A58EC7F9835203F15E118 /* Release */,
+				0CC868DF35E1EBE0C074AE433813B906 /* Debug */,
+				B8DABF29CBA7E6756AC93DC932AB631E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

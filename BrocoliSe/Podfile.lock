@@ -1,5 +1,5 @@
 PODS:
-  - FOCalendar (0.0.4)
+  - FOCalendar (0.0.6)
   - UBProgress (1.0.1)
 
 DEPENDENCIES:
@@ -16,11 +16,11 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   FOCalendar:
-    :commit: 05b30fc72ce7d2f33588ad312457b4fe2b77f3d2
+    :commit: 37e7708998c9c83874814affa23e92c99301c31b
     :git: https://github.com/SamEngComp/FOCalendar.git
 
 SPEC CHECKSUMS:
-  FOCalendar: 308b93d9bd1404c859096fcc4b024a1129b0c05e
+  FOCalendar: 259233cfbc1bde3daf698308eef4612a846b15c4
   UBProgress: 76ab8eb2479cd05860eb2151f520f316d5e59a5d
 
 PODFILE CHECKSUM: 61bdce95b9db03643fed75862c551a013395bac2

@@ -7,6 +7,8 @@
 
 import Foundation
 import UIKit
+import Intents
+import IntentsUI
 
 protocol AlbumSceneDelegate: AnyObject {
     func setController(controller: AlbumViewController)
@@ -17,6 +19,7 @@ protocol AlbumSceneDelegate: AnyObject {
 
 class AlbumViewController: UICollectionViewController {
     
+    private let siriButton = INUIAddVoiceShortcutButton(style: .automatic)
     private var scene: AlbumSceneDelegate?
     private var coreDataManager: CoreDataManagerProtocol?
     var tabCoordinator: TabCoordinatorProtocol?
