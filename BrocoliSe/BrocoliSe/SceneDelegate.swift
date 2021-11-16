@@ -79,7 +79,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     func dealWithUserActivities(userActivity: NSUserActivity, isContinuing: Bool) {
         switch userActivity.activityType {
-        case SiriActivitiesType.openSecondVCActivity.rawValue:
+        case SiriActivitiesType.checkListActivity.rawValue:
             checkList()
         case SiriActivitiesType.albumActivity.rawValue:
             openAlbum()

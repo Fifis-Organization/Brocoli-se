@@ -55,30 +55,30 @@ class AlbumViewController: UICollectionViewController {
 }
 
 extension AlbumViewController: INUIAddVoiceShortcutViewControllerDelegate {
-    //1
+    // 1
     func addVoiceShortcutViewController(_ controller: INUIAddVoiceShortcutViewController,
                                         didFinishWith voiceShortcut: INVoiceShortcut?,
                                         error: Error?) {
         controller.dismiss(animated: true, completion: nil)
     }
-    //2
+    // 2
     func addVoiceShortcutViewControllerDidCancel(_ controller: INUIAddVoiceShortcutViewController) {
         controller.dismiss(animated: true, completion: nil)
     }
 }
 
-extension AlbumViewController: INUIEditVoiceShortcutViewControllerDelegate{
+extension AlbumViewController: INUIEditVoiceShortcutViewControllerDelegate {
     
-    //When the edit option is to update the shortcut
+    // When the edit option is to update the shortcut
     func editVoiceShortcutViewController(_ controller: INUIEditVoiceShortcutViewController, didUpdate voiceShortcut: INVoiceShortcut?, error: Error?) {
         controller.dismiss(animated: true, completion: nil)
     }
-    //When the edit option is to delete the shortcut
+    // When the edit option is to delete the shortcut
     func editVoiceShortcutViewController(_ controller: INUIEditVoiceShortcutViewController, didDeleteVoiceShortcutWithIdentifier deletedVoiceShortcutIdentifier: UUID) {
         controller.dismiss(animated: true, completion: nil)
     }
     
-    //When modal Cancel button is tapped
+    // When modal Cancel button is tapped
     func editVoiceShortcutViewControllerDidCancel(_ controller: INUIEditVoiceShortcutViewController) {
         controller.dismiss(animated: true, completion: nil)
     }

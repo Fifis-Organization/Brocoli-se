@@ -65,8 +65,7 @@
 		56B831D62707494F00490908 /* DiaryViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B831D52707494F00490908 /* DiaryViewControllerTests.swift */; };
 		56D1AB5426FA2523001A2486 /* IconButtonComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D1AB5326FA2523001A2486 /* IconButtonComponent.swift */; };
 		5F22C12D64DBC49B6281335B /* Pods_BrocoliSe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 339A77E77343AA9D6B45448B /* Pods_BrocoliSe.framework */; };
-		A456AC7B273560F0003CC5F6 /* SiriUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = A456AC7A273560F0003CC5F6 /* SiriUtil.swift */; };
-		A456AC7D2735610D003CC5F6 /* SiriActivities.swift in Sources */ = {isa = PBXBuildFile; fileRef = A456AC7C2735610D003CC5F6 /* SiriActivities.swift */; };
+		A456AC7D2735610D003CC5F6 /* SiriActivitiesType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A456AC7C2735610D003CC5F6 /* SiriActivitiesType.swift */; };
 		A47C62FD26F8B48600D6A54B /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47C62FC26F8B48600D6A54B /* OnboardingViewController.swift */; };
 		A47C630026F8B4E600D6A54B /* Onboarding01.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47C62FF26F8B4E600D6A54B /* Onboarding01.swift */; };
 		A47C630226F8B4F800D6A54B /* Onboarding02.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47C630126F8B4F800D6A54B /* Onboarding02.swift */; };
@@ -153,8 +152,7 @@
 		56B831D52707494F00490908 /* DiaryViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryViewControllerTests.swift; sourceTree = "<group>"; };
 		56D1AB5326FA2523001A2486 /* IconButtonComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconButtonComponent.swift; sourceTree = "<group>"; };
 		7FA58FB81DD24388A0BB3880 /* Pods-BrocoliSe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BrocoliSe.debug.xcconfig"; path = "Target Support Files/Pods-BrocoliSe/Pods-BrocoliSe.debug.xcconfig"; sourceTree = "<group>"; };
-		A456AC7A273560F0003CC5F6 /* SiriUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiriUtil.swift; sourceTree = "<group>"; };
-		A456AC7C2735610D003CC5F6 /* SiriActivities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiriActivities.swift; sourceTree = "<group>"; };
+		A456AC7C2735610D003CC5F6 /* SiriActivitiesType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiriActivitiesType.swift; sourceTree = "<group>"; };
 		A47C62FC26F8B48600D6A54B /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		A47C62FF26F8B4E600D6A54B /* Onboarding01.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding01.swift; sourceTree = "<group>"; };
 		A47C630126F8B4F800D6A54B /* Onboarding02.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding02.swift; sourceTree = "<group>"; };
@@ -404,8 +402,7 @@
 				543DCF9826F36DCC00BDAF63 /* NamesEnums.swift */,
 				39DA525F26F9FFEC00158880 /* StringExtension.swift */,
 				39DA538926FD584400158880 /* UIViewExtension.swift */,
-				A456AC7A273560F0003CC5F6 /* SiriUtil.swift */,
-				A456AC7C2735610D003CC5F6 /* SiriActivities.swift */,
+				A456AC7C2735610D003CC5F6 /* SiriActivitiesType.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -609,7 +606,7 @@
 				54BA499926F8C2D900201438 /* RewardModalScene.swift in Sources */,
 				3932587126E9008000A44687 /* ProgressBarComponent.swift in Sources */,
 				A47C630226F8B4F800D6A54B /* Onboarding02.swift in Sources */,
-				A456AC7D2735610D003CC5F6 /* SiriActivities.swift in Sources */,
+				A456AC7D2735610D003CC5F6 /* SiriActivitiesType.swift in Sources */,
 				56937A1A27219EA600615042 /* SettingsScene.swift in Sources */,
 				56937A1C27219F2300615042 /* SettingsViewController.swift in Sources */,
 				A47C630826F8B58100D6A54B /* FoodSelectorComponent.swift in Sources */,
@@ -623,7 +620,6 @@
 				3932587126E9008000A44687 /* ProgressBarComponent.swift in Sources */,
 				54109F1626F2959700EC4C10 /* DiaryTableViewCellComponent.swift in Sources */,
 				569B432B26FB66DB0084071E /* PersistenceService.swift in Sources */,
-				A456AC7B273560F0003CC5F6 /* SiriUtil.swift in Sources */,
 				3932587426E9008C00A44687 /* DiaryScene.swift in Sources */,
 				3984BD4026E8E9AB00C92824 /* DiaryViewController.swift in Sources */,
 				5436A2D5273D3ED3001B2DF8 /* SearchBar.swift in Sources */,
@@ -829,7 +825,6 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1.2.0;
 				DEVELOPMENT_TEAM = 2KUGC5CZ6Z;
-
 				INFOPLIST_FILE = BrocoliSe/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

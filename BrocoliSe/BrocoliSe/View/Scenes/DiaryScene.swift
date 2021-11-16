@@ -115,18 +115,25 @@ class DiaryScene: UIView {
     }
     
     func setupSiri() {
-        print("Deu certo")
-        
-        //pegar o dia
-        guard let dayActual = self.dayActual else {return}
-        //adicionar a comida no ingested
-        self.foods?.forEach {
-            dayActual.addToIngested($0)
-            dayActual.removeFromNoIngested($0)
+        guard let dayActual = self.dayActual,
+              let noIngesteds = dayActual.noIngested as? Set<FoodOff> else {
+            return
         }
-        //reload table
-        diaryTableView.reloadData()
         
+        if !noIngesteds.isEmpty {
+            self.foods?.forEach { food in
+                var validate = false
+                noIngesteds.forEach { noIngested in
+                    if food == noIngested {
+                        validate = true
+                    }
+                }
+                if validate {
+                    controller?.saveFood(today: dayActual, food: food, isCheck: true)
+                }
+            }
+            diaryTableView.reloadData()
+        }
     }
     
     required init?(coder: NSCoder) {
