@@ -145,4 +145,23 @@ class FoodSelectorComponent: UIView {
     func getSelected() -> [String] {
         return selectedFood
     }
+
+    func setSelected(selectedFood: [String]) {
+        selectedFood.forEach { food in
+            switch food {
+            case FoodNames.carne:
+                selectFood(self.buttonCarne)
+            case FoodNames.ovos:
+                selectFood(self.buttonOvo)
+            case FoodNames.leite:
+                selectFood(self.buttonLeite)
+            case FoodNames.frango:
+                selectFood(self.buttonFrango)
+            case FoodNames.peixe:
+                selectFood(self.buttonPeixe)
+            default:
+                return
+            }
+        }
+    }
 }

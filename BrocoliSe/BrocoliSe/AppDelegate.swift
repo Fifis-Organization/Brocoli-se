@@ -12,37 +12,42 @@ import IntentsUI
 class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
     
     let notification = NotificationViewController()
-    let controller = DiaryViewController()
+    let persistentService = PersistenceService()
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        UserDefaults.standard.set(true, forKey: "First Launch")
-        UNUserNotificationCenter.current()
-            .requestAuthorization(options: [.alert, .sound]) { _ , error  in
-            if let error = error {
-                print(error.localizedDescription)
-            }
+        if !persistentService.getKeyValue(udKey: .firstLaunch) {
+            self.persistentService.persist(udKey: .vibrations, value: true)
+            UNUserNotificationCenter.current()
+                .requestAuthorization(options: [.alert, .sound]) { authorization, error  in
+                    self.persistentService.persist(udKey: .notifications, value: authorization)
+                    if let error = error {
+                        print(error.localizedDescription)
+                    }
+                }
         }
-
+        
         UNUserNotificationCenter.current().delegate = self
         
         var dateComponents = DateComponents()
         dateComponents.calendar = Calendar.current
         dateComponents.hour = 9
-           
+        
         let trigger = UNCalendarNotificationTrigger(
-                 dateMatching: dateComponents, repeats: true)
+            dateMatching: dateComponents, repeats: true)
         
         var dateComponents2 = DateComponents()
         dateComponents2.calendar = Calendar.current
         dateComponents2.hour = 21
-           
+        
         let trigger2 = UNCalendarNotificationTrigger(
-                 dateMatching: dateComponents2, repeats: true)
+            dateMatching: dateComponents2, repeats: true)
         
         UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
         notification.schenduleNotificationMorning(trigger: trigger)
         notification.schenduleNotificationNight(trigger: trigger2)
+        persistentService.persist(udKey: .firstLaunch, value: true)
+
         return true
     }
 

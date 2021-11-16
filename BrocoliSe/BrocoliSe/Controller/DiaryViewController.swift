@@ -19,6 +19,7 @@ protocol DiarySceneDelegate: AnyObject {
     func setupDatas()
     func setTextLabelProgress(_ text: String)
     func setupSiri()
+    func reloadTable()
 }
 
 class DiaryViewController: UIViewController {
@@ -33,6 +34,12 @@ class DiaryViewController: UIViewController {
         super.viewDidLoad()
         view.insetsLayoutMarginsFromSafeArea = false
     }
+
+    override func viewWillAppear(_ animated: Bool) {
+        self.fetchUser()
+        self.fetchFoodAll()
+        diaryScene?.reloadTable()
+    }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -41,7 +48,6 @@ class DiaryViewController: UIViewController {
         setupSiriChecklist()
         
     }
-    
     
     func setupSiriAlbum() {
         let actionIdentifier = "com.brocolise.album"
@@ -63,6 +69,10 @@ class DiaryViewController: UIViewController {
         activity.isEligibleForPrediction = true
         self.userActivity = activity
         activity.becomeCurrent()
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
     }
 
     func setDiaryScene(_ aScene: DiarySceneDelegate) {

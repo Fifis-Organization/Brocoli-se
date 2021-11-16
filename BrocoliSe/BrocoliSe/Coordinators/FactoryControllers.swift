@@ -22,8 +22,24 @@ struct FactoryControllers {
         return albumVC
     }
     
-    static func createProfileViewController() {
+    static func createSettingsViewController() -> SettingsViewController {
+        let settingsScene = SettingsScene(frame: UIScreen.main.bounds)
+        let settingsVC = SettingsViewController()
+        settingsVC.setCoreDataManager(CoreDataManager())
+        settingsVC.setProfileScene(settingsScene)
+        settingsScene.setupData()
         
+        return settingsVC
+    }
+
+    static func createProfileViewController() -> ProfileViewController {
+        let profileScene = ProfileScene(frame: UIScreen.main.bounds)
+        let profileVC = ProfileViewController()
+        profileVC.setCoreDataManager(CoreDataManager())
+        profileVC.setProfileScene(profileScene)
+        profileScene.setupDatas()
+
+        return profileVC
     }
     
     static func createOnboardingViewController() -> OnboardingViewController {
