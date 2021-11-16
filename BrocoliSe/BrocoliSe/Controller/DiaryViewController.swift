@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import IntentsUI
+import Intents
 
 protocol DiarySceneDelegate: AnyObject {
     func setDayAll(days: [Day])
@@ -16,13 +18,16 @@ protocol DiarySceneDelegate: AnyObject {
     func presenterModal(_ modal: ModalViewController)
     func setupDatas()
     func setTextLabelProgress(_ text: String)
+    func setupSiri()
     func reloadTable()
 }
 
 class DiaryViewController: UIViewController {
-    private var diaryScene: DiarySceneDelegate?
+        
+    var diaryScene: DiarySceneDelegate?
     private var coreDataManager: CoreDataManagerProtocol?
-
+    private let siriButton = INUIAddVoiceShortcutButton(style: .automatic)
+    
     var tabCoordinator: TabCoordinatorProtocol?
     
     override func viewDidLoad() {
@@ -39,6 +44,31 @@ class DiaryViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         tabCoordinator?.configTabBar(color: .white)
+        setupSiriAlbum()
+        setupSiriChecklist()
+        
+    }
+    
+    private func setupSiriAlbum() {
+        let actionIdentifier = "com.brocolise.album"
+        let activity = NSUserActivity(activityType: actionIdentifier)
+        activity.title = "Album Brocolise"
+        activity.suggestedInvocationPhrase = "Tela Album Brocolise"
+        activity.isEligibleForSearch = true
+        activity.isEligibleForPrediction = true
+        self.userActivity = activity
+        activity.becomeCurrent()
+     }
+    
+    private func setupSiriChecklist() {
+        let actionIdentifier = "com.brocolise.checklist"
+        let activity = NSUserActivity(activityType: actionIdentifier)
+        activity.title = "Marcar itens"
+        activity.suggestedInvocationPhrase = "Marcar itens"
+        activity.isEligibleForSearch = true
+        activity.isEligibleForPrediction = true
+        self.userActivity = activity
+        activity.becomeCurrent()
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
