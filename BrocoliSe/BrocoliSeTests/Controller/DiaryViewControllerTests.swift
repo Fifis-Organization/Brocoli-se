@@ -99,15 +99,13 @@ class DiaryViewControllerTests: XCTestCase {
         today.date = Date()
         let food1: FoodOff = coreData.createEntity()
         food1.food = "Brocolis"
-        let food2: FoodOff = coreData.createEntity()
-        food2.food = "Frutas"
         
-        controller.saveFood(ingestedFood: [food1], noIngestedFood: [food2], today: today)
+        controller.saveFood(today: today, food: food1, isCheck: true)
+        
         controller.fetchDay(Date())
         let dayReceive: Day? = scene.daySelected
         
         XCTAssertEqual(dayReceive?.ingested, [food1])
-        XCTAssertEqual(dayReceive?.noIngested, [food2])
     }
     
     func test_createToday() {
