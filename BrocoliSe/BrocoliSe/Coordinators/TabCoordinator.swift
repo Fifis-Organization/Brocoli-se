@@ -24,7 +24,7 @@ class TabCoordinator: NSObject, TabCoordinatorProtocol {
     }
 
     func start() {
-        let pages: [TabBarPage] = [.diary, .album]
+        let pages: [TabBarPage] = [.diary, .album, .recipes]
             .sorted(by: { $0.pageOrderNumber() < $1.pageOrderNumber() })
         controllers = pages.map({ getTabController($0) })
         prepareTabBarController(withTabControllers: controllers)
@@ -82,6 +82,19 @@ class TabCoordinator: NSObject, TabCoordinatorProtocol {
             navController.navigationBar.prefersLargeTitles = true
             navController.navigationBar.largeTitleTextAttributes = attrs
             navController.pushViewController(albumVC, animated: true)
+        case .recipes:
+            let recipesVC = FactoryControllers.createRecipeListViewController()
+            recipesVC.tabCoordinator = self
+            recipesVC.title = "Receitas"
+            let attrs = [
+                NSAttributedString.Key.foregroundColor: UIColor.backgroundColor,
+                NSAttributedString.Key.font: UIFont.graviolaSoft(size: 34) ?? UIFont.systemFont(ofSize: 34)
+            ]
+            navController.navigationBar.barStyle = .black
+            navController.navigationItem.largeTitleDisplayMode = .always
+            navController.navigationBar.prefersLargeTitles = true
+            navController.navigationBar.largeTitleTextAttributes = attrs
+            navController.pushViewController(recipesVC, animated: true)
         }
         
         return navController
