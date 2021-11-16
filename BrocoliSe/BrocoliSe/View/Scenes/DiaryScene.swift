@@ -134,9 +134,7 @@ extension DiaryScene: UITableViewDelegate, UITableViewDataSource {
         cell.setData(iconName: foodName.iconTable(), foodName:  foodName)
         cell.checkButtonCallBack = {
             cell.toggleSelected()
-            if let dayActual = self.dayActual {
-                self.controller?.saveFood(today: dayActual, food: food, isCheck: cell.getIsCheck())
-            }
+            self.cellActionSave(food: food, isCheck: cell.getIsCheck())
             self.controller?.fetchDayAll()
         }
         
@@ -151,6 +149,12 @@ extension DiaryScene: UITableViewDelegate, UITableViewDataSource {
             }
         }
         return cell
+    }
+    
+    private func cellActionSave(food: FoodOff, isCheck: Bool) {
+        if let dayActual = self.dayActual {
+            self.controller?.saveFood(today: dayActual, food: food, isCheck: isCheck)
+        }
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
