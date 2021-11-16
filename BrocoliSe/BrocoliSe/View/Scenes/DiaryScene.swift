@@ -117,6 +117,17 @@ class DiaryScene: UIView {
     
     func setupSiri() {
         print("Deu certo")
+        
+        //pegar o dia
+        guard let dayActual = self.dayActual else {return}
+        //adicionar a comida no ingested
+        self.foods?.forEach {
+            dayActual.addToIngested($0)
+            dayActual.removeFromNoIngested($0)
+        }
+        //reload table
+        diaryTableView.reloadData()
+        
     }
     
     required init?(coder: NSCoder) {
