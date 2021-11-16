@@ -49,7 +49,7 @@ class DiaryViewController: UIViewController {
         
     }
     
-    func setupSiriAlbum() {
+    private func setupSiriAlbum() {
         let actionIdentifier = "com.brocolise.album"
         let activity = NSUserActivity(activityType: actionIdentifier)
         activity.title = "Album Brocolise"
@@ -60,7 +60,7 @@ class DiaryViewController: UIViewController {
         activity.becomeCurrent()
      }
     
-    func setupSiriChecklist() {
+    private func setupSiriChecklist() {
         let actionIdentifier = "com.brocolise.checklist"
         let activity = NSUserActivity(activityType: actionIdentifier)
         activity.title = "Marcar itens"

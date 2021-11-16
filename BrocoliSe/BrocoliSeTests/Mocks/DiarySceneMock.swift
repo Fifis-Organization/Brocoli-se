@@ -11,7 +11,6 @@ import CoreData
 
 class DiarySceneMock: DiarySceneDelegate {
 
-    
     var days: [Day]?
     var foods: [FoodOff]?
     var controller: DiaryViewController?
