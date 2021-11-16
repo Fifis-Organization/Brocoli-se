@@ -24,6 +24,7 @@
 		3932586B26E8FF7A00A44687 /* Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3932586A26E8FF7A00A44687 /* Protocol.swift */; };
 		3932587126E9008000A44687 /* ProgressBarComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3932587026E9008000A44687 /* ProgressBarComponent.swift */; };
 		3932587426E9008C00A44687 /* DiaryScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3932587326E9008C00A44687 /* DiaryScene.swift */; };
+		3945A80D273EAEBC00E9F5E3 /* Recipes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3945A80B273EAEBC00E9F5E3 /* Recipes.xcdatamodeld */; };
 		394AEB1F26F7ADD200C5D8E7 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 394AEB1D26F7ADD200C5D8E7 /* DataModel.xcdatamodeld */; };
 		394AEB2226F7ADF700C5D8E7 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394AEB2126F7ADF700C5D8E7 /* CoreDataManager.swift */; };
 		394AEB2626F7CE6D00C5D8E7 /* EntityCreateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394AEB2526F7CE6D00C5D8E7 /* EntityCreateProtocol.swift */; };
@@ -104,6 +105,7 @@
 		3932586A26E8FF7A00A44687 /* Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocol.swift; sourceTree = "<group>"; };
 		3932587026E9008000A44687 /* ProgressBarComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarComponent.swift; sourceTree = "<group>"; };
 		3932587326E9008C00A44687 /* DiaryScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryScene.swift; sourceTree = "<group>"; };
+		3945A80C273EAEBC00E9F5E3 /* Recipees.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Recipees.xcdatamodel; sourceTree = "<group>"; };
 		394AEB1E26F7ADD200C5D8E7 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		394AEB2126F7ADF700C5D8E7 /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		394AEB2526F7CE6D00C5D8E7 /* EntityCreateProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityCreateProtocol.swift; sourceTree = "<group>"; };
@@ -223,6 +225,7 @@
 			isa = PBXGroup;
 			children = (
 				394AEB1D26F7ADD200C5D8E7 /* DataModel.xcdatamodeld */,
+				3945A80B273EAEBC00E9F5E3 /* Recipes.xcdatamodeld */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -631,6 +634,7 @@
 				3984BD3C26E8E9AB00C92824 /* AppDelegate.swift in Sources */,
 				39DA525C26F7E4DF00158880 /* FactoryControllers.swift in Sources */,
 				3984BD3E26E8E9AB00C92824 /* SceneDelegate.swift in Sources */,
+				3945A80D273EAEBC00E9F5E3 /* Recipes.xcdatamodeld in Sources */,
 				394AEB1F26F7ADD200C5D8E7 /* DataModel.xcdatamodeld in Sources */,
 				54CDC6262728CADA007CA4D5 /* ProfileScene.swift in Sources */,
 				394AEB2626F7CE6D00C5D8E7 /* EntityCreateProtocol.swift in Sources */,
@@ -926,6 +930,16 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
+		3945A80B273EAEBC00E9F5E3 /* Recipes.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				3945A80C273EAEBC00E9F5E3 /* Recipees.xcdatamodel */,
+			);
+			currentVersion = 3945A80C273EAEBC00E9F5E3 /* Recipees.xcdatamodel */;
+			path = Recipes.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
 		394AEB1D26F7ADD200C5D8E7 /* DataModel.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (

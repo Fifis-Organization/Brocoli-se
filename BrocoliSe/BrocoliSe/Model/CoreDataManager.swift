@@ -20,12 +20,17 @@ class CoreDataManager: CoreDataManagerProtocol {
         return self.container.viewContext
     }
     
-    init() {
-        self.container = NSPersistentContainer(name: "DataModel")
+    init(dataModelType: DataModelType = .check) {
+        self.container = NSPersistentContainer(name: dataModelType.rawValue)
         self.container.loadPersistentStores { (_, error) in
             if let error = error as NSError? {
                 fatalError("Unresolved error \(error), \(error.userInfo)")
             }
         }
     }
+}
+
+enum DataModelType: String {
+    case recipe = "Recipes"
+    case check  = "DataModel"
 }
