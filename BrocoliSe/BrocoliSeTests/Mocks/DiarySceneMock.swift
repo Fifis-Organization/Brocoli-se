@@ -10,6 +10,8 @@ import CoreData
 @testable import BrocoliSe
 
 class DiarySceneMock: DiarySceneDelegate {
+
+    
     var days: [Day]?
     var foods: [FoodOff]?
     var controller: DiaryViewController?
@@ -54,5 +56,9 @@ class DiarySceneMock: DiarySceneDelegate {
 
     func reloadTable() {
 
+    }
+    
+    func setupSiri() {
+        
     }
 }
