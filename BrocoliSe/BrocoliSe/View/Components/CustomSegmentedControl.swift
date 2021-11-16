@@ -28,8 +28,6 @@ class CustomSegmentedControl: UISegmentedControl {
         configure()
         self.addSubview(segmentIndicator)
         setUpSegmentedIndicatorConstraints()
-        self.setBackgroundImage(UIImage(), for: .normal, barMetrics: .default)
-        self.setDividerImage(UIImage(), forLeftSegmentState: .normal, rightSegmentState: .normal, barMetrics: .default)
     }
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -37,6 +35,9 @@ class CustomSegmentedControl: UISegmentedControl {
     
     private func configure() {
         self.selectedSegmentTintColor = .clear
+        
+        self.setBackgroundImage(UIImage(), for: .normal, barMetrics: .default)
+        self.setDividerImage(UIImage(), forLeftSegmentState: .normal, rightSegmentState: .normal, barMetrics: .default)
         
         let attrsSelected = [
             NSAttributedString.Key.foregroundColor: color,
@@ -56,9 +57,11 @@ class CustomSegmentedControl: UISegmentedControl {
     private func setUpSegmentedIndicatorConstraints() {
         segmentIndicator.translatesAutoresizingMaskIntoConstraints = false
         
-        segmentIndicator.topAnchor.constraint(equalTo: self.bottomAnchor, constant: -2.5).isActive = true
-        segmentIndicator.heightAnchor.constraint(equalToConstant: 2.5).isActive = true
-        segmentIndicator.widthAnchor.constraint(equalToConstant: 100).isActive = true
+        NSLayoutConstraint.activate([
+            segmentIndicator.topAnchor.constraint(equalTo: self.bottomAnchor, constant: -2.5),
+            segmentIndicator.heightAnchor.constraint(equalToConstant: 2.5),
+            segmentIndicator.widthAnchor.constraint(equalToConstant: 100)
+        ])
         
         leading.isActive = false
         leading = segmentIndicator.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: (100 * CGFloat(self.selectedSegmentIndex)) + 5)
