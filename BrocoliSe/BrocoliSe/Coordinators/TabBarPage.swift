@@ -4,6 +4,7 @@ import UIKit
 enum TabBarPage {
     case diary
     case album
+    case recipes
 
     init?(index: Int) {
         switch index {
@@ -11,6 +12,8 @@ enum TabBarPage {
             self = .diary
         case 1:
             self = .album
+        case 2:
+            self = .recipes
         default:
             return nil
         }
@@ -22,6 +25,8 @@ enum TabBarPage {
             return "Diário"
         case .album:
             return "Álbum"
+        case .recipes:
+            return "Receitas"
         }
     }
 
@@ -31,6 +36,8 @@ enum TabBarPage {
             return 0
         case .album:
             return 1
+        case .recipes:
+            return 2
         }
     }
     
@@ -40,6 +47,8 @@ enum TabBarPage {
             return UIImage(named: "daily-icon") ?? UIImage()
         case .album:
             return UIImage(named: "album-icon") ?? UIImage()
+        case .recipes:
+            return UIImage(named: "recipes-icon") ?? UIImage()
         }
     }
     

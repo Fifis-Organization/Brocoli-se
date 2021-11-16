@@ -24,6 +24,7 @@
 		3932586B26E8FF7A00A44687 /* Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3932586A26E8FF7A00A44687 /* Protocol.swift */; };
 		3932587126E9008000A44687 /* ProgressBarComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3932587026E9008000A44687 /* ProgressBarComponent.swift */; };
 		3932587426E9008C00A44687 /* DiaryScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3932587326E9008C00A44687 /* DiaryScene.swift */; };
+		3945A80D273EAEBC00E9F5E3 /* Recipes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3945A80B273EAEBC00E9F5E3 /* Recipes.xcdatamodeld */; };
 		394AEB1F26F7ADD200C5D8E7 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 394AEB1D26F7ADD200C5D8E7 /* DataModel.xcdatamodeld */; };
 		394AEB2226F7ADF700C5D8E7 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394AEB2126F7ADF700C5D8E7 /* CoreDataManager.swift */; };
 		394AEB2626F7CE6D00C5D8E7 /* EntityCreateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394AEB2526F7CE6D00C5D8E7 /* EntityCreateProtocol.swift */; };
@@ -39,7 +40,12 @@
 		39DA526026F9FFEC00158880 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39DA525F26F9FFEC00158880 /* StringExtension.swift */; };
 		39DA538A26FD584500158880 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39DA538926FD584400158880 /* UIViewExtension.swift */; };
 		54109F1626F2959700EC4C10 /* DiaryTableViewCellComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54109F1526F2959700EC4C10 /* DiaryTableViewCellComponent.swift */; };
+		5436A2D5273D3ED3001B2DF8 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5436A2D4273D3ED3001B2DF8 /* SearchBar.swift */; };
 		543DCF9926F36DCC00BDAF63 /* NamesEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 543DCF9826F36DCC00BDAF63 /* NamesEnums.swift */; };
+		549A03E1273BE41700B13A75 /* RecipeListScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 549A03E0273BE41700B13A75 /* RecipeListScene.swift */; };
+		549A03E3273BE55800B13A75 /* RecipeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 549A03E2273BE55800B13A75 /* RecipeListViewController.swift */; };
+		549A03E5273BE68200B13A75 /* RecipeListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 549A03E4273BE68200B13A75 /* RecipeListCell.swift */; };
+		549A03E7273BE93E00B13A75 /* LabelWithLeftImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 549A03E6273BE93E00B13A75 /* LabelWithLeftImage.swift */; };
 		54BA499526F8B0D000201438 /* ModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BA499426F8B0D000201438 /* ModalViewController.swift */; };
 		54BA499726F8B1B300201438 /* ModalComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BA499626F8B1B300201438 /* ModalComponent.swift */; };
 		54BA499926F8C2D900201438 /* RewardModalScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54BA499826F8C2D900201438 /* RewardModalScene.swift */; };
@@ -99,6 +105,7 @@
 		3932586A26E8FF7A00A44687 /* Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocol.swift; sourceTree = "<group>"; };
 		3932587026E9008000A44687 /* ProgressBarComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarComponent.swift; sourceTree = "<group>"; };
 		3932587326E9008C00A44687 /* DiaryScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryScene.swift; sourceTree = "<group>"; };
+		3945A80C273EAEBC00E9F5E3 /* Recipees.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Recipees.xcdatamodel; sourceTree = "<group>"; };
 		394AEB1E26F7ADD200C5D8E7 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		394AEB2126F7ADF700C5D8E7 /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		394AEB2526F7CE6D00C5D8E7 /* EntityCreateProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityCreateProtocol.swift; sourceTree = "<group>"; };
@@ -116,7 +123,12 @@
 		39DA525F26F9FFEC00158880 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		39DA538926FD584400158880 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		54109F1526F2959700EC4C10 /* DiaryTableViewCellComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryTableViewCellComponent.swift; sourceTree = "<group>"; };
+		5436A2D4273D3ED3001B2DF8 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		543DCF9826F36DCC00BDAF63 /* NamesEnums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamesEnums.swift; sourceTree = "<group>"; };
+		549A03E0273BE41700B13A75 /* RecipeListScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeListScene.swift; sourceTree = "<group>"; };
+		549A03E2273BE55800B13A75 /* RecipeListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeListViewController.swift; sourceTree = "<group>"; };
+		549A03E4273BE68200B13A75 /* RecipeListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeListCell.swift; sourceTree = "<group>"; };
+		549A03E6273BE93E00B13A75 /* LabelWithLeftImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelWithLeftImage.swift; sourceTree = "<group>"; };
 		54BA499426F8B0D000201438 /* ModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalViewController.swift; sourceTree = "<group>"; };
 		54BA499626F8B1B300201438 /* ModalComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalComponent.swift; sourceTree = "<group>"; };
 		54BA499826F8C2D900201438 /* RewardModalScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardModalScene.swift; sourceTree = "<group>"; };
@@ -213,6 +225,7 @@
 			isa = PBXGroup;
 			children = (
 				394AEB1D26F7ADD200C5D8E7 /* DataModel.xcdatamodeld */,
+				3945A80B273EAEBC00E9F5E3 /* Recipes.xcdatamodeld */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -288,6 +301,7 @@
 				A496A9322716FFD600B80622 /* NotificationViewController.swift */,
 				54CDC6272728D095007CA4D5 /* ProfileViewController.swift */,
 				56937A1B27219F2300615042 /* SettingsViewController.swift */,
+				549A03E2273BE55800B13A75 /* RecipeListViewController.swift */,
 				3984BD5A26E8FCF400C92824 /* Fonts */,
 			);
 			path = Controller;
@@ -334,6 +348,9 @@
 				568DDD8E27185C920067B94C /* ProfileSelectionCell.swift */,
 				56937A172721943100615042 /* SettingsCell.swift */,
 				562216132726F879004AF110 /* CustomViewButton.swift */,
+				549A03E4273BE68200B13A75 /* RecipeListCell.swift */,
+				549A03E6273BE93E00B13A75 /* LabelWithLeftImage.swift */,
+				5436A2D4273D3ED3001B2DF8 /* SearchBar.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -357,6 +374,7 @@
 				54BA499826F8C2D900201438 /* RewardModalScene.swift */,
 				54CDC6252728CADA007CA4D5 /* ProfileScene.swift */,
 				56937A1927219EA600615042 /* SettingsScene.swift */,
+				549A03E0273BE41700B13A75 /* RecipeListScene.swift */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -592,6 +610,7 @@
 				569B432B26FB66DB0084071E /* PersistenceService.swift in Sources */,
 				3932587426E9008C00A44687 /* DiaryScene.swift in Sources */,
 				3984BD4026E8E9AB00C92824 /* DiaryViewController.swift in Sources */,
+				5436A2D5273D3ED3001B2DF8 /* SearchBar.swift in Sources */,
 				392DA3982716FDBC00426712 /* EntityDeleteProtocol.swift in Sources */,
 				A47C62FD26F8B48600D6A54B /* OnboardingViewController.swift in Sources */,
 				543DCF9926F36DCC00BDAF63 /* NamesEnums.swift in Sources */,
@@ -600,17 +619,22 @@
 				3902B0E926EF977900FE2C8F /* AppCoordinator.swift in Sources */,
 				568DDD8F27185C920067B94C /* ProfileSelectionCell.swift in Sources */,
 				562C91DF26F8B51D00548428 /* AlbumScene.swift in Sources */,
+				549A03E3273BE55800B13A75 /* RecipeListViewController.swift in Sources */,
 				562C91E126F8C85300548428 /* CollectionViewCell.swift in Sources */,
 				3950D13326F3DFFC003D3E97 /* DiaryCardComponent.swift in Sources */,
+				549A03E5273BE68200B13A75 /* RecipeListCell.swift in Sources */,
 				54BA499726F8B1B300201438 /* ModalComponent.swift in Sources */,
 				3932586826E8FF4900A44687 /* Fonts.swift in Sources */,
 				3902B0F326F0DD0200FE2C8F /* TabBarPage.swift in Sources */,
+				549A03E1273BE41700B13A75 /* RecipeListScene.swift in Sources */,
 				562C91DD26F8B3CD00548428 /* AlbumViewController.swift in Sources */,
 				3932586526E8FF3F00A44687 /* Colors.swift in Sources */,
 				562216142726F879004AF110 /* CustomViewButton.swift in Sources */,
+				549A03E7273BE93E00B13A75 /* LabelWithLeftImage.swift in Sources */,
 				3984BD3C26E8E9AB00C92824 /* AppDelegate.swift in Sources */,
 				39DA525C26F7E4DF00158880 /* FactoryControllers.swift in Sources */,
 				3984BD3E26E8E9AB00C92824 /* SceneDelegate.swift in Sources */,
+				3945A80D273EAEBC00E9F5E3 /* Recipes.xcdatamodeld in Sources */,
 				394AEB1F26F7ADD200C5D8E7 /* DataModel.xcdatamodeld in Sources */,
 				54CDC6262728CADA007CA4D5 /* ProfileScene.swift in Sources */,
 				394AEB2626F7CE6D00C5D8E7 /* EntityCreateProtocol.swift in Sources */,
@@ -906,6 +930,16 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
+		3945A80B273EAEBC00E9F5E3 /* Recipes.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				3945A80C273EAEBC00E9F5E3 /* Recipees.xcdatamodel */,
+			);
+			currentVersion = 3945A80C273EAEBC00E9F5E3 /* Recipees.xcdatamodel */;
+			path = Recipes.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
 		394AEB1D26F7ADD200C5D8E7 /* DataModel.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
