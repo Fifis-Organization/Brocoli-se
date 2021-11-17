@@ -24,6 +24,9 @@
 		3932586B26E8FF7A00A44687 /* Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3932586A26E8FF7A00A44687 /* Protocol.swift */; };
 		3932587126E9008000A44687 /* ProgressBarComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3932587026E9008000A44687 /* ProgressBarComponent.swift */; };
 		3932587426E9008C00A44687 /* DiaryScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3932587326E9008C00A44687 /* DiaryScene.swift */; };
+		3945A8112741F27600E9F5E3 /* RecipeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3945A8102741F27600E9F5E3 /* RecipeModel.swift */; };
+		3945A8132741F32700E9F5E3 /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3945A8122741F32700E9F5E3 /* Endpoints.swift */; };
+		3945A8152741F4AF00E9F5E3 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3945A8142741F4AF00E9F5E3 /* ApiManager.swift */; };
 		394AEB1F26F7ADD200C5D8E7 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 394AEB1D26F7ADD200C5D8E7 /* DataModel.xcdatamodeld */; };
 		394AEB2226F7ADF700C5D8E7 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394AEB2126F7ADF700C5D8E7 /* CoreDataManager.swift */; };
 		394AEB2626F7CE6D00C5D8E7 /* EntityCreateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394AEB2526F7CE6D00C5D8E7 /* EntityCreateProtocol.swift */; };
@@ -104,6 +107,9 @@
 		3932586A26E8FF7A00A44687 /* Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocol.swift; sourceTree = "<group>"; };
 		3932587026E9008000A44687 /* ProgressBarComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBarComponent.swift; sourceTree = "<group>"; };
 		3932587326E9008C00A44687 /* DiaryScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryScene.swift; sourceTree = "<group>"; };
+		3945A8102741F27600E9F5E3 /* RecipeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeModel.swift; sourceTree = "<group>"; };
+		3945A8122741F32700E9F5E3 /* Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
+		3945A8142741F4AF00E9F5E3 /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
 		394AEB1E26F7ADD200C5D8E7 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		394AEB2126F7ADF700C5D8E7 /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		394AEB2526F7CE6D00C5D8E7 /* EntityCreateProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityCreateProtocol.swift; sourceTree = "<group>"; };
@@ -219,6 +225,16 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		3945A80E2741F1D800E9F5E3 /* ApiManager */ = {
+			isa = PBXGroup;
+			children = (
+				3945A8102741F27600E9F5E3 /* RecipeModel.swift */,
+				3945A8122741F32700E9F5E3 /* Endpoints.swift */,
+				3945A8142741F4AF00E9F5E3 /* ApiManager.swift */,
+			);
+			path = ApiManager;
+			sourceTree = "<group>";
+		};
 		394AEB1C26F7AD9C00C5D8E7 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
@@ -262,6 +278,7 @@
 			isa = PBXGroup;
 			children = (
 				A496A9342717095D00B80622 /* BrocoliSe.entitlements */,
+				3945A80E2741F1D800E9F5E3 /* ApiManager */,
 				394AEB1C26F7AD9C00C5D8E7 /* CoreData */,
 				543DCF9726F36DB600BDAF63 /* Utilities */,
 				3902B0E326EF96AB00FE2C8F /* Coordinators */,
@@ -610,6 +627,7 @@
 				5436A2D5273D3ED3001B2DF8 /* SearchBar.swift in Sources */,
 				392DA3982716FDBC00426712 /* EntityDeleteProtocol.swift in Sources */,
 				A47C62FD26F8B48600D6A54B /* OnboardingViewController.swift in Sources */,
+				3945A8112741F27600E9F5E3 /* RecipeModel.swift in Sources */,
 				543DCF9926F36DCC00BDAF63 /* NamesEnums.swift in Sources */,
 				A47C630A26F8B66000D6A54B /* OnboardingCoordinator.swift in Sources */,
 				A47C630426F8B50000D6A54B /* Onboarding03.swift in Sources */,
@@ -628,6 +646,7 @@
 				3932586526E8FF3F00A44687 /* Colors.swift in Sources */,
 				562216142726F879004AF110 /* CustomViewButton.swift in Sources */,
 				549A03E7273BE93E00B13A75 /* LabelWithLeftImage.swift in Sources */,
+				3945A8152741F4AF00E9F5E3 /* ApiManager.swift in Sources */,
 				3984BD3C26E8E9AB00C92824 /* AppDelegate.swift in Sources */,
 				39DA525C26F7E4DF00158880 /* FactoryControllers.swift in Sources */,
 				3984BD3E26E8E9AB00C92824 /* SceneDelegate.swift in Sources */,
@@ -638,6 +657,7 @@
 				39DA526026F9FFEC00158880 /* StringExtension.swift in Sources */,
 				3902B0EF26F0B1BB00FE2C8F /* TabCoordinator.swift in Sources */,
 				394AEB2A26F7CEBE00C5D8E7 /* EntitySaveProtocol.swift in Sources */,
+				3945A8132741F32700E9F5E3 /* Endpoints.swift in Sources */,
 				54CDC6282728D095007CA4D5 /* ProfileViewController.swift in Sources */,
 				54BA499526F8B0D000201438 /* ModalViewController.swift in Sources */,
 				56937A1E2721A8DE00615042 /* SettingsCoordinator.swift in Sources */,
