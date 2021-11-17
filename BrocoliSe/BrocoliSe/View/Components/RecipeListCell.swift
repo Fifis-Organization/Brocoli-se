@@ -89,11 +89,11 @@ class RecipeListCell: UITableViewCell {
 
     // MARK: - PUBLIC METHODS
 
-    func configureCell(recipeImage: UIImage, recipeName: String, recipeTime: String, recipePortions: String) {
-        self.recipeImage.image = recipeImage
-        self.recipeName.text = recipeName
-        self.recipeTime.setLabelText(text: recipeTime)
-        self.recipePortions.setLabelText(text: recipePortions)
+    func configureCell(model: RecipeCellModel) {
+        self.recipeImage.image = model.pathPhoto
+        self.recipeName.text = model.name
+        self.recipeTime.setLabelText(text: model.time)
+        self.recipePortions.setLabelText(text: model.portions)
     }
 
     // MARK: - PRIVATE METHODS

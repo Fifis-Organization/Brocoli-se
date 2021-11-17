@@ -7,11 +7,22 @@
 
 import UIKit
 
+struct RecipeCellModel {
+    var id, name, portions, time: String
+    var ingredients, steps: [String]
+    var pathPhoto: UIImage
+}
+
 class RecipeListScene: UIView {
 
     private var controller: RecipeListViewController?
     private var isSearch: Bool = false
     private var isActiveKeyboard: Bool = false
+    private var recipes: [RecipeCellModel] = [] {
+        didSet {
+             self.tableView.reloadData()
+        }
+    }
 
     private lazy var segmentedControl: CustomSegmentedControl = {
         let segmentedControl = CustomSegmentedControl()
@@ -132,6 +143,20 @@ class RecipeListScene: UIView {
 }
 
 extension RecipeListScene: RecipeListSceneDelegate {
+    func setRecipes(recipes: [RecipeModel]) {
+        recipes.forEach { model in
+            ApiManager.downloaded(from: model.pathPhoto) { image in
+                self.recipes.append(RecipeCellModel(id: model.id,
+                                                    name: model.name,
+                                                    portions: model.portions,
+                                                    time: model.time,
+                                                    ingredients: model.ingredients,
+                                                    steps: model.steps,
+                                                    pathPhoto: image))
+            }
+        }
+    }
+    
     func setController(controller: RecipeListViewController) {
         self.controller = controller
     }
@@ -143,14 +168,15 @@ extension RecipeListScene: RecipeListSceneDelegate {
 
 extension RecipeListScene: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return recipes.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: RecipeListCell.identifier, for: indexPath) as? RecipeListCell else {
             return UITableViewCell()
         }
-
+        let recipe = self.recipes[indexPath.row]
+        cell.configureCell(model: recipe)
         cell.didTapCell = {
             // Dar o push para tela de descrição da receita
         }
