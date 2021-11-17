@@ -43,13 +43,9 @@ class ApiManager: ApiManagerProtocol {
                         return
                     }
                     do {
-                        // let jsonData = try JSONSerialization.jsonObject(with: responseData, options: .mutableContainers)
-                        // print(jsonData)
                         let apiResponse = try JSONDecoder().decode([T].self, from: responseData)
-                        // print(apiResponse)
                         completion(.success(apiResponse))
                     } catch {
-                        // print(error)
                         completion(.failure(.unableToDecode))
                     }
                 case 501...599: completion(.failure(.badRequest))
