@@ -37,14 +37,14 @@ class RecipeListViewController: UIViewController {
         fetchRecipesApi()
     }
     
-    func fetchRecipesApi() {
+    private func fetchRecipesApi() {
         DispatchQueue.main.async {
             self.apiManager?.fetch(request: Endpoints.getRecipes, model: RecipeModel.self) { result in
                 switch result {
                 case .success(let models):
                      self.scene?.setRecipes(recipes: models)
                 case .failure(_):
-                    print("Error")
+                    break
                 }
             }
         }

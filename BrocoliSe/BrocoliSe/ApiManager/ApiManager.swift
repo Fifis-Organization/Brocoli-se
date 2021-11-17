@@ -78,7 +78,7 @@ class ApiManager: ApiManagerProtocol {
         }
     }
     
-    func handleUrl(endpoint: EndpointsProtocol) -> URLRequest? {
+    private func handleUrl(endpoint: EndpointsProtocol) -> URLRequest? {
         guard let baseUrl = URL(string: endpoint.baseURL + endpoint.path) else { return nil }
         return URLRequest(url: baseUrl)
     }
