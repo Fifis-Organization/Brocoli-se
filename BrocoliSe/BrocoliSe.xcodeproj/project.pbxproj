@@ -27,6 +27,7 @@
 		3945A8112741F27600E9F5E3 /* RecipeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3945A8102741F27600E9F5E3 /* RecipeModel.swift */; };
 		3945A8132741F32700E9F5E3 /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3945A8122741F32700E9F5E3 /* Endpoints.swift */; };
 		3945A8152741F4AF00E9F5E3 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3945A8142741F4AF00E9F5E3 /* ApiManager.swift */; };
+		3945A80D273EAEBC00E9F5E3 /* Recipes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3945A80B273EAEBC00E9F5E3 /* Recipes.xcdatamodeld */; };
 		394AEB1F26F7ADD200C5D8E7 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 394AEB1D26F7ADD200C5D8E7 /* DataModel.xcdatamodeld */; };
 		394AEB2226F7ADF700C5D8E7 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394AEB2126F7ADF700C5D8E7 /* CoreDataManager.swift */; };
 		394AEB2626F7CE6D00C5D8E7 /* EntityCreateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394AEB2526F7CE6D00C5D8E7 /* EntityCreateProtocol.swift */; };
@@ -54,6 +55,7 @@
 		54CDC6262728CADA007CA4D5 /* ProfileScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54CDC6252728CADA007CA4D5 /* ProfileScene.swift */; };
 		54CDC6282728D095007CA4D5 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54CDC6272728D095007CA4D5 /* ProfileViewController.swift */; };
 		54CDC62A2728D6DF007CA4D5 /* CustomImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54CDC6292728D6DF007CA4D5 /* CustomImagePicker.swift */; };
+		560CBD7B2743D2B70062939F /* CustomSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560CBD7A2743D2B70062939F /* CustomSegmentedControl.swift */; };
 		562216142726F879004AF110 /* CustomViewButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 562216132726F879004AF110 /* CustomViewButton.swift */; };
 		562C91DD26F8B3CD00548428 /* AlbumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 562C91DC26F8B3CD00548428 /* AlbumViewController.swift */; };
 		562C91DF26F8B51D00548428 /* AlbumScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 562C91DE26F8B51D00548428 /* AlbumScene.swift */; };
@@ -67,6 +69,7 @@
 		56B831D62707494F00490908 /* DiaryViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B831D52707494F00490908 /* DiaryViewControllerTests.swift */; };
 		56D1AB5426FA2523001A2486 /* IconButtonComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D1AB5326FA2523001A2486 /* IconButtonComponent.swift */; };
 		5F22C12D64DBC49B6281335B /* Pods_BrocoliSe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 339A77E77343AA9D6B45448B /* Pods_BrocoliSe.framework */; };
+		A456AC7D2735610D003CC5F6 /* SiriActivitiesType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A456AC7C2735610D003CC5F6 /* SiriActivitiesType.swift */; };
 		A47C62FD26F8B48600D6A54B /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47C62FC26F8B48600D6A54B /* OnboardingViewController.swift */; };
 		A47C630026F8B4E600D6A54B /* Onboarding01.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47C62FF26F8B4E600D6A54B /* Onboarding01.swift */; };
 		A47C630226F8B4F800D6A54B /* Onboarding02.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47C630126F8B4F800D6A54B /* Onboarding02.swift */; };
@@ -74,6 +77,8 @@
 		A47C630626F8B56A00D6A54B /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47C630526F8B56A00D6A54B /* TextField.swift */; };
 		A47C630826F8B58100D6A54B /* FoodSelectorComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47C630726F8B58100D6A54B /* FoodSelectorComponent.swift */; };
 		A47C630A26F8B66000D6A54B /* OnboardingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47C630926F8B66000D6A54B /* OnboardingCoordinator.swift */; };
+		A47EDFA6272E77150055286B /* IntentsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A47EDFA4272E77150055286B /* IntentsUI.framework */; };
+		A47EDFA7272E77150055286B /* Intents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A47EDFA5272E77150055286B /* Intents.framework */; };
 		A496A9332716FFD600B80622 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A496A9322716FFD600B80622 /* NotificationViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -110,6 +115,7 @@
 		3945A8102741F27600E9F5E3 /* RecipeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeModel.swift; sourceTree = "<group>"; };
 		3945A8122741F32700E9F5E3 /* Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
 		3945A8142741F4AF00E9F5E3 /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
+		3945A80C273EAEBC00E9F5E3 /* Recipees.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Recipees.xcdatamodel; sourceTree = "<group>"; };
 		394AEB1E26F7ADD200C5D8E7 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		394AEB2126F7ADF700C5D8E7 /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		394AEB2526F7CE6D00C5D8E7 /* EntityCreateProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityCreateProtocol.swift; sourceTree = "<group>"; };
@@ -139,6 +145,7 @@
 		54CDC6252728CADA007CA4D5 /* ProfileScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScene.swift; sourceTree = "<group>"; };
 		54CDC6272728D095007CA4D5 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		54CDC6292728D6DF007CA4D5 /* CustomImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomImagePicker.swift; sourceTree = "<group>"; };
+		560CBD7A2743D2B70062939F /* CustomSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSegmentedControl.swift; sourceTree = "<group>"; };
 		562216132726F879004AF110 /* CustomViewButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewButton.swift; sourceTree = "<group>"; };
 		562C91DC26F8B3CD00548428 /* AlbumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumViewController.swift; sourceTree = "<group>"; };
 		562C91DE26F8B51D00548428 /* AlbumScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumScene.swift; sourceTree = "<group>"; };
@@ -153,6 +160,7 @@
 		56B831D52707494F00490908 /* DiaryViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryViewControllerTests.swift; sourceTree = "<group>"; };
 		56D1AB5326FA2523001A2486 /* IconButtonComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconButtonComponent.swift; sourceTree = "<group>"; };
 		7FA58FB81DD24388A0BB3880 /* Pods-BrocoliSe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BrocoliSe.debug.xcconfig"; path = "Target Support Files/Pods-BrocoliSe/Pods-BrocoliSe.debug.xcconfig"; sourceTree = "<group>"; };
+		A456AC7C2735610D003CC5F6 /* SiriActivitiesType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiriActivitiesType.swift; sourceTree = "<group>"; };
 		A47C62FC26F8B48600D6A54B /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		A47C62FF26F8B4E600D6A54B /* Onboarding01.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding01.swift; sourceTree = "<group>"; };
 		A47C630126F8B4F800D6A54B /* Onboarding02.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding02.swift; sourceTree = "<group>"; };
@@ -160,6 +168,8 @@
 		A47C630526F8B56A00D6A54B /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		A47C630726F8B58100D6A54B /* FoodSelectorComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodSelectorComponent.swift; sourceTree = "<group>"; };
 		A47C630926F8B66000D6A54B /* OnboardingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCoordinator.swift; sourceTree = "<group>"; };
+		A47EDFA4272E77150055286B /* IntentsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IntentsUI.framework; path = System/Library/Frameworks/IntentsUI.framework; sourceTree = SDKROOT; };
+		A47EDFA5272E77150055286B /* Intents.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Intents.framework; path = System/Library/Frameworks/Intents.framework; sourceTree = SDKROOT; };
 		A48BD8472705DE6100A265D8 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		A496A9322716FFD600B80622 /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
 		A496A9342717095D00B80622 /* BrocoliSe.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BrocoliSe.entitlements; sourceTree = "<group>"; };
@@ -170,6 +180,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A47EDFA7272E77150055286B /* Intents.framework in Frameworks */,
+				A47EDFA6272E77150055286B /* IntentsUI.framework in Frameworks */,
 				5F22C12D64DBC49B6281335B /* Pods_BrocoliSe.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -239,6 +251,7 @@
 			isa = PBXGroup;
 			children = (
 				394AEB1D26F7ADD200C5D8E7 /* DataModel.xcdatamodeld */,
+				3945A80B273EAEBC00E9F5E3 /* Recipes.xcdatamodeld */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -365,6 +378,7 @@
 				549A03E4273BE68200B13A75 /* RecipeListCell.swift */,
 				549A03E6273BE93E00B13A75 /* LabelWithLeftImage.swift */,
 				5436A2D4273D3ED3001B2DF8 /* SearchBar.swift */,
+				560CBD7A2743D2B70062939F /* CustomSegmentedControl.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -408,6 +422,7 @@
 				543DCF9826F36DCC00BDAF63 /* NamesEnums.swift */,
 				39DA525F26F9FFEC00158880 /* StringExtension.swift */,
 				39DA538926FD584400158880 /* UIViewExtension.swift */,
+				A456AC7C2735610D003CC5F6 /* SiriActivitiesType.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -435,6 +450,8 @@
 		F5092037EE03D133043F77A8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A47EDFA5272E77150055286B /* Intents.framework */,
+				A47EDFA4272E77150055286B /* IntentsUI.framework */,
 				339A77E77343AA9D6B45448B /* Pods_BrocoliSe.framework */,
 			);
 			name = Frameworks;
@@ -609,6 +626,7 @@
 				54BA499926F8C2D900201438 /* RewardModalScene.swift in Sources */,
 				3932587126E9008000A44687 /* ProgressBarComponent.swift in Sources */,
 				A47C630226F8B4F800D6A54B /* Onboarding02.swift in Sources */,
+				A456AC7D2735610D003CC5F6 /* SiriActivitiesType.swift in Sources */,
 				56937A1A27219EA600615042 /* SettingsScene.swift in Sources */,
 				56937A1C27219F2300615042 /* SettingsViewController.swift in Sources */,
 				A47C630826F8B58100D6A54B /* FoodSelectorComponent.swift in Sources */,
@@ -624,6 +642,7 @@
 				569B432B26FB66DB0084071E /* PersistenceService.swift in Sources */,
 				3932587426E9008C00A44687 /* DiaryScene.swift in Sources */,
 				3984BD4026E8E9AB00C92824 /* DiaryViewController.swift in Sources */,
+				560CBD7B2743D2B70062939F /* CustomSegmentedControl.swift in Sources */,
 				5436A2D5273D3ED3001B2DF8 /* SearchBar.swift in Sources */,
 				392DA3982716FDBC00426712 /* EntityDeleteProtocol.swift in Sources */,
 				A47C62FD26F8B48600D6A54B /* OnboardingViewController.swift in Sources */,
@@ -650,6 +669,7 @@
 				3984BD3C26E8E9AB00C92824 /* AppDelegate.swift in Sources */,
 				39DA525C26F7E4DF00158880 /* FactoryControllers.swift in Sources */,
 				3984BD3E26E8E9AB00C92824 /* SceneDelegate.swift in Sources */,
+				3945A80D273EAEBC00E9F5E3 /* Recipes.xcdatamodeld in Sources */,
 				394AEB1F26F7ADD200C5D8E7 /* DataModel.xcdatamodeld in Sources */,
 				54CDC6262728CADA007CA4D5 /* ProfileScene.swift in Sources */,
 				394AEB2626F7CE6D00C5D8E7 /* EntityCreateProtocol.swift in Sources */,
@@ -946,6 +966,16 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
+		3945A80B273EAEBC00E9F5E3 /* Recipes.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				3945A80C273EAEBC00E9F5E3 /* Recipees.xcdatamodel */,
+			);
+			currentVersion = 3945A80C273EAEBC00E9F5E3 /* Recipees.xcdatamodel */;
+			path = Recipes.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
 		394AEB1D26F7ADD200C5D8E7 /* DataModel.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (

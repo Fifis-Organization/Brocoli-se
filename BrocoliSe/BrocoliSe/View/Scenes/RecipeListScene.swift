@@ -24,6 +24,14 @@ class RecipeListScene: UIView {
         }
     }
 
+    private lazy var segmentedControl: CustomSegmentedControl = {
+        let segmentedControl = CustomSegmentedControl()
+        segmentedControl.backgroundColor = .clear
+        segmentedControl.indexChanged(newIndex: 0)
+        segmentedControl.addTarget(self, action: #selector(segmentedControlValueChanged), for: .valueChanged)
+        return segmentedControl
+    }()
+
     private lazy var tableView: UITableView = {
         let table = UITableView()
         table.translatesAutoresizingMaskIntoConstraints = false
@@ -89,6 +97,10 @@ class RecipeListScene: UIView {
             isActiveKeyboard = true
         }
     }
+    
+    @objc func segmentedControlValueChanged(_ sender: UISegmentedControl) {
+            segmentedControl.indexChanged(newIndex: sender.selectedSegmentIndex)
+    }
 
     @objc func keyboardWillHide(notification: NSNotification) {
         isActiveKeyboard = false
@@ -110,13 +122,19 @@ class RecipeListScene: UIView {
     private func setupWhiteView() {
         addSubview(whiteView)
         whiteView.addSubview(tableView)
+        whiteView.addSubview(segmentedControl)
         NSLayoutConstraint.activate([
             whiteView.topAnchor.constraint(equalTo: searchBar.bottomAnchor, constant: 30),
             whiteView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
             whiteView.leftAnchor.constraint(equalTo: self.leftAnchor),
             whiteView.rightAnchor.constraint(equalTo: self.rightAnchor),
+            
+            segmentedControl.topAnchor.constraint(equalTo: whiteView.topAnchor, constant: 20),
+            segmentedControl.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            segmentedControl.widthAnchor.constraint(equalToConstant: 220),
+            segmentedControl.heightAnchor.constraint(equalToConstant: 30),
 
-            tableView.topAnchor.constraint(equalTo: whiteView.topAnchor, constant: 30),
+            tableView.topAnchor.constraint(equalTo: segmentedControl.bottomAnchor, constant: 30),
             tableView.bottomAnchor.constraint(equalTo: whiteView.bottomAnchor),
             tableView.leadingAnchor.constraint(equalTo: whiteView.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: whiteView.trailingAnchor)

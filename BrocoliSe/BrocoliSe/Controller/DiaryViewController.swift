@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import IntentsUI
+import Intents
 
 protocol DiarySceneDelegate: AnyObject {
     func setDayAll(days: [Day])
@@ -16,13 +18,16 @@ protocol DiarySceneDelegate: AnyObject {
     func presenterModal(_ modal: ModalViewController)
     func setupDatas()
     func setTextLabelProgress(_ text: String)
+    func setupSiri()
     func reloadTable()
 }
 
 class DiaryViewController: UIViewController {
-    private var diaryScene: DiarySceneDelegate?
+        
+    var diaryScene: DiarySceneDelegate?
     private var coreDataManager: CoreDataManagerProtocol?
-
+    private let siriButton = INUIAddVoiceShortcutButton(style: .automatic)
+    
     var tabCoordinator: TabCoordinatorProtocol?
     
     override func viewDidLoad() {
@@ -39,6 +44,31 @@ class DiaryViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         tabCoordinator?.configTabBar(color: .white)
+        setupSiriAlbum()
+        setupSiriChecklist()
+        
+    }
+    
+    private func setupSiriAlbum() {
+        let actionIdentifier = "com.brocolise.album"
+        let activity = NSUserActivity(activityType: actionIdentifier)
+        activity.title = "Album Brocolise"
+        activity.suggestedInvocationPhrase = "Tela Album Brocolise"
+        activity.isEligibleForSearch = true
+        activity.isEligibleForPrediction = true
+        self.userActivity = activity
+        activity.becomeCurrent()
+     }
+    
+    private func setupSiriChecklist() {
+        let actionIdentifier = "com.brocolise.checklist"
+        let activity = NSUserActivity(activityType: actionIdentifier)
+        activity.title = "Marcar itens"
+        activity.suggestedInvocationPhrase = "Marcar itens"
+        activity.isEligibleForSearch = true
+        activity.isEligibleForPrediction = true
+        self.userActivity = activity
+        activity.becomeCurrent()
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -56,17 +86,20 @@ class DiaryViewController: UIViewController {
         coreDataManager = aCoreData
     }
     
-    func saveFood(ingestedFood: [FoodOff], noIngestedFood: [FoodOff], today: Day) {
+    func saveFood(today: Day, food: FoodOff, isCheck: Bool) {
         guard let coreDataManager = coreDataManager else { return }
-    
-        today.removeFromIngested(NSSet(array: noIngestedFood))
-        today.addToIngested(NSSet(array: ingestedFood))
         
-        today.removeFromNoIngested(NSSet(array: ingestedFood))
-        today.addToNoIngested(NSSet(array: noIngestedFood))
+        if !isCheck {
+            today.removeFromIngested(food)
+            today.addToNoIngested(food)
+        } else {
+            today.addToIngested(food)
+            today.removeFromNoIngested(food)
+        }
+        coreDataManager.save()
         
         let user: [User] = coreDataManager.fetch()
-        if noIngestedFood.isEmpty {
+        if today.noIngested?.count ?? -1 == 0 {
             today.concluded = true
             user.first?.point += 10
         } else {
