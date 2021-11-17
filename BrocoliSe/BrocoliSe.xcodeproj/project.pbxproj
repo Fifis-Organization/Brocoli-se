@@ -52,6 +52,7 @@
 		54CDC6262728CADA007CA4D5 /* ProfileScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54CDC6252728CADA007CA4D5 /* ProfileScene.swift */; };
 		54CDC6282728D095007CA4D5 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54CDC6272728D095007CA4D5 /* ProfileViewController.swift */; };
 		54CDC62A2728D6DF007CA4D5 /* CustomImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54CDC6292728D6DF007CA4D5 /* CustomImagePicker.swift */; };
+		560CBD7B2743D2B70062939F /* CustomSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560CBD7A2743D2B70062939F /* CustomSegmentedControl.swift */; };
 		562216142726F879004AF110 /* CustomViewButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 562216132726F879004AF110 /* CustomViewButton.swift */; };
 		562C91DD26F8B3CD00548428 /* AlbumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 562C91DC26F8B3CD00548428 /* AlbumViewController.swift */; };
 		562C91DF26F8B51D00548428 /* AlbumScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 562C91DE26F8B51D00548428 /* AlbumScene.swift */; };
@@ -138,6 +139,7 @@
 		54CDC6252728CADA007CA4D5 /* ProfileScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScene.swift; sourceTree = "<group>"; };
 		54CDC6272728D095007CA4D5 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		54CDC6292728D6DF007CA4D5 /* CustomImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomImagePicker.swift; sourceTree = "<group>"; };
+		560CBD7A2743D2B70062939F /* CustomSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSegmentedControl.swift; sourceTree = "<group>"; };
 		562216132726F879004AF110 /* CustomViewButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewButton.swift; sourceTree = "<group>"; };
 		562C91DC26F8B3CD00548428 /* AlbumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumViewController.swift; sourceTree = "<group>"; };
 		562C91DE26F8B51D00548428 /* AlbumScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumScene.swift; sourceTree = "<group>"; };
@@ -359,6 +361,7 @@
 				549A03E4273BE68200B13A75 /* RecipeListCell.swift */,
 				549A03E6273BE93E00B13A75 /* LabelWithLeftImage.swift */,
 				5436A2D4273D3ED3001B2DF8 /* SearchBar.swift */,
+				560CBD7A2743D2B70062939F /* CustomSegmentedControl.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -622,6 +625,7 @@
 				569B432B26FB66DB0084071E /* PersistenceService.swift in Sources */,
 				3932587426E9008C00A44687 /* DiaryScene.swift in Sources */,
 				3984BD4026E8E9AB00C92824 /* DiaryViewController.swift in Sources */,
+				560CBD7B2743D2B70062939F /* CustomSegmentedControl.swift in Sources */,
 				5436A2D5273D3ED3001B2DF8 /* SearchBar.swift in Sources */,
 				392DA3982716FDBC00426712 /* EntityDeleteProtocol.swift in Sources */,
 				A47C62FD26F8B48600D6A54B /* OnboardingViewController.swift in Sources */,
