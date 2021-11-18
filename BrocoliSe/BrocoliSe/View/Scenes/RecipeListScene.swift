@@ -7,10 +7,11 @@
 
 import UIKit
 
-struct RecipeCellModel {
+struct RecipeCellModel: Equatable {
     var id, name, portions, time: String
     var ingredients, steps: [String]
-    var pathPhoto: UIImage
+    var pathPhoto: UIImage?
+    var pathPhotoStirng: String
 }
 
 class RecipeListScene: UIView {
@@ -20,7 +21,8 @@ class RecipeListScene: UIView {
     private var isActiveKeyboard: Bool = false
     private var recipes: [RecipeCellModel] = [] {
         didSet {
-             self.tableView.reloadData()
+            self.recipes = recipes.sorted(by: { $1.name > $0.name})
+            self.reloadTable()
         }
     }
 
@@ -32,7 +34,7 @@ class RecipeListScene: UIView {
         return segmentedControl
     }()
 
-    private lazy var tableView: UITableView = {
+    private lazy var recipesTableView: UITableView = {
         let table = UITableView()
         table.translatesAutoresizingMaskIntoConstraints = false
         table.backgroundColor = .clear
@@ -121,7 +123,7 @@ class RecipeListScene: UIView {
 
     private func setupWhiteView() {
         addSubview(whiteView)
-        whiteView.addSubview(tableView)
+        whiteView.addSubview(recipesTableView)
         whiteView.addSubview(segmentedControl)
         NSLayoutConstraint.activate([
             whiteView.topAnchor.constraint(equalTo: searchBar.bottomAnchor, constant: 30),
@@ -134,26 +136,58 @@ class RecipeListScene: UIView {
             segmentedControl.widthAnchor.constraint(equalToConstant: 220),
             segmentedControl.heightAnchor.constraint(equalToConstant: 30),
 
-            tableView.topAnchor.constraint(equalTo: segmentedControl.bottomAnchor, constant: 30),
-            tableView.bottomAnchor.constraint(equalTo: whiteView.bottomAnchor),
-            tableView.leadingAnchor.constraint(equalTo: whiteView.leadingAnchor),
-            tableView.trailingAnchor.constraint(equalTo: whiteView.trailingAnchor)
+            recipesTableView.topAnchor.constraint(equalTo: segmentedControl.bottomAnchor, constant: 30),
+            recipesTableView.bottomAnchor.constraint(equalTo:whiteView.bottomAnchor),
+            recipesTableView.leadingAnchor.constraint(equalTo: whiteView.leadingAnchor),
+            recipesTableView.trailingAnchor.constraint(equalTo: whiteView.trailingAnchor)
         ])
     }
+    
+    private func loadImages() {
+        var recipesHelp: [RecipeCellModel] = []
+        recipes.forEach { recipe in
+            ApiManager.downloaded(from: recipe.pathPhotoStirng) { image in
+                var recipeAux = recipe
+                recipeAux.pathPhoto = image
+                recipesHelp.append(recipeAux)
+                
+                if recipesHelp.count == self.recipes.count {
+                    self.recipes = recipesHelp
+                    return
+                }
+            }
+        }
+    }
+    
+}
+
+enum ViewState {
+    case load
+    case error
+    case content(models: [RecipeModel])
 }
 
 extension RecipeListScene: RecipeListSceneDelegate {
-    func setRecipes(recipes: [RecipeModel]) {
-        recipes.forEach { model in
-            ApiManager.downloaded(from: model.pathPhoto) { image in
-                self.recipes.append(RecipeCellModel(id: model.id,
-                                                    name: model.name,
-                                                    portions: model.portions,
-                                                    time: model.time,
-                                                    ingredients: model.ingredients,
-                                                    steps: model.steps,
-                                                    pathPhoto: image))
-            }
+    func setupViewState(from viewState: ViewState) {
+        switch viewState {
+        case .load:
+            self.recipes = []
+        case .error:
+            break
+        case .content(let models):
+            var recipesHelp: [RecipeCellModel] = []
+                models.forEach { model in
+                        recipesHelp.append(RecipeCellModel(id: model.id,
+                                                        name: model.name,
+                                                        portions: model.portions,
+                                                        time: model.time,
+                                                        ingredients: model.ingredients,
+                                                        steps: model.steps,
+                                                        pathPhoto: nil,
+                                                        pathPhotoStirng: model.pathPhoto))
+                }
+            self.recipes = recipesHelp
+            loadImages()
         }
     }
     
@@ -162,7 +196,9 @@ extension RecipeListScene: RecipeListSceneDelegate {
     }
 
     func reloadTable() {
-        self.tableView.reloadData()
+        DispatchQueue.main.async {
+            self.recipesTableView.reloadData()
+        }
     }
 }
 

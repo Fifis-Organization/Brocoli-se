@@ -90,7 +90,11 @@ class RecipeListCell: UITableViewCell {
     // MARK: - PUBLIC METHODS
 
     func configureCell(model: RecipeCellModel) {
-        self.recipeImage.image = model.pathPhoto
+        if let pathPhoto = model.pathPhoto {
+            self.recipeImage.image = pathPhoto
+        } else {
+            self.recipeImage.image = (UIColor.blueSoft?.withAlphaComponent(0.6) ?? .gray).image()
+        }
         self.recipeName.text = model.name
         self.recipeTime.setLabelText(text: model.time)
         self.recipePortions.setLabelText(text: model.portions)

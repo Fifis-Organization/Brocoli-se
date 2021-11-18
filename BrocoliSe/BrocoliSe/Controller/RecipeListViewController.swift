@@ -10,7 +10,7 @@ import UIKit
 protocol RecipeListSceneDelegate: AnyObject {
     func setController(controller: RecipeListViewController)
     func reloadTable()
-    func setRecipes(recipes: [RecipeModel])
+    func setupViewState(from viewState: ViewState)
 }
 
 class RecipeListViewController: UIViewController {
@@ -37,14 +37,15 @@ class RecipeListViewController: UIViewController {
         fetchRecipesApi()
     }
     
-    private func fetchRecipesApi() {
+    func fetchRecipesApi() {
+        self.scene?.setupViewState(from: .load)
         DispatchQueue.main.async {
             self.apiManager?.fetch(request: Endpoints.getRecipes, model: RecipeModel.self) { result in
                 switch result {
                 case .success(let models):
-                     self.scene?.setRecipes(recipes: models)
+                    self.scene?.setupViewState(from: .content(models: models))
                 case .failure(_):
-                    break
+                    self.scene?.setupViewState(from: .error)
                 }
             }
         }

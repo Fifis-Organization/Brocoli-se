@@ -72,7 +72,8 @@ class ApiManager: ApiManagerProtocol {
     }
     
     static func downloaded(from link: String, completion: @escaping (UIImage) -> Void) {
-        guard let baseUrl = URL(string: link) else { return }
+        guard let baseUrl = URL(string: link) else { completion(UIImage(named: "AppIcon") ?? UIImage())
+            return }
         ApiManager.downloaded(from: baseUrl) { image in
             completion(image)
         }
