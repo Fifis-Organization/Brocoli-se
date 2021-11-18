@@ -56,10 +56,6 @@ class RecipeDescriptionScene: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func configure(recipe: RecipeCellModel) {
-        
-    }
-    
     private func setupWhiteView() {
         addSubview(whiteView)
         whiteView.addSubview(tableView)
