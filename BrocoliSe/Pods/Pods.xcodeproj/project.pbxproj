@@ -7,89 +7,155 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1A4361E5FB58161E066E639FE9395C43 /* UBProgress-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6DAEF807F1700E6FC033D7797999E1BD /* UBProgress-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2A590A5A8C0D0A6A2B552502B5957E09 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		383B809B9046F5E47781653159444AA6 /* GeneratorDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A37179553B7D22A9ACC25B5302E372F /* GeneratorDate.swift */; };
-		4AF6FE6014817D5B3DED5C2002D1F507 /* FOCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A387CFF6266E11A996B7FE00F8130C4A /* FOCalendarView.swift */; };
-		5038384D38D81F1DC80C6219DD4615B0 /* RemoteGeneratorDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C09694465A311A17F6187B154C3076EC /* RemoteGeneratorDate.swift */; };
-		55CD084B7A875997759347798FDFBE4A /* CalendarHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995CD8C7973E4630698359CFD162290D /* CalendarHeaderView.swift */; };
-		599EE7D7143B59853F9AF14E0CD63597 /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C34ACB93FE0E4CA38875D42ACD0491 /* Day.swift */; };
-		8EFBAE969164E3EA2EC182357174243E /* UBProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = 5239C4BDCEF6446079AF3382AC1D14B7 /* UBProgress.m */; };
-		9694387C3DECE76B057FE502DBC20DE5 /* FOCalendar-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 21F48620AB93458E254086A1E922C651 /* FOCalendar-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B0EA47C4FD051365FDA5CD06C7822A1C /* CalendarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B784BA4903A40B4227BC9E5EE2CEBAFA /* CalendarCollectionViewCell.swift */; };
+		1A4361E5FB58161E066E639FE9395C43 /* UBProgress-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FE74393BC1339973344257F290C717AB /* UBProgress-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		20505731CDB55602B309A226504D435C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		383B809B9046F5E47781653159444AA6 /* GeneratorDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E04F685826B1E142B702B85045E8B028 /* GeneratorDate.swift */; };
+		4AF6FE6014817D5B3DED5C2002D1F507 /* FOCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F07A06F762497C6668604A37A8FFF0D /* FOCalendarView.swift */; };
+		5038384D38D81F1DC80C6219DD4615B0 /* RemoteGeneratorDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773613F02D1BA0517ACAC344C0C7BD9D /* RemoteGeneratorDate.swift */; };
+		55CD084B7A875997759347798FDFBE4A /* CalendarHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0BA35CB8B519E1914AA7503E9A07233 /* CalendarHeaderView.swift */; };
+		599EE7D7143B59853F9AF14E0CD63597 /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C488AB430FA407864CEA0DEBD37E0B /* Day.swift */; };
+		5BDA0884C153B73A1F64EDE41F1D258F /* Pods-BrocoliSe-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 162778A06CBD6787B9BCEFF704703462 /* Pods-BrocoliSe-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8EFBAE969164E3EA2EC182357174243E /* UBProgress.m in Sources */ = {isa = PBXBuildFile; fileRef = 32DD6FFBFB7C43FFDBB5E1879EB72073 /* UBProgress.m */; };
+		9694387C3DECE76B057FE502DBC20DE5 /* FOCalendar-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 88C95A68C5C94F0AA462798D2E24325D /* FOCalendar-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B0EA47C4FD051365FDA5CD06C7822A1C /* CalendarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C242349F922B14AD277512BB2E29FCA /* CalendarCollectionViewCell.swift */; };
 		C24AD3BCC417AAE9B93C35AE7869C459 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		C74783913D2370FAF7D3472EBFAD78AF /* FOCalendar-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 75D43CB3EF21CAC1A235F049C5B9789C /* FOCalendar-dummy.m */; };
-		CE69A3CA3AF581552604B0B6BE84D18E /* FOCalendar.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E3A889984DDE0847B3B4F923C0C78C2 /* FOCalendar.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D5DCDE4251BB9A5F8E191413F502136A /* Pods-BrocoliSe-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 09E871FBA6656B1485D05B3C8E9651BC /* Pods-BrocoliSe-dummy.m */; };
-		D7078578E3CD3171998EBECB11613CD7 /* CalendarPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FEF72A5558217BAFBA286C7F128F79D /* CalendarPresenter.swift */; };
-		DDAEA1359B32044911D771596A951DCB /* ModelError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B5F6E6DB9B33F6946A465C6D1B78E3 /* ModelError.swift */; };
-		E5B00E75CB9CB29E2A3D64F12A76BD19 /* DataExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C4D636012DDCC9EE822B4EE9891512 /* DataExtension.swift */; };
-		E95D5A3E74B4DC6D341EE077FE1BD633 /* UBProgress-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = EDF24307F44E7D0BCA6D26A33BDACA08 /* UBProgress-dummy.m */; };
-		EFD575A0F7D5C2803EDFC8B1DA49BBF7 /* UBProgress.h in Headers */ = {isa = PBXBuildFile; fileRef = 30FA6193BB086385A45836612A61069F /* UBProgress.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		FACD9FBAB4289D45C464476B9AE51D62 /* Pods-BrocoliSe-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 162778A06CBD6787B9BCEFF704703462 /* Pods-BrocoliSe-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		FB9C121D7F0FC33024E85014C416919B /* Month.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E784801C48750045B4F9528CDE0C13A /* Month.swift */; };
+		C74783913D2370FAF7D3472EBFAD78AF /* FOCalendar-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 154706BDD8E9972BC1353FE06FBD5413 /* FOCalendar-dummy.m */; };
+		CE69A3CA3AF581552604B0B6BE84D18E /* FOCalendar.h in Headers */ = {isa = PBXBuildFile; fileRef = 9AFDDD53E70815313FA5CA7DC31AA499 /* FOCalendar.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D7078578E3CD3171998EBECB11613CD7 /* CalendarPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A88D18A71DE65E426526FF8A1564A56 /* CalendarPresenter.swift */; };
+		DDAEA1359B32044911D771596A951DCB /* ModelError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2146FBD202757987CD4F01F1B874172A /* ModelError.swift */; };
+		E52FD774D8B4F5B01710C100E2D5C4B3 /* Pods-BrocoliSe-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 09E871FBA6656B1485D05B3C8E9651BC /* Pods-BrocoliSe-dummy.m */; };
+		E5B00E75CB9CB29E2A3D64F12A76BD19 /* DataExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DF995FAB631A400B44F1BFCEF80D67F /* DataExtension.swift */; };
+		E95D5A3E74B4DC6D341EE077FE1BD633 /* UBProgress-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DA9C0492F391C63A14DB80942E157626 /* UBProgress-dummy.m */; };
+		EFD575A0F7D5C2803EDFC8B1DA49BBF7 /* UBProgress.h in Headers */ = {isa = PBXBuildFile; fileRef = 8F00FABB4448559EB26CDB3C65306B8B /* UBProgress.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FB9C121D7F0FC33024E85014C416919B /* Month.swift in Sources */ = {isa = PBXBuildFile; fileRef = 676F9A2F7B628DAF292E89A5FADEDD79 /* Month.swift */; };
 		FC278CECEB9F4F4F000515B33EA8D15E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		CC500E4E88B36C0C514F07C21C85BF41 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 98E4E31ACF70C75F787980E1CA266898;
-			remoteInfo = FOCalendar;
-		};
-		EACD6DF40D6C33674795C63688B22816 /* PBXContainerItemProxy */ = {
+		3C7BA40F04AF3D87A449AD42FFB4BA39 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 60D354207883A696E54CF0054A6EFDE3;
 			remoteInfo = UBProgress;
 		};
+		74AE0F4C6B4D9F036A92149D07DA5283 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 98E4E31ACF70C75F787980E1CA266898;
+			remoteInfo = FOCalendar;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		05133F8E78BFCA993F3F44ED03F66984 /* UITableView+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UITableView+Extensions.swift"; path = "SkeletonViewCore/Sources/Internal/UIKitExtensions/UITableView+Extensions.swift"; sourceTree = "<group>"; };
+		07D592C1E8A6F4C8A2C262207ECC590D /* UIView+AppLifecycleNotifications.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIView+AppLifecycleNotifications.swift"; path = "SkeletonViewCore/Sources/Internal/UIKitExtensions/UIView+AppLifecycleNotifications.swift"; sourceTree = "<group>"; };
+		08BC72F72883E518651A784C4F2DBA2E /* SkeletonMultilinesLayerConfig.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SkeletonMultilinesLayerConfig.swift; path = SkeletonViewCore/Sources/Internal/SkeletonConfigs/SkeletonMultilinesLayerConfig.swift; sourceTree = "<group>"; };
 		09E871FBA6656B1485D05B3C8E9651BC /* Pods-BrocoliSe-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-BrocoliSe-dummy.m"; sourceTree = "<group>"; };
+		0ACF296ACE2589AD52DDBC8CAE336A82 /* FOCalendar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FOCalendar.release.xcconfig; sourceTree = "<group>"; };
+		0DB9E296240E6E88FF4EE7561B36DA04 /* SkeletonCollectionViewProtocols.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SkeletonCollectionViewProtocols.swift; path = SkeletonViewCore/Sources/API/Collections/CollectionViews/SkeletonCollectionViewProtocols.swift; sourceTree = "<group>"; };
+		0E515C1F6BA52026845679ABA118889B /* Deprecated.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Deprecated.swift; path = SkeletonViewCore/Sources/API/Deprecated.swift; sourceTree = "<group>"; };
+		0F3790624E7C514EFEB8A868BE1D0DA8 /* FOCalendar-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "FOCalendar-Info.plist"; sourceTree = "<group>"; };
+		149088E58CCE54849F793BBF289CFCB6 /* UIView+Transitions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIView+Transitions.swift"; path = "SkeletonViewCore/Sources/Internal/UIKitExtensions/UIView+Transitions.swift"; sourceTree = "<group>"; };
+		154706BDD8E9972BC1353FE06FBD5413 /* FOCalendar-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "FOCalendar-dummy.m"; sourceTree = "<group>"; };
 		162778A06CBD6787B9BCEFF704703462 /* Pods-BrocoliSe-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-BrocoliSe-umbrella.h"; sourceTree = "<group>"; };
-		19CA0444DB88B9C1BB29A1592C54BA9F /* FOCalendar-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FOCalendar-prefix.pch"; sourceTree = "<group>"; };
+		1A34563A2EA6E519744783359E02A6B9 /* FOCalendar.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = FOCalendar.modulemap; sourceTree = "<group>"; };
+		1A88D18A71DE65E426526FF8A1564A56 /* CalendarPresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CalendarPresenter.swift; path = FOCalendar/Presenter/CalendarPresenter.swift; sourceTree = "<group>"; };
 		1C144D8557F653584DE24CD386D7229A /* Pods-BrocoliSe-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-BrocoliSe-frameworks.sh"; sourceTree = "<group>"; };
-		1E784801C48750045B4F9528CDE0C13A /* Month.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Month.swift; path = FOCalendar/Model/Month.swift; sourceTree = "<group>"; };
 		1F7F9FA3D99F529D625D63C7C7E7AC65 /* Pods-BrocoliSe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BrocoliSe.debug.xcconfig"; sourceTree = "<group>"; };
-		21F48620AB93458E254086A1E922C651 /* FOCalendar-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FOCalendar-umbrella.h"; sourceTree = "<group>"; };
-		25E5DB9CBCDD4FEE17DDF7100AC90D74 /* UBProgress-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UBProgress-prefix.pch"; sourceTree = "<group>"; };
-		30FA6193BB086385A45836612A61069F /* UBProgress.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = UBProgress.h; path = UBProgress/UBProgress.h; sourceTree = "<group>"; };
-		3A37179553B7D22A9ACC25B5302E372F /* GeneratorDate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GeneratorDate.swift; path = FOCalendar/Model/GeneratorDate.swift; sourceTree = "<group>"; };
-		3E3A889984DDE0847B3B4F923C0C78C2 /* FOCalendar.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FOCalendar.h; path = FOCalendar/FOCalendar.h; sourceTree = "<group>"; };
+		20118DC79B6D76EFE5655DC8004A9D04 /* SkeletonLayerBuilder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SkeletonLayerBuilder.swift; path = SkeletonViewCore/Sources/Internal/SkeletonLayerBuilders/SkeletonLayerBuilder.swift; sourceTree = "<group>"; };
+		20C16BDFFEB00904F4DFFA6DCF103F30 /* GradientDirection.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GradientDirection.swift; path = SkeletonViewCore/Sources/API/Models/GradientDirection.swift; sourceTree = "<group>"; };
+		2146FBD202757987CD4F01F1B874172A /* ModelError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ModelError.swift; path = FOCalendar/Helpers/ModelError.swift; sourceTree = "<group>"; };
+		23BBC2B7CD8BABDDD0A48268CE7F33AF /* Recoverable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Recoverable.swift; path = SkeletonViewCore/Sources/Internal/SkeletonExtensions/Recoverable.swift; sourceTree = "<group>"; };
+		244DE5D4EC3080A760C4EBE3EC299573 /* SkeletonTransitionStyle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SkeletonTransitionStyle.swift; path = SkeletonViewCore/Sources/API/Models/SkeletonTransitionStyle.swift; sourceTree = "<group>"; };
+		2661402E4E3FF4C81D01B1E8663142A0 /* UITextView+IBInspectable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UITextView+IBInspectable.swift"; path = "SkeletonViewCore/Sources/API/UIKitExtensions/UITextView+IBInspectable.swift"; sourceTree = "<group>"; };
+		28A5B1CC37D55F6858BBDB7D595CAFAE /* SkeletonView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SkeletonView.debug.xcconfig; sourceTree = "<group>"; };
+		2C14C083FE7E8320EB08B38F72F3EBE2 /* SkeletonLayer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SkeletonLayer.swift; path = SkeletonViewCore/Sources/Internal/Models/SkeletonLayer.swift; sourceTree = "<group>"; };
+		2CB01713B206C6507D45F4BE36B3D5D1 /* SkeletonTextNode.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SkeletonTextNode.swift; path = SkeletonViewCore/Sources/Internal/SkeletonExtensions/SkeletonTextNode.swift; sourceTree = "<group>"; };
+		2CE97B51B5D0D1927BB5484585F68C07 /* SkeletonDebug.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SkeletonDebug.swift; path = SkeletonViewCore/Sources/Internal/Debug/SkeletonDebug.swift; sourceTree = "<group>"; };
+		2E34627864C3F7C24E65E45A727C77A9 /* FOCalendar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FOCalendar.debug.xcconfig; sourceTree = "<group>"; };
+		326BE61F014F7545C6950A6687843BA4 /* SkeletonMultilineLayerBuilder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SkeletonMultilineLayerBuilder.swift; path = SkeletonViewCore/Sources/Internal/SkeletonLayerBuilders/SkeletonMultilineLayerBuilder.swift; sourceTree = "<group>"; };
+		32DD6FFBFB7C43FFDBB5E1879EB72073 /* UBProgress.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = UBProgress.m; path = UBProgress/UBProgress.m; sourceTree = "<group>"; };
+		33E2DE4821DD3E5DEE14C9980283EB52 /* UBProgress-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "UBProgress-Info.plist"; sourceTree = "<group>"; };
+		38A7FE37957B0205C5D2E8C2F73ECF5A /* SkeletonCollectionDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SkeletonCollectionDelegate.swift; path = SkeletonViewCore/Sources/Internal/Collections/SkeletonCollectionDelegate.swift; sourceTree = "<group>"; };
+		3C490EF3ACD12527D050905C2DCC2B38 /* AssociationPolicy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AssociationPolicy.swift; path = SkeletonViewCore/Sources/Internal/Helpers/AssociationPolicy.swift; sourceTree = "<group>"; };
+		4240E5B421C7B4328031D648D66E4068 /* SkeletonView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SkeletonView.release.xcconfig; sourceTree = "<group>"; };
 		4373E7CD5E7E49A0AF11AABCE66EBE13 /* FOCalendar */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = FOCalendar; path = FOCalendar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		44B95E372BD24E8632A49AB003DF1778 /* UBProgress.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = UBProgress.release.xcconfig; sourceTree = "<group>"; };
-		5239C4BDCEF6446079AF3382AC1D14B7 /* UBProgress.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = UBProgress.m; path = UBProgress/UBProgress.m; sourceTree = "<group>"; };
-		5FEF72A5558217BAFBA286C7F128F79D /* CalendarPresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CalendarPresenter.swift; path = FOCalendar/Presenter/CalendarPresenter.swift; sourceTree = "<group>"; };
-		6DAEF807F1700E6FC033D7797999E1BD /* UBProgress-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UBProgress-umbrella.h"; sourceTree = "<group>"; };
-		70C4D636012DDCC9EE822B4EE9891512 /* DataExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DataExtension.swift; path = FOCalendar/Helpers/DataExtension.swift; sourceTree = "<group>"; };
+		440C5012AE4ECECC74F311EAB6F241BC /* UILabel+IBInspectable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UILabel+IBInspectable.swift"; path = "SkeletonViewCore/Sources/API/UIKitExtensions/UILabel+IBInspectable.swift"; sourceTree = "<group>"; };
+		45EF0FFF02EC13D0EE7AB0444ABABC89 /* CALayer+Animations.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "CALayer+Animations.swift"; path = "SkeletonViewCore/Sources/API/UIKitExtensions/CALayer+Animations.swift"; sourceTree = "<group>"; };
+		481FA092477B4C2F4B271F59BAA70501 /* SkeletonTableViewProtocols.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SkeletonTableViewProtocols.swift; path = SkeletonViewCore/Sources/API/Collections/TableViews/SkeletonTableViewProtocols.swift; sourceTree = "<group>"; };
+		4B36526D080CB80340F9D21CAC1D1019 /* UIView+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIView+Extensions.swift"; path = "SkeletonViewCore/Sources/Internal/UIKitExtensions/UIView+Extensions.swift"; sourceTree = "<group>"; };
+		5455613475856AEACC92F04E151D5597 /* SkeletonView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SkeletonView-prefix.pch"; sourceTree = "<group>"; };
+		5C242349F922B14AD277512BB2E29FCA /* CalendarCollectionViewCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CalendarCollectionViewCell.swift; path = FOCalendar/View/CalendarCollectionViewCell.swift; sourceTree = "<group>"; };
+		611B49619B4C6AE0D60E4CE825968008 /* UIView+SkeletonView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIView+SkeletonView.swift"; path = "SkeletonViewCore/Sources/Internal/UIKitExtensions/UIView+SkeletonView.swift"; sourceTree = "<group>"; };
+		628FC88B182FBC164931ECA8E59A1C32 /* SkeletonView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SkeletonView.swift; path = SkeletonViewCore/Sources/API/SkeletonView.swift; sourceTree = "<group>"; };
+		63A3A02362CAAF246EA0D44F9EA6A14F /* UILabel+SKExtensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UILabel+SKExtensions.swift"; path = "SkeletonViewCore/Sources/API/UIKitExtensions/UILabel+SKExtensions.swift"; sourceTree = "<group>"; };
+		6428F5F80B4CA104C2031849F7210A32 /* SkeletonGradient.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SkeletonGradient.swift; path = SkeletonViewCore/Sources/API/Models/SkeletonGradient.swift; sourceTree = "<group>"; };
+		676F9A2F7B628DAF292E89A5FADEDD79 /* Month.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Month.swift; path = FOCalendar/Model/Month.swift; sourceTree = "<group>"; };
+		691A00CFE455DCC4AEFB74C78A3FA5C3 /* SkeletonTreeNode+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "SkeletonTreeNode+Extensions.swift"; path = "SkeletonViewCore/Sources/Internal/UIKitExtensions/SkeletonTreeNode+Extensions.swift"; sourceTree = "<group>"; };
+		6A0F1F8C62ADD0F228B254CAB22A45DF /* UIView+IBInspectable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIView+IBInspectable.swift"; path = "SkeletonViewCore/Sources/API/UIKitExtensions/UIView+IBInspectable.swift"; sourceTree = "<group>"; };
+		6A66682241E1800E94EB4572FC66BBCC /* UITableView+CollectionSkeleton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UITableView+CollectionSkeleton.swift"; path = "SkeletonViewCore/Sources/Internal/UIKitExtensions/UITableView+CollectionSkeleton.swift"; sourceTree = "<group>"; };
+		6BE19F481EB9236498BADAF18429D55D /* SkeletonAppearance.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SkeletonAppearance.swift; path = SkeletonViewCore/Sources/API/Appearance/SkeletonAppearance.swift; sourceTree = "<group>"; };
+		6C165213C3E2741E49D2FA4192570547 /* Recursive.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Recursive.swift; path = SkeletonViewCore/Sources/Internal/Helpers/Recursive.swift; sourceTree = "<group>"; };
 		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		75D43CB3EF21CAC1A235F049C5B9789C /* FOCalendar-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "FOCalendar-dummy.m"; sourceTree = "<group>"; };
+		76C488AB430FA407864CEA0DEBD37E0B /* Day.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Day.swift; path = FOCalendar/Model/Day.swift; sourceTree = "<group>"; };
+		773613F02D1BA0517ACAC344C0C7BD9D /* RemoteGeneratorDate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RemoteGeneratorDate.swift; path = FOCalendar/Model/RemoteGeneratorDate.swift; sourceTree = "<group>"; };
 		77DB1BFC9F99C9392A79F1E1F008EBB3 /* Pods-BrocoliSe-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-BrocoliSe-Info.plist"; sourceTree = "<group>"; };
+		7B2DEF8CC672508CEB2E02ED72981591 /* SkeletonView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SkeletonView-umbrella.h"; sourceTree = "<group>"; };
 		7B9DB8D01FFDBD9DBBB9B9D3A2F4FA04 /* Pods-BrocoliSe-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-BrocoliSe-acknowledgements.plist"; sourceTree = "<group>"; };
+		7EFF2BCE4B9D0DECEBC8D8CCB8F1C9C0 /* CALayer+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "CALayer+Extensions.swift"; path = "SkeletonViewCore/Sources/Internal/UIKitExtensions/CALayer+Extensions.swift"; sourceTree = "<group>"; };
 		807B034A7B112291D686194A59270EC0 /* Pods-BrocoliSe-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-BrocoliSe-acknowledgements.markdown"; sourceTree = "<group>"; };
-		8D0FDBA02A1853C1BC8E4B54AFD8BB15 /* Pods-BrocoliSe */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-BrocoliSe"; path = Pods_BrocoliSe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		92FBEF55272C2A010249CA926EC0BB43 /* FOCalendar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FOCalendar.release.xcconfig; sourceTree = "<group>"; };
-		995CD8C7973E4630698359CFD162290D /* CalendarHeaderView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CalendarHeaderView.swift; path = FOCalendar/View/CalendarHeaderView.swift; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		A387CFF6266E11A996B7FE00F8130C4A /* FOCalendarView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FOCalendarView.swift; path = FOCalendar/View/FOCalendarView.swift; sourceTree = "<group>"; };
+		887785EA0A81B3FDCC0BC6AD7BE704AD /* Swizzling.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Swizzling.swift; path = SkeletonViewCore/Sources/Internal/Helpers/Swizzling.swift; sourceTree = "<group>"; };
+		88C95A68C5C94F0AA462798D2E24325D /* FOCalendar-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FOCalendar-umbrella.h"; sourceTree = "<group>"; };
+		8A0FF11EA16C2166A5ACF4AD5BB75C11 /* SubviewsSkeletonables.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SubviewsSkeletonables.swift; path = SkeletonViewCore/Sources/Internal/SkeletonExtensions/SubviewsSkeletonables.swift; sourceTree = "<group>"; };
+		8AB41C17DC574A1B12B7FA840DC84FA6 /* SkeletonFlowHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SkeletonFlowHandler.swift; path = SkeletonViewCore/Sources/Internal/SkeletonFlowHandler.swift; sourceTree = "<group>"; };
+		8D0FDBA02A1853C1BC8E4B54AFD8BB15 /* Pods_BrocoliSe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BrocoliSe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8F00FABB4448559EB26CDB3C65306B8B /* UBProgress.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = UBProgress.h; path = UBProgress/UBProgress.h; sourceTree = "<group>"; };
+		94C76C9FA94C1ABFF84737345E9051F1 /* UITextView+SKExtensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UITextView+SKExtensions.swift"; path = "SkeletonViewCore/Sources/API/UIKitExtensions/UITextView+SKExtensions.swift"; sourceTree = "<group>"; };
+		95D47F413AAC4794BBEB74397D68808F /* UILabel+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UILabel+Extensions.swift"; path = "SkeletonViewCore/Sources/Internal/UIKitExtensions/UILabel+Extensions.swift"; sourceTree = "<group>"; };
+		9AFDDD53E70815313FA5CA7DC31AA499 /* FOCalendar.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FOCalendar.h; path = FOCalendar/FOCalendar.h; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9DF995FAB631A400B44F1BFCEF80D67F /* DataExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DataExtension.swift; path = FOCalendar/Helpers/DataExtension.swift; sourceTree = "<group>"; };
+		9EE3F18FC2FAE54AE414ADD2782D8053 /* PrepareViewForSkeleton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PrepareViewForSkeleton.swift; path = SkeletonViewCore/Sources/Internal/SkeletonExtensions/PrepareViewForSkeleton.swift; sourceTree = "<group>"; };
+		9F07A06F762497C6668604A37A8FFF0D /* FOCalendarView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FOCalendarView.swift; path = FOCalendar/View/FOCalendarView.swift; sourceTree = "<group>"; };
+		A0DF9F43E4C3DCF2FCFF283389D3C576 /* SkeletonTreeNode.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SkeletonTreeNode.swift; path = SkeletonViewCore/Sources/Internal/SkeletonTree/SkeletonTreeNode.swift; sourceTree = "<group>"; };
+		A2E71FC767D62B750D205E65AC737910 /* Int+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Int+Extensions.swift"; path = "SkeletonViewCore/Sources/Internal/FoundationExtensions/Int+Extensions.swift"; sourceTree = "<group>"; };
+		A7B2206375DD6AA8F228778B7B2B513B /* DispatchQueue+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "DispatchQueue+Extensions.swift"; path = "SkeletonViewCore/Sources/Internal/FoundationExtensions/DispatchQueue+Extensions.swift"; sourceTree = "<group>"; };
 		A86697CC98B5C3EF330000E0A13665FC /* Pods-BrocoliSe.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-BrocoliSe.modulemap"; sourceTree = "<group>"; };
-		B46F219AE169801169FDEA28CE073E40 /* UBProgress-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "UBProgress-Info.plist"; sourceTree = "<group>"; };
-		B784BA4903A40B4227BC9E5EE2CEBAFA /* CalendarCollectionViewCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CalendarCollectionViewCell.swift; path = FOCalendar/View/CalendarCollectionViewCell.swift; sourceTree = "<group>"; };
-		B7C34ACB93FE0E4CA38875D42ACD0491 /* Day.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Day.swift; path = FOCalendar/Model/Day.swift; sourceTree = "<group>"; };
-		C09694465A311A17F6187B154C3076EC /* RemoteGeneratorDate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RemoteGeneratorDate.swift; path = FOCalendar/Model/RemoteGeneratorDate.swift; sourceTree = "<group>"; };
+		AB1A79FFC305B91BE34A221AD3CE7B8D /* RecoverableViewState.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RecoverableViewState.swift; path = SkeletonViewCore/Sources/Internal/Models/RecoverableViewState.swift; sourceTree = "<group>"; };
+		ACDCFE86363732F5F1FB29C59DBA2F91 /* SkeletonExtended.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SkeletonExtended.swift; path = SkeletonViewCore/Sources/API/SkeletonExtended.swift; sourceTree = "<group>"; };
+		AD9B1AB29FF0CCD90CC4C956454E60D8 /* UBProgress.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = UBProgress.release.xcconfig; sourceTree = "<group>"; };
+		AF359F237154C89BE231F1872209B71A /* CollectionSkeleton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CollectionSkeleton.swift; path = SkeletonViewCore/Sources/Internal/Collections/CollectionSkeleton.swift; sourceTree = "<group>"; };
+		AFE75041DE6D20E20730D08575F4F833 /* GradientDirection+Animations.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "GradientDirection+Animations.swift"; path = "SkeletonViewCore/Sources/Internal/SkeletonExtensions/GradientDirection+Animations.swift"; sourceTree = "<group>"; };
+		B4841E97459E33BF479D41620D55659B /* SkeletonCollectionDataSource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SkeletonCollectionDataSource.swift; path = SkeletonViewCore/Sources/Internal/Collections/SkeletonCollectionDataSource.swift; sourceTree = "<group>"; };
+		B9E0E5296D063CA076C73F5919D12FF9 /* SkeletonView-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SkeletonView-Info.plist"; sourceTree = "<group>"; };
 		C1713464E1F0BDAC44977F75E3D68FF4 /* Pods-BrocoliSe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BrocoliSe.release.xcconfig"; sourceTree = "<group>"; };
-		C26726A53BEC6E0DE07FD26F0803896C /* FOCalendar-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "FOCalendar-Info.plist"; sourceTree = "<group>"; };
-		CEAF6F4ADBEEAE7AEC11D1CC4A99EB3E /* FOCalendar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FOCalendar.debug.xcconfig; sourceTree = "<group>"; };
-		D3B5F6E6DB9B33F6946A465C6D1B78E3 /* ModelError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ModelError.swift; path = FOCalendar/Helpers/ModelError.swift; sourceTree = "<group>"; };
+		C61DE47A95012ECE54F065DEB29AA066 /* Notification+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Notification+Extensions.swift"; path = "SkeletonViewCore/Sources/Internal/FoundationExtensions/Notification+Extensions.swift"; sourceTree = "<group>"; };
+		C783E8FC0BA0A0273C1C2FC2F9B2A757 /* UBProgress.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = UBProgress.modulemap; sourceTree = "<group>"; };
+		CA200EE3871CC16FE7DBA3E0CF7E66BE /* ProcessInfo+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ProcessInfo+Extensions.swift"; path = "SkeletonViewCore/Sources/Internal/FoundationExtensions/ProcessInfo+Extensions.swift"; sourceTree = "<group>"; };
+		CA2B2FA3A3CE12ECFEEE628F18711435 /* UIView+CollectionSkeleton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIView+CollectionSkeleton.swift"; path = "SkeletonViewCore/Sources/Internal/UIKitExtensions/UIView+CollectionSkeleton.swift"; sourceTree = "<group>"; };
+		CCE176BE9EE0D7246E2F62F336CCD16C /* UIView+SKExtensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIView+SKExtensions.swift"; path = "SkeletonViewCore/Sources/API/UIKitExtensions/UIView+SKExtensions.swift"; sourceTree = "<group>"; };
+		D7FFE8F808CF68BEE590A04D11306D13 /* SkeletonView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SkeletonView-dummy.m"; sourceTree = "<group>"; };
+		DA1E7A0E3E12705F2090836C2939CB43 /* SkeletonConfig.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SkeletonConfig.swift; path = SkeletonViewCore/Sources/Internal/SkeletonConfigs/SkeletonConfig.swift; sourceTree = "<group>"; };
+		DA9C0492F391C63A14DB80942E157626 /* UBProgress-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UBProgress-dummy.m"; sourceTree = "<group>"; };
+		DF85EE5A10127448CF2F163F33D243FD /* SkeletonReusableCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SkeletonReusableCell.swift; path = SkeletonViewCore/Sources/Internal/Collections/SkeletonReusableCell.swift; sourceTree = "<group>"; };
 		DF95775FD49637B20932D430C32120BC /* UBProgress */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = UBProgress; path = UBProgress.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E9207FBAC19F05703F565E52D179C543 /* UBProgress.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = UBProgress.modulemap; sourceTree = "<group>"; };
-		EDF24307F44E7D0BCA6D26A33BDACA08 /* UBProgress-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UBProgress-dummy.m"; sourceTree = "<group>"; };
-		EF1CCAD4B9EA34418ACA8375BC6273DB /* FOCalendar.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = FOCalendar.modulemap; sourceTree = "<group>"; };
-		F1A41E13DBFE8EAA97E7D534A2FD4B62 /* UBProgress.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = UBProgress.debug.xcconfig; sourceTree = "<group>"; };
+		E04F685826B1E142B702B85045E8B028 /* GeneratorDate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GeneratorDate.swift; path = FOCalendar/Model/GeneratorDate.swift; sourceTree = "<group>"; };
+		E0BA35CB8B519E1914AA7503E9A07233 /* CalendarHeaderView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CalendarHeaderView.swift; path = FOCalendar/View/CalendarHeaderView.swift; sourceTree = "<group>"; };
+		E5BD98465A9D8897C3AE477943CEAD0D /* Notification+SkeletonFlow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Notification+SkeletonFlow.swift"; path = "SkeletonViewCore/Sources/API/FoundationExtensions/Notification+SkeletonFlow.swift"; sourceTree = "<group>"; };
+		E60D2E574AB65915340461D21205CDBB /* FOCalendar-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FOCalendar-prefix.pch"; sourceTree = "<group>"; };
+		E64127717BD22A81C05D4B47684B07DC /* UICollectionView+Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UICollectionView+Extensions.swift"; path = "SkeletonViewCore/Sources/API/UIKitExtensions/UICollectionView+Extensions.swift"; sourceTree = "<group>"; };
+		E6B7B3750E69E28230A12AFD9ADE1402 /* UIView+Swizzling.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIView+Swizzling.swift"; path = "SkeletonViewCore/Sources/Internal/UIKitExtensions/UIView+Swizzling.swift"; sourceTree = "<group>"; };
+		EE0B0FE312F2664E27EF75ABEE3D2876 /* UICollectionView+CollectionSkeleton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UICollectionView+CollectionSkeleton.swift"; path = "SkeletonViewCore/Sources/Internal/UIKitExtensions/UICollectionView+CollectionSkeleton.swift"; sourceTree = "<group>"; };
+		EE655758D10BF680CA803215A2E4988B /* SkeletonType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SkeletonType.swift; path = SkeletonViewCore/Sources/API/Models/SkeletonType.swift; sourceTree = "<group>"; };
+		EE7699EC3DB0B7629AEFE5927FD015C1 /* UIView+AssociatedObjects.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIView+AssociatedObjects.swift"; path = "SkeletonViewCore/Sources/Internal/UIKitExtensions/UIView+AssociatedObjects.swift"; sourceTree = "<group>"; };
+		F0966BCC9C65A01B440327286F4C2B45 /* UBProgress.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = UBProgress.debug.xcconfig; sourceTree = "<group>"; };
+		F0B55CEE2A4EE75DF5AECDE21401BF24 /* UIColor+Skeleton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIColor+Skeleton.swift"; path = "SkeletonViewCore/Sources/Internal/UIKitExtensions/UIColor+Skeleton.swift"; sourceTree = "<group>"; };
+		F3CF945C0E3BFD81FDB9EC14F2422802 /* UBProgress-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UBProgress-prefix.pch"; sourceTree = "<group>"; };
+		F94FB3E1769A0C8C48CFB6CE16C7D779 /* SkeletonAnimationBuilder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SkeletonAnimationBuilder.swift; path = SkeletonViewCore/Sources/API/AnimationBuilder/SkeletonAnimationBuilder.swift; sourceTree = "<group>"; };
+		FD73BA305988165A92FA4EBF8110BC04 /* SkeletonView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SkeletonView.modulemap; sourceTree = "<group>"; };
+		FE74393BC1339973344257F290C717AB /* UBProgress-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UBProgress-umbrella.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,14 +167,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B22E7BE0A2C31D3A7924F29403A6C218 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				2A590A5A8C0D0A6A2B552502B5957E09 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		C0F5B02B3648596D267D31DA27BD3E8D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -117,9 +175,103 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D313131B35E99B7DB3F0A9DE2864CA30 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				20505731CDB55602B309A226504D435C /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		02B1620F39ACA38765807FA5504CA749 /* SkeletonView */ = {
+			isa = PBXGroup;
+			children = (
+				3C490EF3ACD12527D050905C2DCC2B38 /* AssociationPolicy.swift */,
+				45EF0FFF02EC13D0EE7AB0444ABABC89 /* CALayer+Animations.swift */,
+				7EFF2BCE4B9D0DECEBC8D8CCB8F1C9C0 /* CALayer+Extensions.swift */,
+				AF359F237154C89BE231F1872209B71A /* CollectionSkeleton.swift */,
+				0E515C1F6BA52026845679ABA118889B /* Deprecated.swift */,
+				A7B2206375DD6AA8F228778B7B2B513B /* DispatchQueue+Extensions.swift */,
+				20C16BDFFEB00904F4DFFA6DCF103F30 /* GradientDirection.swift */,
+				AFE75041DE6D20E20730D08575F4F833 /* GradientDirection+Animations.swift */,
+				A2E71FC767D62B750D205E65AC737910 /* Int+Extensions.swift */,
+				C61DE47A95012ECE54F065DEB29AA066 /* Notification+Extensions.swift */,
+				E5BD98465A9D8897C3AE477943CEAD0D /* Notification+SkeletonFlow.swift */,
+				9EE3F18FC2FAE54AE414ADD2782D8053 /* PrepareViewForSkeleton.swift */,
+				CA200EE3871CC16FE7DBA3E0CF7E66BE /* ProcessInfo+Extensions.swift */,
+				23BBC2B7CD8BABDDD0A48268CE7F33AF /* Recoverable.swift */,
+				AB1A79FFC305B91BE34A221AD3CE7B8D /* RecoverableViewState.swift */,
+				6C165213C3E2741E49D2FA4192570547 /* Recursive.swift */,
+				F94FB3E1769A0C8C48CFB6CE16C7D779 /* SkeletonAnimationBuilder.swift */,
+				6BE19F481EB9236498BADAF18429D55D /* SkeletonAppearance.swift */,
+				B4841E97459E33BF479D41620D55659B /* SkeletonCollectionDataSource.swift */,
+				38A7FE37957B0205C5D2E8C2F73ECF5A /* SkeletonCollectionDelegate.swift */,
+				0DB9E296240E6E88FF4EE7561B36DA04 /* SkeletonCollectionViewProtocols.swift */,
+				DA1E7A0E3E12705F2090836C2939CB43 /* SkeletonConfig.swift */,
+				2CE97B51B5D0D1927BB5484585F68C07 /* SkeletonDebug.swift */,
+				ACDCFE86363732F5F1FB29C59DBA2F91 /* SkeletonExtended.swift */,
+				8AB41C17DC574A1B12B7FA840DC84FA6 /* SkeletonFlowHandler.swift */,
+				6428F5F80B4CA104C2031849F7210A32 /* SkeletonGradient.swift */,
+				2C14C083FE7E8320EB08B38F72F3EBE2 /* SkeletonLayer.swift */,
+				20118DC79B6D76EFE5655DC8004A9D04 /* SkeletonLayerBuilder.swift */,
+				326BE61F014F7545C6950A6687843BA4 /* SkeletonMultilineLayerBuilder.swift */,
+				08BC72F72883E518651A784C4F2DBA2E /* SkeletonMultilinesLayerConfig.swift */,
+				DF85EE5A10127448CF2F163F33D243FD /* SkeletonReusableCell.swift */,
+				481FA092477B4C2F4B271F59BAA70501 /* SkeletonTableViewProtocols.swift */,
+				2CB01713B206C6507D45F4BE36B3D5D1 /* SkeletonTextNode.swift */,
+				244DE5D4EC3080A760C4EBE3EC299573 /* SkeletonTransitionStyle.swift */,
+				A0DF9F43E4C3DCF2FCFF283389D3C576 /* SkeletonTreeNode.swift */,
+				691A00CFE455DCC4AEFB74C78A3FA5C3 /* SkeletonTreeNode+Extensions.swift */,
+				EE655758D10BF680CA803215A2E4988B /* SkeletonType.swift */,
+				628FC88B182FBC164931ECA8E59A1C32 /* SkeletonView.swift */,
+				8A0FF11EA16C2166A5ACF4AD5BB75C11 /* SubviewsSkeletonables.swift */,
+				887785EA0A81B3FDCC0BC6AD7BE704AD /* Swizzling.swift */,
+				EE0B0FE312F2664E27EF75ABEE3D2876 /* UICollectionView+CollectionSkeleton.swift */,
+				E64127717BD22A81C05D4B47684B07DC /* UICollectionView+Extensions.swift */,
+				F0B55CEE2A4EE75DF5AECDE21401BF24 /* UIColor+Skeleton.swift */,
+				95D47F413AAC4794BBEB74397D68808F /* UILabel+Extensions.swift */,
+				440C5012AE4ECECC74F311EAB6F241BC /* UILabel+IBInspectable.swift */,
+				63A3A02362CAAF246EA0D44F9EA6A14F /* UILabel+SKExtensions.swift */,
+				6A66682241E1800E94EB4572FC66BBCC /* UITableView+CollectionSkeleton.swift */,
+				05133F8E78BFCA993F3F44ED03F66984 /* UITableView+Extensions.swift */,
+				2661402E4E3FF4C81D01B1E8663142A0 /* UITextView+IBInspectable.swift */,
+				94C76C9FA94C1ABFF84737345E9051F1 /* UITextView+SKExtensions.swift */,
+				07D592C1E8A6F4C8A2C262207ECC590D /* UIView+AppLifecycleNotifications.swift */,
+				EE7699EC3DB0B7629AEFE5927FD015C1 /* UIView+AssociatedObjects.swift */,
+				CA2B2FA3A3CE12ECFEEE628F18711435 /* UIView+CollectionSkeleton.swift */,
+				4B36526D080CB80340F9D21CAC1D1019 /* UIView+Extensions.swift */,
+				6A0F1F8C62ADD0F228B254CAB22A45DF /* UIView+IBInspectable.swift */,
+				611B49619B4C6AE0D60E4CE825968008 /* UIView+SkeletonView.swift */,
+				CCE176BE9EE0D7246E2F62F336CCD16C /* UIView+SKExtensions.swift */,
+				E6B7B3750E69E28230A12AFD9ADE1402 /* UIView+Swizzling.swift */,
+				149088E58CCE54849F793BBF289CFCB6 /* UIView+Transitions.swift */,
+				6357975987F9EB20856705EE3AE716B2 /* Support Files */,
+			);
+			path = SkeletonView;
+			sourceTree = "<group>";
+		};
+		3917743DA85F309F6E30E44D0BA83B1B /* FOCalendar */ = {
+			isa = PBXGroup;
+			children = (
+				5C242349F922B14AD277512BB2E29FCA /* CalendarCollectionViewCell.swift */,
+				E0BA35CB8B519E1914AA7503E9A07233 /* CalendarHeaderView.swift */,
+				1A88D18A71DE65E426526FF8A1564A56 /* CalendarPresenter.swift */,
+				9DF995FAB631A400B44F1BFCEF80D67F /* DataExtension.swift */,
+				76C488AB430FA407864CEA0DEBD37E0B /* Day.swift */,
+				9AFDDD53E70815313FA5CA7DC31AA499 /* FOCalendar.h */,
+				9F07A06F762497C6668604A37A8FFF0D /* FOCalendarView.swift */,
+				E04F685826B1E142B702B85045E8B028 /* GeneratorDate.swift */,
+				2146FBD202757987CD4F01F1B874172A /* ModelError.swift */,
+				676F9A2F7B628DAF292E89A5FADEDD79 /* Month.swift */,
+				773613F02D1BA0517ACAC344C0C7BD9D /* RemoteGeneratorDate.swift */,
+				4EC5A0D1F8C4B673B34D3C3F09D9460D /* Support Files */,
+			);
+			path = FOCalendar;
+			sourceTree = "<group>";
+		};
 		482EF774DC0B3541D42ADE2DAF3465D3 /* Pods-BrocoliSe */ = {
 			isa = PBXGroup;
 			children = (
@@ -137,6 +289,21 @@
 			path = "Target Support Files/Pods-BrocoliSe";
 			sourceTree = "<group>";
 		};
+		4EC5A0D1F8C4B673B34D3C3F09D9460D /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				1A34563A2EA6E519744783359E02A6B9 /* FOCalendar.modulemap */,
+				154706BDD8E9972BC1353FE06FBD5413 /* FOCalendar-dummy.m */,
+				0F3790624E7C514EFEB8A868BE1D0DA8 /* FOCalendar-Info.plist */,
+				E60D2E574AB65915340461D21205CDBB /* FOCalendar-prefix.pch */,
+				88C95A68C5C94F0AA462798D2E24325D /* FOCalendar-umbrella.h */,
+				2E34627864C3F7C24E65E45A727C77A9 /* FOCalendar.debug.xcconfig */,
+				0ACF296ACE2589AD52DDBC8CAE336A82 /* FOCalendar.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/FOCalendar";
+			sourceTree = "<group>";
+		};
 		578452D2E740E91742655AC8F1636D1F /* iOS */ = {
 			isa = PBXGroup;
 			children = (
@@ -145,15 +312,19 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		67CE625CFC22CCD24256FF7424F8F896 /* UBProgress */ = {
+		6357975987F9EB20856705EE3AE716B2 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				30FA6193BB086385A45836612A61069F /* UBProgress.h */,
-				5239C4BDCEF6446079AF3382AC1D14B7 /* UBProgress.m */,
-				87AAF69646A1149432707E6FE3701860 /* Support Files */,
+				FD73BA305988165A92FA4EBF8110BC04 /* SkeletonView.modulemap */,
+				D7FFE8F808CF68BEE590A04D11306D13 /* SkeletonView-dummy.m */,
+				B9E0E5296D063CA076C73F5919D12FF9 /* SkeletonView-Info.plist */,
+				5455613475856AEACC92F04E151D5597 /* SkeletonView-prefix.pch */,
+				7B2DEF8CC672508CEB2E02ED72981591 /* SkeletonView-umbrella.h */,
+				28A5B1CC37D55F6858BBDB7D595CAFAE /* SkeletonView.debug.xcconfig */,
+				4240E5B421C7B4328031D648D66E4068 /* SkeletonView.release.xcconfig */,
 			);
-			name = UBProgress;
-			path = UBProgress;
+			name = "Support Files";
+			path = "../Target Support Files/SkeletonView";
 			sourceTree = "<group>";
 		};
 		6A47CADD723C2378338F0D65F5D6A3AA /* Targets Support Files */ = {
@@ -164,58 +335,49 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		87AAF69646A1149432707E6FE3701860 /* Support Files */ = {
+		83544B3308B108899CF0CE1E595AF05E /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				E9207FBAC19F05703F565E52D179C543 /* UBProgress.modulemap */,
-				EDF24307F44E7D0BCA6D26A33BDACA08 /* UBProgress-dummy.m */,
-				B46F219AE169801169FDEA28CE073E40 /* UBProgress-Info.plist */,
-				25E5DB9CBCDD4FEE17DDF7100AC90D74 /* UBProgress-prefix.pch */,
-				6DAEF807F1700E6FC033D7797999E1BD /* UBProgress-umbrella.h */,
-				F1A41E13DBFE8EAA97E7D534A2FD4B62 /* UBProgress.debug.xcconfig */,
-				44B95E372BD24E8632A49AB003DF1778 /* UBProgress.release.xcconfig */,
+				C783E8FC0BA0A0273C1C2FC2F9B2A757 /* UBProgress.modulemap */,
+				DA9C0492F391C63A14DB80942E157626 /* UBProgress-dummy.m */,
+				33E2DE4821DD3E5DEE14C9980283EB52 /* UBProgress-Info.plist */,
+				F3CF945C0E3BFD81FDB9EC14F2422802 /* UBProgress-prefix.pch */,
+				FE74393BC1339973344257F290C717AB /* UBProgress-umbrella.h */,
+				F0966BCC9C65A01B440327286F4C2B45 /* UBProgress.debug.xcconfig */,
+				AD9B1AB29FF0CCD90CC4C956454E60D8 /* UBProgress.release.xcconfig */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/UBProgress";
 			sourceTree = "<group>";
 		};
-		A6A957A11A4F259F99542E0DD52F651C /* Products */ = {
+		915A85576EE247AB3F1B0F7952726AC6 /* UBProgress */ = {
+			isa = PBXGroup;
+			children = (
+				8F00FABB4448559EB26CDB3C65306B8B /* UBProgress.h */,
+				32DD6FFBFB7C43FFDBB5E1879EB72073 /* UBProgress.m */,
+				83544B3308B108899CF0CE1E595AF05E /* Support Files */,
+			);
+			path = UBProgress;
+			sourceTree = "<group>";
+		};
+		A118A4A70AC7711D1CFFEE75A320E237 /* Products */ = {
 			isa = PBXGroup;
 			children = (
 				4373E7CD5E7E49A0AF11AABCE66EBE13 /* FOCalendar */,
-				8D0FDBA02A1853C1BC8E4B54AFD8BB15 /* Pods-BrocoliSe */,
+				8D0FDBA02A1853C1BC8E4B54AFD8BB15 /* Pods_BrocoliSe.framework */,
 				DF95775FD49637B20932D430C32120BC /* UBProgress */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		B4F1C04ACD6220298A8F535EFB9D8B89 /* Pods */ = {
+		ACF92F93541520F80B0D56F6771A1E1D /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				B88B23FEEC556E43AFF40BF64E552A5C /* FOCalendar */,
-				67CE625CFC22CCD24256FF7424F8F896 /* UBProgress */,
+				3917743DA85F309F6E30E44D0BA83B1B /* FOCalendar */,
+				02B1620F39ACA38765807FA5504CA749 /* SkeletonView */,
+				915A85576EE247AB3F1B0F7952726AC6 /* UBProgress */,
 			);
 			name = Pods;
-			sourceTree = "<group>";
-		};
-		B88B23FEEC556E43AFF40BF64E552A5C /* FOCalendar */ = {
-			isa = PBXGroup;
-			children = (
-				B784BA4903A40B4227BC9E5EE2CEBAFA /* CalendarCollectionViewCell.swift */,
-				995CD8C7973E4630698359CFD162290D /* CalendarHeaderView.swift */,
-				5FEF72A5558217BAFBA286C7F128F79D /* CalendarPresenter.swift */,
-				70C4D636012DDCC9EE822B4EE9891512 /* DataExtension.swift */,
-				B7C34ACB93FE0E4CA38875D42ACD0491 /* Day.swift */,
-				3E3A889984DDE0847B3B4F923C0C78C2 /* FOCalendar.h */,
-				A387CFF6266E11A996B7FE00F8130C4A /* FOCalendarView.swift */,
-				3A37179553B7D22A9ACC25B5302E372F /* GeneratorDate.swift */,
-				D3B5F6E6DB9B33F6946A465C6D1B78E3 /* ModelError.swift */,
-				1E784801C48750045B4F9528CDE0C13A /* Month.swift */,
-				C09694465A311A17F6187B154C3076EC /* RemoteGeneratorDate.swift */,
-				FDCFCB687F10EE6FEBD4E1A61BC6E8DE /* Support Files */,
-			);
-			name = FOCalendar;
-			path = FOCalendar;
 			sourceTree = "<group>";
 		};
 		CF1408CF629C7361332E53B88F7BD30C = {
@@ -223,8 +385,8 @@
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
-				B4F1C04ACD6220298A8F535EFB9D8B89 /* Pods */,
-				A6A957A11A4F259F99542E0DD52F651C /* Products */,
+				ACF92F93541520F80B0D56F6771A1E1D /* Pods */,
+				A118A4A70AC7711D1CFFEE75A320E237 /* Products */,
 				6A47CADD723C2378338F0D65F5D6A3AA /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
@@ -237,38 +399,23 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		FDCFCB687F10EE6FEBD4E1A61BC6E8DE /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				EF1CCAD4B9EA34418ACA8375BC6273DB /* FOCalendar.modulemap */,
-				75D43CB3EF21CAC1A235F049C5B9789C /* FOCalendar-dummy.m */,
-				C26726A53BEC6E0DE07FD26F0803896C /* FOCalendar-Info.plist */,
-				19CA0444DB88B9C1BB29A1592C54BA9F /* FOCalendar-prefix.pch */,
-				21F48620AB93458E254086A1E922C651 /* FOCalendar-umbrella.h */,
-				CEAF6F4ADBEEAE7AEC11D1CC4A99EB3E /* FOCalendar.debug.xcconfig */,
-				92FBEF55272C2A010249CA926EC0BB43 /* FOCalendar.release.xcconfig */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/FOCalendar";
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		109274B25D68951B2076D909F623E4FA /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				FACD9FBAB4289D45C464476B9AE51D62 /* Pods-BrocoliSe-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		25293C95D6BC04FD04D5ACCE0A0155A5 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				EFD575A0F7D5C2803EDFC8B1DA49BBF7 /* UBProgress.h in Headers */,
 				1A4361E5FB58161E066E639FE9395C43 /* UBProgress-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8C73A05650302BBA9AAF4D7A438E916E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5BDA0884C153B73A1F64EDE41F1D258F /* Pods-BrocoliSe-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -322,22 +469,22 @@
 		};
 		F882F501E130699A66242F82314E78E8 /* Pods-BrocoliSe */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = EC567D36F7833D4EC98AD7601FBD27FC /* Build configuration list for PBXNativeTarget "Pods-BrocoliSe" */;
+			buildConfigurationList = B6C86B242ECFB4D37CCED4F760DE2246 /* Build configuration list for PBXNativeTarget "Pods-BrocoliSe" */;
 			buildPhases = (
-				109274B25D68951B2076D909F623E4FA /* Headers */,
-				43E3997B4E6A222EF66B123E6405F3F1 /* Sources */,
-				B22E7BE0A2C31D3A7924F29403A6C218 /* Frameworks */,
-				B6C754987E768DB1D777EC952592B383 /* Resources */,
+				8C73A05650302BBA9AAF4D7A438E916E /* Headers */,
+				7167CBF3AD3DD180F60A2610416D1F68 /* Sources */,
+				D313131B35E99B7DB3F0A9DE2864CA30 /* Frameworks */,
+				3D59FFC6754E39ECF2872D3C0154DB51 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				80874ED562D4DD0F8250EFF54EC9C045 /* PBXTargetDependency */,
-				71A772CCFC9737184A8CA415F2D85078 /* PBXTargetDependency */,
+				A82BC3F941440E17376D397E90C0F66E /* PBXTargetDependency */,
+				1B9B6EE8B606314A26731E54C4CC133A /* PBXTargetDependency */,
 			);
 			name = "Pods-BrocoliSe";
 			productName = Pods_BrocoliSe;
-			productReference = 8D0FDBA02A1853C1BC8E4B54AFD8BB15 /* Pods-BrocoliSe */;
+			productReference = 8D0FDBA02A1853C1BC8E4B54AFD8BB15 /* Pods_BrocoliSe.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -358,7 +505,7 @@
 				en,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = A6A957A11A4F259F99542E0DD52F651C /* Products */;
+			productRefGroup = A118A4A70AC7711D1CFFEE75A320E237 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -370,14 +517,14 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		582D4115148CBF2258CEF31DA6BFAE93 /* Resources */ = {
+		3D59FFC6754E39ECF2872D3C0154DB51 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B6C754987E768DB1D777EC952592B383 /* Resources */ = {
+		582D4115148CBF2258CEF31DA6BFAE93 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -394,11 +541,11 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		43E3997B4E6A222EF66B123E6405F3F1 /* Sources */ = {
+		7167CBF3AD3DD180F60A2610416D1F68 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D5DCDE4251BB9A5F8E191413F502136A /* Pods-BrocoliSe-dummy.m in Sources */,
+				E52FD774D8B4F5B01710C100E2D5C4B3 /* Pods-BrocoliSe-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -432,24 +579,24 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		71A772CCFC9737184A8CA415F2D85078 /* PBXTargetDependency */ = {
+		1B9B6EE8B606314A26731E54C4CC133A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = UBProgress;
 			target = 60D354207883A696E54CF0054A6EFDE3 /* UBProgress */;
-			targetProxy = EACD6DF40D6C33674795C63688B22816 /* PBXContainerItemProxy */;
+			targetProxy = 3C7BA40F04AF3D87A449AD42FFB4BA39 /* PBXContainerItemProxy */;
 		};
-		80874ED562D4DD0F8250EFF54EC9C045 /* PBXTargetDependency */ = {
+		A82BC3F941440E17376D397E90C0F66E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = FOCalendar;
 			target = 98E4E31ACF70C75F787980E1CA266898 /* FOCalendar */;
-			targetProxy = CC500E4E88B36C0C514F07C21C85BF41 /* PBXContainerItemProxy */;
+			targetProxy = 74AE0F4C6B4D9F036A92149D07DA5283 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		3442522DD6EB9CEAEE2993618997E159 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 92FBEF55272C2A010249CA926EC0BB43 /* FOCalendar.release.xcconfig */;
+			baseConfigurationReference = 0ACF296ACE2589AD52DDBC8CAE336A82 /* FOCalendar.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -485,7 +632,7 @@
 		};
 		3ED375B81EADB05F33A3EEA2AD82ECAC /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F1A41E13DBFE8EAA97E7D534A2FD4B62 /* UBProgress.debug.xcconfig */;
+			baseConfigurationReference = F0966BCC9C65A01B440327286F4C2B45 /* UBProgress.debug.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -519,7 +666,7 @@
 		};
 		7D4F9C0E41B01B8823C8C7F68D2713CD /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 44B95E372BD24E8632A49AB003DF1778 /* UBProgress.release.xcconfig */;
+			baseConfigurationReference = AD9B1AB29FF0CCD90CC4C956454E60D8 /* UBProgress.release.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -552,47 +699,9 @@
 			};
 			name = Release;
 		};
-		7F91F16DFE3A58EC7F9835203F15E118 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = C1713464E1F0BDAC44977F75E3D68FF4 /* Pods-BrocoliSe.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-BrocoliSe/Pods-BrocoliSe-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-BrocoliSe/Pods-BrocoliSe.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 		898AE738510259F506E6D513DC36CF61 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CEAF6F4ADBEEAE7AEC11D1CC4A99EB3E /* FOCalendar.debug.xcconfig */;
+			baseConfigurationReference = 2E34627864C3F7C24E65E45A727C77A9 /* FOCalendar.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -691,6 +800,43 @@
 			};
 			name = Debug;
 		};
+		9414DD8F521388FC909099D900BB5072 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1F7F9FA3D99F529D625D63C7C7E7AC65 /* Pods-BrocoliSe.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-BrocoliSe/Pods-BrocoliSe-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-BrocoliSe/Pods-BrocoliSe.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		9E406C6AAF85E580207CD97B0044DEAB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -753,9 +899,9 @@
 			};
 			name = Release;
 		};
-		DE6A6118BD7F0889D6F6A2B458394E8E /* Debug */ = {
+		BC05B10BBB3E49A9BE0D47AAF6387056 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1F7F9FA3D99F529D625D63C7C7E7AC65 /* Pods-BrocoliSe.debug.xcconfig */;
+			baseConfigurationReference = C1713464E1F0BDAC44977F75E3D68FF4 /* Pods-BrocoliSe.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -785,10 +931,11 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Debug;
+			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
@@ -820,11 +967,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		EC567D36F7833D4EC98AD7601FBD27FC /* Build configuration list for PBXNativeTarget "Pods-BrocoliSe" */ = {
+		B6C86B242ECFB4D37CCED4F760DE2246 /* Build configuration list for PBXNativeTarget "Pods-BrocoliSe" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				DE6A6118BD7F0889D6F6A2B458394E8E /* Debug */,
-				7F91F16DFE3A58EC7F9835203F15E118 /* Release */,
+				9414DD8F521388FC909099D900BB5072 /* Debug */,
+				BC05B10BBB3E49A9BE0D47AAF6387056 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
