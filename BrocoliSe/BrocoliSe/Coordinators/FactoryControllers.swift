@@ -52,6 +52,7 @@ struct FactoryControllers {
         let recipeListScene = RecipeListScene()
         let recipeVC = RecipeListViewController()
         recipeVC.setRecipeListScene(recipeListScene)
+        recipeVC.apiManager = ApiManager()
         return recipeVC
     }
     
