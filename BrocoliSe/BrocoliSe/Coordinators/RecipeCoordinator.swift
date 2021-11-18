@@ -19,9 +19,11 @@ class RecipeCoordinator: RecipeCoodinatorProtocol {
     var navigationController: UINavigationController
     var type: CoordinatorType {.settings}
     var tabCoordinator: TabCoordinator?
+    private var recipe: RecipeCellModel?
     
-    init (navigationController: UINavigationController) {
+    init (navigationController: UINavigationController, recipe: RecipeCellModel) {
         self.navigationController = navigationController
+        self.recipe = recipe
     }
     
     func start() {
@@ -29,7 +31,8 @@ class RecipeCoordinator: RecipeCoodinatorProtocol {
     }
     
     func showRecipeDescriptionViewController() {
-        let recipeDescriptionVC = FactoryControllers.createRecipeDescriptionViewController()
+        guard let recipe = self.recipe else { return }
+        let recipeDescriptionVC = FactoryControllers.createRecipeDescriptionViewController(recipe: recipe)
         recipeDescriptionVC.tabCoordinator = tabCoordinator
         navigationController.pushViewController(recipeDescriptionVC, animated: true)
     }

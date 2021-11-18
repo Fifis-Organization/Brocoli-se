@@ -23,6 +23,7 @@ class InfoCardComponent: UIView {
     private var label: UILabel = {
         var label = UILabel()
         label.font = UIFont.graviolaSoft(size: 12)
+        label.sizeToFit()
         return label
     }()
     

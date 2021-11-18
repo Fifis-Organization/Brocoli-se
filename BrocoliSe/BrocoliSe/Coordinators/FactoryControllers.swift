@@ -56,8 +56,8 @@ struct FactoryControllers {
         return recipeVC
     }
     
-    static func createRecipeDescriptionViewController() -> RecipeDescriptionViewController {
-        let recipeDescriptionScene = RecipeDescriptionScene()
+    static func createRecipeDescriptionViewController(recipe: RecipeCellModel) -> RecipeDescriptionViewController {
+        let recipeDescriptionScene = RecipeDescriptionScene(frame: .zero, recipe: recipe)
         let recipeDescriptionVC = RecipeDescriptionViewController()
         recipeDescriptionVC.setRecipeDescriptionScene(recipeDescriptionScene)
         return recipeDescriptionVC

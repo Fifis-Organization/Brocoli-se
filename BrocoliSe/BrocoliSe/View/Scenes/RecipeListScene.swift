@@ -181,7 +181,7 @@ extension RecipeListScene: UITableViewDelegate, UITableViewDataSource {
         let recipe = self.filteredData[indexPath.row]
         cell.configureCell(model: recipe)
         cell.didTapCell = {
-            self.controller?.tabCoordinator?.showRecipeCoordinator()
+            self.controller?.tabCoordinator?.showRecipeCoordinator(recipe: recipe)
         }
 
         return cell

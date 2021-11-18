@@ -26,6 +26,8 @@ class RecipeDescriptionScene: UIView {
         return table
     }()
     
+    private var recipe: RecipeCellModel?
+    
     private let headerImage = HeaderImageView()
     
     private var numberOfSteps = 3
@@ -41,8 +43,10 @@ class RecipeDescriptionScene: UIView {
         return view
     }()
     
-    override init(frame: CGRect) {
+    init(frame: CGRect, recipe: RecipeCellModel) {
         super.init(frame: frame)
+        self.recipe = recipe
+        self.numberOfSteps = self.recipe?.steps.count ?? 0
         configHeaderImageView()
         setupWhiteView()
         
@@ -50,6 +54,10 @@ class RecipeDescriptionScene: UIView {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func configure(recipe: RecipeCellModel) {
+        
     }
     
     private func setupWhiteView() {
@@ -79,7 +87,7 @@ class RecipeDescriptionScene: UIView {
             headerImage.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -(UIScreen.main.bounds.height * 0.68))
         ])
         
-        let imageHeader = UIImage(named: "comida")?.withRenderingMode(.alwaysOriginal)
+        let imageHeader = recipe?.pathPhoto.withRenderingMode(.alwaysOriginal)
         headerImage.setImageHeader(image: imageHeader)
     }
 }
@@ -102,9 +110,9 @@ extension RecipeDescriptionScene: UITableViewDelegate, UITableViewDataSource {
         case 0:
             return 1
         case 1:
-            return 4
+            return recipe?.ingredients.count ?? 0
         case 2:
-            return 3
+            return recipe?.steps.count ?? 0
         default:
             return 0
         }
@@ -114,11 +122,13 @@ extension RecipeDescriptionScene: UITableViewDelegate, UITableViewDataSource {
         let label = UILabel()
         label.textColor = UIColor.blueDark
         label.font = UIFont.graviolaSoft(size: 20)
+        label.numberOfLines = 0
         
         switch section {
         case 0:
             label.font = UIFont.graviolaSoft(size: 22)
-            label.text = "   Carne de Jaca"
+            guard let recipeName = recipe?.name else { return label }
+            label.text = "  \(recipeName)"
         case 1:
             label.text = "   Ingredientes"
         case 2:
@@ -137,13 +147,13 @@ extension RecipeDescriptionScene: UITableViewDelegate, UITableViewDataSource {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: InforRecipeCell.identifier, for: indexPath) as? InforRecipeCell else {
                 return UITableViewCell()
             }
-            cell.setCardInfo(timerText: "30 MIN", porcoesText: "3 PORÇÕES")
+            cell.setCardInfo(timerText: recipe?.time.uppercased() ?? "", porcoesText: recipe?.portions.uppercased() ?? "")
             return cell
         case 1:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: IngredientsCell.identifier, for: indexPath) as? IngredientsCell else {
                 return UITableViewCell()
             }
-            cell.setIngredientsLabel(text: "500g de jaca")
+            cell.setIngredientsLabel(text: recipe?.ingredients[indexPath.row] ?? "")
             return cell
         case 2:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: StepsCell.identifier, for: indexPath) as? StepsCell else {
@@ -151,7 +161,7 @@ extension RecipeDescriptionScene: UITableViewDelegate, UITableViewDataSource {
             }
             if step != numberOfSteps {
                 step += 1
-                cell.setStep(number: self.step, text: "Lave bem a jaca")
+                cell.setStep(number: self.step, text: recipe?.steps[indexPath.row] ?? "")
             }
             return cell
         default:

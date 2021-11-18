@@ -15,6 +15,7 @@ class IngredientsCell: UITableViewCell {
         var label = UILabel()
         label.font = UIFont.graviolaRegular(size: 17)
         label.textColor = .blueDark
+        label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -44,7 +45,9 @@ class IngredientsCell: UITableViewCell {
             pointSymbol.heightAnchor.constraint(equalToConstant: 10),
             
             ingredientLabel.leftAnchor.constraint(equalTo: pointSymbol.rightAnchor, constant: 15),
-            ingredientLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor)
+            ingredientLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 10),
+            ingredientLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -10),
+            ingredientLabel.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -20)
         ])
     }
     
