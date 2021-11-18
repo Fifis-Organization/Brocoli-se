@@ -20,9 +20,12 @@ class RecipeListScene: UIView {
     private var isActiveKeyboard: Bool = false
     private var recipes: [RecipeCellModel] = [] {
         didSet {
-             self.tableView.reloadData()
+            self.tableView.reloadData()
+            self.filteredData = recipes
         }
     }
+
+    private var filteredData: [RecipeCellModel] = []
 
     private lazy var segmentedControl: CustomSegmentedControl = {
         let segmentedControl = CustomSegmentedControl()
@@ -168,14 +171,14 @@ extension RecipeListScene: RecipeListSceneDelegate {
 
 extension RecipeListScene: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return recipes.count
+        return filteredData.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: RecipeListCell.identifier, for: indexPath) as? RecipeListCell else {
             return UITableViewCell()
         }
-        let recipe = self.recipes[indexPath.row]
+        let recipe = self.filteredData[indexPath.row]
         cell.configureCell(model: recipe)
         cell.didTapCell = {
             // Dar o push para tela de descrição da receita
@@ -210,6 +213,10 @@ extension RecipeListScene: UISearchBarDelegate {
     }
 
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        // Atualizar a table conforme o input do usuário
+        filteredData = searchText.isEmpty ? recipes : recipes.filter {
+            $0.name.range(of: searchText, options: .caseInsensitive, range: nil, locale: nil) != nil
+        }
+
+        tableView.reloadData()
     }
 }
