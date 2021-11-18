@@ -152,7 +152,7 @@ extension RecipeListScene: UITableViewDelegate, UITableViewDataSource {
         }
 
         cell.didTapCell = {
-            // Dar o push para tela de descrição da receita
+            self.controller?.tabCoordinator?.showRecipeCoordinator()
         }
 
         return cell

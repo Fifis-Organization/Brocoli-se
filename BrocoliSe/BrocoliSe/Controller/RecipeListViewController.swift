@@ -25,6 +25,7 @@ class RecipeListViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
        super.viewWillAppear(animated)
         tabCoordinator?.configTabBar(color: .white)
+        navigationController?.navigationBar.backgroundColor = .blueDark
     }
 
     func setRecipeListScene(_ recipeListScene: RecipeListSceneDelegate) {

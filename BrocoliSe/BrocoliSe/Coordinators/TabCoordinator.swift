@@ -8,6 +8,7 @@ protocol TabCoordinatorProtocol: Coordinator {
     func currentPage() -> TabBarPage?
     func configTabBar(color: UIColor)
     func showSettingsCoordinator()
+    func showRecipeCoordinator()
 }
 
 class TabCoordinator: NSObject, TabCoordinatorProtocol {
@@ -93,7 +94,7 @@ class TabCoordinator: NSObject, TabCoordinatorProtocol {
             navController.navigationBar.barStyle = .black
             navController.navigationItem.largeTitleDisplayMode = .always
             navController.navigationBar.prefersLargeTitles = true
-            navController.navigationBar.largeTitleTextAttributes = attrs
+            navController.navigationBar.largeTitleTextAttributes = attrs as [NSAttributedString.Key : Any]
             navController.pushViewController(recipesVC, animated: true)
         }
         
@@ -126,6 +127,15 @@ class TabCoordinator: NSObject, TabCoordinatorProtocol {
         settingsCoordinator.finishDelegate = self
         settingsCoordinator.start()
         childCoordinators.append(settingsCoordinator)
+    }
+    
+    func showRecipeCoordinator() {
+        let navController = controllers[2]
+        let recipeCoordinator = RecipeCoordinator(navigationController: navController)
+        recipeCoordinator.finishDelegate = self
+        recipeCoordinator.tabCoordinator = self
+        recipeCoordinator.start()
+        childCoordinators.append(recipeCoordinator)
     }
 }
 
