@@ -29,14 +29,13 @@ class RecipeListViewController: UIViewController {
        super.viewWillAppear(animated)
         tabCoordinator?.configTabBar(color: .white)
         navigationController?.navigationBar.backgroundColor = .blueDark
-        fetchRecipesApi()
     }
 
     func setRecipeListScene(_ recipeListScene: RecipeListSceneDelegate) {
         scene = recipeListScene
         scene?.setController(controller: self)
         view = scene as? UIView
-        
+        fetchRecipesApi()
     }
     
     func fetchRecipesApi() {
