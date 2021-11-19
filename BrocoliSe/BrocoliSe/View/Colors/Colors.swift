@@ -15,4 +15,8 @@ extension UIColor {
     static let redCustom        = UIColor(named: "red-custom")
     static let backgroundColor  = UIColor(named: "background-color")
     static let blueSoft         = UIColor(named: "blue-soft")
+    static let lightBlue        = UIColor(named: "light-blue")
+    static let lightBrown       = UIColor(named: "light-brown")
+    static let strongBlue       = UIColor(named: "strong-blue")
+    static let strongBrown      = UIColor(named: "strong-brown")
 }
