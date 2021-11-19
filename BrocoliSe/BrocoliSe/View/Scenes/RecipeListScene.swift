@@ -150,6 +150,7 @@ class RecipeListScene: UIView {
             recipesTableView.trailingAnchor.constraint(equalTo: whiteView.trailingAnchor),
             
             spinner.topAnchor.constraint(equalTo: segmentedControl.bottomAnchor, constant: 30),
+            spinner.centerYAnchor.constraint(equalTo: whiteView.centerYAnchor),
             spinner.bottomAnchor.constraint(equalTo:whiteView.bottomAnchor),
             spinner.leadingAnchor.constraint(equalTo: whiteView.leadingAnchor),
             spinner.trailingAnchor.constraint(equalTo: whiteView.trailingAnchor)
@@ -170,6 +171,7 @@ extension RecipeListScene: RecipeListSceneDelegate {
     func setupViewState(from viewState: ViewState) {
         switch viewState {
         case .load:
+            
             self.spinner.startAnimating()
         case .error:
             DispatchQueue.main.async {
@@ -179,6 +181,7 @@ extension RecipeListScene: RecipeListSceneDelegate {
             }
         case .content(let models):
             DispatchQueue.main.async {
+                self.recipesTableView.restore()
                 self.spinner.stopAnimating()
             }
             self.recipes = models

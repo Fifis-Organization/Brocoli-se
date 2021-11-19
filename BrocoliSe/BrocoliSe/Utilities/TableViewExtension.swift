@@ -9,7 +9,8 @@ import Foundation
 import UIKit
 
 extension UITableView {
-    func setEmptyView(for type: EmptyViewType, tapButton: UITapGestureRecognizer? = nil) {
+    func setEmptyView(for type: EmptyViewType,
+                      tapButton: UITapGestureRecognizer? = nil) {
         let emptyView = UIView(frame: CGRect(x: self.center.x, y: self.center.y, width: self.bounds.size.width, height: self.bounds.size.height))
         
         let imageAttachment = NSTextAttachment()
