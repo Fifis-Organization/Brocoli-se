@@ -9,9 +9,9 @@ import Foundation
 import UIKit
 
 extension UITableView {
-    func setEmptyView(for type: EmptyViewType) {
+    func setEmptyView(for type: EmptyViewType, tapButton: UITapGestureRecognizer? = nil) {
         let emptyView = UIView(frame: CGRect(x: self.center.x, y: self.center.y, width: self.bounds.size.width, height: self.bounds.size.height))
-
+        
         let imageAttachment = NSTextAttachment()
         guard let color: UIColor = .blueDark?.withAlphaComponent(0.7) else { return }
         imageAttachment.image = UIImage(systemName: "bookmark.circle.fill")?.withTintColor(color)
@@ -25,22 +25,38 @@ extension UITableView {
         messageLabel.numberOfLines = 0
         messageLabel.textAlignment = .center
         messageLabel.textColor = color
-        messageLabel.font = self.bounds.size.height > 400 ? .graviolaRegular(size: 17) : .graviolaRegular(size: 14)
-
-        switch type {
-        case .apiRecipes:
-            messageLabel.text = "Parece que ocorreu um erro ao carregar os dados."
-        case .savedRecipes:
-            messageLabel.attributedText = fullString
+        messageLabel.font = .graviolaRegular(size: 17)
+       
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle("Recarregar", for: .normal)
+        button.setTitleColor(.white, for: .normal)
+        button.titleLabel?.font = .graviolaRegular(size: 16)
+        button.backgroundColor = .greenMedium
+        button.layer.cornerRadius = 8
+        if let tapButton = tapButton {
+            button.addGestureRecognizer(tapButton)
         }
-
+        
         let brocolisImage = UIImageView(image: UIImage(named: "brocolis-triste"))
         brocolisImage.translatesAutoresizingMaskIntoConstraints = false
         brocolisImage.contentMode = .scaleAspectFit
         brocolisImage.alpha = 0.7
+       
+        switch type {
+        case .apiRecipes:
+            messageLabel.text = "Parece que ocorreu um erro ao carregar os dados."
+            button.isHidden = false
+            brocolisImage.isHidden = false
+        case .savedRecipes:
+            messageLabel.attributedText = fullString
+            button.isHidden = true
+            brocolisImage.isHidden = true
+        }
 
         emptyView.addSubview(messageLabel)
         emptyView.addSubview(brocolisImage)
+        emptyView.addSubview(button)
 
         NSLayoutConstraint.activate([
             messageLabel.topAnchor.constraint(equalTo: emptyView.topAnchor),
@@ -49,8 +65,12 @@ extension UITableView {
 
             brocolisImage.topAnchor.constraint(equalTo: messageLabel.bottomAnchor, constant: 30),
             brocolisImage.centerXAnchor.constraint(equalTo: emptyView.centerXAnchor),
-            brocolisImage.heightAnchor.constraint(equalTo: emptyView.heightAnchor,
-                                                  multiplier: self.bounds.size.height > 400 ? 0.3 : 0.4)
+            brocolisImage.heightAnchor.constraint(equalTo: emptyView.heightAnchor, multiplier: 0.3),
+            
+            button.topAnchor.constraint(equalTo: brocolisImage.bottomAnchor, constant: 30),
+            button.centerXAnchor.constraint(equalTo: emptyView.centerXAnchor),
+            button.trailingAnchor.constraint(equalTo: emptyView.trailingAnchor, constant: -40),
+            button.leadingAnchor.constraint(equalTo: emptyView.leadingAnchor, constant: 40)
         ])
 
         self.backgroundView = emptyView

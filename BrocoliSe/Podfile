@@ -8,5 +8,6 @@ target 'BrocoliSe' do
   # Pods for BrocoliSe
   pod 'UBProgress'
   pod 'FOCalendar', :git => 'https://github.com/SamEngComp/FOCalendar.git'
+  pod 'Kingfisher', '~> 7.0'
 
 end

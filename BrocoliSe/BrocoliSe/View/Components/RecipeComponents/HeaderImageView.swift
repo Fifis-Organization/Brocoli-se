@@ -41,8 +41,13 @@ class HeaderImageView: UIView {
         ])
     }
     
-    func setImageHeader(image: UIImage?) {
-        self.imageHeader.image = image
+    func setImageHeader(urlString: String) {
+        if let baseUrl = URL(string: urlString) {
+            self.imageHeader.kf.setImage(with: baseUrl)
+        } else {
+            self.imageHeader.image = UIImage(named: "fotoReceita-EmptyState")
+        }
+        self.imageHeader.image?.withRenderingMode(.alwaysOriginal)
     }
     
     private func configMaskFoto() {

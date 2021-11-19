@@ -7,11 +7,10 @@
 
 import UIKit
 
-struct RecipeCellModel: Equatable {
-    var id, name, portions, time: String
-    var ingredients, steps: [String]
-    var pathPhoto: UIImage?
-    var pathPhotoStirng: String
+enum ViewState {
+    case load
+    case error
+    case content(models: [RecipeModel])
 }
 
 class RecipeListScene: UIView {
@@ -19,7 +18,7 @@ class RecipeListScene: UIView {
     private var controller: RecipeListViewController?
     private var isSearch: Bool = false
     private var isActiveKeyboard: Bool = false
-    private var recipes: [RecipeCellModel] = [] {
+    private var recipes: [RecipeModel] = [] {
         didSet {
             self.recipes = recipes.sorted(by: { $1.name > $0.name})
             self.reloadTable()
@@ -27,7 +26,7 @@ class RecipeListScene: UIView {
         }
     }
 
-    private var filteredData: [RecipeCellModel] = []
+    private var filteredData: [RecipeModel] = []
 
     private lazy var segmentedControl: CustomSegmentedControl = {
         let segmentedControl = CustomSegmentedControl()
@@ -78,6 +77,8 @@ class RecipeListScene: UIView {
         view.layer.cornerRadius  = 20
         return view
     }()
+    
+    private var spinner = UIActivityIndicatorView(style: .large)
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -104,7 +105,7 @@ class RecipeListScene: UIView {
     }
     
     @objc func segmentedControlValueChanged(_ sender: UISegmentedControl) {
-            segmentedControl.indexChanged(newIndex: sender.selectedSegmentIndex)
+        segmentedControl.indexChanged(newIndex: sender.selectedSegmentIndex)
     }
 
     @objc func keyboardWillHide(notification: NSNotification) {
@@ -126,8 +127,12 @@ class RecipeListScene: UIView {
 
     private func setupWhiteView() {
         addSubview(whiteView)
+        whiteView.addSubview(spinner)
         whiteView.addSubview(recipesTableView)
         whiteView.addSubview(segmentedControl)
+        
+        spinner.translatesAutoresizingMaskIntoConstraints = false
+        
         NSLayoutConstraint.activate([
             whiteView.topAnchor.constraint(equalTo: searchBar.bottomAnchor, constant: 30),
             whiteView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
@@ -142,55 +147,41 @@ class RecipeListScene: UIView {
             recipesTableView.topAnchor.constraint(equalTo: segmentedControl.bottomAnchor, constant: 30),
             recipesTableView.bottomAnchor.constraint(equalTo:whiteView.bottomAnchor),
             recipesTableView.leadingAnchor.constraint(equalTo: whiteView.leadingAnchor),
-            recipesTableView.trailingAnchor.constraint(equalTo: whiteView.trailingAnchor)
+            recipesTableView.trailingAnchor.constraint(equalTo: whiteView.trailingAnchor),
+            
+            spinner.topAnchor.constraint(equalTo: segmentedControl.bottomAnchor, constant: 30),
+            spinner.bottomAnchor.constraint(equalTo:whiteView.bottomAnchor),
+            spinner.leadingAnchor.constraint(equalTo: whiteView.leadingAnchor),
+            spinner.trailingAnchor.constraint(equalTo: whiteView.trailingAnchor)
         ])
     }
     
-    private func loadImages() {
-        var recipesHelp: [RecipeCellModel] = []
-        recipes.forEach { recipe in
-            ApiManager.downloaded(from: recipe.pathPhotoStirng) { image in
-                var recipeAux = recipe
-                recipeAux.pathPhoto = image
-                recipesHelp.append(recipeAux)
-                
-                if recipesHelp.count == self.recipes.count {
-                    self.recipes = recipesHelp
-                    return
-                }
-            }
-        }
+    private func tapButtonGesture() -> UITapGestureRecognizer {
+        return UITapGestureRecognizer(target: self, action: #selector(didTapReloadButton))
     }
     
-}
-
-enum ViewState {
-    case load
-    case error
-    case content(models: [RecipeModel])
+    @objc private func didTapReloadButton() {
+        controller?.fetchRecipesApi()
+    }
+    
 }
 
 extension RecipeListScene: RecipeListSceneDelegate {
     func setupViewState(from viewState: ViewState) {
         switch viewState {
         case .load:
-            self.recipes = []
+            self.spinner.startAnimating()
         case .error:
-            break
+            DispatchQueue.main.async {
+                self.spinner.stopAnimating()
+                self.recipesTableView.restore()
+                self.recipesTableView.setEmptyView(for: .apiRecipes, tapButton: self.tapButtonGesture())
+            }
         case .content(let models):
-            var recipesHelp: [RecipeCellModel] = []
-                models.forEach { model in
-                        recipesHelp.append(RecipeCellModel(id: model.id,
-                                                        name: model.name,
-                                                        portions: model.portions,
-                                                        time: model.time,
-                                                        ingredients: model.ingredients,
-                                                        steps: model.steps,
-                                                        pathPhoto: nil,
-                                                        pathPhotoStirng: model.pathPhoto))
-                }
-            self.recipes = recipesHelp
-            loadImages()
+            DispatchQueue.main.async {
+                self.spinner.stopAnimating()
+            }
+            self.recipes = models
         }
     }
     
