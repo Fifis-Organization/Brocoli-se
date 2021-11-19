@@ -19,9 +19,9 @@ class RecipeCoordinator: RecipeCoodinatorProtocol {
     var navigationController: UINavigationController
     var type: CoordinatorType {.settings}
     var tabCoordinator: TabCoordinator?
-    private var recipe: RecipeCellModel?
+    private var recipe: RecipeModel?
     
-    init (navigationController: UINavigationController, recipe: RecipeCellModel) {
+    init (navigationController: UINavigationController, recipe: RecipeModel) {
         self.navigationController = navigationController
         self.recipe = recipe
     }

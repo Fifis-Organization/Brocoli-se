@@ -56,28 +56,6 @@ class ApiManager: ApiManagerProtocol {
         task?.resume()
     }
     
-    static func downloaded(from baseUrl: URL, completion: @escaping (UIImage) -> Void) {
-        URLSession.shared.dataTask(with: baseUrl) { data, response, error in
-            guard
-                let httpURLResponse = response as? HTTPURLResponse, httpURLResponse.statusCode == 200,
-                let mimeType = response?.mimeType, mimeType.hasPrefix("image"),
-                let data = data, error == nil,
-                let image = UIImage(data: data)
-                else { completion(UIImage(named: "AppIcon") ?? UIImage())
-                    return }
-            DispatchQueue.main.async {
-               completion(image)
-            }
-        }.resume()
-    }
-    
-    static func downloaded(from link: String, completion: @escaping (UIImage) -> Void) {
-        guard let baseUrl = URL(string: link) else { return }
-        ApiManager.downloaded(from: baseUrl) { image in
-            completion(image)
-        }
-    }
-    
     private func handleUrl(endpoint: EndpointsProtocol) -> URLRequest? {
         guard let baseUrl = URL(string: endpoint.baseURL + endpoint.path) else { return nil }
         return URLRequest(url: baseUrl)

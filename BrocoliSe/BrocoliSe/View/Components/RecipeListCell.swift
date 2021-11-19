@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class RecipeListCell: UITableViewCell {
 
@@ -89,8 +90,13 @@ class RecipeListCell: UITableViewCell {
 
     // MARK: - PUBLIC METHODS
 
-    func configureCell(model: RecipeCellModel) {
-        self.recipeImage.image = model.pathPhoto
+    func configureCell(model: RecipeModel) {
+        if let baseUrl = URL(string: model.pathPhoto) {
+            self.recipeImage.kf.setImage(with: baseUrl)
+        } else {
+            self.recipeImage.image = UIImage(named: "fotoReceita-EmptyState")
+        }
+        
         self.recipeName.text = model.name
         self.recipeTime.setLabelText(text: model.time)
         self.recipePortions.setLabelText(text: model.portions)

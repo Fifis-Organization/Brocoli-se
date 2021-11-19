@@ -1,15 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "comida.jpg",
+      "filename" : "fotoReceita-EmptyState3.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "fotoReceita-EmptyState3@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "fotoReceita-EmptyState3@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

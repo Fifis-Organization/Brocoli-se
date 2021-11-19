@@ -8,7 +8,7 @@ protocol TabCoordinatorProtocol: Coordinator {
     func currentPage() -> TabBarPage?
     func configTabBar(color: UIColor)
     func showSettingsCoordinator()
-    func showRecipeCoordinator(recipe: RecipeCellModel)
+    func showRecipeCoordinator(recipe: RecipeModel)
 }
 
 class TabCoordinator: NSObject, TabCoordinatorProtocol {
@@ -129,7 +129,7 @@ class TabCoordinator: NSObject, TabCoordinatorProtocol {
         childCoordinators.append(settingsCoordinator)
     }
     
-    func showRecipeCoordinator(recipe: RecipeCellModel) {
+    func showRecipeCoordinator(recipe: RecipeModel) {
         let navController = controllers[2]
         let recipeCoordinator = RecipeCoordinator(navigationController: navController, recipe: recipe)
         recipeCoordinator.finishDelegate = self

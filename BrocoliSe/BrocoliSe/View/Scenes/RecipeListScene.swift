@@ -7,10 +7,10 @@
 
 import UIKit
 
-struct RecipeCellModel {
-    var id, name, portions, time: String
-    var ingredients, steps: [String]
-    var pathPhoto: UIImage
+enum ViewState {
+    case load
+    case error
+    case content(models: [RecipeModel])
 }
 
 class RecipeListScene: UIView {
@@ -18,14 +18,15 @@ class RecipeListScene: UIView {
     private var controller: RecipeListViewController?
     private var isSearch: Bool = false
     private var isActiveKeyboard: Bool = false
-    private var recipes: [RecipeCellModel] = [] {
+    private var recipes: [RecipeModel] = [] {
         didSet {
-            self.tableView.reloadData()
+            self.recipes = recipes.sorted(by: { $1.name > $0.name})
+            self.reloadTable()
             self.filteredData = recipes
         }
     }
 
-    private var filteredData: [RecipeCellModel] = []
+    private var filteredData: [RecipeModel] = []
 
     private lazy var segmentedControl: CustomSegmentedControl = {
         let segmentedControl = CustomSegmentedControl()
@@ -35,7 +36,7 @@ class RecipeListScene: UIView {
         return segmentedControl
     }()
 
-    private lazy var tableView: UITableView = {
+    private lazy var recipesTableView: UITableView = {
         let table = UITableView()
         table.translatesAutoresizingMaskIntoConstraints = false
         table.backgroundColor = .clear
@@ -76,6 +77,8 @@ class RecipeListScene: UIView {
         view.layer.cornerRadius  = 20
         return view
     }()
+    
+    private var spinner = UIActivityIndicatorView(style: .large)
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -102,7 +105,7 @@ class RecipeListScene: UIView {
     }
     
     @objc func segmentedControlValueChanged(_ sender: UISegmentedControl) {
-            segmentedControl.indexChanged(newIndex: sender.selectedSegmentIndex)
+        segmentedControl.indexChanged(newIndex: sender.selectedSegmentIndex)
     }
 
     @objc func keyboardWillHide(notification: NSNotification) {
@@ -124,8 +127,12 @@ class RecipeListScene: UIView {
 
     private func setupWhiteView() {
         addSubview(whiteView)
-        whiteView.addSubview(tableView)
+        whiteView.addSubview(spinner)
+        whiteView.addSubview(recipesTableView)
         whiteView.addSubview(segmentedControl)
+        
+        spinner.translatesAutoresizingMaskIntoConstraints = false
+        
         NSLayoutConstraint.activate([
             whiteView.topAnchor.constraint(equalTo: searchBar.bottomAnchor, constant: 30),
             whiteView.bottomAnchor.constraint(equalTo: self.bottomAnchor),
@@ -137,26 +144,47 @@ class RecipeListScene: UIView {
             segmentedControl.widthAnchor.constraint(equalToConstant: 220),
             segmentedControl.heightAnchor.constraint(equalToConstant: 30),
 
-            tableView.topAnchor.constraint(equalTo: segmentedControl.bottomAnchor, constant: 30),
-            tableView.bottomAnchor.constraint(equalTo: whiteView.bottomAnchor),
-            tableView.leadingAnchor.constraint(equalTo: whiteView.leadingAnchor),
-            tableView.trailingAnchor.constraint(equalTo: whiteView.trailingAnchor)
+            recipesTableView.topAnchor.constraint(equalTo: segmentedControl.bottomAnchor, constant: 30),
+            recipesTableView.bottomAnchor.constraint(equalTo:whiteView.bottomAnchor),
+            recipesTableView.leadingAnchor.constraint(equalTo: whiteView.leadingAnchor),
+            recipesTableView.trailingAnchor.constraint(equalTo: whiteView.trailingAnchor),
+            
+            spinner.topAnchor.constraint(equalTo: segmentedControl.bottomAnchor, constant: 30),
+            spinner.centerYAnchor.constraint(equalTo: whiteView.centerYAnchor),
+            spinner.bottomAnchor.constraint(equalTo:whiteView.bottomAnchor),
+            spinner.leadingAnchor.constraint(equalTo: whiteView.leadingAnchor),
+            spinner.trailingAnchor.constraint(equalTo: whiteView.trailingAnchor)
         ])
     }
+    
+    private func tapButtonGesture() -> UITapGestureRecognizer {
+        return UITapGestureRecognizer(target: self, action: #selector(didTapReloadButton))
+    }
+    
+    @objc private func didTapReloadButton() {
+        controller?.fetchRecipesApi()
+    }
+    
 }
 
 extension RecipeListScene: RecipeListSceneDelegate {
-    func setRecipes(recipes: [RecipeModel]) {
-        recipes.forEach { model in
-            ApiManager.downloaded(from: model.pathPhoto) { image in
-                self.recipes.append(RecipeCellModel(id: model.id,
-                                                    name: model.name,
-                                                    portions: model.portions,
-                                                    time: model.time,
-                                                    ingredients: model.ingredients,
-                                                    steps: model.steps,
-                                                    pathPhoto: image))
+    func setupViewState(from viewState: ViewState) {
+        switch viewState {
+        case .load:
+            
+            self.spinner.startAnimating()
+        case .error:
+            DispatchQueue.main.async {
+                self.spinner.stopAnimating()
+                self.recipesTableView.restore()
+                self.recipesTableView.setEmptyView(for: .apiRecipes, tapButton: self.tapButtonGesture())
             }
+        case .content(let models):
+            DispatchQueue.main.async {
+                self.recipesTableView.restore()
+                self.spinner.stopAnimating()
+            }
+            self.recipes = models
         }
     }
     
@@ -165,7 +193,9 @@ extension RecipeListScene: RecipeListSceneDelegate {
     }
 
     func reloadTable() {
-        self.tableView.reloadData()
+        DispatchQueue.main.async {
+            self.recipesTableView.reloadData()
+        }
     }
 }
 
@@ -217,6 +247,6 @@ extension RecipeListScene: UISearchBarDelegate {
             $0.name.range(of: searchText, options: .caseInsensitive, range: nil, locale: nil) != nil
         }
 
-        tableView.reloadData()
+        reloadTable()
     }
 }
