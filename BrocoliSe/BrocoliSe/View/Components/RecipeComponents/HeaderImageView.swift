@@ -11,11 +11,13 @@ class HeaderImageView: UIView {
     
     private let maskImage: UIImageView = {
         let image = UIImageView(image: UIImage(named: "maskImage"))
+        image.accessibilityIgnoresInvertColors = true
         return image
     }()
 
     private let imageHeader: UIImageView = {
         let image = UIImageView(image: UIImage(named: "emptyStateFoto"))
+        image.accessibilityIgnoresInvertColors = true
         image.contentMode = .scaleAspectFill
         return image
     }()
