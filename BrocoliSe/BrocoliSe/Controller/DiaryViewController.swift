@@ -46,7 +46,25 @@ class DiaryViewController: UIViewController {
         tabCoordinator?.configTabBar(color: .white)
         setupSiriAlbum()
         setupSiriChecklist()
+        donateInteraction()
         
+    }
+    
+    func donateInteraction() {
+        let intent = RecipeIntent()
+        intent.suggestedInvocationPhrase = "Procurar receita"
+        intent.name = "nome"
+        let interaction = INInteraction(intent: intent, response: nil)
+        
+        interaction.donate { (error) in
+            if error != nil {
+                if let error = error as NSError? {
+                    print("Interaction donation failed: \(error.description)")
+                } else {
+                    print("Successfully donated interaction")
+                }
+            }
+        }
     }
     
     private func setupSiriAlbum() {

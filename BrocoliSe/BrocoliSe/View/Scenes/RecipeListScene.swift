@@ -139,6 +139,10 @@ extension RecipeListScene: RecipeListSceneDelegate {
     func reloadTable() {
         self.tableView.reloadData()
     }
+    
+    func setupSiriResearch(recipe: String) {
+        searchBar.searchTextField.text = recipe
+    }
 }
 
 extension RecipeListScene: UITableViewDelegate, UITableViewDataSource {

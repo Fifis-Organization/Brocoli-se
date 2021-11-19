@@ -63,6 +63,17 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     func scene(_ scene: UIScene, continue userActivity: NSUserActivity) {
         dealWithUserActivities(userActivity: userActivity, isContinuing: true)
+        
+        guard let intent = userActivity.interaction?.intent as? RecipeIntent,
+                let recipe = intent.name else {
+                    return 
+        }
+        guard let tabBarCoordinator = appCoordinator?.childCoordinators.first as? TabCoordinator else {return}
+        tabBarCoordinator.setSelectedIndex(2)
+        guard let tabBarCoordinator = appCoordinator?.childCoordinators.first as? TabCoordinator,
+              let recipeVC = tabBarCoordinator.controllers.last?.viewControllers.first as? RecipeListViewController else {return}
+        recipeVC.scene?.setupSiriResearch(recipe: recipe)
+
     }
     
     fileprivate func openAlbum() {
@@ -85,6 +96,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             openAlbum()
         default:
             break
+            
         }
     }
 
