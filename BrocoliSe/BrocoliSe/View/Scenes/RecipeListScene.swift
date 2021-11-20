@@ -148,9 +148,7 @@ class RecipeListScene: UIView {
                                                        steps: Array(steps),
                                                        pathPhoto: UIImage(data: $0.pathFoto ?? Data()),
                                                        pathPhotoString: pathPhotoString))
-                } else {
-                    print("Deu Error")
-                }
+                } 
             }
             self.recipesCoredata = recipesHelp
         } else {
