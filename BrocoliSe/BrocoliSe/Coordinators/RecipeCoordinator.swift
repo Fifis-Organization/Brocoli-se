@@ -10,6 +10,7 @@ import UIKit
 
 protocol RecipeCoodinatorProtocol: Coordinator {
     func showRecipeDescriptionViewController()
+    func getRecipes() -> RecipeCellModel?
 }
 
 class RecipeCoordinator: RecipeCoodinatorProtocol {
@@ -19,9 +20,9 @@ class RecipeCoordinator: RecipeCoodinatorProtocol {
     var navigationController: UINavigationController
     var type: CoordinatorType {.settings}
     var tabCoordinator: TabCoordinator?
-    private var recipe: RecipeModel?
+    private var recipe: RecipeCellModel?
     
-    init (navigationController: UINavigationController, recipe: RecipeModel) {
+    init (navigationController: UINavigationController, recipe: RecipeCellModel) {
         self.navigationController = navigationController
         self.recipe = recipe
     }
@@ -34,6 +35,11 @@ class RecipeCoordinator: RecipeCoodinatorProtocol {
         guard let recipe = self.recipe else { return }
         let recipeDescriptionVC = FactoryControllers.createRecipeDescriptionViewController(recipe: recipe)
         recipeDescriptionVC.tabCoordinator = tabCoordinator
+        recipeDescriptionVC.recipeCoordinator = self
         navigationController.pushViewController(recipeDescriptionVC, animated: true)
+    }
+    
+    func getRecipes() -> RecipeCellModel? {
+        return recipe
     }
 }
