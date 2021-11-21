@@ -50,6 +50,10 @@ class HeaderImageView: UIView {
         self.imageHeader.image?.withRenderingMode(.alwaysOriginal)
     }
     
+    func setImageHeader(image: UIImage) {
+        self.imageHeader.image = image.withRenderingMode(.alwaysOriginal)
+    }
+    
     private func configMaskFoto() {
         self.addSubview(maskImage)
         maskImage.translatesAutoresizingMaskIntoConstraints = false
