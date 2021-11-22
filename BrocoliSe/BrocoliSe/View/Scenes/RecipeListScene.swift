@@ -188,6 +188,15 @@ extension RecipeListScene: RecipeListSceneDelegate {
         }
     }
     
+    func setupSiriResearch(recipe: String) {
+        searchBar.searchTextField.text = recipe
+        
+        filteredData = recipe.isEmpty ? recipes : recipes.filter {
+            $0.name.range(of: recipe, options: .caseInsensitive, range: nil, locale: nil) != nil
+        }
+        reloadTable()
+    }
+    
     func setController(controller: RecipeListViewController) {
         self.controller = controller
     }
