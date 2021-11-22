@@ -50,7 +50,7 @@ class DiaryViewController: UIViewController {
         
     }
     
-    func setupResearchRecipe() {
+    private func setupResearchRecipe() {
         let intent = RecipeIntent()
         intent.suggestedInvocationPhrase = "Pesquisar receita"
         intent.name = "nome"
