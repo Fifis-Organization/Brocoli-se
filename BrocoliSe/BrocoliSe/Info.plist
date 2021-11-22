@@ -31,12 +31,9 @@
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string></string>
 	<key>NSUserActivityTypes</key>
-	<dict>
-		<key>Album</key>
-		<string>com.brocolise.album</string>
-		<key>CheckList</key>
-		<string>com.brocolise.checklist</string>
-	</dict>
+	<array>
+		<string>RecipeIntent</string>
+	</array>
 	<key>UIAppFonts</key>
 	<array>
 		<string>GraviolaSoft-Medium.otf</string>

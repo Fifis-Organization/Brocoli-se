@@ -10,12 +10,13 @@ import UIKit
 protocol RecipeListSceneDelegate: AnyObject {
     func setController(controller: RecipeListViewController)
     func reloadTable()
+    func setupSiriResearch(recipe: String)
     func setupViewState(from viewState: ViewState)
 }
 
 class RecipeListViewController: UIViewController {
 
-    private var scene: RecipeListSceneDelegate?
+    var scene: RecipeListSceneDelegate?
 
     var tabCoordinator: TabCoordinatorProtocol?
     
