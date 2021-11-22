@@ -258,9 +258,13 @@ extension RecipeListScene: RecipeListSceneDelegate {
     
     func setupSiriResearch(recipe: String) {
         searchBar.searchTextField.text = recipe
-        
+        segmentedControl.indexChanged(newIndex: 0)
         filteredData = recipe.isEmpty ? recipes : recipes.filter {
             $0.name.range(of: recipe, options: .caseInsensitive, range: nil, locale: nil) != nil
+        }
+        self.recipesTableView.restore()
+        if filteredData.isEmpty {
+            self.recipesTableView.setEmptyView(for: .emptySearch)
         }
         reloadTable()
     }
@@ -329,7 +333,10 @@ extension RecipeListScene: UISearchBarDelegate {
                 $0.name.range(of: searchText, options: .caseInsensitive, range: nil, locale: nil) != nil
             }
         }
-
+        self.recipesTableView.restore()
+        if filteredData.isEmpty {
+            self.recipesTableView.setEmptyView(for: .emptySearch)
+        }
         reloadTable()
     }
 }

@@ -53,6 +53,10 @@ extension UITableView {
             messageLabel.attributedText = fullString
             button.isHidden = true
             brocolisImage.isHidden = true
+        case .emptySearch:
+            messageLabel.text = "Sua pesquisa não corresponde a nenhuma receita."
+            button.isHidden = true
+            brocolisImage.isHidden = true
         }
 
         emptyView.addSubview(messageLabel)
