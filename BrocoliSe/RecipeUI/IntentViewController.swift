@@ -30,7 +30,7 @@ class IntentViewController: UIViewController, INUIHostedViewControlling {
     }
     
     var desiredSize: CGSize {
-        // swiftlint:disable:force_unwrapping
+        // swiftlint:disable force_unwrapping
         return self.extensionContext!.hostedViewMaximumAllowedSize
     }
     
