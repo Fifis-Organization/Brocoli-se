@@ -151,10 +151,17 @@ class RecipeListScene: UIView {
                 } 
             }
             self.recipesCoredata = recipesHelp
+            recipesTableView.restore()
+            if recipesHelp.isEmpty {
+                self.recipesTableView.setEmptyView(for: .savedRecipes)
+            }
         } else {
+            recipesTableView.restore()
+            if self.recipes.isEmpty {
+                self.recipesTableView.setEmptyView(for: .apiRecipes)
+            }
             self.filteredData = recipes
         }
-        
     }
 
     @objc func keyboardWillHide(notification: NSNotification) {
@@ -313,8 +320,14 @@ extension RecipeListScene: UISearchBarDelegate {
     }
 
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        filteredData = searchText.isEmpty ? recipes : recipes.filter {
-            $0.name.range(of: searchText, options: .caseInsensitive, range: nil, locale: nil) != nil
+        if self.segmentedControl.selectedSegmentIndex == 1 {
+            filteredData = searchText.isEmpty ? recipesCoredata : recipesCoredata.filter {
+                $0.name.range(of: searchText, options: .caseInsensitive, range: nil, locale: nil) != nil
+            }
+        } else {
+            filteredData = searchText.isEmpty ? recipes : recipes.filter {
+                $0.name.range(of: searchText, options: .caseInsensitive, range: nil, locale: nil) != nil
+            }
         }
 
         reloadTable()
