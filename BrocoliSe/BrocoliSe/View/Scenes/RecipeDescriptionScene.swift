@@ -26,7 +26,7 @@ class RecipeDescriptionScene: UIView {
         return table
     }()
     
-    private var recipe: RecipeModel?
+    private var recipe: RecipeCellModel?
     
     private let headerImage = HeaderImageView()
     
@@ -43,7 +43,7 @@ class RecipeDescriptionScene: UIView {
         return view
     }()
     
-    init(frame: CGRect, recipe: RecipeModel) {
+    init(frame: CGRect, recipe: RecipeCellModel) {
         super.init(frame: frame)
         self.recipe = recipe
         self.numberOfSteps = self.recipe?.steps.count ?? 0
@@ -83,7 +83,11 @@ class RecipeDescriptionScene: UIView {
             headerImage.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -(UIScreen.main.bounds.height * 0.68))
         ])
         
-        headerImage.setImageHeader(urlString: recipe?.pathPhoto ?? "")
+        if let image = recipe?.pathPhoto {
+            headerImage.setImageHeader(image: image)
+        } else {
+            headerImage.setImageHeader(urlString: recipe?.pathPhotoString ?? "")
+        }
     }
 }
 

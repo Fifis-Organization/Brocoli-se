@@ -90,13 +90,16 @@ class RecipeListCell: UITableViewCell {
 
     // MARK: - PUBLIC METHODS
 
-    func configureCell(model: RecipeModel) {
-        if let baseUrl = URL(string: model.pathPhoto) {
-            self.recipeImage.kf.setImage(with: baseUrl)
+    func configureCell(model: RecipeCellModel) {
+        if let image = model.pathPhoto {
+            self.recipeImage.image = image
         } else {
-            self.recipeImage.image = UIImage(named: "fotoReceita-EmptyState")
+            if let baseUrl = URL(string: model.pathPhotoString) {
+                self.recipeImage.kf.setImage(with: baseUrl)
+            } else {
+                self.recipeImage.image = UIImage(named: "fotoReceita-EmptyState")
+            }
         }
-        
         self.recipeName.text = model.name
         self.recipeTime.setLabelText(text: model.time)
         self.recipePortions.setLabelText(text: model.portions)

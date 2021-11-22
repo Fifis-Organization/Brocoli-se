@@ -7,7 +7,6 @@
 
 import Foundation
 import Intents
-import RecipeUI
 
 class RecipeIntentHandler: NSObject, RecipeIntentHandling {
     
