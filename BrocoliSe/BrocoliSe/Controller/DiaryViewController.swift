@@ -48,7 +48,25 @@ class DiaryViewController: UIViewController {
         tabCoordinator?.configTabBar(color: .white)
         setupSiriAlbum()
         setupSiriChecklist()
+        setupResearchRecipe()
         
+    }
+    
+    private func setupResearchRecipe() {
+        let intent = RecipeIntent()
+        intent.suggestedInvocationPhrase = "Pesquisar receita"
+        intent.name = "nome"
+        let interaction = INInteraction(intent: intent, response: nil)
+        
+        interaction.donate { (error) in
+            if error != nil {
+                if let error = error as NSError? {
+                    print("Interaction donation failed: \(error.description)")
+                } else {
+                    print("Successfully donated interaction")
+                }
+            }
+        }
     }
     
     private func setupSiriAlbum() {
@@ -60,13 +78,14 @@ class DiaryViewController: UIViewController {
         activity.isEligibleForPrediction = true
         self.userActivity = activity
         activity.becomeCurrent()
+        activity.resignCurrent()
      }
     
     private func setupSiriChecklist() {
         let actionIdentifier = "com.brocolise.checklist"
         let activity = NSUserActivity(activityType: actionIdentifier)
-        activity.title = "Marcar itens"
-        activity.suggestedInvocationPhrase = "Marcar itens"
+        activity.title = "Marcar todos os itens"
+        activity.suggestedInvocationPhrase = "Marcar todo os itens"
         activity.isEligibleForSearch = true
         activity.isEligibleForPrediction = true
         self.userActivity = activity
