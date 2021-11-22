@@ -82,7 +82,7 @@ class DiaryViewController: UIViewController {
     private func setupSiriChecklist() {
         let actionIdentifier = "com.brocolise.checklist"
         let activity = NSUserActivity(activityType: actionIdentifier)
-        activity.title = "Marcar todo os itens"
+        activity.title = "Marcar todos os itens"
         activity.suggestedInvocationPhrase = "Marcar todo os itens"
         activity.isEligibleForSearch = true
         activity.isEligibleForPrediction = true
