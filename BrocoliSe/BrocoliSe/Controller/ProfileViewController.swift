@@ -91,12 +91,47 @@ class ProfileViewController: UIViewController {
         let selectedFoods = scene?.getSelectedFood()
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: FoodOff.entityName)
         coreDataManager.removeEntity(request: request)
+        
+        var foods: [FoodOff] = []
+        
         selectedFoods?.forEach {
             let food: FoodOff = coreDataManager.createEntity()
             food.food = $0
-            coreDataManager.save()
+            foods.append(food)
         }
         
+        let calendar = Calendar(identifier: .gregorian)
+        let days: [Day] = coreDataManager.fetch()
+        let daySelected = calendar.dateComponents([.day, .month, .year], from: Date())
+        
+        var today: Day?
+        days.forEach {
+            if let dayDate = $0.date {
+                if daySelected.day == calendar.component(.day, from: dayDate) &&
+                    daySelected.month == calendar.component(.month, from: dayDate) &&
+                    daySelected.year == calendar.component(.year, from: dayDate) {
+                    today = $0
+                }
+            }
+        }
+        
+        if let today = today,
+           let todayFoods = today.foods {
+            today.removeFromFoods(todayFoods)
+            if let ingested = today.ingested {
+                today.removeFromIngested(ingested)
+            }
+            if let noIngested = today.noIngested {
+                today.removeFromNoIngested(noIngested)
+            }
+            if today.concluded {
+                user.first?.point -= 10
+                today.concluded = false
+            }
+            today.addToFoods(NSSet(array: foods))
+            today.addToNoIngested(NSSet(array: foods))
+            today.addToIngested(NSSet(array: []))
+        }
         coreDataManager.save()
     }
 }

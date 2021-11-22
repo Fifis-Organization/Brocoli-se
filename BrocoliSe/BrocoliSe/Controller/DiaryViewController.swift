@@ -38,6 +38,8 @@ class DiaryViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         self.fetchUser()
         self.fetchFoodAll()
+        coreDataManager = CoreDataManager()
+        self.fetchDay(Date())
         diaryScene?.reloadTable()
     }
     
