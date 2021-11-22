@@ -16,8 +16,6 @@ import IntentsUI
 
 class IntentViewController: UIViewController, INUIHostedViewControlling {
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -32,6 +30,7 @@ class IntentViewController: UIViewController, INUIHostedViewControlling {
     }
     
     var desiredSize: CGSize {
+        //swiftlint:disable:force_unwrapping
         return self.extensionContext!.hostedViewMaximumAllowedSize
     }
     

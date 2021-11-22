@@ -11,8 +11,7 @@ import Intents
 class RecipeIntentHandler: NSObject, RecipeIntentHandling {
     
     func handle(intent: RecipeIntent, completion: @escaping (RecipeIntentResponse) -> Void) {
-        print(intent.name!)
-        completion(RecipeIntentResponse.success(result: intent.name!))
+        completion(RecipeIntentResponse.success(result: intent.name ?? "nome"))
     }
     
     func resolveName(for intent: RecipeIntent, with completion: @escaping (INStringResolutionResult) -> Void) {
