@@ -83,25 +83,25 @@ class ProfileViewController: UIViewController {
     }
 
     @objc func saveUser() {
-        guard let coreDataManager = coreDataManager else { return }
-        let user: [User] = coreDataManager.fetch()
+        let coredataManager = CoreDataManager(dataModelType: .check)
+        let user: [User] = coredataManager.fetch()
         user.first?.icon = scene?.updatedImage()
         user.first?.name = scene?.getTextFieldName()
 
         let selectedFoods = scene?.getSelectedFood()
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: FoodOff.entityName)
-        coreDataManager.removeEntity(request: request)
+        coredataManager.removeEntity(request: request)
         
         var foods: [FoodOff] = []
         
         selectedFoods?.forEach {
-            let food: FoodOff = coreDataManager.createEntity()
+            let food: FoodOff = coredataManager.createEntity()
             food.food = $0
             foods.append(food)
         }
         
         let calendar = Calendar(identifier: .gregorian)
-        let days: [Day] = coreDataManager.fetch()
+        let days: [Day] = coredataManager.fetch()
         let daySelected = calendar.dateComponents([.day, .month, .year], from: Date())
         
         var today: Day?
@@ -132,6 +132,6 @@ class ProfileViewController: UIViewController {
             today.addToNoIngested(NSSet(array: foods))
             today.addToIngested(NSSet(array: []))
         }
-        coreDataManager.save()
+        coredataManager.save()
     }
 }
