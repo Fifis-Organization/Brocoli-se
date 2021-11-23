@@ -83,8 +83,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     fileprivate func checkList() {
         guard let tabBarCoordinator = appCoordinator?.childCoordinators.first as? TabCoordinator,
               let diaryVC = tabBarCoordinator.controllers.first?.viewControllers.first as? DiaryViewController else {return}
+        tabBarCoordinator.setSelectedIndex(0)
         diaryVC.diaryScene?.setupSiri()
-        
     }
     
     func dealWithUserActivities(userActivity: NSUserActivity, isContinuing: Bool) {

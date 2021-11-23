@@ -125,31 +125,7 @@ class RecipeListScene: UIView {
             if spinner.isAnimating {
                 spinner.stopAnimating()
             }
-            let coredataManager = CoreDataManager(dataModelType: .recipe)
-            var recipesHelp: [RecipeCellModel] = []
-            let recipesFetch: [Recipe] = coredataManager.fetch()
-            recipesFetch.forEach {
-                if let idRecipe = $0.id,
-                   let name = $0.nome,
-                   let portions = $0.porcoes,
-                   let time = $0.tempo,
-                   let setIngredients = $0.ingredients as? Set<Ingredient>,
-                   let setSteps = $0.steps as? Set<Steps>,
-                   let pathPhotoString = $0.pathFotoString {
-                    var ingredients: [String] = []
-                    var steps: [String] = []
-                    setIngredients.forEach { ingredients.append($0.ingredient ?? "") }
-                    setSteps.forEach { steps.append($0.step ?? "") }
-                    recipesHelp.append(RecipeCellModel(idRecipe: idRecipe,
-                                                       name: name,
-                                                       portions: portions,
-                                                       time: time,
-                                                       ingredients: Array(ingredients),
-                                                       steps: Array(steps),
-                                                       pathPhoto: UIImage(data: $0.pathFoto ?? Data()),
-                                                       pathPhotoString: pathPhotoString))
-                } 
-            }
+            let recipesHelp = setupDataCoredata()
             self.recipesCoredata = recipesHelp
             recipesTableView.restore()
             if recipesHelp.isEmpty {
@@ -162,6 +138,35 @@ class RecipeListScene: UIView {
             }
             self.filteredData = recipes
         }
+    }
+    
+    private func setupDataCoredata() -> [RecipeCellModel] {
+        let coredataManager = CoreDataManager(dataModelType: .recipe)
+        var recipesHelp: [RecipeCellModel] = []
+        let recipesFetch: [Recipe] = coredataManager.fetch()
+        recipesFetch.forEach {
+            if let idRecipe = $0.id,
+               let name = $0.nome,
+               let portions = $0.porcoes,
+               let time = $0.tempo,
+               let setIngredients = $0.ingredients as? Set<Ingredient>,
+               let setSteps = $0.steps as? Set<Steps>,
+               let pathPhotoString = $0.pathFotoString {
+                var ingredients: [String] = []
+                var steps: [String] = []
+                setIngredients.forEach { ingredients.append($0.ingredient ?? "") }
+                setSteps.forEach { steps.append($0.step ?? "") }
+                recipesHelp.append(RecipeCellModel(idRecipe: idRecipe,
+                                                   name: name,
+                                                   portions: portions,
+                                                   time: time,
+                                                   ingredients: Array(ingredients),
+                                                   steps: Array(steps),
+                                                   pathPhoto: UIImage(data: $0.pathFoto ?? Data()),
+                                                   pathPhotoString: pathPhotoString))
+            }
+        }
+        return recipesHelp
     }
 
     @objc func keyboardWillHide(notification: NSNotification) {
@@ -224,6 +229,15 @@ class RecipeListScene: UIView {
 }
 
 extension RecipeListScene: RecipeListSceneDelegate {
+    func setupDatas() {
+        if segmentedControl.selectedSegmentIndex == 1 {
+            recipesCoredata = setupDataCoredata()
+            if recipesCoredata.isEmpty {
+                recipesTableView.setEmptyView(for: .savedRecipes)
+            }
+        }
+    }
+    
     func setupViewState(from viewState: ViewState) {
         switch viewState {
         case .load:
