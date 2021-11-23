@@ -12,6 +12,7 @@ protocol RecipeListSceneDelegate: AnyObject {
     func reloadTable()
     func setupSiriResearch(recipe: String)
     func setupViewState(from viewState: ViewState)
+    func setupDatas()
 }
 
 class RecipeListViewController: UIViewController {
@@ -28,8 +29,10 @@ class RecipeListViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
        super.viewWillAppear(animated)
+        scene?.setupDatas()
         tabCoordinator?.configTabBar(color: .white)
         navigationController?.navigationBar.backgroundColor = .blueDark
+        scene?.reloadTable()
     }
 
     func setRecipeListScene(_ recipeListScene: RecipeListSceneDelegate) {
