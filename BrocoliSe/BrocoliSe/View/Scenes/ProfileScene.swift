@@ -172,6 +172,10 @@ class ProfileScene: UIView {
             foodSelectorLabel.widthAnchor.constraint(equalTo: contentStackView.widthAnchor)
         ])
     }
+    
+    func shakeFoodSelected() {
+        foodSelector.shakeEffect(horizontaly: 4)
+    }
 }
 
 extension ProfileScene: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
