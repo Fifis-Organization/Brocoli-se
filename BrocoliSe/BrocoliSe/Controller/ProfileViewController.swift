@@ -16,6 +16,7 @@ protocol ProfileSceneDelegate: AnyObject {
     func getTextFieldName() -> String
     func setSelectedFood(selectedFood: [String])
     func getSelectedFood() -> [String]
+    func shakeFoodSelected()
 }
 
 class ProfileViewController: UIViewController {
@@ -81,29 +82,43 @@ class ProfileViewController: UIViewController {
         navigationController?.navigationItem.largeTitleDisplayMode = .never
         navigationController?.navigationBar.prefersLargeTitles = false
     }
+    
+    private func alertConfirm(message: String) {
+        let alert = UIAlertController(title: "Olá", message: message, preferredStyle: UIAlertController.Style.alert)
 
+        alert.addAction(UIAlertAction(title: "Entendi", style: UIAlertAction.Style.default, handler: nil))
+        alert.view.tintColor = .greenMedium
+        self.present(alert, animated: true)
+    }
+    
+    // swiftlint:disable function_body_length
     @objc func saveUser() {
-        guard let coreDataManager = coreDataManager else { return }
-        let user: [User] = coreDataManager.fetch()
+        if scene?.getSelectedFood().isEmpty ?? true {
+            scene?.shakeFoodSelected()
+            alertConfirm(message: "Você deve escolher algum alimento!")
+            return
+        }
+        
+        let coredataManager = CoreDataManager(dataModelType: .check)
+        let user: [User] = coredataManager.fetch()
         user.first?.icon = scene?.updatedImage()
         user.first?.name = scene?.getTextFieldName()
 
         let selectedFoods = scene?.getSelectedFood()
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: FoodOff.entityName)
-        coreDataManager.removeEntity(request: request)
+        coredataManager.removeEntity(request: request)
         
         var foods: [FoodOff] = []
         
         selectedFoods?.forEach {
-            let food: FoodOff = coreDataManager.createEntity()
+            let food: FoodOff = coredataManager.createEntity()
             food.food = $0
             foods.append(food)
         }
         
         let calendar = Calendar(identifier: .gregorian)
-        let days: [Day] = coreDataManager.fetch()
+        let days: [Day] = coredataManager.fetch()
         let daySelected = calendar.dateComponents([.day, .month, .year], from: Date())
-        
         var today: Day?
         days.forEach {
             if let dayDate = $0.date {
@@ -132,6 +147,8 @@ class ProfileViewController: UIViewController {
             today.addToNoIngested(NSSet(array: foods))
             today.addToIngested(NSSet(array: []))
         }
-        coreDataManager.save()
+        
+        coredataManager.save()
+        alertConfirm(message: "Suas alterações foram salvas!")
     }
 }
