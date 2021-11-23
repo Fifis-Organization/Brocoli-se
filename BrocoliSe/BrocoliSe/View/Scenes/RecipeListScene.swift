@@ -13,20 +13,35 @@ enum ViewState {
     case content(models: [RecipeModel])
 }
 
+struct RecipeCellModel {
+    var idRecipe, name, portions, time: String
+    var ingredients, steps: [String]
+    var pathPhoto: UIImage?
+    var pathPhotoString: String
+}
+
 class RecipeListScene: UIView {
 
     private var controller: RecipeListViewController?
     private var isSearch: Bool = false
     private var isActiveKeyboard: Bool = false
-    private var recipes: [RecipeModel] = [] {
+    private var recipes: [RecipeCellModel] = [] {
         didSet {
-            self.recipes = recipes.sorted(by: { $1.name > $0.name})
-            self.reloadTable()
             self.filteredData = recipes
         }
     }
-
-    private var filteredData: [RecipeModel] = []
+    private var filteredData: [RecipeCellModel] = [] {
+        didSet {
+            self.filteredData = filteredData.sorted(by: { $1.name > $0.name})
+            self.reloadTable()
+        }
+    }
+    
+    private var recipesCoredata: [RecipeCellModel] = [] {
+        didSet {
+            self.filteredData = recipesCoredata
+        }
+    }
 
     private lazy var segmentedControl: CustomSegmentedControl = {
         let segmentedControl = CustomSegmentedControl()
@@ -106,6 +121,47 @@ class RecipeListScene: UIView {
     
     @objc func segmentedControlValueChanged(_ sender: UISegmentedControl) {
         segmentedControl.indexChanged(newIndex: sender.selectedSegmentIndex)
+        if sender.selectedSegmentIndex == 1 {
+            if spinner.isAnimating {
+                spinner.stopAnimating()
+            }
+            let coredataManager = CoreDataManager(dataModelType: .recipe)
+            var recipesHelp: [RecipeCellModel] = []
+            let recipesFetch: [Recipe] = coredataManager.fetch()
+            recipesFetch.forEach {
+                if let idRecipe = $0.id,
+                   let name = $0.nome,
+                   let portions = $0.porcoes,
+                   let time = $0.tempo,
+                   let setIngredients = $0.ingredients as? Set<Ingredient>,
+                   let setSteps = $0.steps as? Set<Steps>,
+                   let pathPhotoString = $0.pathFotoString {
+                    var ingredients: [String] = []
+                    var steps: [String] = []
+                    setIngredients.forEach { ingredients.append($0.ingredient ?? "") }
+                    setSteps.forEach { steps.append($0.step ?? "") }
+                    recipesHelp.append(RecipeCellModel(idRecipe: idRecipe,
+                                                       name: name,
+                                                       portions: portions,
+                                                       time: time,
+                                                       ingredients: Array(ingredients),
+                                                       steps: Array(steps),
+                                                       pathPhoto: UIImage(data: $0.pathFoto ?? Data()),
+                                                       pathPhotoString: pathPhotoString))
+                } 
+            }
+            self.recipesCoredata = recipesHelp
+            recipesTableView.restore()
+            if recipesHelp.isEmpty {
+                self.recipesTableView.setEmptyView(for: .savedRecipes)
+            }
+        } else {
+            recipesTableView.restore()
+            if self.recipes.isEmpty {
+                self.recipesTableView.setEmptyView(for: .apiRecipes)
+            }
+            self.filteredData = recipes
+        }
     }
 
     @objc func keyboardWillHide(notification: NSNotification) {
@@ -171,7 +227,6 @@ extension RecipeListScene: RecipeListSceneDelegate {
     func setupViewState(from viewState: ViewState) {
         switch viewState {
         case .load:
-            
             self.spinner.startAnimating()
         case .error:
             DispatchQueue.main.async {
@@ -182,10 +237,36 @@ extension RecipeListScene: RecipeListSceneDelegate {
         case .content(let models):
             DispatchQueue.main.async {
                 self.recipesTableView.restore()
-                self.spinner.stopAnimating()
+                if self.spinner.isAnimating {
+                    self.spinner.stopAnimating()
+                }
             }
-            self.recipes = models
+            var recipesHelp: [RecipeCellModel] = []
+            models.forEach {
+                recipesHelp.append(RecipeCellModel(idRecipe: $0.id,
+                                                   name: $0.name,
+                                                   portions: $0.portions,
+                                                   time: $0.time,
+                                                   ingredients: $0.ingredients,
+                                                   steps: $0.steps,
+                                                   pathPhoto: nil,
+                                                   pathPhotoString: $0.pathPhoto))
+            }
+            self.recipes = recipesHelp
         }
+    }
+    
+    func setupSiriResearch(recipe: String) {
+        searchBar.searchTextField.text = recipe
+        segmentedControl.indexChanged(newIndex: 0)
+        filteredData = recipe.isEmpty ? recipes : recipes.filter {
+            $0.name.range(of: recipe, options: .caseInsensitive, range: nil, locale: nil) != nil
+        }
+        self.recipesTableView.restore()
+        if filteredData.isEmpty {
+            self.recipesTableView.setEmptyView(for: .emptySearch)
+        }
+        reloadTable()
     }
     
     func setController(controller: RecipeListViewController) {
@@ -243,10 +324,19 @@ extension RecipeListScene: UISearchBarDelegate {
     }
 
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        filteredData = searchText.isEmpty ? recipes : recipes.filter {
-            $0.name.range(of: searchText, options: .caseInsensitive, range: nil, locale: nil) != nil
+        if self.segmentedControl.selectedSegmentIndex == 1 {
+            filteredData = searchText.isEmpty ? recipesCoredata : recipesCoredata.filter {
+                $0.name.range(of: searchText, options: .caseInsensitive, range: nil, locale: nil) != nil
+            }
+        } else {
+            filteredData = searchText.isEmpty ? recipes : recipes.filter {
+                $0.name.range(of: searchText, options: .caseInsensitive, range: nil, locale: nil) != nil
+            }
         }
-
+        self.recipesTableView.restore()
+        if filteredData.isEmpty {
+            self.recipesTableView.setEmptyView(for: .emptySearch)
+        }
         reloadTable()
     }
 }

@@ -10,4 +10,5 @@ import Foundation
 enum EmptyViewType {
     case apiRecipes
     case savedRecipes
+    case emptySearch
 }
