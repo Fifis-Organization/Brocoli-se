@@ -18,6 +18,7 @@ class RecipeListCell: UITableViewCell {
 
     private lazy var recipeImage: UIImageView = {
         let image = UIImageView()
+        image.accessibilityIgnoresInvertColors = true
         image.image = UIImage(named: "foto-perfil")
         image.contentMode = .scaleAspectFill
         image.layer.masksToBounds = false

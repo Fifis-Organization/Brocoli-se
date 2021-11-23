@@ -16,6 +16,7 @@ class CustomImagePicker: UIView {
 
     private lazy var profileImageView: UIImageView = {
         let imgView = UIImageView()
+        imgView.accessibilityIgnoresInvertColors = true
         imgView.image = UIImage(systemName: "person.crop.circle.fill")
         imgView.tintColor = .blueDark
         imgView.contentMode = .scaleAspectFill

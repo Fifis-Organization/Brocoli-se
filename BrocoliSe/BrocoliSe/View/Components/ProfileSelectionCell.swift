@@ -27,6 +27,7 @@ class ProfileSelectionCell: UITableViewCell {
     
     private var profileImageView: UIImageView = {
         let imageView = UIImageView()
+        imageView.accessibilityIgnoresInvertColors = true
         imageView.image = UIImage(systemName: "person.crop.circle.fill")
         imageView.tintColor = .blueDark
         imageView.contentMode = .scaleAspectFill

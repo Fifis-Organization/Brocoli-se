@@ -12,6 +12,7 @@ class CollectionViewCell: UICollectionViewCell {
     
     private var firstStickerImage: UIImageView = {
         let imageView = UIImageView()
+        imageView.accessibilityIgnoresInvertColors = true
         imageView.contentMode = .scaleAspectFit
         imageView.clipsToBounds = true
         return imageView
@@ -38,6 +39,7 @@ class CollectionViewCell: UICollectionViewCell {
 
     private var secondStickerImage: UIImageView = {
         let imageView = UIImageView()
+        imageView.accessibilityIgnoresInvertColors = true
         imageView.contentMode = .scaleAspectFit
         imageView.clipsToBounds = true
         return imageView
@@ -74,6 +76,7 @@ class CollectionViewCell: UICollectionViewCell {
 
     private var thirdStickerImage: UIImageView = {
         let imageView = UIImageView()
+        imageView.accessibilityIgnoresInvertColors = true
         imageView.contentMode = .scaleAspectFit
         imageView.clipsToBounds = true
         return imageView
@@ -100,6 +103,7 @@ class CollectionViewCell: UICollectionViewCell {
 
     private var fourthStickerImage: UIImageView = {
         let imageView = UIImageView()
+        imageView.accessibilityIgnoresInvertColors = true
         imageView.contentMode = .scaleAspectFit
         imageView.clipsToBounds = true
         return imageView
