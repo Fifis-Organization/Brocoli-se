@@ -38,6 +38,7 @@ class DiaryViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         self.fetchUser()
         self.fetchFoodAll()
+        _ = createToday()
         coreDataManager = CoreDataManager()
         self.fetchDay(Date())
         diaryScene?.reloadTable()
@@ -49,7 +50,6 @@ class DiaryViewController: UIViewController {
         setupSiriAlbum()
         setupSiriChecklist()
         setupResearchRecipe()
-        
     }
     
     private func setupResearchRecipe() {

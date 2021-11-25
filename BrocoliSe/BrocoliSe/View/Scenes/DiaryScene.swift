@@ -156,6 +156,10 @@ extension DiaryScene: UITableViewDelegate, UITableViewDataSource {
         
         cell.setData(iconName: foodName.iconTable(), foodName:  foodName)
         cell.checkButtonCallBack = {
+            if PersistenceService().getKeyValue(udKey: .vibrations) {
+                let haptic = UISelectionFeedbackGenerator()
+                haptic.selectionChanged()
+            }
             cell.toggleSelected()
             self.cellActionSave(food: food, isCheck: cell.getIsCheck())
             self.controller?.fetchDayAll()
