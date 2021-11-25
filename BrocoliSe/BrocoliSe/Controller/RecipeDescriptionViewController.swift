@@ -18,6 +18,7 @@ class RecipeDescriptionViewController: UIViewController {
     var tabCoordinator: TabCoordinatorProtocol?
     var recipeCoordinator: RecipeCoordinator?
     let coredateManager = CoreDataManager(dataModelType: .recipe)
+    private var isSave = false
     
     override func viewWillAppear(_ animated: Bool) {
         tabCoordinator?.configTabBar(color: .white)
@@ -28,61 +29,83 @@ class RecipeDescriptionViewController: UIViewController {
         self.navigationController?.navigationBar.backgroundColor = .clear
         
         let backButtonImage = UIImage(named: "backButton")?.withRenderingMode(.alwaysOriginal)
-        var saveButtonImage = UIImage(named: "saveButton")?.withRenderingMode(.alwaysOriginal)
-        
-        var validate = false
-        let recipes: [Recipe] = coredateManager.fetch()
-        if let recipeModel = recipeCoordinator?.getRecipes() {
-            validate = recipes.contains(where: {$0.id == recipeModel.idRecipe})
-        }
-        if validate {
-            saveButtonImage = UIImage(named: "saveButton.fill")?.withRenderingMode(.alwaysOriginal)
+
+        if fetchValidate() {
+            removeSaveButton()
+        } else {
+            saveButton()
         }
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: backButtonImage, style: .plain, target: self, action: #selector(popSelf))
-        navigationItem.rightBarButtonItem = UIBarButtonItem(image: saveButtonImage, style: .plain, target: self, action: validate ? #selector(removeRecipe) : #selector(saveRecipe))
+    }
+    
+    private func saveButton() {
+        let saveButtonImage = UIImage(named: "saveButton")?.withRenderingMode(.alwaysOriginal)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: saveButtonImage, style: .plain, target: self, action: #selector(saveRecipe))
+    }
+    
+    private func removeSaveButton() {
+        let saveButtonImage = UIImage(named: "saveButton.fill")?.withRenderingMode(.alwaysOriginal)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: saveButtonImage, style: .plain, target: self, action: #selector(removeRecipe))
+    }
+    
+    private func fetchValidate() -> Bool{
+        let recipes: [Recipe] = coredateManager.fetch()
+        if let recipeModel = recipeCoordinator?.getRecipes() {
+           return recipes.contains(where: {$0.id == recipeModel.idRecipe})
+        }
+        return false
     }
     
     @objc private func popSelf() {
         navigationController?.popViewController(animated: false)
+        if isSave {
+            if !fetchValidate() {
+                let recipeModel = recipeCoordinator?.getRecipes()
+                let recipe: Recipe = coredateManager.createEntity()
+                recipe.id = recipeModel?.idRecipe
+                recipe.nome = recipeModel?.name
+                recipe.porcoes = recipeModel?.portions
+                recipe.tempo = recipeModel?.time
+                recipe.pathFoto = recipeModel?.pathPhoto?.pngData()
+                recipe.pathFotoString = recipeModel?.pathPhotoString
+                
+                var ingredients: [Ingredient] = []
+                recipeModel?.ingredients.forEach {
+                    let ingredient: Ingredient = coredateManager.createEntity()
+                    ingredient.ingredient = $0
+                    ingredients.append(ingredient)
+                }
+                
+                var steps: [Steps] = []
+                recipeModel?.steps.forEach {
+                    let step: Steps = coredateManager.createEntity()
+                    step.step = $0
+                    steps.append(step)
+                }
+                
+                recipe.addToIngredients(NSSet(array: ingredients))
+                recipe.addToSteps(NSSet(array: steps))
+                coredateManager.save()
+            }
+        } else {
+            let recipeModel = recipeCoordinator?.getRecipes()?.idRecipe as? NSString ?? ""
+            let request = NSFetchRequest<NSFetchRequestResult>(entityName: Recipe.entityName)
+            request.predicate = NSPredicate.init(format: "id==%@", recipeModel)
+            coredateManager.removeEntity(request: request)
+        }
     }
     
     @objc private func saveRecipe() {
         navigationItem.rightBarButtonItem?.image = UIImage(named: "saveButton.fill")?.withRenderingMode(.alwaysOriginal)
-        let recipeModel = recipeCoordinator?.getRecipes()
-        let recipe: Recipe = coredateManager.createEntity()
-        recipe.id = recipeModel?.idRecipe
-        recipe.nome = recipeModel?.name
-        recipe.porcoes = recipeModel?.portions
-        recipe.tempo = recipeModel?.time
-        recipe.pathFoto = recipeModel?.pathPhoto?.pngData()
-        recipe.pathFotoString = recipeModel?.pathPhotoString
-        
-        var ingredients: [Ingredient] = []
-        recipeModel?.ingredients.forEach {
-            let ingredient: Ingredient = coredateManager.createEntity()
-            ingredient.ingredient = $0
-            ingredients.append(ingredient)
-        }
-        
-        var steps: [Steps] = []
-        recipeModel?.steps.forEach {
-            let step: Steps = coredateManager.createEntity()
-            step.step = $0
-            steps.append(step)
-        }
-        
-        recipe.addToIngredients(NSSet(array: ingredients))
-        recipe.addToSteps(NSSet(array: steps))
-        coredateManager.save()
+        isSave = true
+        removeSaveButton()
     }
     
     @objc private func removeRecipe() {
         navigationItem.rightBarButtonItem?.image = UIImage(named: "saveButton")?.withRenderingMode(.alwaysOriginal)
-        let recipeModel = recipeCoordinator?.getRecipes()?.idRecipe as? NSString ?? ""
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: Recipe.entityName)
-        request.predicate = NSPredicate.init(format: "id==%@", recipeModel)
-        coredateManager.removeEntity(request: request)
+        isSave = false
+        saveButton()
     }
     
     func setRecipeDescriptionScene(_ recipeDescriptionScene: RecipeDescriptionSceneDelegate) {
