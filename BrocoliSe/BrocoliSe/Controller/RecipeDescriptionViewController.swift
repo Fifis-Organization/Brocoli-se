@@ -49,7 +49,7 @@ class RecipeDescriptionViewController: UIViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: saveButtonImage, style: .plain, target: self, action: #selector(removeRecipe))
     }
     
-    private func fetchValidate() -> Bool{
+    private func fetchValidate() -> Bool {
         let recipes: [Recipe] = coredateManager.fetch()
         if let recipeModel = recipeCoordinator?.getRecipes() {
            return recipes.contains(where: {$0.id == recipeModel.idRecipe})
